@@ -15,13 +15,15 @@ export function Heading({ level, children, id }: { level: number; children: Reac
   };
 
   return (
-    <Tag id={id} className={`${baseClasses} ${sizeClasses[level]}`}>
-      <a href={`#${id}`} className="group relative">
-        <span className="absolute -left-6 top-0 opacity-0 group-hover:opacity-100 text-muted-foreground transition-opacity">
-          #
-        </span>
-        {children}
+    <Tag id={id} className={`group relative ${baseClasses} ${sizeClasses[level]}`}>
+      <a 
+        href={`#${id}`} 
+        className="absolute -left-6 top-0 opacity-0 group-hover:opacity-100 text-muted-foreground transition-opacity select-none no-underline"
+        aria-hidden="true"
+      >
+        #
       </a>
+      {children}
     </Tag>
   );
 }

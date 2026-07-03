@@ -77,7 +77,7 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
             <div className="flex flex-col gap-1">
               {results.map((item) => (
                 <Link 
-                  key={item.id} 
+                  key={`${item.category}-${item.id}`} 
                   href={`/assets/${item.category}/${item.id}`}
                   onClick={() => onOpenChange(false)}
                   className="flex items-center gap-4 px-4 py-3 rounded-lg hover:bg-accent transition-colors group"
