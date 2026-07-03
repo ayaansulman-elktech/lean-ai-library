@@ -1,16 +1,7 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-07-03T08:09:14.227Z",
+  "generatedAt": "2026-07-03T09:10:01.722Z",
   "items": [
-    {
-      "id": ".pytest_cache",
-      "name": ".pytest_cache",
-      "type": "agent",
-      "category": "agents",
-      "keywords": [],
-      "description": "No description provided.",
-      "githubPath": "agents/apple-compliance/.pytest_cache"
-    },
     {
       "id": "apple-compliance",
       "name": "apple-compliance",
@@ -19,15 +10,6 @@
       "keywords": [],
       "description": "Pre-submission App Store Review gate. Assesses an app descriptor against the review guidelines, weighted toward Guideline 4.3 (Spam/duplicate). Use before submitting any app.",
       "githubPath": "agents/apple-compliance"
-    },
-    {
-      "id": ".pytest_cache",
-      "name": ".pytest_cache",
-      "type": "agent",
-      "category": "agents",
-      "keywords": [],
-      "description": "No description provided.",
-      "githubPath": "agents/apple-docs-rag/.pytest_cache"
     },
     {
       "id": "apple-docs-rag",
@@ -48,15 +30,6 @@
       "githubPath": "agents/microcopy"
     },
     {
-      "id": ".pytest_cache",
-      "name": ".pytest_cache",
-      "type": "agent",
-      "category": "agents",
-      "keywords": [],
-      "description": "No description provided.",
-      "githubPath": "agents/security-review/.pytest_cache"
-    },
-    {
       "id": "security-review",
       "name": "security-review-agent",
       "type": "agent",
@@ -64,15 +37,6 @@
       "keywords": [],
       "description": "Security-review gate: static scan + LLM review of generated app code.",
       "githubPath": "agents/security-review"
-    },
-    {
-      "id": ".pytest_cache",
-      "name": ".pytest_cache",
-      "type": "agent",
-      "category": "agents",
-      "keywords": [],
-      "description": "No description provided.",
-      "githubPath": "agents/skill-optimizer/.pytest_cache"
     },
     {
       "id": "skill-optimizer",
@@ -102,15 +66,6 @@
       "githubPath": "agents/tester"
     },
     {
-      "id": ".pytest_cache",
-      "name": ".pytest_cache",
-      "type": "agent",
-      "category": "agents",
-      "keywords": [],
-      "description": "No description provided.",
-      "githubPath": "agents/ux-audit/.pytest_cache"
-    },
-    {
       "id": "ux-audit",
       "name": "ux-audit",
       "type": "agent",
@@ -118,15 +73,6 @@
       "keywords": [],
       "description": "Audit a screen (or screen video) against the UX checklist and saliency, return a scored PDF. Use after a screen is designed and before sign-off.",
       "githubPath": "agents/ux-audit"
-    },
-    {
-      "id": ".pytest_cache",
-      "name": ".pytest_cache",
-      "type": "agent",
-      "category": "agents",
-      "keywords": [],
-      "description": "No description provided.",
-      "githubPath": "agents/wireframing/.pytest_cache"
     },
     {
       "id": "wireframing",
@@ -154,15 +100,6 @@
       "keywords": [],
       "description": "No description provided.",
       "githubPath": "apps"
-    },
-    {
-      "id": ".pytest_cache",
-      "name": ".pytest_cache",
-      "type": "other",
-      "category": "design-system",
-      "keywords": [],
-      "description": "No description provided.",
-      "githubPath": "design-system/.pytest_cache"
     },
     {
       "id": "boilerplate",
@@ -235,15 +172,6 @@
       "keywords": [],
       "description": "Token build pipeline for the Lean Design System.",
       "githubPath": "design-system"
-    },
-    {
-      "id": ".pytest_cache",
-      "name": ".pytest_cache",
-      "type": "library",
-      "category": "libraries",
-      "keywords": [],
-      "description": "No description provided.",
-      "githubPath": "libraries/agent-core/.pytest_cache"
     },
     {
       "id": "agent-core",
@@ -345,15 +273,6 @@
       "githubPath": "libraries/memory"
     },
     {
-      "id": ".pytest_cache",
-      "name": ".pytest_cache",
-      "type": "library",
-      "category": "libraries",
-      "keywords": [],
-      "description": "No description provided.",
-      "githubPath": "libraries/ml-core/.pytest_cache"
-    },
-    {
       "id": "ml-core",
       "name": "ml-core",
       "type": "library",
@@ -363,15 +282,6 @@
       "githubPath": "libraries/ml-core"
     },
     {
-      "id": ".pytest_cache",
-      "name": ".pytest_cache",
-      "type": "library",
-      "category": "libraries",
-      "keywords": [],
-      "description": "No description provided.",
-      "githubPath": "libraries/models/.pytest_cache"
-    },
-    {
       "id": "models",
       "name": "vis-models",
       "type": "library",
@@ -379,15 +289,6 @@
       "keywords": [],
       "description": "Vision-model layer: SUM-backed saliency (+ offline mock) for the UX-audit agent.",
       "githubPath": "libraries/models"
-    },
-    {
-      "id": ".pytest_cache",
-      "name": ".pytest_cache",
-      "type": "library",
-      "category": "libraries",
-      "keywords": [],
-      "description": "No description provided.",
-      "githubPath": "libraries/rag/.pytest_cache"
     },
     {
       "id": "rag",
@@ -415,15 +316,6 @@
       "keywords": [],
       "description": "No description provided.",
       "githubPath": "libraries/skills"
-    },
-    {
-      "id": ".pytest_cache",
-      "name": ".pytest_cache",
-      "type": "pipeline",
-      "category": "pipelines",
-      "keywords": [],
-      "description": "No description provided.",
-      "githubPath": "pipelines/sprint/.pytest_cache"
     },
     {
       "id": "sprint",

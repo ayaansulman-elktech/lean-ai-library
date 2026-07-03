@@ -20,10 +20,10 @@
   "examples": [],
   "dependencies": [],
   "related": [
-    ".pytest_cache",
     "apple-compliance",
     "apple-docs-rag",
-    "microcopy"
+    "microcopy",
+    "security-review"
   ],
   "toc": [],
   "repository": {

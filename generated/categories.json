@@ -1,11 +1,11 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-07-03T08:09:14.223Z",
+  "generatedAt": "2026-07-03T09:10:01.720Z",
   "items": [
     {
       "id": "agents",
       "title": "Agents",
-      "count": 15
+      "count": 9
     },
     {
       "id": "apps",
@@ -20,17 +20,17 @@
     {
       "id": "design-system",
       "title": "Design-system",
-      "count": 8
+      "count": 7
     },
     {
       "id": "libraries",
       "title": "Libraries",
-      "count": 20
+      "count": 16
     },
     {
       "id": "pipelines",
       "title": "Pipelines",
-      "count": 2
+      "count": 1
     },
     {
       "id": "_templates",

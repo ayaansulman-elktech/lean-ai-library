@@ -1,29 +1,13 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-07-03T08:09:14.212Z",
+  "generatedAt": "2026-07-03T09:10:01.715Z",
   "items": [
-    {
-      "id": ".pytest_cache",
-      "name": ".pytest_cache",
-      "type": "agent",
-      "category": "agents",
-      "shortDescription": "No description",
-      "cover": null
-    },
     {
       "id": "apple-compliance",
       "name": "apple-compliance",
       "type": "agent",
       "category": "agents",
       "shortDescription": "Pre-submission App Store Review gate. Assesses an app descriptor against the review guidelines, weighted toward Guideline 4.3 (Spam/duplicate). Use be",
-      "cover": null
-    },
-    {
-      "id": ".pytest_cache",
-      "name": ".pytest_cache",
-      "type": "agent",
-      "category": "agents",
-      "shortDescription": "No description",
       "cover": null
     },
     {
@@ -43,27 +27,11 @@
       "cover": null
     },
     {
-      "id": ".pytest_cache",
-      "name": ".pytest_cache",
-      "type": "agent",
-      "category": "agents",
-      "shortDescription": "No description",
-      "cover": null
-    },
-    {
       "id": "security-review",
       "name": "security-review-agent",
       "type": "agent",
       "category": "agents",
       "shortDescription": "Security-review gate: static scan + LLM review of generated app code.",
-      "cover": null
-    },
-    {
-      "id": ".pytest_cache",
-      "name": ".pytest_cache",
-      "type": "agent",
-      "category": "agents",
-      "shortDescription": "No description",
       "cover": null
     },
     {
@@ -91,27 +59,11 @@
       "cover": null
     },
     {
-      "id": ".pytest_cache",
-      "name": ".pytest_cache",
-      "type": "agent",
-      "category": "agents",
-      "shortDescription": "No description",
-      "cover": null
-    },
-    {
       "id": "ux-audit",
       "name": "ux-audit",
       "type": "agent",
       "category": "agents",
       "shortDescription": "Audit a screen (or screen video) against the UX checklist and saliency, return a scored PDF. Use after a screen is designed and before sign-off.",
-      "cover": null
-    },
-    {
-      "id": ".pytest_cache",
-      "name": ".pytest_cache",
-      "type": "agent",
-      "category": "agents",
-      "shortDescription": "No description",
       "cover": null
     },
     {
@@ -135,14 +87,6 @@
       "name": "apps",
       "type": "other",
       "category": "other",
-      "shortDescription": "No description",
-      "cover": null
-    },
-    {
-      "id": ".pytest_cache",
-      "name": ".pytest_cache",
-      "type": "other",
-      "category": "design-system",
       "shortDescription": "No description",
       "cover": null
     },
@@ -208,14 +152,6 @@
       "type": "other",
       "category": "other",
       "shortDescription": "Token build pipeline for the Lean Design System.",
-      "cover": null
-    },
-    {
-      "id": ".pytest_cache",
-      "name": ".pytest_cache",
-      "type": "library",
-      "category": "libraries",
-      "shortDescription": "No description",
       "cover": null
     },
     {
@@ -307,14 +243,6 @@
       "cover": null
     },
     {
-      "id": ".pytest_cache",
-      "name": ".pytest_cache",
-      "type": "library",
-      "category": "libraries",
-      "shortDescription": "No description",
-      "cover": null
-    },
-    {
       "id": "ml-core",
       "name": "ml-core",
       "type": "library",
@@ -323,27 +251,11 @@
       "cover": null
     },
     {
-      "id": ".pytest_cache",
-      "name": ".pytest_cache",
-      "type": "library",
-      "category": "libraries",
-      "shortDescription": "No description",
-      "cover": null
-    },
-    {
       "id": "models",
       "name": "vis-models",
       "type": "library",
       "category": "libraries",
       "shortDescription": "Vision-model layer: SUM-backed saliency (+ offline mock) for the UX-audit agent.",
-      "cover": null
-    },
-    {
-      "id": ".pytest_cache",
-      "name": ".pytest_cache",
-      "type": "library",
-      "category": "libraries",
-      "shortDescription": "No description",
       "cover": null
     },
     {
@@ -367,14 +279,6 @@
       "name": "skills",
       "type": "library",
       "category": "libraries",
-      "shortDescription": "No description",
-      "cover": null
-    },
-    {
-      "id": ".pytest_cache",
-      "name": ".pytest_cache",
-      "type": "pipeline",
-      "category": "pipelines",
       "shortDescription": "No description",
       "cover": null
     },

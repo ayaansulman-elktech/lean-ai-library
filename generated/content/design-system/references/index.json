@@ -20,10 +20,10 @@
   "examples": [],
   "dependencies": [],
   "related": [
-    ".pytest_cache",
     "boilerplate",
     "foundations",
-    "illustrations"
+    "illustrations",
+    "patterns"
   ],
   "toc": [
     {

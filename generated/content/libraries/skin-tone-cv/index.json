@@ -20,10 +20,10 @@
   "examples": [],
   "dependencies": [],
   "related": [
-    ".pytest_cache",
     "agent-core",
     "ai-farm",
-    "vision-camera"
+    "vision-camera",
+    "code"
   ],
   "toc": [
     {

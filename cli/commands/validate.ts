@@ -1,8 +1,8 @@
 import { Command } from 'commander';
+import chalk from 'chalk';
 
 export const validateCommand = new Command('validate')
-  .description('Validate the structure and metadata of the assets in the repository')
+  .description('Validate the structure and metadata of the assets in the repository (Placeholder)')
   .action(async () => {
-    console.log('Validate command executed');
-    // TODO: Implement validate logic
+    console.log(chalk.yellow('Validation command is a placeholder.'));
   });

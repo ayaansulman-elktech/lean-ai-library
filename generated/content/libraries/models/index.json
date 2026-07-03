@@ -21,10 +21,10 @@
   "examples": [],
   "dependencies": [],
   "related": [
-    ".pytest_cache",
     "agent-core",
     "skin-tone-cv",
-    "ai-farm"
+    "ai-farm",
+    "vision-camera"
   ],
   "toc": [
     {

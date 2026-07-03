@@ -1,0 +1,12 @@
+source:
+  repository: https://github.com/shaz-ik/lean-ai-factory
+  branch: main
+output:
+  directory: generated
+deployment:
+  provider: vercel
+search:
+  engine: fuse
+site:
+  title: Lean AI Library
+  description: AI Asset Documentation Portal
