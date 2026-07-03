@@ -1,5 +1,5 @@
 source:
-  repository: https://github.com/shaz-ik/lean-ai-factory
+  repository: https://github.com/ayaansulman-elktech/lean-ai-factory
   branch: main
 output:
   directory: generated
