@@ -25,4 +25,6 @@ jobs:
       - name: Publish (Build, Test, Next.js Build, Deploy)
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FACTORY_TOKEN: ${{ secrets.FACTORY_TOKEN }}
         run: npm run cli publish
