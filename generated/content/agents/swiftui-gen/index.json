@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "id": "swiftui-gen",
+    "name": "swiftui-gen",
+    "type": "agent",
+    "category": "agents",
+    "version": "0.1.0",
+    "description": "Turn an A-graded wireframe (screen spec) + design tokens into token-driven SwiftUI, one screen at a time, statically checked (unknown tokens, hardcoded styles, unbalanced brackets). Use after wireframing, before the UX/security audits.",
+    "shortDescription": "Turn an A-graded wireframe (screen spec) + design tokens into token-driven SwiftUI, one screen at a time, statically checked (unknown tokens, hardcode",
+    "keywords": []
+  },
+  "content": {
+    "hasReadme": false,
+    "hasSkill": true
+  },
+  "assets": {
+    "cover": null,
+    "images": []
+  },
+  "examples": [],
+  "dependencies": [
+    "pydantic>=2.6"
+  ],
+  "related": [
+    "apple-compliance",
+    "apple-docs-rag",
+    "microcopy",
+    "security-review"
+  ],
+  "toc": [],
+  "repository": {
+    "branch": "main",
+    "commit": "c43d9c6543f8d0db8e4b705cb68f039df9630ca8",
+    "url": "https://github.com/shaz-ik/lean-ai-factory",
+    "path": "agents/swiftui-gen"
+  }
+}

@@ -64,10 +64,26 @@ export const buildCommand = new Command('build')
         console.log(chalk.gray('Generating static content...'));
         
         const outputDir = path.resolve(process.cwd(), 'generated');
+        
+        // Compute repo info once
+        let branch = 'unknown';
+        let commit = 'unknown';
+        try {
+          const simpleGit = (await import('simple-git')).default;
+          const git = simpleGit(repoDir);
+          branch = (await git.branchLocal()).current;
+          commit = await git.revparse(['HEAD']);
+        } catch (e) {}
+
         const ctx = {
           assets,
           outputDir,
           sourceDir: repoDir,
+          repoInfo: {
+            branch,
+            commit,
+            url: 'https://github.com/shaz-ik/lean-ai-factory'
+          },
           stats: { assetsCopied: 0 }
         };
 

@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "id": "test-agent",
+    "name": "Test Agent",
+    "type": "agent",
+    "category": "agents",
+    "description": "A simple test agent.",
+    "shortDescription": "Test short desc",
+    "keywords": [
+      "test",
+      "agent"
+    ]
+  },
+  "content": {
+    "hasReadme": true,
+    "hasSkill": false
+  },
+  "assets": {
+    "cover": null,
+    "images": []
+  },
+  "examples": [],
+  "dependencies": [],
+  "related": [],
+  "toc": [
+    {
+      "depth": 1,
+      "title": "Test Agent",
+      "slug": "test-agent"
+    }
+  ],
+  "repository": {
+    "path": "agents/test-agent"
+  }
+}

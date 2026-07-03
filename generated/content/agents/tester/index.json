@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "id": "tester",
+    "name": "tester",
+    "type": "agent",
+    "category": "agents",
+    "description": "Smoke-test an iOS app build — compile, launch in simulator, confirm the core screen renders without crash. Use at the end of a sprint day.",
+    "shortDescription": "Smoke-test an iOS app build — compile, launch in simulator, confirm the core screen renders without crash. Use at the end of a sprint day.",
+    "keywords": []
+  },
+  "content": {
+    "hasReadme": false,
+    "hasSkill": true
+  },
+  "assets": {
+    "cover": null,
+    "images": []
+  },
+  "examples": [],
+  "dependencies": [],
+  "related": [
+    ".pytest_cache",
+    "apple-compliance",
+    "apple-docs-rag",
+    "microcopy"
+  ],
+  "toc": [],
+  "repository": {
+    "branch": "main",
+    "commit": "c43d9c6543f8d0db8e4b705cb68f039df9630ca8",
+    "url": "https://github.com/shaz-ik/lean-ai-factory",
+    "path": "agents/tester"
+  }
+}

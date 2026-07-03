@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "id": "ml-core",
+    "name": "ml-core",
+    "type": "library",
+    "category": "libraries",
+    "version": "0.1.0",
+    "description": "Shared LLM gateway, cost metering, and tracking for the Lean AI Factory.",
+    "shortDescription": "Shared LLM gateway, cost metering, and tracking for the Lean AI Factory.",
+    "keywords": []
+  },
+  "content": {
+    "hasReadme": true,
+    "hasSkill": false
+  },
+  "assets": {
+    "cover": null,
+    "images": []
+  },
+  "examples": [],
+  "dependencies": [
+    "pydantic>=2.6",
+    "pyyaml>=6.0",
+    "python-dotenv>=1.0"
+  ],
+  "related": [
+    "skill-optimizer",
+    "agent-core",
+    "apple-compliance",
+    "apple-docs-rag"
+  ],
+  "toc": [
+    {
+      "depth": 1,
+      "title": "ml-core",
+      "slug": "ml-core"
+    },
+    {
+      "depth": 2,
+      "title": "What it gives you",
+      "slug": "what-it-gives-you"
+    },
+    {
+      "depth": 2,
+      "title": "Use it",
+      "slug": "use-it"
+    },
+    {
+      "depth": 2,
+      "title": "Design notes",
+      "slug": "design-notes"
+    },
+    {
+      "depth": 2,
+      "title": "Test (offline, no keys)",
+      "slug": "test-offline-no-keys"
+    }
+  ],
+  "repository": {
+    "branch": "main",
+    "commit": "c43d9c6543f8d0db8e4b705cb68f039df9630ca8",
+    "url": "https://github.com/shaz-ik/lean-ai-factory",
+    "path": "libraries/ml-core"
+  }
+}

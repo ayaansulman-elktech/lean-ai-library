@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "id": "wireframing",
+    "name": "wireframing",
+    "type": "agent",
+    "category": "agents",
+    "version": "0.1.0",
+    "description": "Generate a link-complete HTML/CSS wireframe from a project charter and loop until the user flow scores \"A\". Use when starting any new app's design phase.",
+    "shortDescription": "Generate a link-complete HTML/CSS wireframe from a project charter and loop until the user flow scores \"A\". Use when starting any new app's design pha",
+    "keywords": []
+  },
+  "content": {
+    "hasReadme": false,
+    "hasSkill": true
+  },
+  "assets": {
+    "cover": null,
+    "images": []
+  },
+  "examples": [],
+  "dependencies": [
+    "pydantic>=2.6"
+  ],
+  "related": [
+    "apple-compliance",
+    "apple-docs-rag",
+    "microcopy",
+    "security-review"
+  ],
+  "toc": [],
+  "repository": {
+    "branch": "main",
+    "commit": "c43d9c6543f8d0db8e4b705cb68f039df9630ca8",
+    "url": "https://github.com/shaz-ik/lean-ai-factory",
+    "path": "agents/wireframing"
+  }
+}

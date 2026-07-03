@@ -4,6 +4,11 @@ export interface GeneratorContext {
   assets: Asset[];
   outputDir: string;
   sourceDir: string;
+  repoInfo: {
+    branch: string;
+    commit: string;
+    url: string;
+  };
   stats: {
     assetsCopied: number;
   };

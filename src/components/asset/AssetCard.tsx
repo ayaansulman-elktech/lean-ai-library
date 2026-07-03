@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Github } from 'lucide-react';
+import { Code } from 'lucide-react';
 import { AssetBadge } from './AssetBadge';
 import { CatalogItem } from '@/lib/api/api';
 
@@ -29,7 +29,7 @@ export function AssetCard({ asset }: AssetCardProps) {
         <div className="p-5 flex-1 flex flex-col">
           <div className="flex items-start justify-between mb-3">
             <AssetBadge type={asset.type} />
-            <Github className="w-5 h-5 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+            <Code className="w-5 h-5 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
           </div>
           
           <h3 className="text-lg font-semibold leading-tight tracking-tight mb-2 group-hover:text-primary">

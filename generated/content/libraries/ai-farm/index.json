@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "id": "ai-farm",
+    "name": "ai-farm",
+    "type": "library",
+    "category": "libraries",
+    "description": "No description provided.",
+    "shortDescription": "No description",
+    "keywords": []
+  },
+  "content": {
+    "hasReadme": true,
+    "hasSkill": false
+  },
+  "assets": {
+    "cover": null,
+    "images": []
+  },
+  "examples": [],
+  "dependencies": [],
+  "related": [
+    ".pytest_cache",
+    "agent-core",
+    "skin-tone-cv",
+    "vision-camera"
+  ],
+  "toc": [
+    {
+      "depth": 1,
+      "title": "AI Farm",
+      "slug": "ai-farm"
+    },
+    {
+      "depth": 2,
+      "title": "Raw → Ready",
+      "slug": "raw--ready"
+    },
+    {
+      "depth": 2,
+      "title": "registry.json",
+      "slug": "registryjson"
+    },
+    {
+      "depth": 2,
+      "title": "Phase-1 scope",
+      "slug": "phase-1-scope"
+    }
+  ],
+  "repository": {
+    "branch": "main",
+    "commit": "c43d9c6543f8d0db8e4b705cb68f039df9630ca8",
+    "url": "https://github.com/shaz-ik/lean-ai-factory",
+    "path": "libraries/ai-farm"
+  }
+}

@@ -74,10 +74,11 @@ describe('Generators', () => {
     
     const contentDir = path.join(outputDir, 'content/agents/test-agent');
     expect(fs.existsSync(contentDir)).toBe(true);
-    expect(fs.existsSync(path.join(contentDir, 'metadata.json'))).toBe(true);
+    expect(fs.existsSync(path.join(contentDir, 'index.json'))).toBe(true);
     expect(fs.existsSync(path.join(contentDir, 'README.md'))).toBe(true);
     
-    const metadata = JSON.parse(fs.readFileSync(path.join(contentDir, 'metadata.json'), 'utf-8'));
-    expect(metadata.id).toBe('test-agent');
+    const indexData = JSON.parse(fs.readFileSync(path.join(contentDir, 'index.json'), 'utf-8'));
+    expect(indexData.metadata.id).toBe('test-agent');
+    expect(indexData.toc.length).toBeGreaterThan(0);
   });
 });

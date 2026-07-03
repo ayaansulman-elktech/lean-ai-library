@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "id": "vision-camera",
+    "name": "vision-camera",
+    "type": "library",
+    "category": "libraries",
+    "description": "No description provided.",
+    "shortDescription": "No description",
+    "keywords": []
+  },
+  "content": {
+    "hasReadme": true,
+    "hasSkill": false
+  },
+  "assets": {
+    "cover": null,
+    "images": []
+  },
+  "examples": [],
+  "dependencies": [],
+  "related": [
+    ".pytest_cache",
+    "agent-core",
+    "skin-tone-cv",
+    "ai-farm"
+  ],
+  "toc": [
+    {
+      "depth": 1,
+      "title": "vision-camera (code snippet)",
+      "slug": "vision-camera-code-snippet"
+    },
+    {
+      "depth": 2,
+      "title": "Contents (to add)",
+      "slug": "contents-to-add"
+    },
+    {
+      "depth": 2,
+      "title": "Why it's a library",
+      "slug": "why-its-a-library"
+    }
+  ],
+  "repository": {
+    "branch": "main",
+    "commit": "c43d9c6543f8d0db8e4b705cb68f039df9630ca8",
+    "url": "https://github.com/shaz-ik/lean-ai-factory",
+    "path": "libraries/code/vision-camera"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "id": "skill-optimizer",
+    "name": "skill-optimizer",
+    "type": "agent",
+    "category": "agents",
+    "version": "0.1.0",
+    "description": "Optimize a SKILL.md as an ML artifact (Optuna/GEPA search -> generate -> run -> judge-panel score -> MLflow -> validate on held-out then frozen sets). Use to harden a skill's quality or make it hold quality on a cheaper model. AI-Engineer / meta tool.",
+    "shortDescription": "Optimize a SKILL.md as an ML artifact (Optuna/GEPA search -> generate -> run -> judge-panel score -> MLflow -> validate on held-out then frozen sets).",
+    "keywords": []
+  },
+  "content": {
+    "hasReadme": true,
+    "hasSkill": true
+  },
+  "assets": {
+    "cover": null,
+    "images": []
+  },
+  "examples": [],
+  "dependencies": [
+    "pydantic>=2.6",
+    "pyyaml>=6.0",
+    "litellm>=1.40",
+    "optuna>=3.6",
+    "mlflow>=2.12",
+    "tiktoken>=0.7",
+    "typer>=0.12",
+    "rich>=13.7",
+    "python-dotenv>=1.0"
+  ],
+  "related": [
+    "ml-core",
+    "apple-compliance",
+    "apple-docs-rag",
+    "microcopy"
+  ],
+  "toc": [
+    {
+      "depth": 1,
+      "title": "Skill Optimizer",
+      "slug": "skill-optimizer"
+    },
+    {
+      "depth": 2,
+      "title": "Quickstart (offline, no API keys)",
+      "slug": "quickstart-offline-no-api-keys"
+    },
+    {
+      "depth": 2,
+      "title": "Layout",
+      "slug": "layout"
+    },
+    {
+      "depth": 2,
+      "title": "Design principles",
+      "slug": "design-principles"
+    },
+    {
+      "depth": 2,
+      "title": "Key seams",
+      "slug": "key-seams"
+    }
+  ],
+  "repository": {
+    "branch": "main",
+    "commit": "c43d9c6543f8d0db8e4b705cb68f039df9630ca8",
+    "url": "https://github.com/shaz-ik/lean-ai-factory",
+    "path": "agents/skill-optimizer"
+  }
+}

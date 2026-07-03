@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "id": "microcopy",
+    "name": "microcopy",
+    "type": "agent",
+    "category": "agents",
+    "version": "0.1.0",
+    "description": "Write Apple-HIG UI copy (title, element text, button labels, links) for each wireframe screen, tuned to the persona voice, checked for length/style. Use after wireframing, feeding swiftui-gen.",
+    "shortDescription": "Write Apple-HIG UI copy (title, element text, button labels, links) for each wireframe screen, tuned to the persona voice, checked for length/style. U",
+    "keywords": []
+  },
+  "content": {
+    "hasReadme": false,
+    "hasSkill": true
+  },
+  "assets": {
+    "cover": null,
+    "images": []
+  },
+  "examples": [],
+  "dependencies": [
+    "pydantic>=2.6"
+  ],
+  "related": [
+    "apple-compliance",
+    "apple-docs-rag",
+    "security-review",
+    "skill-optimizer"
+  ],
+  "toc": [],
+  "repository": {
+    "branch": "main",
+    "commit": "c43d9c6543f8d0db8e4b705cb68f039df9630ca8",
+    "url": "https://github.com/shaz-ik/lean-ai-factory",
+    "path": "agents/microcopy"
+  }
+}

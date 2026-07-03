@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "id": "apple-compliance",
+    "name": "apple-compliance",
+    "type": "agent",
+    "category": "agents",
+    "version": "0.1.0",
+    "description": "Pre-submission App Store Review gate. Assesses an app descriptor against the review guidelines, weighted toward Guideline 4.3 (Spam/duplicate). Use before submitting any app.",
+    "shortDescription": "Pre-submission App Store Review gate. Assesses an app descriptor against the review guidelines, weighted toward Guideline 4.3 (Spam/duplicate). Use be",
+    "keywords": []
+  },
+  "content": {
+    "hasReadme": false,
+    "hasSkill": true
+  },
+  "assets": {
+    "cover": null,
+    "images": []
+  },
+  "examples": [],
+  "dependencies": [
+    "pydantic>=2.6"
+  ],
+  "related": [
+    "apple-docs-rag",
+    "microcopy",
+    "security-review",
+    "skill-optimizer"
+  ],
+  "toc": [],
+  "repository": {
+    "branch": "main",
+    "commit": "c43d9c6543f8d0db8e4b705cb68f039df9630ca8",
+    "url": "https://github.com/shaz-ik/lean-ai-factory",
+    "path": "agents/apple-compliance"
+  }
+}

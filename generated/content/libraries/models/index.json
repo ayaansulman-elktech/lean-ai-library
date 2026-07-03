@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "id": "models",
+    "name": "vis-models",
+    "type": "library",
+    "category": "libraries",
+    "version": "0.1.0",
+    "description": "Vision-model layer: SUM-backed saliency (+ offline mock) for the UX-audit agent.",
+    "shortDescription": "Vision-model layer: SUM-backed saliency (+ offline mock) for the UX-audit agent.",
+    "keywords": []
+  },
+  "content": {
+    "hasReadme": true,
+    "hasSkill": false
+  },
+  "assets": {
+    "cover": null,
+    "images": []
+  },
+  "examples": [],
+  "dependencies": [],
+  "related": [
+    ".pytest_cache",
+    "agent-core",
+    "skin-tone-cv",
+    "ai-farm"
+  ],
+  "toc": [
+    {
+      "depth": 1,
+      "title": "Models library (`vis_models`)",
+      "slug": "models-library-vis_models"
+    },
+    {
+      "depth": 2,
+      "title": "Saliency — \"does attention land on the primary action?\"",
+      "slug": "saliency--does-attention-land-on-the-primary-action"
+    },
+    {
+      "depth": 3,
+      "title": "The seam (mirrors `ml_core`'s gateway)",
+      "slug": "the-seam-mirrors-ml_cores-gateway"
+    },
+    {
+      "depth": 3,
+      "title": "Running the real SUM (AI Farm)",
+      "slug": "running-the-real-sum-ai-farm"
+    }
+  ],
+  "repository": {
+    "branch": "main",
+    "commit": "c43d9c6543f8d0db8e4b705cb68f039df9630ca8",
+    "url": "https://github.com/shaz-ik/lean-ai-factory",
+    "path": "libraries/models"
+  }
+}

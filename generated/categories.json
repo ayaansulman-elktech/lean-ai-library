@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-03T08:09:14.223Z",
+  "items": [
+    {
+      "id": "agents",
+      "title": "Agents",
+      "count": 15
+    },
+    {
+      "id": "apps",
+      "title": "Apps",
+      "count": 1
+    },
+    {
+      "id": "other",
+      "title": "Other",
+      "count": 2
+    },
+    {
+      "id": "design-system",
+      "title": "Design-system",
+      "count": 8
+    },
+    {
+      "id": "libraries",
+      "title": "Libraries",
+      "count": 20
+    },
+    {
+      "id": "pipelines",
+      "title": "Pipelines",
+      "count": 2
+    },
+    {
+      "id": "_templates",
+      "title": "_templates",
+      "count": 2
+    }
+  ]
+}
