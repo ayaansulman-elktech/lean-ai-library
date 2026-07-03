@@ -30,7 +30,7 @@ export class RepositoryReader {
       }
       
       let cloneUrl = this.options.repo;
-      const token = process.env.GITHUB_TOKEN || process.env.FACTORY_TOKEN;
+      const token = process.env.FACTORY_TOKEN || process.env.GITHUB_TOKEN;
       if (token) {
         try {
           const urlObj = new URL(cloneUrl);
