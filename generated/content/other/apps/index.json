@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "id": "apps",
+    "name": "apps",
+    "type": "other",
+    "category": "other",
+    "description": "No description provided.",
+    "shortDescription": "No description",
+    "keywords": []
+  },
+  "content": {
+    "hasReadme": true,
+    "hasSkill": false
+  },
+  "assets": {
+    "cover": null,
+    "images": []
+  },
+  "examples": [],
+  "dependencies": [],
+  "related": [
+    "design-system"
+  ],
+  "toc": [
+    {
+      "depth": 1,
+      "title": "Apps",
+      "slug": "apps"
+    },
+    {
+      "depth": 2,
+      "title": "Per-app shape",
+      "slug": "per-app-shape"
+    }
+  ],
+  "repository": {
+    "branch": "main",
+    "commit": "c43d9c6543f8d0db8e4b705cb68f039df9630ca8",
+    "url": "https://github.com/shaz-ik/lean-ai-factory",
+    "path": "apps"
+  }
+}

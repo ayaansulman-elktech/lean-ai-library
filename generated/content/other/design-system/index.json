@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "id": "design-system",
+    "name": "design-system-tools",
+    "type": "other",
+    "category": "other",
+    "version": "0.1.0",
+    "description": "Token build pipeline for the Lean Design System.",
+    "shortDescription": "Token build pipeline for the Lean Design System.",
+    "keywords": []
+  },
+  "content": {
+    "hasReadme": true,
+    "hasSkill": false
+  },
+  "assets": {
+    "cover": null,
+    "images": []
+  },
+  "examples": [],
+  "dependencies": [],
+  "related": [
+    "apps"
+  ],
+  "toc": [
+    {
+      "depth": 1,
+      "title": "Lean Design System",
+      "slug": "lean-design-system"
+    },
+    {
+      "depth": 2,
+      "title": "Two layers",
+      "slug": "two-layers"
+    },
+    {
+      "depth": 2,
+      "title": "The one hard rule",
+      "slug": "the-one-hard-rule"
+    },
+    {
+      "depth": 2,
+      "title": "Build tokens",
+      "slug": "build-tokens"
+    },
+    {
+      "depth": 2,
+      "title": "Source of truth",
+      "slug": "source-of-truth"
+    },
+    {
+      "depth": 2,
+      "title": "Adding a component",
+      "slug": "adding-a-component"
+    },
+    {
+      "depth": 2,
+      "title": "Structure",
+      "slug": "structure"
+    }
+  ],
+  "repository": {
+    "branch": "main",
+    "commit": "c43d9c6543f8d0db8e4b705cb68f039df9630ca8",
+    "url": "https://github.com/shaz-ik/lean-ai-factory",
+    "path": "design-system"
+  }
+}

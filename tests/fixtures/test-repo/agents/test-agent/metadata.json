@@ -1,0 +1,10 @@
+{
+  "id": "test-agent",
+  "name": "Test Agent",
+  "type": "agent",
+  "category": "agents",
+  "description": "A simple test agent.",
+  "shortDescription": "Test short desc",
+  "keywords": ["test", "agent"],
+  "githubPath": "agents/test-agent"
+}

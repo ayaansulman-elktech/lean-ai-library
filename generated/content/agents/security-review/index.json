@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "id": "security-review",
+    "name": "security-review-agent",
+    "type": "agent",
+    "category": "agents",
+    "version": "0.1.0",
+    "description": "Security-review gate: static scan + LLM review of generated app code.",
+    "shortDescription": "Security-review gate: static scan + LLM review of generated app code.",
+    "keywords": []
+  },
+  "content": {
+    "hasReadme": false,
+    "hasSkill": false
+  },
+  "assets": {
+    "cover": null,
+    "images": []
+  },
+  "examples": [],
+  "dependencies": [
+    "pydantic>=2.6"
+  ],
+  "related": [
+    "apple-compliance",
+    "apple-docs-rag",
+    "microcopy",
+    "skill-optimizer"
+  ],
+  "toc": [],
+  "repository": {
+    "branch": "main",
+    "commit": "c43d9c6543f8d0db8e4b705cb68f039df9630ca8",
+    "url": "https://github.com/shaz-ik/lean-ai-factory",
+    "path": "agents/security-review"
+  }
+}

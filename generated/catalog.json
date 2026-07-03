@@ -1,0 +1,310 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-03T09:10:01.715Z",
+  "items": [
+    {
+      "id": "apple-compliance",
+      "name": "apple-compliance",
+      "type": "agent",
+      "category": "agents",
+      "shortDescription": "Pre-submission App Store Review gate. Assesses an app descriptor against the review guidelines, weighted toward Guideline 4.3 (Spam/duplicate). Use be",
+      "cover": null
+    },
+    {
+      "id": "apple-docs-rag",
+      "name": "apple-docs-rag",
+      "type": "agent",
+      "category": "agents",
+      "shortDescription": "Answer Apple-development questions (App Store guidelines, Core ML, Foundation Models, HIG) grounded ONLY in an indexed doc corpus, with citations. Use",
+      "cover": null
+    },
+    {
+      "id": "microcopy",
+      "name": "microcopy",
+      "type": "agent",
+      "category": "agents",
+      "shortDescription": "Write Apple-HIG UI copy (title, element text, button labels, links) for each wireframe screen, tuned to the persona voice, checked for length/style. U",
+      "cover": null
+    },
+    {
+      "id": "security-review",
+      "name": "security-review-agent",
+      "type": "agent",
+      "category": "agents",
+      "shortDescription": "Security-review gate: static scan + LLM review of generated app code.",
+      "cover": null
+    },
+    {
+      "id": "skill-optimizer",
+      "name": "skill-optimizer",
+      "type": "agent",
+      "category": "agents",
+      "shortDescription": "Optimize a SKILL.md as an ML artifact (Optuna/GEPA search -> generate -> run -> judge-panel score -> MLflow -> validate on held-out then frozen sets).",
+      "cover": null
+    },
+    {
+      "id": "swiftui-gen",
+      "name": "swiftui-gen",
+      "type": "agent",
+      "category": "agents",
+      "shortDescription": "Turn an A-graded wireframe (screen spec) + design tokens into token-driven SwiftUI, one screen at a time, statically checked (unknown tokens, hardcode",
+      "cover": null
+    },
+    {
+      "id": "tester",
+      "name": "tester",
+      "type": "agent",
+      "category": "agents",
+      "shortDescription": "Smoke-test an iOS app build — compile, launch in simulator, confirm the core screen renders without crash. Use at the end of a sprint day.",
+      "cover": null
+    },
+    {
+      "id": "ux-audit",
+      "name": "ux-audit",
+      "type": "agent",
+      "category": "agents",
+      "shortDescription": "Audit a screen (or screen video) against the UX checklist and saliency, return a scored PDF. Use after a screen is designed and before sign-off.",
+      "cover": null
+    },
+    {
+      "id": "wireframing",
+      "name": "wireframing",
+      "type": "agent",
+      "category": "agents",
+      "shortDescription": "Generate a link-complete HTML/CSS wireframe from a project charter and loop until the user flow scores \"A\". Use when starting any new app's design pha",
+      "cover": null
+    },
+    {
+      "id": "color-matching",
+      "name": "color-matching",
+      "type": "application",
+      "category": "apps",
+      "shortDescription": "No description",
+      "cover": null
+    },
+    {
+      "id": "apps",
+      "name": "apps",
+      "type": "other",
+      "category": "other",
+      "shortDescription": "No description",
+      "cover": null
+    },
+    {
+      "id": "boilerplate",
+      "name": "boilerplate",
+      "type": "other",
+      "category": "design-system",
+      "shortDescription": "No description",
+      "cover": null
+    },
+    {
+      "id": "foundations",
+      "name": "foundations",
+      "type": "other",
+      "category": "design-system",
+      "shortDescription": "No description",
+      "cover": null
+    },
+    {
+      "id": "illustrations",
+      "name": "illustrations",
+      "type": "other",
+      "category": "design-system",
+      "shortDescription": "No description",
+      "cover": null
+    },
+    {
+      "id": "patterns",
+      "name": "patterns",
+      "type": "other",
+      "category": "design-system",
+      "shortDescription": "No description",
+      "cover": null
+    },
+    {
+      "id": "platforms",
+      "name": "platforms",
+      "type": "other",
+      "category": "design-system",
+      "shortDescription": "No description",
+      "cover": null
+    },
+    {
+      "id": "references",
+      "name": "references",
+      "type": "other",
+      "category": "design-system",
+      "shortDescription": "No description",
+      "cover": null
+    },
+    {
+      "id": "sfsymbols",
+      "name": "sfsymbols",
+      "type": "other",
+      "category": "design-system",
+      "shortDescription": "No description",
+      "cover": null
+    },
+    {
+      "id": "design-system",
+      "name": "design-system-tools",
+      "type": "other",
+      "category": "other",
+      "shortDescription": "Token build pipeline for the Lean Design System.",
+      "cover": null
+    },
+    {
+      "id": "agent-core",
+      "name": "agent-core",
+      "type": "library",
+      "category": "libraries",
+      "shortDescription": "Shared agent framework (base Agent, structured output, memory, tools) for the Lean AI Factory.",
+      "cover": null
+    },
+    {
+      "id": "skin-tone-cv",
+      "name": "skin-tone-cv",
+      "type": "library",
+      "category": "libraries",
+      "shortDescription": "No description",
+      "cover": null
+    },
+    {
+      "id": "ai-farm",
+      "name": "ai-farm",
+      "type": "library",
+      "category": "libraries",
+      "shortDescription": "No description",
+      "cover": null
+    },
+    {
+      "id": "vision-camera",
+      "name": "vision-camera",
+      "type": "library",
+      "category": "libraries",
+      "shortDescription": "No description",
+      "cover": null
+    },
+    {
+      "id": "code",
+      "name": "code",
+      "type": "library",
+      "category": "libraries",
+      "shortDescription": "No description",
+      "cover": null
+    },
+    {
+      "id": "knowledge",
+      "name": "knowledge",
+      "type": "library",
+      "category": "libraries",
+      "shortDescription": "No description",
+      "cover": null
+    },
+    {
+      "id": "navigation-flow",
+      "name": "navigation-flow",
+      "type": "library",
+      "category": "libraries",
+      "shortDescription": "No description",
+      "cover": null
+    },
+    {
+      "id": "purity",
+      "name": "purity",
+      "type": "library",
+      "category": "libraries",
+      "shortDescription": "No description",
+      "cover": null
+    },
+    {
+      "id": "wireframing",
+      "name": "wireframing",
+      "type": "library",
+      "category": "libraries",
+      "shortDescription": "No description",
+      "cover": null
+    },
+    {
+      "id": "mcp",
+      "name": "mcp",
+      "type": "library",
+      "category": "libraries",
+      "shortDescription": "No description",
+      "cover": null
+    },
+    {
+      "id": "memory",
+      "name": "memory",
+      "type": "library",
+      "category": "libraries",
+      "shortDescription": "No description",
+      "cover": null
+    },
+    {
+      "id": "ml-core",
+      "name": "ml-core",
+      "type": "library",
+      "category": "libraries",
+      "shortDescription": "Shared LLM gateway, cost metering, and tracking for the Lean AI Factory.",
+      "cover": null
+    },
+    {
+      "id": "models",
+      "name": "vis-models",
+      "type": "library",
+      "category": "libraries",
+      "shortDescription": "Vision-model layer: SUM-backed saliency (+ offline mock) for the UX-audit agent.",
+      "cover": null
+    },
+    {
+      "id": "rag",
+      "name": "rag",
+      "type": "library",
+      "category": "libraries",
+      "shortDescription": "Dependency-free retrieval (corpus + TF-IDF) for grounding factory agents.",
+      "cover": null
+    },
+    {
+      "id": "render",
+      "name": "rendering",
+      "type": "library",
+      "category": "libraries",
+      "shortDescription": "Screen -> image + primary-action region (offline SVG mock; Playwright PNG in dev/farm).",
+      "cover": null
+    },
+    {
+      "id": "skills",
+      "name": "skills",
+      "type": "library",
+      "category": "libraries",
+      "shortDescription": "No description",
+      "cover": null
+    },
+    {
+      "id": "sprint",
+      "name": "sprint-orchestrator",
+      "type": "pipeline",
+      "category": "pipelines",
+      "shortDescription": "Chain the factory's agents (wireframe, UX+saliency, compliance, security) into one sprint.",
+      "cover": null
+    },
+    {
+      "id": "agent",
+      "name": "agent-name-here",
+      "type": "other",
+      "category": "_templates",
+      "shortDescription": "What the agent achieves AND when to use it.",
+      "cover": null
+    },
+    {
+      "id": "skill",
+      "name": "skill-name-here",
+      "type": "other",
+      "category": "_templates",
+      "shortDescription": "One line — what it does AND when to trigger it. Used for discovery.",
+      "cover": null
+    }
+  ]
+}

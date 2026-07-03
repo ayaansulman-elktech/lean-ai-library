@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "id": "color-matching",
+    "name": "color-matching",
+    "type": "application",
+    "category": "apps",
+    "description": "No description provided.",
+    "shortDescription": "No description",
+    "keywords": []
+  },
+  "content": {
+    "hasReadme": true,
+    "hasSkill": false
+  },
+  "assets": {
+    "cover": null,
+    "images": []
+  },
+  "examples": [],
+  "dependencies": [],
+  "related": [],
+  "toc": [
+    {
+      "depth": 1,
+      "title": "Color Matching (Sprint 1)",
+      "slug": "color-matching-sprint-1"
+    },
+    {
+      "depth": 2,
+      "title": "Run it",
+      "slug": "run-it"
+    },
+    {
+      "depth": 2,
+      "title": "Files",
+      "slug": "files"
+    },
+    {
+      "depth": 2,
+      "title": "TODO (real implementation)",
+      "slug": "todo-real-implementation"
+    }
+  ],
+  "repository": {
+    "branch": "main",
+    "commit": "c43d9c6543f8d0db8e4b705cb68f039df9630ca8",
+    "url": "https://github.com/shaz-ik/lean-ai-factory",
+    "path": "apps/color-matching"
+  }
+}

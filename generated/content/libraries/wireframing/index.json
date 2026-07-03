@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "id": "wireframing",
+    "name": "wireframing",
+    "type": "library",
+    "category": "libraries",
+    "description": "No description provided.",
+    "shortDescription": "No description",
+    "keywords": []
+  },
+  "content": {
+    "hasReadme": true,
+    "hasSkill": false
+  },
+  "assets": {
+    "cover": null,
+    "images": []
+  },
+  "examples": [],
+  "dependencies": [],
+  "related": [
+    "agent-core",
+    "skin-tone-cv",
+    "ai-farm",
+    "vision-camera"
+  ],
+  "toc": [
+    {
+      "depth": 1,
+      "title": "Wireframing MCP",
+      "slug": "wireframing-mcp"
+    }
+  ],
+  "repository": {
+    "branch": "main",
+    "commit": "c43d9c6543f8d0db8e4b705cb68f039df9630ca8",
+    "url": "https://github.com/shaz-ik/lean-ai-factory",
+    "path": "libraries/mcp/wireframing"
+  }
+}

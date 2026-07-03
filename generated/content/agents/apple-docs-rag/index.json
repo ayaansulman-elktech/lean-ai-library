@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "id": "apple-docs-rag",
+    "name": "apple-docs-rag",
+    "type": "agent",
+    "category": "agents",
+    "version": "0.1.0",
+    "description": "Answer Apple-development questions (App Store guidelines, Core ML, Foundation Models, HIG) grounded ONLY in an indexed doc corpus, with citations. Use when an agent needs an authoritative Apple answer instead of guessing.",
+    "shortDescription": "Answer Apple-development questions (App Store guidelines, Core ML, Foundation Models, HIG) grounded ONLY in an indexed doc corpus, with citations. Use",
+    "keywords": []
+  },
+  "content": {
+    "hasReadme": false,
+    "hasSkill": true
+  },
+  "assets": {
+    "cover": null,
+    "images": []
+  },
+  "examples": [],
+  "dependencies": [
+    "pydantic>=2.6"
+  ],
+  "related": [
+    "apple-compliance",
+    "microcopy",
+    "security-review",
+    "skill-optimizer"
+  ],
+  "toc": [],
+  "repository": {
+    "branch": "main",
+    "commit": "c43d9c6543f8d0db8e4b705cb68f039df9630ca8",
+    "url": "https://github.com/shaz-ik/lean-ai-factory",
+    "path": "agents/apple-docs-rag"
+  }
+}

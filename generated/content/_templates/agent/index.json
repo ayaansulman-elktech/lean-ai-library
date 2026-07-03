@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "id": "agent",
+    "name": "agent-name-here",
+    "type": "other",
+    "category": "_templates",
+    "description": "What the agent achieves AND when to use it.",
+    "shortDescription": "What the agent achieves AND when to use it.",
+    "keywords": []
+  },
+  "content": {
+    "hasReadme": false,
+    "hasSkill": true
+  },
+  "assets": {
+    "cover": null,
+    "images": []
+  },
+  "examples": [],
+  "dependencies": [],
+  "related": [
+    "skill"
+  ],
+  "toc": [],
+  "repository": {
+    "branch": "main",
+    "commit": "c43d9c6543f8d0db8e4b705cb68f039df9630ca8",
+    "url": "https://github.com/shaz-ik/lean-ai-factory",
+    "path": "_templates/agent"
+  }
+}

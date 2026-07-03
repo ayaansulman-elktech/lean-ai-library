@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "id": "render",
+    "name": "rendering",
+    "type": "library",
+    "category": "libraries",
+    "version": "0.1.0",
+    "description": "Screen -> image + primary-action region (offline SVG mock; Playwright PNG in dev/farm).",
+    "shortDescription": "Screen -> image + primary-action region (offline SVG mock; Playwright PNG in dev/farm).",
+    "keywords": []
+  },
+  "content": {
+    "hasReadme": true,
+    "hasSkill": false
+  },
+  "assets": {
+    "cover": null,
+    "images": []
+  },
+  "examples": [],
+  "dependencies": [],
+  "related": [
+    "agent-core",
+    "skin-tone-cv",
+    "ai-farm",
+    "vision-camera"
+  ],
+  "toc": [
+    {
+      "depth": 1,
+      "title": "rendering",
+      "slug": "rendering"
+    }
+  ],
+  "repository": {
+    "branch": "main",
+    "commit": "c43d9c6543f8d0db8e4b705cb68f039df9630ca8",
+    "url": "https://github.com/shaz-ik/lean-ai-factory",
+    "path": "libraries/render"
+  }
+}

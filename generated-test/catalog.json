@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-03T08:03:09.643Z",
+  "items": [
+    {
+      "id": "test-agent",
+      "name": "Test Agent",
+      "type": "agent",
+      "category": "agents",
+      "shortDescription": "Test short desc",
+      "cover": null
+    }
+  ]
+}
