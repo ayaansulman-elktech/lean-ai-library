@@ -38,6 +38,13 @@ export interface Asset {
   related: string[];
 }
 
+export interface FileTreeNode {
+  name: string;
+  type: 'file' | 'directory';
+  path: string;
+  children?: FileTreeNode[];
+}
+
 export interface AssetIndex {
   schemaVersion: string;
   metadata: {
@@ -49,6 +56,7 @@ export interface AssetIndex {
     description: string;
     shortDescription: string;
     keywords: string[];
+    lastUpdated?: string;
   };
   content: {
     hasReadme: boolean;
@@ -63,4 +71,5 @@ export interface AssetIndex {
   related: string[];
   toc: TocEntry[];
   repository: RepositoryInfo;
+  fileTree?: FileTreeNode[];
 }
