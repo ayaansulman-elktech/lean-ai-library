@@ -62,6 +62,27 @@ export class ExtractionPipeline {
     return this.normalize(merged);
   }
 
+  private cleanDescription(desc: string | undefined): string {
+    if (!desc) return 'No description';
+    
+    // Strip markdown formatting
+    let clean = desc
+      .replace(/(\*\*|__)(.*?)\1/g, '$2') // Bold
+      .replace(/(\*|_)(.*?)\1/g, '$2') // Italic
+      .replace(/`([^`]+)`/g, '$1') // Inline code
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // Links
+      .replace(/#/g, '') // Headers
+      .replace(/\n/g, ' ') // Newlines
+      .trim();
+
+    // Small to the point: limit to 70 characters and add ellipsis if needed
+    if (clean.length > 70) {
+      clean = clean.slice(0, 67).trim() + '...';
+    }
+
+    return clean || 'No description';
+  }
+
   private normalize(partial: Partial<Asset>): Asset {
     return {
       id: partial.id || 'unknown-id',
@@ -69,7 +90,7 @@ export class ExtractionPipeline {
       type: partial.type || 'other',
       category: partial.category || 'other',
       description: partial.description || 'No description provided.',
-      shortDescription: partial.shortDescription || partial.description?.split('\n')[0].slice(0, 150) || 'No description',
+      shortDescription: this.cleanDescription(partial.shortDescription || partial.description?.split('\n')[0]),
       keywords: partial.keywords || [],
       version: partial.version,
       githubPath: partial.githubPath || '',

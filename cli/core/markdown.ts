@@ -24,3 +24,23 @@ export function extractToc(markdown?: string): TocEntry[] {
 
   return toc;
 }
+
+export function extractMetadataFromMarkdown(markdown?: string): { title?: string; description?: string } {
+  if (!markdown) return {};
+  
+  const tokens = marked.lexer(markdown);
+  let title: string | undefined;
+  let description: string | undefined;
+
+  for (const token of tokens) {
+    if (!title && token.type === 'heading' && token.depth === 1) {
+      title = token.text;
+    }
+    if (!description && token.type === 'paragraph') {
+      description = token.text.replace(/\n/g, ' ').trim();
+    }
+    if (title && description) break;
+  }
+
+  return { title, description };
+}

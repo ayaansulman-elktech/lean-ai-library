@@ -9,19 +9,37 @@ export class GithubParser implements Parser {
     // Relative path from the repository root
     const relativePath = path.relative(ctx.repoDir, ctx.assetDir).replace(/\\/g, '/');
     
-    // Guess category from the first folder (e.g., 'agents/security-review' -> 'agents')
     const parts = relativePath.split('/');
-    let category = parts.length > 1 ? parts[0] : 'other';
+    let category = 'other';
     let id = parts[parts.length - 1];
-
-    // Infer type from category
     let type: Asset['type'] = 'other';
-    const catLower = category.toLowerCase();
-    if (catLower.includes('agent')) type = 'agent';
-    else if (catLower.includes('librar')) type = 'library';
-    else if (catLower.includes('model')) type = 'model';
-    else if (catLower.includes('app')) type = 'application';
-    else if (catLower.includes('pipeline')) type = 'pipeline';
+
+    const pathStr = relativePath.toLowerCase();
+
+    // Map to specific categories based on path
+    if (pathStr.startsWith('agents') || pathStr.includes('/skills') || pathStr.includes('/agent-core') || pathStr.includes('/memory')) {
+      category = 'skills-library';
+      type = 'agent';
+    } else if (pathStr.startsWith('apps') || pathStr.includes('/ai-farm')) {
+      category = 'ai-farm';
+      type = 'application';
+    } else if (pathStr.startsWith('pipelines') || pathStr.startsWith('scripts') || pathStr.startsWith('design-system') || pathStr.startsWith('_templates') || pathStr.includes('/code') || pathStr.includes('/render')) {
+      category = 'code-library';
+      type = 'library';
+    } else if (pathStr.startsWith('reports') || pathStr.includes('/knowledge') || pathStr.includes('/rag')) {
+      category = 'corpus-knowledge';
+      type = 'library';
+    } else if (pathStr.includes('/models') || pathStr.includes('/ml-core')) {
+      category = 'model-library';
+      type = 'model';
+    } else if (pathStr.includes('/mcp')) {
+      category = 'mcp-library';
+      type = 'library';
+    } else {
+      // Fallback
+      category = 'code-library';
+      type = 'library';
+    }
 
     return {
       id,
