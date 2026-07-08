@@ -1,6 +1,7 @@
 'use client';
 
-import { Copy } from 'lucide-react';
+import { useState } from 'react';
+import { Copy, Check } from 'lucide-react';
 import { AssetIndex } from '@/lib/types/asset';
 import { CoverImage } from './CoverImage';
 
@@ -16,17 +17,42 @@ function formatDate(value?: string) {
 }
 
 export function AssetSidebar({ asset }: AssetSidebarProps) {
+  const [copied, setCopied] = useState(false);
   const npxCommand = asset.metadata.id ? `npx- cognitiveshift ${asset.metadata.id}` : 'npx- cognitiveshift knowledge';
 
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(npxCommand);
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(npxCommand);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy command:', err);
+    }
   };
 
   const handleDownload = () => {
     const repoUrl = asset.repository?.url;
+    const repoPath = asset.repository?.path;
+
     if (repoUrl) {
-      const zipUrl = `${repoUrl.replace(/\.git$/, '')}/archive/refs/heads/${asset.repository.branch || 'main'}.zip`;
-      window.open(zipUrl, '_blank');
+      if (repoPath && repoPath !== '.' && repoPath !== '/') {
+        // Construct the Github Tree URL for the specific subdirectory
+        const githubTreeUrl = `${repoUrl.replace(/\.git$/, '')}/tree/${asset.repository.branch || 'main'}/${repoPath}`;
+        // Use download-directory.github.io to zip and download just that specific subfolder
+        const downloadUrl = `https://download-directory.github.io/?url=${encodeURIComponent(githubTreeUrl)}`;
+        window.open(downloadUrl, '_blank');
+      } else {
+        // If it's the root repository, we can use Github's native archive download
+        const zipUrl = `${repoUrl.replace(/\.git$/, '')}/archive/refs/heads/${asset.repository.branch || 'main'}.zip`;
+        const link = document.createElement('a');
+        link.href = zipUrl;
+        link.download = `${asset.metadata.id || 'download'}.zip`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    } else {
+      alert('No repository URL found to download files from.');
     }
   };
 
@@ -67,7 +93,11 @@ export function AssetSidebar({ asset }: AssetSidebarProps) {
             className="text-white transition-opacity hover:opacity-70 shrink-0"
             title="Copy command"
           >
-            <Copy className="h-5 w-5 md:h-[20px] md:w-[20px]" strokeWidth={1.9} />
+            {copied ? (
+              <Check className="h-5 w-5 md:h-[20px] md:w-[20px] text-green-400" strokeWidth={2} />
+            ) : (
+              <Copy className="h-5 w-5 md:h-[20px] md:w-[20px]" strokeWidth={1.9} />
+            )}
           </button>
         </div>
 
