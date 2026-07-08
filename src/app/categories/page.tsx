@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, Folder } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Folder } from 'lucide-react';
 import { getCategories } from '@/lib/api/api';
 
 export default function CategoriesPage() {
@@ -7,6 +7,13 @@ export default function CategoriesPage() {
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-16 min-h-screen">
+      <nav className="mb-[32px] flex flex-wrap items-center gap-x-8 gap-y-3 text-[14px] leading-none text-black">
+        <Link href="/" className="inline-flex items-center gap-[17px] transition-colors hover:text-[#007aff]">
+          <ArrowLeft className="h-[19px] w-[19px]" strokeWidth={2} />
+          back to home
+        </Link>
+      </nav>
+
       <div className="mb-12">
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">Categories</h1>
         <p className="text-xl text-muted-foreground">

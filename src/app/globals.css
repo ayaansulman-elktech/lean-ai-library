@@ -28,6 +28,10 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
+  --color-soft: var(--soft);
+  --color-soft-hover: var(--soft-hover);
+  --color-blue: var(--blue);
+
   --radius-xl: calc(var(--radius) + 4px);
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
@@ -36,25 +40,29 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #09090b;
+  --foreground: #000000;
   --card: #ffffff;
-  --card-foreground: #09090b;
+  --card-foreground: #000000;
   --popover: #ffffff;
-  --popover-foreground: #09090b;
-  --primary: #18181b;
-  --primary-foreground: #fafafa;
-  --secondary: #f4f4f5;
-  --secondary-foreground: #18181b;
+  --popover-foreground: #000000;
+  --primary: #000000;
+  --primary-foreground: #ffffff;
+  --secondary: #e8e8e8;
+  --secondary-foreground: #000000;
   --muted: #f4f4f5;
-  --muted-foreground: #71717a;
+  --muted-foreground: #2f2f2f;
   --accent: #f4f4f5;
-  --accent-foreground: #18181b;
+  --accent-foreground: #000000;
   --destructive: #ef4444;
-  --destructive-foreground: #fafafa;
+  --destructive-foreground: #ffffff;
   --border: #e4e4e7;
-  --input: #e4e4e7;
-  --ring: #18181b;
+  --input: #e8e8e8;
+  --ring: #000000;
   --radius: 0.5rem;
+  
+  --soft: #e8e8e8;
+  --soft-hover: #dedede;
+  --blue: #0a84ff;
 }
 
 .dark {
@@ -91,5 +99,15 @@ body {
 @layer base {
   * {
     border-color: var(--border);
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 }

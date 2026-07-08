@@ -19,7 +19,7 @@ export interface RepositoryInfo {
 export interface Asset {
   id: string;
   name: string;
-  type: 'agent' | 'library' | 'model' | 'application' | 'pipeline' | 'other';
+  type: 'agent' | 'library' | 'model' | 'application' | 'pipeline' | 'other' | 'pdf' | 'md' | 'folder' | 'fileorother';
   category: string; // The folder name it belongs to
   version?: string;
   description: string;
@@ -38,6 +38,13 @@ export interface Asset {
   related: string[];
 }
 
+export interface FileTreeNode {
+  name: string;
+  type: 'file' | 'directory';
+  path: string;
+  children?: FileTreeNode[];
+}
+
 export interface AssetIndex {
   schemaVersion: string;
   metadata: {
@@ -49,6 +56,7 @@ export interface AssetIndex {
     description: string;
     shortDescription: string;
     keywords: string[];
+    lastUpdated?: string;
   };
   content: {
     hasReadme: boolean;
@@ -63,4 +71,5 @@ export interface AssetIndex {
   related: string[];
   toc: TocEntry[];
   repository: RepositoryInfo;
+  fileTree?: FileTreeNode[];
 }

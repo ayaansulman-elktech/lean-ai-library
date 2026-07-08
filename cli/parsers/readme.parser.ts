@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { Parser, ParserContext } from './base';
 import { Asset } from '../../src/lib/types/asset';
+import { extractMetadataFromMarkdown } from '../core/markdown';
 
 export class ReadmeParser implements Parser {
   name = 'readme';
@@ -22,8 +23,11 @@ export class ReadmeParser implements Parser {
         readme: markdownContent,
       };
 
-      if (data.name) partial.name = data.name;
-      if (data.description) partial.description = data.description;
+      const extracted = extractMetadataFromMarkdown(markdownContent);
+
+      partial.name = data.name || extracted.title;
+      partial.description = data.description || extracted.description;
+      if (data.shortDescription) partial.shortDescription = data.shortDescription;
       if (data.category) partial.category = data.category;
       
       return partial;

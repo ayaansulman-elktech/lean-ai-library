@@ -1,6 +1,6 @@
 import { Asset } from '../../src/lib/types/asset';
 import { Parser, ParserContext } from '../parsers/base';
-import { MetadataParser } from '../parsers/metadata.parser';
+import { ArticleParser } from '../parsers/article.parser';
 import { SkillParser } from '../parsers/skill.parser';
 import { ReadmeParser } from '../parsers/readme.parser';
 import { PackageParser } from '../parsers/package.parser';
@@ -21,7 +21,7 @@ export class ExtractionPipeline {
       new PackageParser(),   // package.json
       new ReadmeParser(),    // README.md frontmatter
       new SkillParser(),     // SKILL.md frontmatter
-      new MetadataParser(),  // metadata.json (Highest priority)
+      new ArticleParser(),   // article.json (Highest priority)
       new ImageParser()      // Orthogonal concern
     ];
   }
@@ -69,7 +69,7 @@ export class ExtractionPipeline {
       type: partial.type || 'other',
       category: partial.category || 'other',
       description: partial.description || 'No description provided.',
-      shortDescription: partial.shortDescription || partial.description?.split('\n')[0].slice(0, 150) || 'No description',
+      shortDescription: partial.shortDescription || partial.name || partial.id || 'No description',
       keywords: partial.keywords || [],
       version: partial.version,
       githubPath: partial.githubPath || '',
