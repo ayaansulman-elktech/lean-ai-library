@@ -18,6 +18,8 @@ export class CatalogGenerator implements Generator {
         type: asset.type,
         category: asset.category,
         shortDescription: asset.shortDescription,
+        description: asset.description,
+        keywords: asset.keywords,
         cover: coverImage ? `/generated/content/${asset.category}/${asset.id}/assets/${path.basename(coverImage.src)}` : null
       };
     });

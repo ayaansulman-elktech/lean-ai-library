@@ -26,12 +26,9 @@ export class SkillParser implements Parser {
 
       partial.name = data.name || extracted.title;
       partial.description = data.description || extracted.description;
+      if (data.shortDescription) partial.shortDescription = data.shortDescription;
       if (data.category) partial.category = data.category;
       
-      // If shortDescription isn't there, we can guess it later or use description
-      if (!data.shortDescription && partial.description) {
-        partial.shortDescription = partial.description.split('\n')[0].slice(0, 150);
-      }
 
       return partial;
     } catch (error) {

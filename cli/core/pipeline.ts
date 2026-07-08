@@ -1,6 +1,6 @@
 import { Asset } from '../../src/lib/types/asset';
 import { Parser, ParserContext } from '../parsers/base';
-import { MetadataParser } from '../parsers/metadata.parser';
+import { ArticleParser } from '../parsers/article.parser';
 import { SkillParser } from '../parsers/skill.parser';
 import { ReadmeParser } from '../parsers/readme.parser';
 import { PackageParser } from '../parsers/package.parser';
@@ -21,7 +21,7 @@ export class ExtractionPipeline {
       new PackageParser(),   // package.json
       new ReadmeParser(),    // README.md frontmatter
       new SkillParser(),     // SKILL.md frontmatter
-      new MetadataParser(),  // metadata.json (Highest priority)
+      new ArticleParser(),   // article.json (Highest priority)
       new ImageParser()      // Orthogonal concern
     ];
   }
@@ -62,27 +62,6 @@ export class ExtractionPipeline {
     return this.normalize(merged);
   }
 
-  private cleanDescription(desc: string | undefined): string {
-    if (!desc) return 'No description';
-    
-    // Strip markdown formatting
-    let clean = desc
-      .replace(/(\*\*|__)(.*?)\1/g, '$2') // Bold
-      .replace(/(\*|_)(.*?)\1/g, '$2') // Italic
-      .replace(/`([^`]+)`/g, '$1') // Inline code
-      .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // Links
-      .replace(/#/g, '') // Headers
-      .replace(/\n/g, ' ') // Newlines
-      .trim();
-
-    // Small to the point: limit to 70 characters and add ellipsis if needed
-    if (clean.length > 70) {
-      clean = clean.slice(0, 67).trim() + '...';
-    }
-
-    return clean || 'No description';
-  }
-
   private normalize(partial: Partial<Asset>): Asset {
     return {
       id: partial.id || 'unknown-id',
@@ -90,7 +69,7 @@ export class ExtractionPipeline {
       type: partial.type || 'other',
       category: partial.category || 'other',
       description: partial.description || 'No description provided.',
-      shortDescription: this.cleanDescription(partial.shortDescription || partial.description?.split('\n')[0]),
+      shortDescription: partial.shortDescription || partial.name || partial.id || 'No description',
       keywords: partial.keywords || [],
       version: partial.version,
       githubPath: partial.githubPath || '',

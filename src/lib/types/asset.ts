@@ -19,7 +19,7 @@ export interface RepositoryInfo {
 export interface Asset {
   id: string;
   name: string;
-  type: 'agent' | 'library' | 'model' | 'application' | 'pipeline' | 'other';
+  type: 'agent' | 'library' | 'model' | 'application' | 'pipeline' | 'other' | 'pdf' | 'md' | 'folder' | 'fileorother';
   category: string; // The folder name it belongs to
   version?: string;
   description: string;

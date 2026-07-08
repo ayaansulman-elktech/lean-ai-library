@@ -10,10 +10,22 @@ interface AssetCardProps {
 
 export function AssetCard({ asset }: AssetCardProps) {
   const href = `/assets/${asset.category}/${asset.id}`;
+
+  let rawDesc = asset.shortDescription || 'lorem ipsum';
+  if (!rawDesc || rawDesc === 'No description' || rawDesc === 'No description provided.') {
+    rawDesc = asset.name;
+  }
   
-  const rawDesc = asset.shortDescription || 'lorem ipsum';
-  // explicitly shorten the text string to satisfy the user request for a shorter description
-  const displayDesc = rawDesc.length > 45 ? rawDesc.substring(0, 45).trim() + '...' : rawDesc;
+  // Clean up any trailing '...' that might have been baked in by the pipeline
+  rawDesc = rawDesc.replace(/\.\.\.$/, '').trim();
+
+  // Truncate cleanly by whole words under 30 characters to avoid any '...'
+  let displayDesc = rawDesc;
+  if (displayDesc.length > 30) {
+    const cut = displayDesc.substring(0, 30);
+    const lastSpace = cut.lastIndexOf(' ');
+    displayDesc = lastSpace > 0 ? cut.substring(0, lastSpace) : cut;
+  }
 
   return (
     <Link href={href} className="block w-full max-w-[350px] cursor-pointer">
@@ -27,7 +39,7 @@ export function AssetCard({ asset }: AssetCardProps) {
         </div>
 
         <div className="flex h-[21px] w-full items-center justify-between gap-4">
-          <p className="flex-1 min-w-0 truncate text-[18px] font-normal leading-none tracking-[0] text-[#242424]">
+          <p className="flex-1 min-w-0 text-[18px] font-normal leading-none tracking-[0] text-[#242424]">
             {displayDesc}
           </p>
 

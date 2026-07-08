@@ -27,6 +27,7 @@ export class ReadmeParser implements Parser {
 
       partial.name = data.name || extracted.title;
       partial.description = data.description || extracted.description;
+      if (data.shortDescription) partial.shortDescription = data.shortDescription;
       if (data.category) partial.category = data.category;
       
       return partial;

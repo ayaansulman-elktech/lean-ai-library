@@ -11,6 +11,8 @@ export interface CatalogItem {
   type: Asset['type'];
   category: string;
   shortDescription: string;
+  description: string;
+  keywords: string[];
   cover: string | null;
 }
 
