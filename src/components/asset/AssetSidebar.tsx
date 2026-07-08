@@ -57,24 +57,26 @@ export function AssetSidebar({ asset }: AssetSidebarProps) {
   };
 
   return (
-    <aside className="flex h-full w-full flex-col lg:w-[400px] xl:w-[480px]">
-      <div className="shrink-0 aspect-video md:h-[270px] md:aspect-auto w-full overflow-hidden rounded-[8px] bg-[#dfeeff]">
-        <CoverImage id={asset.metadata.id} name={asset.metadata.name} fallbackSrc={asset.assets?.cover} />
+    <aside className="flex h-full w-full flex-col lg:w-[400px] xl:w-[480px] overflow-hidden">
+      <div className="flex shrink min-h-0 w-full items-start justify-start">
+        <div className="relative shrink min-h-[120px] h-[270px] max-h-[270px] w-auto aspect-video max-w-[480px] overflow-hidden rounded-[8px] bg-[#dfeeff]">
+          <CoverImage id={asset.metadata.id} name={asset.metadata.name} fallbackSrc={asset.assets?.cover} />
+        </div>
       </div>
 
-      <div className="shrink-0 pt-6 md:pt-[24px]">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] xl:text-[76px] font-bold leading-[1] md:leading-[0.94] tracking-[-0.02em] text-black break-normal">
+      <div className="shrink-0 pt-4 md:pt-[20px]">
+        <h1 className="text-4xl sm:text-5xl md:text-[54px] lg:text-[60px] xl:text-[68px] font-bold leading-[1] md:leading-[0.94] tracking-[-0.02em] text-black break-normal">
           {asset.metadata.name || 'Big title'}
         </h1>
       </div>
       
-      <div className="shrink-0 mt-4 md:mt-[24px]">
+      <div className="shrink overflow-y-auto scrollbar-hide mt-3 md:mt-[16px] min-h-[40px]">
         <p className="w-full text-lg sm:text-xl xl:text-[20px] font-normal leading-[1.5] xl:leading-[1.5] tracking-[0] text-[#161616]">
           {asset.metadata.description?.replace(/\*\*(.*?)\*\*/g, '$1').replace(/\*(.*?)\*/g, '$1')}
         </p>
       </div>
 
-      <div className="shrink-0 pt-6 md:pt-[32px]">
+      <div className="shrink-0 pt-4 md:pt-[20px] pb-2">
         <button
           type="button"
           onClick={handleDownload}
@@ -101,7 +103,7 @@ export function AssetSidebar({ asset }: AssetSidebarProps) {
           </button>
         </div>
 
-        <div className="mt-4 md:mt-[24px] flex flex-col gap-[6px] text-[12px] leading-none tracking-[0] text-black">
+        <div className="mt-4 md:mt-[24px] flex flex-col gap-[6px] text-[12px] leading-none tracking-[0] text-black w-full">
           <span>version: {asset.metadata.version || '1.9'}</span>
           <span>last updated: {formatDate(asset.metadata.lastUpdated)}</span>
         </div>

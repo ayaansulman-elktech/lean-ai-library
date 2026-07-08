@@ -74,7 +74,7 @@ export function AssetViewer({ category, assetName, fileTree, readmeContent, skil
         }`}
       >
         {showTree ? (
-          <div className="flex-1 overflow-auto px-6 md:px-[69px] py-8 md:py-[44px] font-mono text-lg md:text-[24px] leading-[1.48] tracking-[0]">
+          <div className="flex-1 overflow-auto scrollbar-hide px-6 md:px-[69px] py-8 md:py-[44px] font-mono text-lg md:text-[24px] leading-[1.48] tracking-[0]">
             <div>{assetName}/</div>
             {treeLines.map(line => {
               const marker = line.isLast ? '└── ' : '├── ';
@@ -102,7 +102,7 @@ export function AssetViewer({ category, assetName, fileTree, readmeContent, skil
             title={activeFile.name}
           />
         ) : activeContent ? (
-          <pre className="flex-1 overflow-auto whitespace-pre-wrap px-6 md:px-[26px] py-6 md:py-[25px] font-mono text-base md:text-[20px] leading-[1.48] tracking-[0] text-black">
+          <pre className="flex-1 overflow-auto scrollbar-hide whitespace-pre-wrap px-6 md:px-[26px] py-6 md:py-[25px] font-mono text-base md:text-[20px] leading-[1.48] tracking-[0] text-black">
             {activeContent}
           </pre>
         ) : (

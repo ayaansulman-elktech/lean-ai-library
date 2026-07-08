@@ -30,17 +30,36 @@ export function extractMetadataFromMarkdown(markdown?: string): { title?: string
   
   const tokens = marked.lexer(markdown);
   let title: string | undefined;
-  let description: string | undefined;
+  let descriptionLines: string[] = [];
+  let descriptionBlocks = 0;
 
   for (const token of tokens) {
     if (!title && token.type === 'heading' && token.depth === 1) {
       title = token.text;
+      continue;
     }
-    if (!description && token.type === 'paragraph') {
-      description = token.text.replace(/\n/g, ' ').trim();
+
+    // If we've already found a title and we hit another heading, stop gathering description
+    if (title && token.type === 'heading') {
+      break;
     }
-    if (title && description) break;
+
+    if (token.type === 'paragraph') {
+      descriptionLines.push(token.text.replace(/\n/g, ' ').trim());
+      descriptionBlocks++;
+    } else if (token.type === 'list') {
+      // Collect list items
+      const items = token.items.map((item: any) => `- ${item.text.replace(/\n/g, ' ').trim()}`);
+      descriptionLines.push(items.join(' '));
+      descriptionBlocks++;
+    }
+
+    if (descriptionBlocks >= 3) {
+      break;
+    }
   }
+
+  const description = descriptionLines.length > 0 ? descriptionLines.join(' ') : undefined;
 
   return { title, description };
 }
