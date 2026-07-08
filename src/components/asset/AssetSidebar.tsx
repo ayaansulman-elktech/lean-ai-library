@@ -31,45 +31,50 @@ export function AssetSidebar({ asset }: AssetSidebarProps) {
   };
 
   return (
-    <aside className="flex w-full flex-col pt-9 xl:w-[500px]">
-      <div className="h-[281px] w-full overflow-hidden rounded-[5px] bg-[#dfeeff]">
+    <aside className="flex h-full w-full flex-col lg:w-[400px] xl:w-[480px]">
+      <div className="shrink-0 aspect-video md:h-[270px] md:aspect-auto w-full overflow-hidden rounded-[8px] bg-[#dfeeff]">
         <CoverImage id={asset.metadata.id} name={asset.metadata.name} fallbackSrc={asset.assets?.cover} />
       </div>
 
-      <div className="pt-[35px]">
-        <h1 className="text-[92px] font-bold leading-[0.94] tracking-[0] text-black">
+      <div className="shrink-0 pt-6 md:pt-[24px]">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] xl:text-[76px] font-bold leading-[1] md:leading-[0.94] tracking-[-0.02em] text-black break-normal">
           {asset.metadata.name || 'Big title'}
         </h1>
-        <p className="mt-[49px] max-w-[486px] text-[24px] font-normal leading-[1.56] tracking-[0] text-[#161616]">
-          {asset.metadata.description}
+      </div>
+      
+      <div className="shrink-0 mt-4 md:mt-[24px]">
+        <p className="w-full text-lg sm:text-xl xl:text-[20px] font-normal leading-[1.5] xl:leading-[1.5] tracking-[0] text-[#161616]">
+          {asset.metadata.description?.replace(/\*\*(.*?)\*\*/g, '$1').replace(/\*(.*?)\*/g, '$1')}
         </p>
       </div>
 
-      <button
-        type="button"
-        onClick={handleDownload}
-        className="mt-[34px] h-[44px] w-[173px] rounded-[13px] bg-[#007aff] text-[26px] font-normal leading-none text-white transition-colors hover:bg-[#006ee6]"
-      >
-        download
-      </button>
-
-      <div className="mt-[46px] flex h-[78px] w-full items-center justify-between rounded-[14px] bg-[#1f1f1f] px-[41px] text-white">
-        <code className="font-mono text-[16px] leading-none tracking-[0] text-white">
-          {npxCommand}
-        </code>
+      <div className="shrink-0 pt-6 md:pt-[32px]">
         <button
           type="button"
-          onClick={copyToClipboard}
-          className="text-white transition-opacity hover:opacity-70"
-          title="Copy command"
+          onClick={handleDownload}
+          className="h-[44px] w-full sm:w-[150px] rounded-[13px] bg-[#007aff] text-xl md:text-[20px] font-medium leading-none text-white transition-colors hover:bg-[#006ee6]"
         >
-          <Copy className="h-[22px] w-[22px]" strokeWidth={1.9} />
+          download
         </button>
-      </div>
 
-      <div className="mt-[76px] flex flex-col gap-[6px] text-[12px] leading-none tracking-[0] text-black">
-        <span>version: {asset.metadata.version || '1.9'}</span>
-        <span>last updated: {formatDate(asset.metadata.lastUpdated)}</span>
+        <div className="mt-4 md:mt-[24px] flex h-[60px] md:h-[68px] w-full items-center justify-between rounded-[14px] bg-[#1f1f1f] px-6 md:px-[24px] text-white">
+          <code className="font-mono text-sm md:text-[14px] leading-none tracking-[0] text-white break-all pr-4">
+            {npxCommand}
+          </code>
+          <button
+            type="button"
+            onClick={copyToClipboard}
+            className="text-white transition-opacity hover:opacity-70 shrink-0"
+            title="Copy command"
+          >
+            <Copy className="h-5 w-5 md:h-[20px] md:w-[20px]" strokeWidth={1.9} />
+          </button>
+        </div>
+
+        <div className="mt-4 md:mt-[24px] flex flex-col gap-[6px] text-[12px] leading-none tracking-[0] text-black">
+          <span>version: {asset.metadata.version || '1.9'}</span>
+          <span>last updated: {formatDate(asset.metadata.lastUpdated)}</span>
+        </div>
       </div>
     </aside>
   );

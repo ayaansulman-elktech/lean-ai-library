@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { getCatalog, getAssetIndex } from '@/lib/api/api';
 import { getAssetReadme, getAssetSkill } from '@/lib/api/server';
@@ -28,14 +30,22 @@ export default async function AssetPage({ params }: AssetPageProps) {
   const skillContent = assetIndex.content.hasSkill ? await getAssetSkill(category, id) : null;
 
   return (
-    <div className="min-h-screen w-full px-[28px] pt-[23px] pb-7">
-      <div className="grid min-h-[1016px] grid-cols-1 gap-9 xl:grid-cols-[minmax(0,1fr)_500px]">
+    <div className="h-[100dvh] w-full px-[40px] pt-6 pb-6 flex flex-col overflow-hidden">
+      <nav className="shrink-0 mb-4 md:mb-6 flex items-center text-[14px] leading-none text-black">
+        <Link href={`/categories/${category}`} className="inline-flex items-center gap-2 transition-colors hover:text-[#007aff]">
+          <ArrowLeft className="h-4 w-4" />
+          back to previous page
+        </Link>
+      </nav>
+
+      <div className="flex-1 min-h-0 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_400px] xl:grid-cols-[minmax(0,1fr)_480px] lg:gap-[31px]">
         <AssetViewer
           category={category}
           assetName={assetIndex.metadata.name}
           fileTree={assetIndex.fileTree}
           readmeContent={readmeContent}
           skillContent={skillContent}
+          repository={assetIndex.repository}
         />
 
         <AssetSidebar asset={assetIndex} />

@@ -11,6 +11,7 @@ interface AssetViewerProps {
   fileTree?: FileTreeNode[];
   readmeContent?: string | null;
   skillContent?: string | null;
+  repository?: { url: string; branch?: string; path: string };
 }
 
 function buildAsciiTreeLines(nodes: FileTreeNode[], prefix = ''): { node: FileTreeNode; prefix: string; isLast: boolean }[] {
@@ -29,33 +30,51 @@ function buildAsciiTreeLines(nodes: FileTreeNode[], prefix = ''): { node: FileTr
   return lines;
 }
 
-export function AssetViewer({ category, assetName, fileTree, readmeContent, skillContent }: AssetViewerProps) {
-  const [activeFile, setActiveFile] = useState<FileTreeNode | null>(null);
+function findFirstPdf(nodes: FileTreeNode[]): FileTreeNode | null {
+  for (const node of nodes) {
+    if (node.type === 'file' && node.name.toLowerCase().endsWith('.pdf')) {
+      return node;
+    }
+    if (node.children) {
+      const found = findFirstPdf(node.children);
+      if (found) return found;
+    }
+  }
+  return null;
+}
+
+export function AssetViewer({ category, assetName, fileTree, readmeContent, skillContent, repository }: AssetViewerProps) {
+  const defaultPdf = fileTree ? findFirstPdf(fileTree) : null;
+  const [activeFile, setActiveFile] = useState<FileTreeNode | null>(defaultPdf);
 
   const fileName = activeFile?.name.toLowerCase();
   const isReadme = fileName === 'readme.md';
   const isSkill = fileName === 'skill.md';
-  const showTree = !activeFile || (!isReadme && !isSkill);
+  const isPdf = fileName?.endsWith('.pdf');
+  
+  const showTree = !activeFile || (!isReadme && !isSkill && !isPdf);
   const treeLines = fileTree ? buildAsciiTreeLines(fileTree) : [];
   const activeContent = isReadme ? readmeContent : isSkill ? skillContent : null;
 
-  return (
-    <section className="flex min-w-0 flex-col">
-      <Link
-        href={`/categories/${category}`}
-        className="mb-[39px] inline-flex w-fit items-center gap-[17px] text-[14px] leading-none text-black transition-colors hover:text-[#007aff]"
-      >
-        <ArrowLeft className="h-[19px] w-[19px]" strokeWidth={2} />
-        back to previous page
-      </Link>
+  let pdfUrl = '';
+  if (isPdf && activeFile && repository) {
+    const rawBase = repository.url.replace('github.com', 'raw.githubusercontent.com').replace(/\.git$/, '');
+    const branch = repository.branch || 'main';
+    // Path inside the repo
+    const pdfPath = `${repository.path}/${activeFile.path}`;
+    // E.g., https://raw.githubusercontent.com/ayaansulman-elktech/lean-ai-library/main/agents/test-agent/file.pdf
+    pdfUrl = `${rawBase}/${branch}/${pdfPath}`;
+  }
 
+  return (
+    <section className="flex min-w-0 flex-col h-full min-h-0">
       <div
-        className={`min-h-[852px] overflow-hidden rounded-[14px] ${
+        className={`flex-1 min-h-0 flex flex-col overflow-hidden rounded-[14px] ${
           showTree ? 'bg-[#1f1f1f] text-[#f3f3f3]' : 'bg-[#d9d9d9] text-black'
         }`}
       >
         {showTree ? (
-          <div className="px-[69px] pt-[44px] font-mono text-[24px] leading-[1.48] tracking-[0]">
+          <div className="flex-1 overflow-auto px-6 md:px-[69px] py-8 md:py-[44px] font-mono text-lg md:text-[24px] leading-[1.48] tracking-[0]">
             <div>{assetName}/</div>
             {treeLines.map(line => {
               const marker = line.isLast ? '└── ' : '├── ';
@@ -76,12 +95,18 @@ export function AssetViewer({ category, assetName, fileTree, readmeContent, skil
               );
             })}
           </div>
+        ) : isPdf ? (
+          <iframe 
+            src={`https://docs.google.com/viewer?url=${encodeURIComponent(pdfUrl)}&embedded=true`}
+            className="w-full h-full border-none bg-white flex-1"
+            title={activeFile.name}
+          />
         ) : activeContent ? (
-          <pre className="h-full min-h-[852px] overflow-auto whitespace-pre-wrap px-[26px] py-[25px] font-mono text-[20px] leading-[1.48] tracking-[0] text-black">
+          <pre className="flex-1 overflow-auto whitespace-pre-wrap px-6 md:px-[26px] py-6 md:py-[25px] font-mono text-base md:text-[20px] leading-[1.48] tracking-[0] text-black">
             {activeContent}
           </pre>
         ) : (
-          <div className="flex min-h-[852px] items-center justify-center font-mono text-[20px] text-black/50">
+          <div className="flex-1 flex items-center justify-center font-mono text-base md:text-[20px] text-black/50">
             Preview not available
           </div>
         )}
