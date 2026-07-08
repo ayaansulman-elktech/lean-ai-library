@@ -35,6 +35,8 @@ jobs:
         
       # CRITICAL STEP: Build our Catalog metadata first!
       - name: Build Catalog CLI
+        env:
+          FACTORY_TOKEN: ${{ secrets.FACTORY_TOKEN }}
         run: npm run cli -- build
         
       # Now build the Next.js static site
