@@ -14,6 +14,10 @@ export function AssetBadge({ type, className }: AssetBadgeProps) {
     application: 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300 border-orange-200 dark:border-orange-800',
     pipeline: 'bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-300 border-pink-200 dark:border-pink-800',
     other: 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300 border-gray-200 dark:border-gray-700',
+    pdf: 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300 border-red-200 dark:border-red-800',
+    md: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300 border-yellow-200 dark:border-yellow-800',
+    folder: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300 border-yellow-200 dark:border-yellow-800',
+    fileorother: 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300 border-gray-200 dark:border-gray-700',
   };
 
   const labels: Record<Asset['type'], string> = {
@@ -23,6 +27,10 @@ export function AssetBadge({ type, className }: AssetBadgeProps) {
     application: 'Application',
     pipeline: 'Pipeline',
     other: 'Resource',
+    pdf: 'PDF',
+    md: 'Markdown',
+    folder: 'Directory',
+    fileorother: 'File',
   };
 
   return (

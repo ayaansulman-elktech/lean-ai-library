@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
-import { FileTreeNode } from '@/lib/types/asset';
+import { FileTreeNode, RepositoryInfo } from '@/lib/types/asset';
 
 interface AssetViewerProps {
   category: string;
@@ -11,7 +11,7 @@ interface AssetViewerProps {
   fileTree?: FileTreeNode[];
   readmeContent?: string | null;
   skillContent?: string | null;
-  repository?: { url: string; branch?: string; path: string };
+  repository?: RepositoryInfo;
 }
 
 function buildAsciiTreeLines(nodes: FileTreeNode[], prefix = ''): { node: FileTreeNode; prefix: string; isLast: boolean }[] {
@@ -57,7 +57,7 @@ export function AssetViewer({ category, assetName, fileTree, readmeContent, skil
   const activeContent = isReadme ? readmeContent : isSkill ? skillContent : null;
 
   let pdfUrl = '';
-  if (isPdf && activeFile && repository) {
+  if (isPdf && activeFile && repository?.url) {
     const rawBase = repository.url.replace('github.com', 'raw.githubusercontent.com').replace(/\.git$/, '');
     const branch = repository.branch || 'main';
     // Path inside the repo
