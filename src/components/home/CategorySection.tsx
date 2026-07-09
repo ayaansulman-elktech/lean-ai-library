@@ -36,7 +36,7 @@ export function CategorySection({ title, description, categoryId, assets }: Cate
 
       {assets.length > 0 && (
         <div className="mt-[24px]">
-          <Link href={`/categories/${categoryId}`} className="text-[#007aff] hover:underline text-[14px]">
+          <Link href={`/categories/${categoryId}`} className="text-[#007aff] hover:underline text-[16px] font-medium">
             see all
           </Link>
         </div>

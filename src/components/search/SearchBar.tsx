@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 import { searchAssets } from '@/lib/search/fuse';
 import { SearchItem } from '@/lib/api/api';
 
-export function SearchBar() {
+export function SearchBar({ centered }: { centered?: boolean } = {}) {
   const [query, setQuery] = useState('');
   const [isFocused, setIsFocused] = useState(false);
   const [results, setResults] = useState<SearchItem[]>([]);
@@ -40,7 +40,7 @@ export function SearchBar() {
   const showDropdown = isFocused && query.length > 0;
 
   return (
-    <div className="mb-[54px] flex w-full justify-end relative" ref={containerRef}>
+    <div className={`mb-[54px] flex w-full relative ${centered ? 'justify-center' : 'justify-end'}`} ref={containerRef}>
       <div
         className="group flex h-[45px] w-full items-center rounded-full bg-[#e8e8e8] px-[18px] transition-colors focus-within:bg-[#dedede] hover:bg-[#dedede] sm:w-[386px]"
       >
