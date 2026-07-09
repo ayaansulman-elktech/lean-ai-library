@@ -32,7 +32,7 @@ export default function Home() {
         </div>
 
         {/* Manifesto Section */}
-        <div className="pt-[60px] border-t border-[#e4e4e4]">
+        <div className="pt-[60px]">
           <h2 className="text-[18px] font-bold tracking-[0] text-black mb-[16px]">Manifesto</h2>
           <p className="text-[14px] font-normal leading-[1.6] text-[#3c3c3c] mb-[16px]">
             The Cognitive Shift Project is an independent research initiative focused on cognitive AI architectures and formal representations of intelligence. It supports open, iterative research where ideas can be shared, criticized, improved, and evaluated without depending entirely on traditional institutional paths.

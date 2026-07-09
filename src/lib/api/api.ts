@@ -55,11 +55,12 @@ export function getCategories(): CategoryItem[] {
   
   const PREDEFINED_CATEGORIES = [
     { id: 'model-library', title: 'Model Library', description: 'Explore various AI models and architectures.' },
-    { id: 'ai-farm', title: 'Ai Farm', description: 'Tools and resources for training and running AI.' },
     { id: 'code-library', title: 'Code Library', description: 'Reusable code snippets and modules.' },
     { id: 'corpus-knowledge', title: 'Corpus Knowledge', description: 'Datasets and structured knowledge bases.' },
     { id: 'skills-library', title: 'Skills Library', description: 'Specific agent skills and capabilities.' },
     { id: 'mcp-library', title: 'MCP Library', description: 'Machine Control Protocols and integrations.' },
+    { id: 'agents', title: 'Agents', description: 'Autonomous agents and related tools.' },
+    { id: 'ios-ready', title: 'iOS Ready', description: 'Lean Design reduces every application to its core value moment: the screen that creates understanding, the action that validates the use case, and the metric that determines what happens next.' },
   ];
 
   // Merge them, prioritizing predefined, but keeping their dynamic counts
