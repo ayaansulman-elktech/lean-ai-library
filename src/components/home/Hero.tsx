@@ -3,8 +3,7 @@ export function Hero() {
     <section
       className="relative w-full text-center"
       style={{
-        fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif',
-        paddingTop: 'clamp(60px, 6.77vw, 130px)',
+        paddingTop: '190px',
         paddingBottom: 'clamp(40px, 4.17vw, 80px)',
         paddingLeft: '1rem',
         paddingRight: '1rem',

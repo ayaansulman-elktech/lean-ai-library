@@ -32,13 +32,35 @@ export default function Home() {
         </div>
 
         {/* Manifesto Section */}
-        <div className="pt-[60px]">
-          <h2 className="text-[18px] font-bold tracking-[0] text-black mb-[16px]">Manifesto</h2>
-          <p className="text-[14px] font-normal leading-[1.6] text-[#3c3c3c] mb-[16px]">
+        <div className="pt-[60px] pb-[80px] max-w-[1260px]">
+          <h2
+            className="font-bold text-black mb-[16px]"
+            style={{
+              fontSize: '25.11px',
+              letterSpacing: '0',
+            }}
+          >
+            Manifest
+          </h2>
+          <p
+            className="text-black mb-[24px]"
+            style={{
+              fontSize: '25.11px',
+              fontWeight: 50,
+              lineHeight: '1.5',
+              letterSpacing: '0',
+            }}
+          >
             The Cognitive Shift Project is an independent research initiative focused on cognitive AI architectures and formal representations of intelligence. It supports open, iterative research where ideas can be shared, criticized, improved, and evaluated without depending entirely on traditional institutional paths.
           </p>
-          <a href="/manifesto" className="text-[#007aff] hover:underline text-[14px]">
-            read our full manifesto
+          <a
+            href="/manifesto"
+            className="text-[#007aff] hover:underline font-medium"
+            style={{
+              fontSize: '18px',
+            }}
+          >
+            Read the full manifest
           </a>
         </div>
       </div>

@@ -42,7 +42,7 @@ export function SearchBar({ centered }: { centered?: boolean } = {}) {
   return (
     <div className={`mb-[54px] flex w-full relative ${centered ? 'justify-center' : 'justify-end'}`} ref={containerRef}>
       <div
-        className="group flex h-[45px] w-full items-center rounded-full bg-[#e8e8e8] px-[18px] transition-colors focus-within:bg-[#dedede] hover:bg-[#dedede] sm:w-[386px]"
+        className="group flex h-[55.6px] w-full items-center rounded-full bg-[#e8e8e8] px-[18px] transition-colors focus-within:bg-[#dedede] hover:bg-[#dedede] sm:w-[375px]"
       >
         <Search className="h-[16px] w-[16px] text-[#a5a5a5] transition-colors group-hover:text-[#7a7a7a] mr-2 shrink-0" strokeWidth={2} />
         <input
