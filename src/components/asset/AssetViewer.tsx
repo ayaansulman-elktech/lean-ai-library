@@ -94,7 +94,7 @@ export function AssetViewer({ category, assetId, assetName, fileTree, readmeCont
   return (
     <section className="flex min-w-0 flex-col h-full min-h-0">
       <div
-        className={`flex-1 min-h-0 flex flex-col overflow-hidden rounded-[14px] ${showTree ? 'bg-[#1f1f1f] text-[#f3f3f3]' : 'bg-[#d9d9d9] text-black'
+        className={`flex-1 min-h-0 flex flex-col overflow-hidden rounded-[14px] ${isPdf ? 'bg-[#d9d9d9] text-black' : 'bg-[#1f1f1f] text-[#f3f3f3]'
           }`}
       >
         {showTree ? (
@@ -138,10 +138,10 @@ export function AssetViewer({ category, assetId, assetName, fileTree, readmeCont
           </div>
         ) : isMd ? (
           <div className="flex-1 flex flex-col bg-transparent overflow-hidden">
-            <div className="border-b border-[#c4c4c4] p-4 flex items-center shrink-0 bg-transparent z-10">
+            <div className="border-b border-[#333333] p-4 flex items-center shrink-0 bg-transparent z-10">
               <button
                 onClick={() => setActiveFile(null)}
-                className="flex items-center gap-2 text-[14px] text-[#3c3c3c] hover:text-black transition-colors"
+                className="flex items-center gap-2 text-[14px] text-[#f3f3f3] hover:text-white transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" />
                 back to files
@@ -155,7 +155,7 @@ export function AssetViewer({ category, assetId, assetName, fileTree, readmeCont
               ) : mdContent ? (
                 <div
                   className="
-                  text-black
+                  text-white
                   [&>h1]:text-3xl [&>h1]:font-bold [&>h1]:mb-6
                   [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:mb-4 [&>h2]:mt-8
                   [&>h3]:text-xl [&>h3]:font-bold [&>h3]:mb-3 [&>h3]:mt-6
@@ -165,14 +165,14 @@ export function AssetViewer({ category, assetId, assetName, fileTree, readmeCont
                   [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-4
                   [&_li]:mb-1
                   [&_a]:text-[#007aff] [&_a]:hover:underline
-                  [&_blockquote]:border-l-4 [&_blockquote]:border-gray-300 [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:text-gray-600 [&_blockquote]:mb-4
-                  [&_pre]:bg-[#f6f8fa] [&_pre]:p-4 [&_pre]:rounded-lg [&_pre]:overflow-x-auto [&_pre]:mb-4
+                  [&_blockquote]:border-l-4 [&_blockquote]:border-gray-500 [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:text-gray-300 [&_blockquote]:mb-4
+                  [&_pre]:bg-[#2a2a2a] [&_pre]:p-4 [&_pre]:rounded-lg [&_pre]:overflow-x-auto [&_pre]:mb-4
                   [&_code]:font-mono [&_code]:text-sm
-                  [&>p>code]:bg-[#f6f8fa] [&>p>code]:px-1.5 [&>p>code]:py-0.5 [&>p>code]:rounded-md
-                  [&_li>code]:bg-[#f6f8fa] [&_li>code]:px-1.5 [&_li>code]:py-0.5 [&_li>code]:rounded-md
+                  [&>p>code]:bg-[#2a2a2a] [&>p>code]:px-1.5 [&>p>code]:py-0.5 [&>p>code]:rounded-md
+                  [&_li>code]:bg-[#2a2a2a] [&_li>code]:px-1.5 [&_li>code]:py-0.5 [&_li>code]:rounded-md
                   [&_table]:w-full [&_table]:mb-4 [&_table]:border-collapse
-                  [&_th]:border [&_th]:border-gray-200 [&_th]:p-2 [&_th]:bg-gray-50 [&_th]:text-left
-                  [&_td]:border [&_td]:border-gray-200 [&_td]:p-2
+                  [&_th]:border [&_th]:border-gray-700 [&_th]:p-2 [&_th]:bg-[#2a2a2a] [&_th]:text-left
+                  [&_td]:border [&_td]:border-gray-700 [&_td]:p-2
                 "
                 >
                   <ReactMarkdown
