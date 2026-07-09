@@ -1,16 +1,43 @@
 export function Hero() {
   return (
-    <section className="relative mx-auto h-[526px] max-w-[1120px] px-4 pt-[69px] text-center">
+    <section
+      className="relative w-full text-center"
+      style={{
+        paddingTop: '190px',
+        paddingBottom: 'clamp(40px, 4.17vw, 80px)',
+        paddingLeft: '1rem',
+        paddingRight: '1rem',
+      }}
+    >
       <h1
-        className="mx-auto flex flex-col justify-center gap-[10px] text-[72px] font-bold leading-[0.93] tracking-[0] text-black md:text-[84px]"
+        style={{
+          fontSize: 'clamp(36px, 6.25vw, 120px)',
+          fontWeight: 700,
+          lineHeight: '1.0',
+          letterSpacing: '0',
+          color: '#000000',
+          margin: '0 auto',
+        }}
       >
-        <span>Build lean</span>
-        <span>Measure fast</span>
-        <span>Keep only what wins.</span>
+        Build lean<br />
+        Measure fast<br />
+        Keep only what wins.
       </h1>
 
-      <p className="mx-auto mt-[46px] max-w-[860px] text-[16px] font-normal leading-[1.45] tracking-[0] text-[#3c3c3c]">
-        Cognitive shift is an independent platform built on continuous exposure to advanced AI research from MIT and the latest industry practices from leading Silicon Valley companies, Cognitive Shift transforms complex ideas into directly applicable frameworks.
+      <p
+        style={{
+          marginTop: 'clamp(24px, 2.4vw, 46px)',
+          fontSize: 'clamp(13px, 1.308vw, 25.11px)',
+          fontWeight: 274,
+          lineHeight: '1.7',
+          letterSpacing: '0',
+          color: '#3c3c3c',
+          margin: 'clamp(24px, 2.4vw, 46px) auto 0',
+        }}
+      >
+        Cognitive shift is an independent platform built on continuous exposure to advanced AI research from MIT and the<br />
+        latest industry practices from leading Silicon Valley companies, Cognitive Shift transforms complex ideas into<br />
+        directly applicable frameworks.
       </p>
     </section>
   );

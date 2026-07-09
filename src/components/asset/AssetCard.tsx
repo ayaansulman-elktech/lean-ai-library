@@ -28,9 +28,9 @@ export function AssetCard({ asset }: AssetCardProps) {
   }
 
   return (
-    <Link href={href} className="block w-full max-w-[350px] cursor-pointer">
-      <article className="flex flex-col gap-[18px]">
-        <div className="group/cover h-[197px] w-full overflow-hidden rounded-[10px] bg-[#dfeeff]">
+    <Link href={href} className="block w-full cursor-pointer">
+      <article className="flex flex-col gap-[12px]">
+        <div className="group/cover aspect-[16/9] w-full overflow-hidden rounded-[14.35px] bg-[#dfeeff]">
           <CoverImage
             id={asset.id}
             name={asset.name}
@@ -38,8 +38,8 @@ export function AssetCard({ asset }: AssetCardProps) {
           />
         </div>
 
-        <div className="flex h-[21px] w-full items-center justify-between gap-4">
-          <p className="flex-1 min-w-0 text-[18px] font-normal leading-none tracking-[0] text-[#242424]">
+        <div className="flex w-full items-start justify-between gap-4 mt-1">
+          <p className="flex-1 min-w-0 text-[14px] md:text-[16px] font-normal leading-[1.2] tracking-[0] text-[#242424]">
             {displayDesc}
           </p>
 

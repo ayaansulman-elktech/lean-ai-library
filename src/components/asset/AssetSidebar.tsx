@@ -102,11 +102,11 @@ export function AssetSidebar({ asset }: AssetSidebarProps) {
             )}
           </button>
         </div>
+      </div>
 
-        <div className="mt-4 md:mt-[24px] flex flex-col gap-[6px] text-[12px] leading-none tracking-[0] text-black w-full">
-          <span>version: {asset.metadata.version || '1.9'}</span>
-          <span>last updated: {formatDate(asset.metadata.lastUpdated)}</span>
-        </div>
+      <div className="mt-auto shrink-0 pt-4 md:pt-[24px] pb-2 flex flex-col gap-[6px] text-[12px] leading-none tracking-[0] text-black w-full">
+        <span>version: {asset.metadata.version || '1.9'}</span>
+        <span>last updated: {formatDate(asset.metadata.lastUpdated)}</span>
       </div>
     </aside>
   );

@@ -16,7 +16,7 @@ export function AssetBadge({ type, className }: AssetBadgeProps) {
     other: 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300 border-gray-200 dark:border-gray-700',
     pdf: 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300 border-red-200 dark:border-red-800',
     md: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300 border-yellow-200 dark:border-yellow-800',
-    folder: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300 border-yellow-200 dark:border-yellow-800',
+    folder: 'bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300 border-amber-200 dark:border-amber-800',
     fileorother: 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300 border-gray-200 dark:border-gray-700',
   };
 
@@ -24,12 +24,12 @@ export function AssetBadge({ type, className }: AssetBadgeProps) {
     agent: 'Agent',
     library: 'Library',
     model: 'Model',
-    application: 'Application',
+    application: 'App',
     pipeline: 'Pipeline',
-    other: 'Resource',
+    other: 'Other',
     pdf: 'PDF',
-    md: 'Markdown',
-    folder: 'Directory',
+    md: 'Document',
+    folder: 'Folder',
     fileorother: 'File',
   };
 

@@ -16,10 +16,10 @@ export default function Home() {
     <div className="w-full pb-[96px]">
       <Hero />
 
-      <div className="relative mx-auto max-w-[1535px] px-[18px]">
+      <div className="relative mx-auto w-full px-4 md:px-[180px]">
         <SearchBar />
 
-        <div className="pt-[11px]">
+        <div className="pt-0">
           {categories.map(category => (
             <CategorySection
               key={category.id}
@@ -32,13 +32,35 @@ export default function Home() {
         </div>
 
         {/* Manifesto Section */}
-        <div className="mt-20 pt-10 border-t border-[#d9d9d9]">
-          <h2 className="text-2xl font-bold tracking-tight mb-4">Manifesto</h2>
-          <p className="text-[#333333] text-[16px] leading-[1.6] max-w-4xl mb-4">
+        <div className="pt-[60px] pb-[80px] max-w-[1260px]">
+          <h2
+            className="font-bold text-black mb-[16px]"
+            style={{
+              fontSize: '25.11px',
+              letterSpacing: '0',
+            }}
+          >
+            Manifest
+          </h2>
+          <p
+            className="text-black mb-[24px]"
+            style={{
+              fontSize: '25.11px',
+              fontWeight: 50,
+              lineHeight: '1.5',
+              letterSpacing: '0',
+            }}
+          >
             The Cognitive Shift Project is an independent research initiative focused on cognitive AI architectures and formal representations of intelligence. It supports open, iterative research where ideas can be shared, criticized, improved, and evaluated without depending entirely on traditional institutional paths.
           </p>
-          <a href="/manifesto" className="text-[#007aff] hover:underline text-[16px]">
-            Read the full manifesto
+          <a
+            href="/manifesto"
+            className="text-[#007aff] hover:underline font-medium"
+            style={{
+              fontSize: '18px',
+            }}
+          >
+            Read the full manifest
           </a>
         </div>
       </div>

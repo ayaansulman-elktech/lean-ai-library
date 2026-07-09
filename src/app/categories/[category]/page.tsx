@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, Home } from 'lucide-react';
 import { getCatalog, getCategories } from '@/lib/api/api';
 import { AssetCard } from '@/components/asset/AssetCard';
+import { SearchBar } from '@/components/search/SearchBar';
 
 interface CategoryPageProps {
   params: Promise<{ category: string }>;
@@ -29,24 +30,27 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   const assets = catalog.filter(a => a.category === categoryId);
 
   return (
-    <div className="mx-auto min-h-screen max-w-[1535px] px-[18px] pb-[96px] pt-[23px]">
+    <div className="mx-auto min-h-screen max-w-[1535px] px-[180px] pb-[96px] pt-[23px]">
       <nav className="mb-[56px] flex flex-wrap items-center gap-x-8 gap-y-3 text-[14px] leading-none text-black">
-        <Link href="/categories" className="inline-flex items-center gap-[17px] transition-colors hover:text-[#007aff]">
+        <Link href="/" className="inline-flex items-center gap-[17px] transition-colors hover:text-[#007aff]">
           <ArrowLeft className="h-[19px] w-[19px]" strokeWidth={2} />
-          back to categories
+          back to previous page
         </Link>
       </nav>
 
-      <header className="mb-[48px] border-b border-[#d9d9d9] pb-[35px]">
-        <h1 className="mb-[18px] text-[48px] font-bold leading-none tracking-[0] text-black">
+      <header className="mb-[48px] flex flex-col items-center text-center">
+        <h1 className="mb-[18px] text-[64px] font-bold leading-none tracking-[0] text-black">
           {category.title}
         </h1>
-        <p className="text-[22px] font-normal leading-none tracking-[0] text-black">
-          {assets.length} {assets.length === 1 ? 'Asset' : 'Assets'}
+        <p className="mb-[48px] max-w-[800px] text-[14px] font-normal leading-[1.6] tracking-[0] text-[#3c3c3c]">
+          {category.description || 'Cognitive shift is an independent platform built on continuous exposure to advanced AI research from MIT and the latest industry practices from leading Silicon Valley companies, Cognitive Shift transforms complex ideas into directly applicable frameworks.'}
         </p>
+        <div className="w-full flex justify-center">
+          <SearchBar centered />
+        </div>
       </header>
 
-      <div className="grid grid-cols-1 gap-x-[45px] gap-y-[58px] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid grid-cols-1 gap-x-[54px] gap-y-[58px] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {assets.map((asset) => (
           <AssetCard key={asset.id} asset={asset} />
         ))}

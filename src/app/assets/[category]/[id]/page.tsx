@@ -32,7 +32,7 @@ export default async function AssetPage({ params }: AssetPageProps) {
   return (
     <div className="h-[100dvh] w-full px-[40px] pt-6 pb-6 flex flex-col overflow-hidden">
       <nav className="shrink-0 mb-4 md:mb-6 flex items-center text-[14px] leading-none text-black">
-        <Link href={`/categories/${category}`} className="inline-flex items-center gap-2 transition-colors hover:text-[#007aff]">
+        <Link href="/" className="inline-flex items-center gap-2 transition-colors hover:text-[#007aff]">
           <ArrowLeft className="h-4 w-4" />
           back to previous page
         </Link>
@@ -41,6 +41,7 @@ export default async function AssetPage({ params }: AssetPageProps) {
       <div className="flex-1 min-h-0 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_400px] xl:grid-cols-[minmax(0,1fr)_480px] lg:gap-[31px]">
         <AssetViewer
           category={category}
+          assetId={id}
           assetName={assetIndex.metadata.name}
           fileTree={assetIndex.fileTree}
           readmeContent={readmeContent}
