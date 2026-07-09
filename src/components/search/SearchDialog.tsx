@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Search, X } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import { Search, X, Loader2 } from 'lucide-react';
 import { searchAssets } from '@/lib/search/fuse';
 import { SearchItem } from '@/lib/api/api';
 import { AssetBadge } from '../asset/AssetBadge';
@@ -15,6 +16,14 @@ interface SearchDialogProps {
 export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchItem[]>([]);
+  const [navigatingId, setNavigatingId] = useState<string | null>(null);
+  const pathname = usePathname();
+
+  // Close dialog and reset loading state when route changes
+  useEffect(() => {
+    onOpenChange(false);
+    setNavigatingId(null);
+  }, [pathname, onOpenChange]);
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -34,6 +43,11 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
   useEffect(() => {
     setResults(searchAssets(query));
   }, [query]);
+
+  // If dialog is closed, ensure navigatingId is reset
+  useEffect(() => {
+    if (!open) setNavigatingId(null);
+  }, [open]);
 
   if (!open) return null;
 
@@ -55,10 +69,12 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
             className="flex-1 bg-transparent border-none outline-none text-lg text-foreground placeholder:text-muted-foreground"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
+            disabled={navigatingId !== null}
           />
           <button 
             onClick={() => onOpenChange(false)}
-            className="p-1 text-muted-foreground hover:text-foreground rounded-md hover:bg-accent transition-colors"
+            className="p-1 text-muted-foreground hover:text-foreground rounded-md hover:bg-accent transition-colors disabled:opacity-50"
+            disabled={navigatingId !== null}
           >
             <X className="w-5 h-5" />
           </button>
@@ -75,26 +91,35 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
             </div>
           ) : (
             <div className="flex flex-col gap-1">
-              {results.map((item) => (
-                <Link 
-                  key={`${item.category}-${item.id}`} 
-                  href={`/assets/${item.category}/${item.id}`}
-                  onClick={() => onOpenChange(false)}
-                  className="flex items-center gap-4 px-4 py-3 rounded-lg hover:bg-accent transition-colors group"
-                >
-                  <div className="flex-1 flex flex-col gap-1">
-                    <div className="flex items-center gap-2">
-                      <span className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                        {item.name}
+              {results.map((item) => {
+                const isNavigating = navigatingId === item.id;
+                
+                return (
+                  <Link 
+                    key={`${item.category}-${item.id}`} 
+                    href={`/assets/${item.category}/${item.id}`}
+                    onClick={() => setNavigatingId(item.id)}
+                    className={`flex items-center justify-between gap-4 px-4 py-3 rounded-lg transition-colors group ${
+                      isNavigating ? 'bg-accent/50 pointer-events-none' : 'hover:bg-accent'
+                    }`}
+                  >
+                    <div className="flex-1 flex flex-col gap-1 min-w-0">
+                      <div className="flex items-center gap-2">
+                        <span className="font-semibold text-foreground group-hover:text-primary transition-colors truncate">
+                          {item.name}
+                        </span>
+                        <AssetBadge type={item.type} className="shrink-0" />
+                      </div>
+                      <span className="text-sm text-muted-foreground line-clamp-1">
+                        {item.description}
                       </span>
-                      <AssetBadge type={item.type} />
                     </div>
-                    <span className="text-sm text-muted-foreground line-clamp-1">
-                      {item.description}
-                    </span>
-                  </div>
-                </Link>
-              ))}
+                    {isNavigating && (
+                      <Loader2 className="w-5 h-5 animate-spin text-muted-foreground shrink-0" />
+                    )}
+                  </Link>
+                );
+              })}
             </div>
           )}
         </div>

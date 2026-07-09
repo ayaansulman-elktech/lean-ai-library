@@ -9,14 +9,14 @@ export function SearchBar() {
 
   return (
     <>
-      <div className="mb-[21px] flex w-full justify-end">
+      <div className="mb-[54px] flex w-full justify-end">
         <button
           type="button"
           onClick={() => setOpen(true)}
-          className="group flex h-[55px] w-full items-center rounded-full bg-[#e6e6e6] px-[22px] text-left transition-colors hover:bg-[#dedede] sm:w-[386px]"
+          className="group flex h-[45px] w-full items-center rounded-full bg-[#e8e8e8] px-[18px] text-left transition-colors hover:bg-[#dedede] sm:w-[386px]"
           aria-label="Open search"
         >
-          <Search className="h-[18px] w-[18px] text-[#a5a5a5] transition-colors group-hover:text-[#7a7a7a]" strokeWidth={2.5} />
+          <Search className="h-[16px] w-[16px] text-[#a5a5a5] transition-colors group-hover:text-[#7a7a7a]" strokeWidth={2} />
         </button>
       </div>
 

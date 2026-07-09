@@ -29,7 +29,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   const assets = catalog.filter(a => a.category === categoryId);
 
   return (
-    <div className="mx-auto min-h-screen max-w-[1535px] px-[18px] pb-[96px] pt-[23px]">
+    <div className="mx-auto min-h-screen max-w-[1535px] px-[180px] pb-[96px] pt-[23px]">
       <nav className="mb-[56px] flex flex-wrap items-center gap-x-8 gap-y-3 text-[14px] leading-none text-black">
         <Link href="/categories" className="inline-flex items-center gap-[17px] transition-colors hover:text-[#007aff]">
           <ArrowLeft className="h-[19px] w-[19px]" strokeWidth={2} />
@@ -46,7 +46,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         </p>
       </header>
 
-      <div className="grid grid-cols-1 gap-x-[45px] gap-y-[58px] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid grid-cols-1 gap-x-[54px] gap-y-[58px] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {assets.map((asset) => (
           <AssetCard key={asset.id} asset={asset} />
         ))}

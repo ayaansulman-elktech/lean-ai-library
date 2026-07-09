@@ -11,7 +11,7 @@ interface AssetViewerProps {
   fileTree?: FileTreeNode[];
   readmeContent?: string | null;
   skillContent?: string | null;
-  repository?: { url: string; branch?: string; path: string };
+  repository?: { url?: string; branch?: string; path?: string };
 }
 
 function buildAsciiTreeLines(nodes: FileTreeNode[], prefix = ''): { node: FileTreeNode; prefix: string; isLast: boolean }[] {
@@ -58,7 +58,7 @@ export function AssetViewer({ category, assetName, fileTree, readmeContent, skil
 
   let pdfUrl = '';
   if (isPdf && activeFile && repository) {
-    const rawBase = repository.url.replace('github.com', 'raw.githubusercontent.com').replace(/\.git$/, '');
+    const rawBase = repository.url?.replace('github.com', 'raw.githubusercontent.com').replace(/\.git$/, '') || '';
     const branch = repository.branch || 'main';
     // Path inside the repo
     const pdfPath = `${repository.path}/${activeFile.path}`;
