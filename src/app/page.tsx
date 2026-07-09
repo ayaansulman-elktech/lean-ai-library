@@ -16,10 +16,10 @@ export default function Home() {
     <div className="w-full pb-[96px]">
       <Hero />
 
-      <div className="relative mx-auto max-w-[1535px] px-[18px]">
+      <div className="relative mx-auto w-full px-4 md:px-[180px]">
         <SearchBar />
 
-        <div className="pt-[11px]">
+        <div className="pt-0">
           {categories.map(category => (
             <CategorySection
               key={category.id}
@@ -32,13 +32,13 @@ export default function Home() {
         </div>
 
         {/* Manifesto Section */}
-        <div className="mt-20 pt-10 border-t border-[#d9d9d9]">
-          <h2 className="text-2xl font-bold tracking-tight mb-4">Manifesto</h2>
-          <p className="text-[#333333] text-[16px] leading-[1.6] max-w-4xl mb-4">
+        <div className="pt-[60px]">
+          <h2 className="text-[18px] font-bold tracking-[0] text-black mb-[16px]">Manifesto</h2>
+          <p className="text-[14px] font-normal leading-[1.6] text-[#3c3c3c] mb-[16px]">
             The Cognitive Shift Project is an independent research initiative focused on cognitive AI architectures and formal representations of intelligence. It supports open, iterative research where ideas can be shared, criticized, improved, and evaluated without depending entirely on traditional institutional paths.
           </p>
-          <a href="/manifesto" className="text-[#007aff] hover:underline text-[16px]">
-            Read the full manifesto
+          <a href="/manifesto" className="text-[#007aff] hover:underline text-[14px]">
+            read our full manifesto
           </a>
         </div>
       </div>

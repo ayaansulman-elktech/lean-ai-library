@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { AssetCard } from '../asset/AssetCard';
 import { CatalogItem } from '@/lib/api/api';
 
@@ -8,25 +9,38 @@ interface CategorySectionProps {
   assets: CatalogItem[];
 }
 
-export function CategorySection({ title, description, assets }: CategorySectionProps) {
+export function CategorySection({ title, description, categoryId, assets }: CategorySectionProps) {
   if (!assets || assets.length === 0) return null;
 
+  const displayAssets = assets.slice(0, 8);
+  const isIosReady = categoryId === 'ios-ready';
+
   return (
-    <section className="mb-[91px]">
-      <div className="mb-[36px]">
-        <h2 className="mb-[22px] text-[18px] font-bold leading-none tracking-[0] text-black">{title}</h2>
+    <section className={`mb-[80px] ${isIosReady ? 'bg-[#efefed] rounded-[16px] p-[24px] sm:p-[42px]' : ''}`}>
+      <div className="mb-[24px]">
+        <h2 className="mb-[8px] text-[18px] font-bold leading-[1.2] tracking-[0] text-black">
+          {title}
+        </h2>
         {description && (
-          <p className="max-w-[1040px] text-[18px] font-normal leading-[1.45] tracking-[0] text-[#252525]">
+          <p className="text-[14px] font-normal leading-[1.45] tracking-[0] text-[#3c3c3c]">
             {description}
           </p>
         )}
       </div>
 
-      <div className="grid grid-cols-1 gap-x-[45px] gap-y-[58px] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {assets.map(asset => (
+      <div className="grid grid-cols-1 gap-x-[54px] gap-y-[54px] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {displayAssets.map(asset => (
           <AssetCard key={asset.id} asset={asset} />
         ))}
       </div>
+
+      {assets.length > 0 && (
+        <div className="mt-[24px]">
+          <Link href={`/categories/${categoryId}`} className="text-[#007aff] hover:underline text-[16px] font-medium">
+            see all
+          </Link>
+        </div>
+      )}
     </section>
   );
 }
