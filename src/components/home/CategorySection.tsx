@@ -16,13 +16,27 @@ export function CategorySection({ title, description, categoryId, assets }: Cate
   const isIosReady = categoryId === 'ios-ready';
 
   return (
-    <section className={`mb-[80px] ${isIosReady ? 'bg-[#efefed] rounded-[16px] p-[24px] sm:p-[42px]' : ''}`}>
+    <section className={`mb-[80px] ${isIosReady ? 'bg-[#efefed] rounded-[16px] py-[42px] px-[24px] -mx-[24px] sm:py-[64px] sm:px-[42px] sm:-mx-[42px]' : ''}`}>
       <div className="mb-[24px]">
-        <h2 className="mb-[8px] text-[18px] font-bold leading-[1.2] tracking-[0] text-black">
+        <h2 
+          className="mb-[16px] font-bold text-black"
+          style={{
+            fontSize: '25.11px',
+            letterSpacing: '0',
+          }}
+        >
           {title}
         </h2>
         {description && (
-          <p className="text-[14px] font-normal leading-[1.45] tracking-[0] text-[#3c3c3c]">
+          <p 
+            className="mb-[24px] text-black"
+            style={{
+              fontSize: '25.11px',
+              fontWeight: 50,
+              lineHeight: '1.5',
+              letterSpacing: '0',
+            }}
+          >
             {description}
           </p>
         )}
@@ -36,7 +50,7 @@ export function CategorySection({ title, description, categoryId, assets }: Cate
 
       {assets.length > 0 && (
         <div className="mt-[24px]">
-          <Link href={`/categories/${categoryId}`} className="text-[#007aff] hover:underline text-[16px] font-medium">
+          <Link href={`/categories/${categoryId}`} className="text-[#007aff] hover:underline text-[22px] font-medium">
             see all
           </Link>
         </div>

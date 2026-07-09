@@ -30,7 +30,7 @@ export function AssetCard({ asset }: AssetCardProps) {
   return (
     <Link href={href} className="block w-full cursor-pointer">
       <article className="flex flex-col gap-[12px]">
-        <div className="group/cover aspect-[16/9] w-full overflow-hidden rounded-[12px] bg-[#dfeeff]">
+        <div className="group/cover aspect-[16/9] w-full overflow-hidden rounded-[14.35px] bg-[#dfeeff]">
           <CoverImage
             id={asset.id}
             name={asset.name}

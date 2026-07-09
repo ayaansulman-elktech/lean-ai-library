@@ -37,6 +37,10 @@
   --radius-sm: calc(var(--radius) - 4px);
 }
 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif !important;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #000000;
