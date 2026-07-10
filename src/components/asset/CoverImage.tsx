@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 interface CoverImageProps {
   id: string;
@@ -17,8 +17,9 @@ function formatName(str: string) {
 }
 
 function CoverOverlay({ name, id }: { name: string, id: string }) {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
   const isApple = name.toLowerCase().includes('apple') || id.toLowerCase().includes('apple');
-  const logoSrc = isApple ? "/covers/Apple Logo.png" : "/covers/Lean ai logo.png";
+  const logoSrc = isApple ? `${basePath}/covers/Apple Logo.png` : `${basePath}/covers/Lean ai logo.png`;
 
   return (
     <div className="absolute inset-0 flex flex-col justify-center px-[31px] text-black">
@@ -30,17 +31,29 @@ function CoverOverlay({ name, id }: { name: string, id: string }) {
 
 export function CoverImage({ name, fallbackSrc, id }: CoverImageProps) {
   const [error, setError] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
 
-  const colors = ['bg-[#dfeeff]', 'bg-[#ffe4e1]', 'bg-[#e0ffff]', 'bg-[#fffacd]', 'bg-[#e6e6fa]', 'bg-[#f0fff0]'];
-  let hash = 0;
-  for (let i = 0; i < name.length; i++) {
-    hash = name.charCodeAt(i) + ((hash << 5) - hash);
-  }
-  const bgColor = colors[Math.abs(hash) % colors.length];
+  // Catch SSR hydration missed errors
+  useEffect(() => {
+    if (imgRef.current && imgRef.current.complete) {
+      if (imgRef.current.naturalWidth === 0) {
+        setError(true);
+      }
+    }
+  }, [fallbackSrc]);
 
-  if (error || !fallbackSrc) {
+  // Treat literal 'null'/'undefined' strings as empty
+  const isInvalidSrc = !fallbackSrc || fallbackSrc === 'null' || fallbackSrc === 'undefined';
+
+  if (error || isInvalidSrc) {
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
     return (
-      <div className={`relative h-full w-full ${bgColor} transition-all duration-200 group-hover/cover:brightness-[0.62]`}>
+      <div className="relative h-full w-full transition-all duration-200 group-hover/cover:brightness-[0.62]">
+        <img 
+          src={`${basePath}/covers/default_thumbnail.png`} 
+          alt="Default Cover" 
+          className="absolute inset-0 h-full w-full object-cover" 
+        />
         <CoverOverlay name={name} id={id} />
       </div>
     );
@@ -49,13 +62,13 @@ export function CoverImage({ name, fallbackSrc, id }: CoverImageProps) {
   return (
     <div className="relative h-full w-full transition-all duration-200 group-hover/cover:brightness-[0.62]">
       <img
+        ref={imgRef}
         src={fallbackSrc}
         alt={name}
-        className="h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover"
         loading="lazy"
         onError={() => setError(true)}
       />
-      <CoverOverlay name={name} id={id} />
     </div>
   );
 }
