@@ -16,8 +16,16 @@ export class CategoriesGenerator implements Generator {
     }
 
     const items = Array.from(counts.entries()).map(([id, count]) => {
-      // Capitalize for title
-      const title = id.charAt(0).toUpperCase() + id.slice(1);
+      // Replace dashes with spaces and capitalize each word
+      const title = id
+        .split('-')
+        .map(word => {
+          if (word === 'ios') return 'iOS';
+          if (word === 'mcp') return 'MCP';
+          return word.charAt(0).toUpperCase() + word.slice(1);
+        })
+        .join(' ');
+        
       return { id, title, count };
     });
 

@@ -1,6 +1,6 @@
 source:
   repository: https://github.com/ayaansulman-elktech/lean-ai-factory
-  branch: main
+  branch: feat/library-improvements
 output:
   directory: generated
 deployment:

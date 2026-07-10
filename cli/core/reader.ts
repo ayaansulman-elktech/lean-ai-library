@@ -6,6 +6,7 @@ import { rm } from 'fs/promises';
 export interface ReaderOptions {
   local?: string;
   repo?: string;
+  branch?: string;
 }
 
 export class RepositoryReader {
@@ -44,11 +45,15 @@ export class RepositoryReader {
         }
       }
 
-      console.log(`Cloning repository ${this.options.repo}...`);
+      console.log(`Cloning repository ${this.options.repo}${this.options.branch ? ` (branch: ${this.options.branch})` : ''}...`);
       const git = simpleGit();
       
       try {
-        await git.clone(cloneUrl, this.tempDir);
+        if (this.options.branch) {
+          await git.clone(cloneUrl, this.tempDir, ['-b', this.options.branch]);
+        } else {
+          await git.clone(cloneUrl, this.tempDir);
+        }
       } catch (err: any) {
         // Obfuscate token in error message if it fails
         const errorMsg = err.message || String(err);

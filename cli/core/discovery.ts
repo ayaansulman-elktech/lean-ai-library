@@ -8,7 +8,7 @@ export interface DiscoveryOptions {
 
 const DEFAULT_OPTIONS: DiscoveryOptions = {
   ignoreDirs: ['.git', '.github', 'node_modules', 'dist', 'build', '.next', 'coverage', '__pycache__', 'venv', 'cli', 'src', 'public'],
-  indicatorFiles: ['article.json', 'README.md', 'SKILL.md', 'metadata.json', 'pyproject.toml', 'package.json']
+  indicatorFiles: ['block.json', 'article.json', 'README.md', 'SKILL.md', 'metadata.json', 'pyproject.toml', 'package.json']
 };
 
 export class AssetDiscovery {
