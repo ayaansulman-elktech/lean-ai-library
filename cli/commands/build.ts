@@ -21,7 +21,10 @@ export const buildCommand = new Command('build')
     }
 
     // Default to the repo in config
-    const readerOptions = { repo: config.source.repository };
+    const readerOptions = { 
+      repo: config.source.repository,
+      branch: config.source.branch
+    };
     const reader = new RepositoryReader(readerOptions);
     let repoDir: string;
 

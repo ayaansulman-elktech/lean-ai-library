@@ -7,6 +7,7 @@ import { PackageParser } from '../parsers/package.parser';
 import { PythonParser } from '../parsers/python.parser';
 import { GithubParser } from '../parsers/github.parser';
 import { ImageParser } from '../parsers/image.parser';
+import { BlockParser } from '../parsers/block.parser';
 
 export class ExtractionPipeline {
   private parsers: Parser[];
@@ -21,6 +22,7 @@ export class ExtractionPipeline {
       new PackageParser(),   // package.json
       new ReadmeParser(),    // README.md frontmatter
       new SkillParser(),     // SKILL.md frontmatter
+      new BlockParser(),     // block.json (High priority)
       new ArticleParser(),   // article.json (Highest priority)
       new ImageParser()      // Orthogonal concern
     ];

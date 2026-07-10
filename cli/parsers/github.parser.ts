@@ -16,29 +16,23 @@ export class GithubParser implements Parser {
 
     const pathStr = relativePath.toLowerCase();
 
-    // Map to specific categories based on path
-    if (pathStr.startsWith('agents') || pathStr.includes('/skills') || pathStr.includes('/agent-core') || pathStr.includes('/memory')) {
-      category = 'skills-library';
-      type = 'agent';
-    } else if (pathStr.startsWith('apps') || pathStr.includes('/ai-farm')) {
-      category = 'ai-farm';
-      type = 'application';
-    } else if (pathStr.startsWith('pipelines') || pathStr.startsWith('scripts') || pathStr.startsWith('design-system') || pathStr.startsWith('_templates') || pathStr.includes('/code') || pathStr.includes('/render')) {
-      category = 'code-library';
-      type = 'library';
-    } else if (pathStr.startsWith('reports') || pathStr.includes('/knowledge') || pathStr.includes('/rag')) {
-      category = 'corpus-knowledge';
-      type = 'library';
-    } else if (pathStr.includes('/models') || pathStr.includes('/ml-core')) {
-      category = 'model-library';
-      type = 'model';
-    } else if (pathStr.includes('/mcp')) {
-      category = 'mcp-library';
-      type = 'library';
+    // Extract category dynamically from the new Isomorphic structure: libraries/<category>/blocks/<id>
+    if (parts[0] === 'libraries' && parts.length >= 3) {
+      category = parts[1]; // e.g., 'agents', 'ios-ready', 'models'
+      // Assign types based on some simple heuristics or default to library
+      if (category === 'agents') type = 'agent';
+      else if (category === 'models') type = 'model';
+      else if (category === 'ios-ready' || category === 'ai-farm') type = 'application';
+      else type = 'library';
     } else {
-      // Fallback
-      category = 'code-library';
-      type = 'library';
+      // Fallback for root-level stuff if they still exist
+      if (pathStr.includes('agent')) {
+        category = 'agents';
+        type = 'agent';
+      } else {
+        category = 'code-library';
+        type = 'library';
+      }
     }
 
     return {

@@ -53,24 +53,21 @@ export function getCategories(): CategoryItem[] {
   // @ts-ignore
   const dynamicCategories: CategoryItem[] = categoriesJson.items || [];
   
-  const PREDEFINED_CATEGORIES = [
-    { id: 'model-library', title: 'Model Library', description: 'Explore various AI models and architectures.' },
-    { id: 'code-library', title: 'Code Library', description: 'Reusable code snippets and modules.' },
-    { id: 'corpus-knowledge', title: 'Corpus Knowledge', description: 'Datasets and structured knowledge bases.' },
-    { id: 'skills-library', title: 'Skills Library', description: 'Specific agent skills and capabilities.' },
-    { id: 'mcp-library', title: 'MCP Library', description: 'Machine Control Protocols and integrations.' },
-    { id: 'agents', title: 'Agents', description: 'Autonomous agents and related tools.' },
-    { id: 'ios-ready', title: 'iOS Ready', description: 'Lean Design reduces every application to its core value moment: the screen that creates understanding, the action that validates the use case, and the metric that determines what happens next.' },
-  ];
+  // Optional: Provide rich descriptions for known categories, but don't restrict to them!
+  const DESCRIPTIONS: Record<string, string> = {
+    'model-library': 'Explore various AI models and architectures.',
+    'code-library': 'Reusable code snippets and modules.',
+    'corpus-knowledge': 'Datasets and structured knowledge bases.',
+    'skills-library': 'Specific agent skills and capabilities.',
+    'mcp-library': 'Machine Control Protocols and integrations.',
+    'agents': 'Autonomous agents and related tools.',
+    'ios-ready': 'Production-ready iOS/Swift code tailored for Apple environments.'
+  };
 
-  // Merge them, prioritizing predefined, but keeping their dynamic counts
-  return PREDEFINED_CATEGORIES.map(predefined => {
-    const dynamic = dynamicCategories.find(d => d.id === predefined.id);
-    return {
-      ...predefined,
-      count: dynamic ? dynamic.count : 0
-    };
-  });
+  return dynamicCategories.map(category => ({
+    ...category,
+    description: DESCRIPTIONS[category.id] || `Browse all assets in the ${category.title} category.`
+  }));
 }
 
 export function getManifest(): ManifestData {
