@@ -41,6 +41,8 @@ jobs:
         
       # Now build the Next.js static site
       - name: Build with Next.js
+        env:
+          NEXT_PUBLIC_BASE_PATH: /lean-ai-library
         run: npx next build
         
       - name: Upload artifact
