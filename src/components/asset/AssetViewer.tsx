@@ -7,7 +7,6 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import { FileTreeNode } from '@/lib/types/asset';
-import { getAssetFileContent } from '@/app/actions';
 
 interface AssetViewerProps {
   category: string;
@@ -69,19 +68,30 @@ export function AssetViewer({ category, assetId, assetName, fileTree, readmeCont
         setMdContent(readmeContent);
       } else if (isSkill && skillContent) {
         setMdContent(skillContent);
-      } else {
+      } else if (repository && repository.url) {
         setIsLoadingMd(true);
-        getAssetFileContent(category, assetId, activeFile.path)
+        const rawBase = repository.url.replace('github.com', 'raw.githubusercontent.com').replace(/\.git$/, '');
+        const branch = repository.branch || 'main';
+        const mdPath = `${repository.path}/${activeFile.path}`;
+        const mdUrl = `${rawBase}/${branch}/${mdPath}`;
+        
+        fetch(mdUrl)
+          .then(res => {
+            if (!res.ok) throw new Error('Failed to fetch');
+            return res.text();
+          })
           .then((content) => {
             setMdContent(content);
           })
           .catch(() => setMdContent(null))
           .finally(() => setIsLoadingMd(false));
+      } else {
+        setMdContent(null);
       }
     } else {
       setMdContent(null);
     }
-  }, [isMd, isReadme, isSkill, activeFile, readmeContent, skillContent, category, assetId]);
+  }, [isMd, isReadme, isSkill, activeFile, readmeContent, skillContent, category, assetId, repository]);
 
   let pdfUrl = '';
   if (isPdf && activeFile && repository) {
