@@ -1,0 +1,18 @@
+{
+  "factoryData": {
+    "id": "patterns",
+    "name": "Patterns (Apple-DNA libraries)",
+    "type": "library",
+    "category": "code-library",
+    "description": "Reusable interaction / experience patterns drawn from Apple's design DNA. One subfolder per library: Each entry documents **what it is, when to use it, and the components/tokens it touches**. These feed the prototype + universe-enhancing design steps.",
+    "shortDescription": "Patterns (Apple-DNA libraries)",
+    "keywords": [],
+    "githubPath": "design-system/patterns",
+    "readme": "# Patterns (Apple-DNA libraries)\r\n\r\nReusable interaction / experience patterns drawn from Apple's design DNA. One subfolder\r\nper library:\r\n\r\n| Library | What it holds |\r\n|---|---|\r\n| `animation/` | motion patterns — transitions, springs, scroll-driven effects |\r\n| `continuous-experience/` | cross-device continuity — Handoff, Universal Clipboard, calls-into-app |\r\n| `enhance-experience/` | system integrations that elevate UX — Live Activities, App Intents, widgets, Siri |\r\n| `interaction-ideas/` | a catalog of interaction concepts to pull from per niche |\r\n\r\nEach entry documents **what it is, when to use it, and the components/tokens it touches**.\r\nThese feed the prototype + universe-enhancing design steps.\r\n",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": []
+  },
+  "localOverrides": {}
+}

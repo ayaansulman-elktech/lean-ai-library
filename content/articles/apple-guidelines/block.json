@@ -1,0 +1,20 @@
+{
+  "factoryData": {
+    "id": "apple-guidelines",
+    "name": "apple-guidelines",
+    "type": "library",
+    "category": "knowledge",
+    "description": "A lean-ai-factory block.",
+    "shortDescription": "Block for apple-guidelines",
+    "keywords": [
+      "apple guidelines"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/knowledge/blocks/apple-guidelines",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": []
+  },
+  "localOverrides": {}
+}

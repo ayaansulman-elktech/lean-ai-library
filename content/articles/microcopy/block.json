@@ -1,0 +1,23 @@
+{
+  "factoryData": {
+    "id": "microcopy",
+    "name": "microcopy",
+    "type": "agent",
+    "category": "agents",
+    "description": "See SKILL.md for details.",
+    "shortDescription": "Block for microcopy",
+    "keywords": [
+      "microcopy"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/agents/blocks/microcopy",
+    "skill": "# Microcopy agent\r\n\r\nStep 4 of the design-automation pipeline (deck p.60): the words. LLM writes concise, benefit-led\r\ncopy per screen slot; a deterministic checker enforces the HIG rules (see `references/voice-and-tone.md`)\r\nand re-asks once on failure.\r\n\r\n```python\r\nfrom microcopy import MicrocopyAgent\r\nres = MicrocopyAgent(ctx).run({\r\n    \"spec\": wireframe_result[\"spec\"],     # {screens: [...]} from the wireframing agent\r\n    \"persona\": \"…\", \"voice\": \"warm, clear\",\r\n    \"app\": \"ColorMatching\",\r\n})\r\nres.output[\"copy\"]         # {screen_id: {title, elements{}, actions{}, links{}}} -> feed swiftui-gen\r\nres.output[\"all_passed\"]   # gate\r\n```\r\n\r\n**Rules enforced:** title ≤ 40 chars; button labels 1–4 words, ≤ 22 chars, no trailing period,\r\nnever ALL CAPS; every wireframe element gets copy. Generation is **per screen** so each can be\r\nreviewed and adjusted independently.\r\n",
+    "assets": [],
+    "examples": [],
+    "dependencies": [
+      "pydantic>=2.6"
+    ],
+    "related": []
+  },
+  "localOverrides": {}
+}

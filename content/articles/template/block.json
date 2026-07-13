@@ -1,0 +1,21 @@
+{
+  "factoryData": {
+    "id": "_template",
+    "name": "_template",
+    "type": "model",
+    "category": "models",
+    "description": "Longer description: what it does, how, and any caveats.",
+    "shortDescription": "one-line description shown in the gallery",
+    "keywords": [
+      "one line: what this model predicts / produces"
+    ],
+    "version": "0.0.0",
+    "githubPath": "libraries/models/blocks/_template",
+    "readme": "# _template (model card)\r\n\r\nReference block — copy this folder to add a model, then fill in `block.json` and `src/`.\r\n\r\n- **Task:** <what it predicts / produces>\r\n- **Inputs / outputs:** <image → mask / features / …>\r\n- **Status:** `raw` (Python adapter + offline mock). Promote to `ready` (CoreML) only when an app\r\n  needs it on device.\r\n- **Source / license:** <repo url> / <license>\r\n- **Apple-native:** <does Vision/CoreML/ARKit already do this? verdict + why the model is still needed>\r\n\r\n## Use\r\n```python\r\nfrom blocks._template.src import build\r\nmodel = build(offline=True)     # deterministic mock (real backend when weights are on the box)\r\nmodel.predict(\"input\")\r\n```\r\n\r\n## Wiring the real backend\r\nImplement `TemplateModel.predict` in `src/model.py` (lazy-import torch/coreml), and make\r\n`is_available()` return True only when deps + weights are present. Until then, `build()` returns\r\nthe mock so the block stays green in CI.\r\n",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": []
+  },
+  "localOverrides": {}
+}

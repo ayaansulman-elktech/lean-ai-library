@@ -1,0 +1,19 @@
+{
+  "factoryData": {
+    "id": "rag",
+    "name": "rag",
+    "type": "library",
+    "category": "code-library",
+    "description": "A small, **dependency-free** retrieval library for grounding agents in a document corpus. - **`Corpus`** — documents chunked into pieces, each carrying its `source` (for citations). - **`load_corpus(dir)`** — index every `*.md` (uses a `source:` line as the citation URL). - **`LexicalRetriever`** — TF-IDF cosine over chunks. No external deps; a solid baseline for a focused doc set and fully offline-testable. - **`Retriever`** protocol — the seam for a future `EmbeddingRetriever` (semantic recall via the ml-core providers) that drops in without changing callers. Used by `agents/apple-docs-rag` to answer Apple-development questions with citations.",
+    "shortDescription": "rag",
+    "keywords": [],
+    "version": "0.1.0",
+    "githubPath": "libraries/rag",
+    "readme": "# rag\r\n\r\nA small, **dependency-free** retrieval library for grounding agents in a document corpus.\r\n\r\n- **`Corpus`** — documents chunked into pieces, each carrying its `source` (for citations).\r\n- **`load_corpus(dir)`** — index every `*.md` (uses a `source:` line as the citation URL).\r\n- **`LexicalRetriever`** — TF-IDF cosine over chunks. No external deps; a solid baseline for a\r\n  focused doc set and fully offline-testable.\r\n- **`Retriever`** protocol — the seam for a future `EmbeddingRetriever` (semantic recall via the\r\n  ml-core providers) that drops in without changing callers.\r\n\r\n```python\r\nfrom rag import load_corpus, LexicalRetriever\r\nr = LexicalRetriever(load_corpus(\"path/to/docs\"))\r\nfor chunk, score in r.search(\"how does Guideline 4.3 treat variant apps?\", k=4):\r\n    print(score, chunk.title, chunk.source)\r\n```\r\n\r\nUsed by `agents/apple-docs-rag` to answer Apple-development questions with citations.\r\n",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": []
+  },
+  "localOverrides": {}
+}

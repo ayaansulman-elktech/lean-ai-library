@@ -1,0 +1,26 @@
+{
+  "factoryData": {
+    "id": "sum",
+    "name": "sum",
+    "type": "model",
+    "category": "models",
+    "description": "SUM (Saliency Unification through Mamba) predicts a human-attention heatmap for a still image, with a UI/web-page condition tuned for interface screens. Used by ux-audit to check the primary action is the visual hot-spot. Real weights run in the AI-farm; offline, a real pixel-based classical model or a deterministic mock stands in. The adapter is the shared vis_models.saliency core, re-exported here.",
+    "shortDescription": "Predicts where viewers look on a still screen or image.",
+    "keywords": [
+      "image saliency (still-screen attention)"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/models/blocks/sum",
+    "readme": "# sum (model card)\r\n\r\nStill-image saliency — where viewers look on a screen\r\n([Arhosseini77/SUM](https://github.com/Arhosseini77/SUM), *Saliency Unification through Mamba*).\r\n\r\n- **Task:** predict a human-attention heatmap for a still screen/image (UI/web-page condition).\r\n- **Inputs:** an image (screen or screenshot). **Outputs:** a `vis_models` `SaliencyMap`.\r\n- **Status:** `raw` — the adapter is the shared `vis_models.saliency` core (used by ux-audit). Real\r\n  `.pth` weights run in the AI-farm (`ai-farm/raw/SUM`); offline it falls back to a real\r\n  pixel-based classical model, or a deterministic mock when forced.\r\n- **Apple-native:** *partial* — Vision's `VNGenerateAttentionBasedSaliencyImageRequest` gives\r\n  general on-device saliency, but not a UI-tuned model; SUM's interface condition is why it's used.\r\n\r\n## Use\r\n```python\r\nfrom blocks.sum.src import build\r\nfrom blocks.sum.src.metrics import analyze\r\nfrom vis_models.saliency import Region\r\n\r\nmodel = build()                              # real SUM on the farm; classical pixel model elsewhere\r\nsmap  = model.predict(\"screen.png\")\r\nanalyze(smap, Region(0.25, 0.80, 0.50, 0.12))   # does attention peak on the primary action?\r\n```\r\n\r\nThe SUM vs ViNet split: **SUM = still screens, ViNet = video/onboarding clips.**\r\n\r\n## Running the real model (AI-farm)\r\nFetch the SUM repo + checkpoint into `ai-farm/raw/SUM/`, install `torch`, then `build()` returns\r\nthe real `SUMSaliencyModel` (`is_available()` gates the fallback).\r\n",
+    "assets": [
+      {
+        "src": "cover.svg",
+        "alt": "cover"
+      }
+    ],
+    "examples": [],
+    "dependencies": [],
+    "related": []
+  },
+  "localOverrides": {}
+}

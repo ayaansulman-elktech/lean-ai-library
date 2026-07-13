@@ -1,0 +1,26 @@
+{
+  "factoryData": {
+    "id": "ux_position_mask",
+    "name": "ux-position-mask",
+    "type": "library",
+    "category": "code",
+    "description": "Audits which elements of a screen are in good vs dangerous positions. Core rules (`audit`, pure stdlib): given elements with a role (primary/secondary/content) and a normalized box, return a per-element verdict (good/ok/dangerous) with reasons plus a score/grade — thumb-reach ergonomics (primary actions belong lower-center), rule-of-thirds active zones (key content where the eye lands first), and safe areas (status bar/notch, home indicator, edges). For an arbitrary screen *design*, `audit_image(path)` first runs a classical, offline detector (background subtraction + connected components + role heuristics; Pillow/numpy/scipy) to find the elements, then scores them. Migration path: when auditing *generated* screens, replace detection by reading element boxes from the known layout — the rules stay the same.",
+    "shortDescription": "Audit a screen design: detect its elements and flag which sit in good/dangerous positions (thumb reach, active zones, safe areas).",
+    "keywords": [
+      "audit which screen elements sit in good vs dangerous positions"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/code/blocks/ux_position_mask",
+    "readme": "# ux-position-mask (code block)\r\n\r\nAudits a screen design: **which elements sit in good vs dangerous positions.** Two layers:\r\n\r\n- **`audit(elements)`** — the pure, stdlib rules engine. Maps each element onto a UX zone mask\r\n  (thumb reach, rule-of-thirds active zones, safe areas) → per-element verdict (good / ok /\r\n  dangerous) + reasons + score/grade. Inputs: `[{name, role, box:[x,y,w,h]}]`, normalized `[0,1]`,\r\n  origin top-left. Roles: `primary` (main CTA), `secondary` (supporting), `content` (hero/text/media).\r\n- **`audit_image(path)`** — for an arbitrary screen **design/screenshot**: a classical, offline\r\n  detector (background subtraction → connected components → role heuristics; Pillow/numpy/scipy)\r\n  finds the elements, then `audit` scores them. Best-effort — correct it in the tester UI.\r\n\r\n**Outputs:** `{ elements:[{verdict, reach, attention, reasons}], flags, score, grade, detected }`.\r\n\r\n**First needed by:** UX auditing (code.md Task 4). Complements the `ux-audit` agent's saliency check.\r\n\r\n**Migration path:** when auditing *generated* screens, drop `audit_image`'s detection and feed the\r\nelement boxes from the known layout into `audit` — the rules don't change.\r\n\r\n## The rules\r\nGrounded in the **Design Composition** knowledge corpus (`../../../knowledge/composition` — active\r\nvs passive zones, rule of thirds: *\"place header text, hero images, or CTA buttons in the active\r\nzones\"*) and the standard mobile thumb-zone reachability map.\r\n\r\n- **Thumb reach** (radial, one-handed — the dominant ~49% grip): a circular comfort zone centered\r\n  in the **lower-middle** of the screen (where the thumb rests and sweeps). The green **EASY**\r\n  circle sits lower-center and reaches up to about the middle; the yellow **OK** ring surrounds it;\r\n  the **top — especially the top corners — is red HARD** (out of reach one-handed). Primary actions\r\n  belong in the easy circle.\r\n- **Active zones** (rule of thirds / F-pattern top-weighting): the upper region and thirds lines get\r\n  the most attention → key content belongs there; passive zones get less.\r\n- **Safe areas**: elements crossing the status bar/notch, the home indicator, or the screen edges\r\n  are flagged dangerous (may be clipped or hard to tap).\r\n\r\n## Use\r\n```python\r\nfrom blocks.ux_position_mask.src.ux_position_mask import audit\r\naudit([{\"name\": \"Buy\", \"role\": \"primary\", \"box\": [0.2, 0.82, 0.6, 0.08]}])\r\n# -> primary action in the natural thumb zone -> \"good\"\r\n```\r\n\r\nGrounded in `../../../knowledge/composition` (active/passive zones, rule of thirds). Deterministic\r\nand offline — no model, no LLM.\r\n",
+    "assets": [
+      {
+        "src": "cover.svg",
+        "alt": "cover"
+      }
+    ],
+    "examples": [],
+    "dependencies": [],
+    "related": []
+  },
+  "localOverrides": {}
+}

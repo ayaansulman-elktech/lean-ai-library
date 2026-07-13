@@ -69,65 +69,51 @@ export const buildCommand = new Command('build')
       console.log(chalk.gray('Normalizing assets...'));
       console.log(chalk.green(`✓ Generated ${assets.length} Asset objects\n`));
 
-      console.log(chalk.gray('Generating static content...'));
-      
-      const outputDir = path.resolve(process.cwd(), config.output.directory);
-      
-      // Compute repo info once
-      let branch = config.source.branch || 'main';
-      let commit = 'unknown';
-      try {
-        const simpleGit = (await import('simple-git')).default;
-        const git = simpleGit(repoDir);
-        branch = (await git.branchLocal()).current;
-        commit = await git.revparse(['HEAD']);
-      } catch (e) {}
+      console.log(chalk.gray('Upserting assets to content/articles/...'));
+      const contentDir = path.join(process.cwd(), 'content', 'articles');
+      if (!fs.existsSync(contentDir)) fs.mkdirSync(contentDir, { recursive: true });
 
-      const ctx = {
-        assets,
-        outputDir,
-        sourceDir: repoDir,
-        repoInfo: {
-          branch,
-          commit,
-          url: config.source.repository
-        },
-        stats: { assetsCopied: 0 }
-      };
+      const slugify = (val: string) => val.trim().toLowerCase().replace(/[^a-z0-9_-]+/g, '-').replace(/^[-_]+|[-_]+$/g, '');
 
-      const { CatalogGenerator } = await import('../generators/catalog.generator');
-      const { CategoriesGenerator } = await import('../generators/categories.generator');
-      const { SearchGenerator } = await import('../generators/search.generator');
-      const { ManifestGenerator } = await import('../generators/manifest.generator');
-      const { ContentGenerator } = await import('../generators/content.generator');
-      const { AssetsGenerator } = await import('../generators/assets.generator');
+      let upsertedCount = 0;
+      for (const asset of assets) {
+        const slug = slugify(asset.id || asset.name);
+        if (!slug) continue;
 
-      const generators = [
-        new CatalogGenerator(),
-        new CategoriesGenerator(),
-        new SearchGenerator(),
-        new ManifestGenerator(),
-        new ContentGenerator(),
-        new AssetsGenerator()
-      ];
+        const assetDir = path.join(contentDir, slug);
+        if (!fs.existsSync(assetDir)) fs.mkdirSync(assetDir, { recursive: true });
 
-      const startGenTime = Date.now();
-      for (const gen of generators) {
-        await gen.generate(ctx);
+        const blockPath = path.join(assetDir, 'block.json');
+        const legacyPath = path.join(assetDir, 'article.json');
+
+        let existing: any = {};
+        if (fs.existsSync(blockPath)) {
+          existing = JSON.parse(fs.readFileSync(blockPath, 'utf-8'));
+        } else if (fs.existsSync(legacyPath)) {
+          existing = { localOverrides: JSON.parse(fs.readFileSync(legacyPath, 'utf-8')) };
+        }
+
+        const newBlock = {
+          factoryData: asset,
+          localOverrides: existing.localOverrides || {}
+        };
+
+        fs.writeFileSync(blockPath, JSON.stringify(newBlock, null, 2));
+        upsertedCount++;
       }
+      
+      console.log(chalk.green(`✓ Upserted ${upsertedCount} assets\n`));
+
+      console.log(chalk.gray('Generating frontend indexes...'));
+      
+      const { IndexGenerator } = await import('../generators/index.generator');
+      const indexGen = new IndexGenerator();
+      const startGenTime = Date.now();
+      await indexGen.generate({} as any);
       const buildDuration = ((Date.now() - startGenTime) / 1000).toFixed(1);
 
-      console.log(chalk.green(`✓ Generated catalog.json`));
-      console.log(chalk.green(`✓ Generated categories.json`));
-      console.log(chalk.green(`✓ Generated search.json`));
-      console.log(chalk.green(`✓ Generated manifest.json`));
-      console.log(chalk.green(`✓ Copied ${ctx.stats.assetsCopied} assets\n`));
-
-      // Summary
-      const counts: Record<string, number> = {};
-      assets.forEach(a => {
-        counts[a.type] = (counts[a.type] || 0) + 1;
-      });
+      console.log(chalk.green(`✓ Generated data/articles.json`));
+      console.log(chalk.green(`✓ Generated data/categories.json\n`));
 
       const uniqueCategories = new Set(assets.map(a => a.category)).size;
 
@@ -135,12 +121,8 @@ export const buildCommand = new Command('build')
       console.log(chalk.cyan(`Repository scanned`));
       console.log(`${chalk.yellow(assets.length)} assets`);
       console.log(`${chalk.yellow(uniqueCategories)} categories\n`);
-      
-      Object.entries(counts).forEach(([type, count]) => {
-        console.log(`  ${type}: ${chalk.yellow(count)}`);
-      });
 
-      console.log(chalk.gray(`\nCompleted in ${buildDuration}s\n`));
+      console.log(chalk.gray(`Completed in ${buildDuration}s\n`));
       
     } catch (error) {
       console.error(chalk.red('\nBuild failed:'), error);

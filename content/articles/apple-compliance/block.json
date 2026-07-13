@@ -1,0 +1,24 @@
+{
+  "factoryData": {
+    "id": "apple-compliance",
+    "name": "apple-compliance",
+    "type": "agent",
+    "category": "agents",
+    "description": "See README.md for details.",
+    "shortDescription": "Block for apple-compliance",
+    "keywords": [
+      "apple compliance"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/agents/blocks/apple-compliance",
+    "readme": "# Apple Compliance Agent\r\n\r\n**Agent Core:** `apple-compliance`\r\n\r\n## Overview\r\nThe Apple Compliance Agent is an automated gatekeeper designed to enforce Apple's App Store Review Guidelines, with a specific focus on **Guideline 4.3 (Spam)** and design minimums.\r\n\r\nBefore any Sprint App is shipped to the App Store, this agent reviews the UI/UX flows and feature sets to ensure the application provides enough unique value and adheres to Apple's strict minimum functionality requirements.\r\n\r\n## Architecture\r\n- Subclasses the core `Agent` framework from `libraries/agent-core`.\r\n- Plugs directly into the `sprint` pipeline to act as a go/no-go gate.\r\n- Operates offline and keylessly during local CI testing.\r\n\r\n## Capabilities\r\n- **Static Analysis:** Evaluates the product charter against known App Store rejection patterns.\r\n- **Design Review:** Flags applications that look like simple web wrappers or duplicate existing functionality without added value.\r\n",
+    "skill": "# Apple Compliance gate\r\n\r\nThe existential gate for a high-volume app factory: **Guideline 4.3 (Spam)** bans near-duplicate\r\napps that differ only cosmetically. This agent (`src/apple_compliance/`, on `agent-core`) reviews\r\nan app descriptor and returns a structured `ComplianceReport`.\r\n\r\nTwo layers (like security-review):\r\n- **Deterministic checks** (`checks.py`, no LLM) — a **real 4.3 duplicate scan** that measures\r\n  lexical similarity of the app against its **sibling catalog** (not a self-reported \"how I differ\"\r\n  field), plus 2.3 metadata, 4.2 native/min-functionality (web-wrapper detection), 3.1 external\r\n  payments, and 5.1 privacy. Any **high-severity** finding **hard-blocks** regardless of the model.\r\n- **LLM review** for the judgement calls, given the deterministic findings as context.\r\n\r\n```python\r\nfrom apple_compliance import AppleComplianceAgent\r\nagent = AppleComplianceAgent(ctx, catalog=[sibling1, sibling2, ...])   # catalog powers the 4.3 scan\r\nres = agent.run({\"name\": ..., \"value\": ..., \"features\": [...], \"category\": ...})\r\nif not res.output[\"passes\"]:   # gate: block submission\r\n    ...\r\n```\r\nThe sibling catalog can also be passed per-run as the task's `\"siblings\"` key.\r\n\r\n- `verdict`: pass | flag | fail · `risk_level`: low | medium | high · `findings[]` (LLM + deterministic).\r\n- `static_findings[]`: the deterministic-only findings; any `high` here hard-blocks.\r\n- `passes()` blocks on a `fail`, any `high` overall risk, or any high-severity deterministic finding.\r\n- Canonical source: developer.apple.com/app-store/review/guidelines (see `references/guidelines.md`).\r\n",
+    "assets": [],
+    "examples": [],
+    "dependencies": [
+      "pydantic>=2.6"
+    ],
+    "related": []
+  },
+  "localOverrides": {}
+}

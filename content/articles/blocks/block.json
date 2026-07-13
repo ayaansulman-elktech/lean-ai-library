@@ -1,0 +1,18 @@
+{
+  "factoryData": {
+    "id": "blocks",
+    "name": "Model blocks",
+    "type": "model",
+    "category": "models",
+    "description": "Each model is **one self-contained folder** — the V1 architecture in [`../ARCHITECTURE.md`](../ARCHITECTURE.md). This folder holds the blocks; `_template/` is the canonical starting point (copy it to add a model).",
+    "shortDescription": "Model blocks",
+    "keywords": [],
+    "githubPath": "libraries/models/blocks",
+    "readme": "# Model blocks\r\n\r\nEach model is **one self-contained folder** — the V1 architecture in\r\n[`../ARCHITECTURE.md`](../ARCHITECTURE.md). This folder holds the blocks; `_template/` is the\r\ncanonical starting point (copy it to add a model).\r\n\r\n## Create a block\r\n```\r\ncp -r _template <model-name>          # then edit block.json + src/\r\n```\r\n\r\nMinimum required files (what `_template/` contains):\r\n\r\n| Path | Role |\r\n|---|---|\r\n| `block.json` | manifest — the single source of truth (name, version, status, adapter, `deps`, `apple_native`, weights…) |\r\n| `README.md` | model card (task, inputs/outputs, license, Apple-native verdict) |\r\n| `cover.svg` | gallery cover |\r\n| `src/model.py` | real adapter — lazy heavy imports (torch/coreml); `is_available()` gates real vs mock |\r\n| `src/mock.py` | deterministic offline stand-in — no weights, runs in CI |\r\n| `src/metrics.py` | optional post-processing |\r\n| `src/__init__.py` | exposes `build(offline=False)` — the shared factory |\r\n| `tests/test_model.py` | offline, mock-backed, green in CI |\r\n| `swift/Model.swift` | on-device wrapper — only when promoted to `status: ready` |\r\n| `assets/` | optional sample I/O |\r\n\r\n## The contract every block satisfies\r\n```python\r\nfrom blocks.<name>.src import build\r\nmodel = build(offline=False)     # real backend if weights present, else the mock\r\nmodel.predict(inputs)            # one typed entry method\r\n```\r\nIdentical shape across blocks → an MCP server is a thin generic wrapper (`block.json` → tool\r\nschema → `predict`). See `ARCHITECTURE.md` §4.\r\n\r\nBlocks never import each other; related blocks share a **common core** (e.g. `vis_models.saliency`)\r\ndeclared in `block.json`'s `deps`. So each block is independently usable, and MCP-ifying one means\r\nserving the block **plus its `deps`** — see `ARCHITECTURE.md` §4b.\r\n\r\n## Testing\r\nBlocks are tested together as one package: `cd libraries/models/blocks && python -m pytest`\r\n(this dir is in `scripts/test-all.sh` and CI). The `pyproject.toml` here puts the block tree and\r\n`vis_models` on the path, so tests import `blocks.<name>.src.*`.\r\n\r\n## raw → ready\r\n`status: raw` = Python adapter + mock (default). Promote to `ready` (add `swift/`, build a CoreML\r\n`.mlpackage` under `../../ai-farm/ready/`) only when an app needs the model on device.\r\n",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": []
+  },
+  "localOverrides": {}
+}

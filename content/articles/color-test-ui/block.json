@@ -1,0 +1,18 @@
+{
+  "factoryData": {
+    "id": "color-test-ui",
+    "name": "Color test UI",
+    "type": "library",
+    "category": "code",
+    "description": "A self-contained `index.html` (no server) for visually testing the color code: - **Extract** — choose an image → see its dominant colors + percentages. - **Match** — pick a base color → see every harmony (complementary, analogous, triadic, split-complementary, tetradic, monochromatic) as swatches. Open `index.html` in any browser. The JS **mirrors** `color_extraction.py` / `color_matching.py` (same quantization + hue math) so it's a faithful visual check — the Python remains the source of truth for production.",
+    "shortDescription": "Color test UI",
+    "keywords": [],
+    "githubPath": "libraries/code/color-test-ui",
+    "readme": "# Color test UI\r\n\r\nA self-contained `index.html` (no server) for visually testing the color code:\r\n1. **Extract** — choose an image → see its dominant colors + percentages.\r\n2. **Match** — pick a base color → see every harmony (complementary, analogous, triadic,\r\n   split-complementary, tetradic, monochromatic) as swatches.\r\n\r\nOpen `index.html` in any browser. The JS **mirrors** `color_extraction.py` / `color_matching.py`\r\n(same quantization + hue math) so it's a faithful visual check — the Python remains the source of\r\ntruth for production.\r\n",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": []
+  },
+  "localOverrides": {}
+}

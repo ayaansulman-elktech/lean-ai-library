@@ -1,0 +1,18 @@
+{
+  "factoryData": {
+    "id": "boilerplate",
+    "name": "Design project boilerplate",
+    "type": "library",
+    "category": "code-library",
+    "description": "The starter kit every new app's design copies: - the lean component set (atoms → templates) it will actually use, - the template screens (onboarding, paywall, core, settings), - a `tokens.override.json` skeleton for the universe, - the design checklist (hierarchy, contrast, scannability, flow…). Spinning up a niche = **copy this → generate the universe** (`tokens.override.json` + moodboard via the purity tool) → apply. Keeps every app Apple-native and consistent from screen one.",
+    "shortDescription": "Design project boilerplate",
+    "keywords": [],
+    "githubPath": "design-system/boilerplate",
+    "readme": "# Design project boilerplate\r\n\r\nThe starter kit every new app's design copies:\r\n\r\n- the lean component set (atoms → templates) it will actually use,\r\n- the template screens (onboarding, paywall, core, settings),\r\n- a `tokens.override.json` skeleton for the universe,\r\n- the design checklist (hierarchy, contrast, scannability, flow…).\r\n\r\nSpinning up a niche = **copy this → generate the universe** (`tokens.override.json` +\r\nmoodboard via the purity tool) → apply. Keeps every app Apple-native and consistent from\r\nscreen one.\r\n",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": []
+  },
+  "localOverrides": {}
+}

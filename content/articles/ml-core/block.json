@@ -1,0 +1,23 @@
+{
+  "factoryData": {
+    "id": "ml-core",
+    "name": "ml-core",
+    "type": "library",
+    "category": "code-library",
+    "description": "The factory's **shared LLM layer** — one tested, provider-agnostic gateway + cost meter + tracking that every agent and tool depends on. Extracted from the skill-optimizer so there's a single, hardened seam for all LLM calls (no per-tool reinvention).",
+    "shortDescription": "ml-core",
+    "keywords": [],
+    "version": "0.1.0",
+    "githubPath": "libraries/ml-core",
+    "readme": "# ml-core\r\n\r\nThe factory's **shared LLM layer** — one tested, provider-agnostic gateway + cost meter +\r\ntracking that every agent and tool depends on. Extracted from the skill-optimizer so there's\r\na single, hardened seam for all LLM calls (no per-tool reinvention).\r\n\r\n## What it gives you\r\n- **`build_gateway(cfg, meter, offline=…)`** → `gateway.complete(alias, messages)` across all\r\n  providers (Claude / Codex / Grok / Kimi / DeepSeek), with retries/backoff and param-dropping.\r\n- **`CostMeter`** — tokens / USD / latency per call, per model, with a hard budget cap.\r\n- **`build_tracker(...)`** — MLflow wrapper (`log_params/metrics/text`), degrades to a no-op\r\n  if MLflow isn't installed.\r\n- **`load_env()`** — pulls provider keys from `.env`.\r\n- **`MockGateway`** — deterministic offline backend (no keys, no spend) for tests/CI.\r\n\r\n## Use it\r\n```python\r\nfrom ml_core import load_env, load_providers, CostMeter, build_gateway\r\n\r\nload_env()                                   # reads .env (provider keys)\r\ncfg   = load_providers(\"providers.yaml\")\r\nmeter = CostMeter(budget_usd=5.0)\r\ngw    = build_gateway(cfg, meter, offline=False)   # offline=True -> MockGateway, no keys\r\n\r\nresp = gw.complete(\"deepseek\", [{\"role\": \"user\", \"content\": \"hello\"}])\r\nprint(resp.text, meter.summary())\r\n```\r\n\r\n## Design notes\r\n- **Decoupled:** ml-core knows nothing about skills/agents — just LLM plumbing, cost, config,\r\n  tracking. Agents import it; it imports nothing of theirs.\r\n- **Lazy deps:** `litellm` and `mlflow` are imported only when actually used, so `import ml_core`\r\n  and the whole offline/mock path need only `pydantic` + `pyyaml`.\r\n- **Pools** (`smart`/`fast`/`vision` in `providers.yaml`) are caller-side groupings; the gateway\r\n  dispatches a single alias — pool selection is the caller's job.\r\n\r\n## Test (offline, no keys)\r\n```bash\r\ncd libraries/ml-core\r\npython -m pytest          # uses the mock gateway; no providers, no spend\r\n```\r\n",
+    "assets": [],
+    "examples": [],
+    "dependencies": [
+      "pydantic>=2.6",
+      "pyyaml>=6.0",
+      "python-dotenv>=1.0"
+    ],
+    "related": []
+  },
+  "localOverrides": {}
+}

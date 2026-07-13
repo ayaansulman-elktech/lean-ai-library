@@ -1,0 +1,24 @@
+{
+  "factoryData": {
+    "id": "apple-docs-rag",
+    "name": "apple-docs-rag",
+    "type": "agent",
+    "category": "agents",
+    "description": "See README.md for details.",
+    "shortDescription": "Block for apple-docs-rag",
+    "keywords": [
+      "apple docs rag"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/agents/blocks/apple-docs-rag",
+    "readme": "# Apple Docs RAG Agent\r\n\r\n**Agent Core:** `apple-docs-rag`\r\n\r\n## Overview\r\nThe Apple Docs RAG (Retrieval-Augmented Generation) Agent grounds LLM responses using official Apple documentation. It ensures that any technical or design advice provided to the sprint teams strictly adheres to Apple's Human Interface Guidelines (HIG) and developer documentation.\r\n\r\n## Architecture\r\n- Subclasses the core `Agent` framework from `libraries/agent-core`.\r\n- Leverages the dependency-free `rag` library (TF-IDF retrieval core) to index and search Apple Developer documentation.\r\n- Supports offline mocked responses for local CI without needing LLM API keys.\r\n\r\n## Capabilities\r\n- **Citations:** Every generated answer includes exact citations back to the source Apple documentation.\r\n- **Pluggable Retrieval:** Currently relies on a lightweight TF-IDF corpus, built to easily swap to embedding-based retrieval in the future.\r\n",
+    "skill": "# Apple-docs RAG\r\n\r\nGrounds agents in real Apple docs instead of letting them hallucinate. Retrieves the most\r\nrelevant chunks from `corpus/` and answers **using only that context**, with `[Title]` citations;\r\nreturns `grounded: false` (\"Not found in the indexed Apple docs.\") when the corpus doesn't cover it.\r\n\r\n```python\r\nfrom apple_docs_rag import AppleDocsRAGAgent\r\nres = AppleDocsRAGAgent(ctx).run(\"Does Core ML run on device?\")\r\nres.output[\"answer\"]      # with [Core ML] citation\r\nres.output[\"grounded\"]    # False if not in the corpus\r\nres.output[\"sources\"]     # the source URLs\r\n```\r\n\r\n- **Corpus** (`corpus/*.md`): App Store guidelines (4.3-focused), Core ML, Foundation Models, HIG.\r\n  Add more docs by dropping `*.md` files (a `source:` line becomes the citation URL).\r\n- **Retrieval**: `libraries/rag` TF-IDF (no deps, offline). Pluggable seam for an embedding\r\n  retriever later (semantic recall via the ml-core providers).\r\n",
+    "assets": [],
+    "examples": [],
+    "dependencies": [
+      "pydantic>=2.6"
+    ],
+    "related": []
+  },
+  "localOverrides": {}
+}

@@ -1,0 +1,18 @@
+{
+  "factoryData": {
+    "id": "skills",
+    "name": "Skill library",
+    "type": "library",
+    "category": "code-library",
+    "description": "Reusable skills built from `_templates/skill` per the `CHARTER.md`. One folder per skill. - Cross-app skills live here. - Project-specific skills may live with their app instead. The four running tools (`wireframing`, `skill-optimizer`, `ux-audit`, `tester`) live under `/agents` because they are agents; pure skills land here.",
+    "shortDescription": "Skill library",
+    "keywords": [],
+    "githubPath": "libraries/skills",
+    "readme": "# Skill library\r\n\r\nReusable skills built from `_templates/skill` per the `CHARTER.md`. One folder per skill.\r\n\r\n- Cross-app skills live here.\r\n- Project-specific skills may live with their app instead.\r\n\r\nThe four running tools (`wireframing`, `skill-optimizer`, `ux-audit`, `tester`) live\r\nunder `/agents` because they are agents; pure skills land here.\r\n",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": []
+  },
+  "localOverrides": {}
+}

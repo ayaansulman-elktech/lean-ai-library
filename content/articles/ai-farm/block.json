@@ -1,0 +1,18 @@
+{
+  "factoryData": {
+    "id": "ai-farm",
+    "name": "AI Farm",
+    "type": "library",
+    "category": "code-library",
+    "description": "Productionized models, each packaged as an MCP-compatible capability.",
+    "shortDescription": "AI Farm",
+    "keywords": [],
+    "githubPath": "libraries/ai-farm",
+    "readme": "# AI Farm\r\n\r\nProductionized models, each packaged as an MCP-compatible capability.\r\n\r\n## Raw → Ready\r\n\r\n- `raw/<model>/` — the model + a wrapper + a one-page card (inputs/outputs/license).\r\n- `ready/<model>` — the Apple-native build (CoreML / MLX) when an app needs it on-device.\r\n\r\nPromote `raw → ready` only when an app actually needs it on device.\r\n\r\n## registry.json\r\n\r\nThe single index agents read to discover capabilities. One entry per model:\r\n\r\n```json\r\n{ \"name\": \"\", \"task\": \"\", \"status\": \"raw | ready\", \"source\": \"\", \"license\": \"\", \"mcp\": \"\" }\r\n```\r\n\r\n## Phase-1 scope\r\n\r\nOnly `skin-tone-cv` goes fully Raw→Ready (the reference example). `SUM` / `ViNet`\r\nstay raw (used by `ux-audit` on host). Everything else is added on demand — do not\r\npre-fill the shelf.\r\n",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": []
+  },
+  "localOverrides": {}
+}

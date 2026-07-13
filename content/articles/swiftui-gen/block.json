@@ -1,0 +1,23 @@
+{
+  "factoryData": {
+    "id": "swiftui-gen",
+    "name": "swiftui-gen",
+    "type": "agent",
+    "category": "agents",
+    "description": "See SKILL.md for details.",
+    "shortDescription": "Block for swiftui-gen",
+    "keywords": [
+      "swiftui gen"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/agents/blocks/swiftui-gen",
+    "skill": "# SwiftUI generation agent\r\n\r\nThe **prototype** step of the design-automation pipeline (deck p.60 step 2): apply the design\r\nsystem onto the wireframe. LLM writes the view; a deterministic checker gates it and, on failure,\r\nre-asks once with the issues.\r\n\r\n```python\r\nfrom swiftui_gen import SwiftUIGenAgent\r\nres = SwiftUIGenAgent(ctx, out_dir=\"apps/color-matching/Sources\").run({\r\n    \"spec\": wireframe_result[\"spec\"],      # {screens: [...]} from the wireframing agent\r\n    \"tokens\": token_names,                  # from design-system/tokens/build/Tokens.swift\r\n    \"app\": \"ColorMatching\",\r\n    \"copy\": {\"onboarding\": {...}},          # optional micro-copy per screen (from microcopy agent)\r\n})\r\nres.output[\"files\"]        # [{screen_id, view, filename, swift, passed, issues}]\r\nres.output[\"all_passed\"]   # gate\r\n```\r\n\r\n**Hard rule:** screens must style **only** with `Tokens.*` — hardcoded colors/fonts/sizes fail the\r\ncheck (they'd break the per-app universe mechanism). Generation is **per screen** so each can be\r\naudited and adjusted independently. See `references/component-map.md` for the element→SwiftUI map.\r\n",
+    "assets": [],
+    "examples": [],
+    "dependencies": [
+      "pydantic>=2.6"
+    ],
+    "related": []
+  },
+  "localOverrides": {}
+}

@@ -1,0 +1,23 @@
+{
+  "factoryData": {
+    "id": "wireframing",
+    "name": "wireframing",
+    "type": "library",
+    "category": "mcp",
+    "description": "See README.md for details.",
+    "shortDescription": "Block for wireframing",
+    "keywords": [
+      "wireframing"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/mcp/blocks/wireframing",
+    "readme": "# Wireframing MCP\r\n\r\nThe MCP server behind the wireframing skill: given a project charter + screen spec, it places\r\nelements per page, links screens, and returns the wireframe plus an **editable flow** a human can\r\nadjust (add a button → target, rename, add content). The `agents/wireframing` skill drives this\r\nserver; the `wireframe-studio` editor is the human face of the same shared `WireframeSpec`.\r\n\r\nGrading and HTML generation are **reused** from `agents/wireframing` (`spec` / `generate` / `audit`) —\r\none source of truth, not reimplemented here.\r\n\r\n## Layout\r\n```\r\nlibraries/mcp/wireframing/\r\n├── src/wireframing_mcp/\r\n│   ├── core.py      # pure tool logic (offline): new/add_screen/place_element/add_action/\r\n│   │                #   link_screens/unlink/remove_screen/rename_screen/audit/export_html\r\n│   ├── server.py    # MCP transport — exposes core as MCP tools (FastMCP)\r\n│   └── bridge.py    # HTTP bridge (CORS) so the browser studio shares the same spec\r\n└── tests/test_core.py\r\n```\r\n\r\n## Run\r\n\r\n**Tests** (offline, no keys, no MCP SDK):\r\n```bash\r\ncd libraries/mcp/wireframing && python -m pytest -q\r\n```\r\n\r\n**MCP server** (for agents — Codex / Claude):\r\n```bash\r\npip install \"wireframing-mcp[server]\"     # installs the `mcp` transport\r\npython -m wireframing_mcp.server\r\n```\r\nTools: `new_wireframe`, `add_screen`, `rename_screen`, `place_element`, `add_action`,\r\n`link_screens`, `unlink`, `remove_screen`, `audit`, `export_html`, `get_spec`, `load_spec`.\r\n\r\n**HTTP bridge** (for the human `wireframe-studio` editor — stdlib only, no install):\r\n```bash\r\npython -m wireframing_mcp.bridge          # http://localhost:8765\r\n```\r\n`GET /spec` · `POST /spec` · `GET /audit` · `GET /health`. In the studio, click **⇅ MCP** →\r\n**Push** / **Pull** to share the flow. The shared contract is the factory `WireframeSpec`\r\n(`{screens:[{id,title,elements,links,actions}]}`); the studio projects its rich layout to/from it.\r\n\r\n## How it fits\r\n```\r\ncharter ─▶ wireframing agent ─┐\r\n                              ├─▶ Wireframing MCP (one shared WireframeSpec) ─▶ audit (A–F) ─▶ export HTML\r\nwireframe-studio (human) ─────┘        ▲ reuses agents/wireframing spec/generate/audit\r\n```\r\n`navigation-flow` (sibling MCP) grades a flow; this server's `audit` uses the same canonical logic.\r\n",
+    "assets": [],
+    "examples": [],
+    "dependencies": [
+      "pydantic>=2.6"
+    ],
+    "related": []
+  },
+  "localOverrides": {}
+}

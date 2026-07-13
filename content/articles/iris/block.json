@@ -1,0 +1,26 @@
+{
+  "factoryData": {
+    "id": "iris",
+    "name": "iris",
+    "type": "model",
+    "category": "models",
+    "description": "MediaPipe Iris (PyTorch port) locates the pupil center + iris boundary and eye contour from a 64x64 eye crop. Used by Colors Matching to pull the person's eye colour from the precise iris disc (face-parsing gives the rough eye region; this pinpoints the iris). Weights are a one-time TFLite->PyTorch conversion (torch-only at runtime, CPU-fast); the upstream MediaPipe face-mesh crop stage is skipped in favour of a supplied eye box.",
+    "shortDescription": "Locates the iris in an eye, so the eye colour can be sampled.",
+    "keywords": [
+      "iris / eye-landmark detection (pupil center + iris boundary)"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/models/blocks/iris",
+    "readme": "# iris (model card)\r\n\r\nIris / eye-landmark detection — pupil center + iris boundary\r\n([Morris88826/MediaPipe_Iris](https://github.com/Morris88826/MediaPipe_Iris), a PyTorch port of\r\nGoogle's MediaPipe Iris).\r\n\r\n- **Task:** locate the **iris** (pupil center + boundary) and eye contour in an eye.\r\n- **Inputs:** an **eye crop**, or a **face image + a normalized eye box** `(x,y,w,h)` — the box comes\r\n  from **face-parsing** (Task 4), so the two compose: face-parsing finds the eye, iris pinpoints it.\r\n- **Outputs:** an `IrisResult` (center, radius, boundary points) + `metrics.eye_color` — the\r\n  person's **eye colour**, sampled from the iris ring (the Colors Matching payload).\r\n- **Status:** `raw`, self-contained (`deps: []`). Weights are a one-time TFLite→PyTorch conversion\r\n  (`iris_landmark.pth`, ~2.7MB); after that it's **torch-only** and CPU-fast. The upstream MediaPipe\r\n  face-mesh crop stage is skipped (we supply the eye box), so **no mediapipe/tensorflow at runtime**.\r\n- **Apple-native:** *partial* — Vision gives single **pupil points**, ARKit gives gaze/eye\r\n  transforms (TrueDepth), but neither localizes the **iris disc** on an arbitrary photo.\r\n\r\n## Use\r\n```python\r\nfrom blocks.iris.src import build\r\nfrom blocks.iris.src.metrics import eye_color\r\n\r\nmodel = build()                                    # real model when weights are on the box\r\nres   = model.predict(\"selfie.jpg\", eye_box=(0.36, 0.34, 0.10, 0.06))   # box from face-parsing\r\nres.center, res.radius                             # where the iris is (normalized in the crop)\r\neye_color(\"selfie.jpg\", res)                       # -> {\"rgb\": [...], \"hex\": \"#..\"} eye colour\r\n```\r\n\r\n## Producing the weights (one-time)\r\nThe repo ships `data/iris_landmark.tflite`; convert it to `iris_landmark.pth` (read the TFLite with\r\n`ai-edge-litert` — no full TensorFlow needed), then place it under `ai-farm/raw/iris/`. Done once on\r\nthe farm; the block auto-discovers `libs/iris.py` + the `.pth` and runs torch-only.\r\n",
+    "assets": [
+      {
+        "src": "cover.svg",
+        "alt": "cover"
+      }
+    ],
+    "examples": [],
+    "dependencies": [],
+    "related": []
+  },
+  "localOverrides": {}
+}

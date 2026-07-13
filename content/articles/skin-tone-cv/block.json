@@ -1,0 +1,18 @@
+{
+  "factoryData": {
+    "id": "skin-tone-cv",
+    "name": "skin-tone-cv (model card)",
+    "type": "application",
+    "category": "ai-farm",
+    "description": "- **Task:** extract skin / hair / eye tones from a selfie → features for seasonal palette. - **Status:** raw → ready (Phase-1 reference model that proves the pipeline). - **Inputs:** image. **Outputs:** tone features / palette class. - **Source / license:** <fill>. - **Ready build:** `../../ready/skin-tone-cv.mlpackage` (CoreML, on-device).",
+    "shortDescription": "skin-tone-cv (model card)",
+    "keywords": [],
+    "githubPath": "libraries/ai-farm/raw/skin-tone-cv",
+    "readme": "# skin-tone-cv (model card)\r\n\r\n- **Task:** extract skin / hair / eye tones from a selfie → features for seasonal palette.\r\n- **Status:** raw → ready (Phase-1 reference model that proves the pipeline).\r\n- **Inputs:** image. **Outputs:** tone features / palette class.\r\n- **Source / license:** <fill>.\r\n- **Ready build:** `../../ready/skin-tone-cv.mlpackage` (CoreML, on-device).\r\n",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": []
+  },
+  "localOverrides": {}
+}

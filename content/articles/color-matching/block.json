@@ -1,0 +1,21 @@
+{
+  "factoryData": {
+    "id": "color-matching",
+    "name": "color-matching",
+    "type": "application",
+    "category": "ios-ready",
+    "description": "See README.md for details.",
+    "shortDescription": "Block for color-matching",
+    "keywords": [
+      "color matching"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/ios-ready/blocks/color-matching",
+    "readme": "# Color Matching (Sprint 1)\r\n\r\nSwiftUI starter. Consumes the shared layer (`design-system`, `agents`, `libraries`).\r\n\r\n## Run it\r\nThe `.xcodeproj` is not committed (it's generated/local). To build:\r\n1. Open Xcode → **File ▸ New ▸ Project ▸ iOS App**, name `ColorMatching`, bundle id `co.elktech.colormatching`.\r\n2. Add the files under `Sources/` to the target (or use XcodeGen / Swift Package).\r\n3. Run on a simulator. The flow follows `wireframe/` and the design-system templates.\r\n\r\n## Files\r\n- `Sources/ColorMatchingApp.swift` — entry point.\r\n- `Sources/ContentView.swift` — root flow.\r\n- `Sources/Onboarding/`, `ColorAnalysis/`, `OutfitScan/`, `Paywall/` — feature views.\r\n- `charter.md` — the spec. `universe/` — this app's tokens/moodboard.\r\n- `wireframe/`, `audit/` — agent outputs.\r\n\r\n## TODO (real implementation)\r\n- Replace `analyze()` with the `skin-tone-cv` CoreML model + `seasons.md` mapping.\r\n- Camera capture + encryption from `libraries/code/vision-camera`.\r\n- StoreKit 2 in the paywall.\r\n",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": []
+  },
+  "localOverrides": {}
+}

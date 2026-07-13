@@ -1,0 +1,18 @@
+{
+  "factoryData": {
+    "id": "memory",
+    "name": "App-Benchmark memory",
+    "type": "library",
+    "category": "code-library",
+    "description": "A queryable store of competitor **screens, flows, onboarding, and paywalls** — the \"memory app\" from the deck. - **Sources:** screensdesign.com (screens/flows), Sensor Tower (revenue), startups.rip (what failed). - `scripts/ingest.py` pulls and tags each screen by app / niche / screen-type into `benchmark.db`. - **Consumers:** the wireframing agent (best-practice flows) and feature decomposition (minimal feature set per niche). Phase 1: ingest the Color Matching competitor + 2–3 onboarding/paywall references under `sources/color-matching/`.",
+    "shortDescription": "App-Benchmark memory",
+    "keywords": [],
+    "githubPath": "libraries/memory",
+    "readme": "# App-Benchmark memory\r\n\r\nA queryable store of competitor **screens, flows, onboarding, and paywalls** — the\r\n\"memory app\" from the deck.\r\n\r\n- **Sources:** screensdesign.com (screens/flows), Sensor Tower (revenue), startups.rip (what failed).\r\n- `scripts/ingest.py` pulls and tags each screen by app / niche / screen-type into `benchmark.db`.\r\n- **Consumers:** the wireframing agent (best-practice flows) and feature decomposition (minimal feature set per niche).\r\n\r\nPhase 1: ingest the Color Matching competitor + 2–3 onboarding/paywall references under\r\n`sources/color-matching/`.\r\n",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": []
+  },
+  "localOverrides": {}
+}

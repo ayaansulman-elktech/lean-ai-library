@@ -1,0 +1,23 @@
+{
+  "factoryData": {
+    "id": "security-review",
+    "name": "security-review",
+    "type": "agent",
+    "category": "agents",
+    "description": "See README.md for details.",
+    "shortDescription": "Block for security-review",
+    "keywords": [
+      "security review"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/agents/blocks/security-review",
+    "readme": "# Security Review Agent\r\n\r\n**Agent Core:** `security-review`\r\n\r\n## Overview\r\nThe Security Review Agent serves as the automated security gate in the Sprint pipeline. It performs both static codebase scanning and LLM-driven logical reviews to ensure applications meet minimum security requirements before release.\r\n\r\n## Architecture\r\n- Subclasses the core `Agent` framework from `libraries/agent-core`.\r\n- Plugs into the `sprint` orchestrator pipeline.\r\n- Operates offline and keylessly during local CI testing.\r\n\r\n## Capabilities\r\n- **Static Scanning:** Automatically scans code for common vulnerabilities (e.g., hardcoded credentials, insecure defaults).\r\n- **LLM Security Gate:** Leverages the LLM gateway (`ml-core`) for intelligent analysis of logic flows that standard static analyzers might miss.\r\n",
+    "assets": [],
+    "examples": [],
+    "dependencies": [
+      "pydantic>=2.6"
+    ],
+    "related": []
+  },
+  "localOverrides": {}
+}
