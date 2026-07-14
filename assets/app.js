@@ -1,4 +1,5 @@
 (function () {
+  setupThemeToggle();
   const page = document.body.dataset.page;
 
   if (page === "home") {
@@ -17,12 +18,33 @@
     initUpdatesPage();
   }
 
+  function setupThemeToggle() {
+    const toggleBtn = document.getElementById("theme-toggle");
+    if (!toggleBtn) return;
+    
+    toggleBtn.addEventListener("click", () => {
+      const isDark = document.documentElement.classList.toggle("dark-theme");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+  }
+
   async function fetchJson(path) {
     const response = await fetch(path, { cache: "no-store" });
     if (!response.ok) {
       throw new Error(`Unable to load ${path}`);
     }
     return response.json();
+  }
+
+  function normalizeCategory(cat) {
+    const map = {
+      'agents': 'agent-library',
+      'code': 'code-library',
+      'knowledge': 'knowledge-library',
+      'models': 'model-library',
+      'mcp': 'mcp-library'
+    };
+    return map[cat] || cat;
   }
 
   async function initHome() {
@@ -228,7 +250,8 @@
     designCategories.forEach((designCategory) => {
       const source = categories.find((item) => item.slug === designCategory.slug) || {};
       const category = { ...source, ...designCategory };
-      const queryHasResults = showEmptyCategories || articles.length > 0;
+      const categoryArticles = articles.filter(a => normalizeCategory(a.category) === category.slug);
+      const queryHasResults = showEmptyCategories || categoryArticles.length > 0;
       if (!queryHasResults) return;
 
       const section = document.createElement("section");
@@ -241,7 +264,7 @@
             ${category.description ? `<p>${escapeHtml(category.description)}</p>` : ""}
           </header>
           <div class="article-grid">
-            ${Array.from({ length: category.cardCount || 16 }, (_, index) => renderDesignCard(category, index)).join("")}
+            ${categoryArticles.map((article) => renderArticleCard(article)).join("")}
           </div>
         </div>
       `;
@@ -270,29 +293,7 @@
     ];
   }
 
-  function renderDesignCard(category, index) {
-    const searchText = `${category.name} lorem ipsum item ${index + 1}`.toLowerCase();
-    return `
-      <article class="article-card design-card" data-search="${escapeAttribute(searchText)}" aria-label="${escapeAttribute(category.name)} example ${index + 1}">
-        <div class="article-cover-link design-card-cover">
-          <img src="assets/library-card-cover.png" alt="">
-          <div class="design-card-label" aria-hidden="true">
-            <span class="design-card-mark"></span>
-            <strong>Lorem</strong>
-            <span>Ipsum exfrasis</span>
-          </div>
-        </div>
-        <div class="article-meta-row">
-          <p class="article-short">lorem ipsum</p>
-          <a class="download-dot" href="assets/library-card-cover.png" download aria-label="Download ${escapeAttribute(category.name)} example ${index + 1}">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 6.5v11m0 0 5-5m-5 5-5-5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          </a>
-        </div>
-      </article>
-    `;
-  }
+
 
   async function initLibraryPage() {
     const titleEl = document.getElementById("library-page-title");
@@ -304,7 +305,10 @@
     const slug = new URLSearchParams(window.location.search).get("category");
 
     try {
-      const categories = await fetchJson("data/categories.json");
+      const [categories, articles] = await Promise.all([
+        fetchJson("data/categories.json"),
+        fetchJson("data/articles.json")
+      ]);
       const designCategory = getDesignCategories().find((item) => item.slug === slug);
 
       if (!designCategory) {
@@ -323,10 +327,9 @@
       document.title = `${category.name} - Cognitive Shift`;
       titleEl.textContent = category.name;
       descriptionEl.textContent = category.description || fallbackDescription;
-      gridEl.innerHTML = Array.from(
-        { length: 16 },
-        (_, index) => renderDesignCard(category, index)
-      ).join("");
+      
+      const categoryArticles = articles.filter(a => normalizeCategory(a.category) === designCategory.slug);
+      gridEl.innerHTML = categoryArticles.map(article => renderArticleCard(article)).join("");
 
       const filterCards = () => {
         const query = searchInput.value.trim().toLowerCase();
@@ -354,53 +357,41 @@
     }
   }
 
-  function initUpdatesPage() {
+  async function initUpdatesPage() {
     const groupsEl = document.getElementById("updates-groups");
     const historyNav = document.getElementById("updates-history-nav");
     const emptyEl = document.getElementById("updates-empty");
     const searchInput = document.getElementById("updates-search-input");
     const searchClear = document.querySelector(".updates-search-clear");
     const filterButtons = Array.from(document.querySelectorAll("[data-update-filter]"));
-    const libraryNames = new Map(
-      getDesignCategories()
-        .map((category) => [category.slug, category.name])
-    );
-    const categorySequence = [
-      "agent-library",
-      "code-library",
-      "knowledge-library",
-      "mcp-library",
-      "model-library",
-      "ios-ready"
-    ];
-    const updateGroups = [
-      { id: "updates-17-jun", date: "17 Jun", title: "This week", count: 10 },
-      { id: "updates-10-jun", date: "10 Jun", title: "Previous week", count: 8 },
-      { id: "updates-03-jun", date: "03 Jun", title: "Earlier", count: 7 }
-    ];
     let activeFilter = "all";
 
-    groupsEl.innerHTML = updateGroups.map((group, groupIndex) => {
-      const cards = Array.from({ length: group.count }, (_, cardIndex) => {
-        const categorySlug = categorySequence[(groupIndex * 2 + cardIndex) % categorySequence.length];
-        const categoryName = libraryNames.get(categorySlug) || "Library";
-        return renderUpdateCard({ categorySlug, categoryName, date: group.date }, cardIndex);
+    try {
+      const articles = await fetchJson("data/articles.json");
+
+      const updateGroups = [
+        { id: "updates-17-jun", date: "17 Jun", title: "This week", articles: articles.slice(0, 10) },
+        { id: "updates-10-jun", date: "10 Jun", title: "Previous week", articles: articles.slice(10, 18) },
+        { id: "updates-03-jun", date: "03 Jun", title: "Earlier", articles: articles.slice(18) }
+      ].filter(g => g.articles.length > 0);
+
+      groupsEl.innerHTML = updateGroups.map((group) => {
+        const cards = group.articles.map(article => renderArticleCard(article)).join("");
+
+        return `
+          <section class="updates-group" id="${escapeAttribute(group.id)}" data-history-date="${escapeAttribute(group.date)}">
+            <header class="updates-group-header">
+              <h2>${escapeHtml(group.title)}</h2>
+              <p>${escapeHtml(group.date)} · ${group.articles.length} new blocks</p>
+            </header>
+            <div class="updates-grid">${cards}</div>
+          </section>
+        `;
       }).join("");
 
-      return `
-        <section class="updates-group" id="${escapeAttribute(group.id)}" data-history-date="${escapeAttribute(group.date)}">
-          <header class="updates-group-header">
-            <h2>${escapeHtml(group.title)}</h2>
-            <p>${escapeHtml(group.date)} · ${group.count} new blocks</p>
-          </header>
-          <div class="updates-grid">${cards}</div>
-        </section>
-      `;
-    }).join("");
-
-    historyNav.innerHTML = updateGroups.map((group, index) => `
-      <a class="${index === 0 ? "is-active" : ""}" href="#${escapeAttribute(group.id)}" data-history-target="${escapeAttribute(group.id)}">${escapeHtml(group.date)}</a>
-    `).join("");
+      historyNav.innerHTML = updateGroups.map((group, index) => `
+        <a class="${index === 0 ? "is-active" : ""}" href="#${escapeAttribute(group.id)}" data-history-target="${escapeAttribute(group.id)}">${escapeHtml(group.date)}</a>
+      `).join("");
 
     const syncFilters = () => {
       filterButtons.forEach((button) => {
@@ -471,38 +462,25 @@
 
     window.addEventListener("scroll", updateActiveHistory, { passive: true });
     applyFilters();
-  }
-
-  function renderUpdateCard({ categorySlug, categoryName, date }, index) {
-    const searchText = `${categoryName} ${categorySlug} ${date} lorem ipsum block ${index + 1}`.toLowerCase();
-    return `
-      <article class="article-card design-card" data-category="${escapeAttribute(categorySlug)}" data-search="${escapeAttribute(searchText)}" aria-label="${escapeAttribute(categoryName)} update ${index + 1}">
-        <div class="article-cover-link design-card-cover">
-          <img src="assets/library-card-cover.png" alt="">
-          <div class="design-card-label" aria-hidden="true">
-            <span class="design-card-mark"></span>
-            <strong>Lorem</strong>
-            <span>Ipsum exfrasis</span>
-          </div>
-        </div>
-        <div class="article-meta-row">
-          <p class="article-short">lorem ipsum</p>
-          <a class="download-dot" href="assets/library-card-cover.png" download aria-label="Download ${escapeAttribute(categoryName)} update ${index + 1}">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 6.5v11m0 0 5-5m-5 5-5-5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          </a>
-        </div>
-      </article>
-    `;
+    } catch (error) {
+      groupsEl.innerHTML = `<p class="status-message">${escapeHtml(error.message)}</p>`;
+    }
   }
 
   function renderArticleCard(article) {
-    const coverPath = article.coverPreviewPath || article.coverPath;
+    const coverPath = article.coverPreviewPath || article.coverPath || 'assets/default_thumbnail.png';
+    const normalizedCat = normalizeCategory(article.category);
+    const searchText = `${article.name} ${normalizedCat} ${article.shortDescription}`.toLowerCase();
+    
     return `
-      <article class="article-card">
-        <a class="article-cover-link" href="article.html?id=${encodeURIComponent(article.slug)}" aria-label="Open ${escapeHtml(article.name)}">
+      <article class="article-card design-card" data-category="${escapeAttribute(normalizedCat)}" data-search="${escapeAttribute(searchText)}" aria-label="${escapeAttribute(article.name)}">
+        <a class="article-cover-link design-card-cover" href="article.html?id=${encodeURIComponent(article.slug)}">
           <img src="${escapeAttribute(coverPath)}" alt="">
+          <div class="design-card-label" aria-hidden="true">
+            <span class="design-card-mark"></span>
+            <strong>${escapeHtml(article.name)}</strong>
+            <span>${escapeHtml(article.type || 'Article')}</span>
+          </div>
         </a>
         <div class="article-meta-row">
           <p class="article-short">${escapeHtml(article.shortDescription || article.name)}</p>

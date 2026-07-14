@@ -68,7 +68,7 @@ export class IndexGenerator implements Generator {
           slug,
           ...merged,
           contentPath: contentFile || merged.contentPath || '',
-          coverPath: coverFile || merged.coverPath || 'assets/library-card-cover.png',
+          coverPath: coverFile || merged.coverPath || 'assets/default_thumbnail.png',
           coverPreviewPath: coverPreview || merged.coverPreviewPath || ''
         });
       }

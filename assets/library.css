@@ -4,6 +4,10 @@ body[data-page="library"] {
   min-height: 100vh;
 }
 
+html.dark-theme body[data-page="library"] {
+  color: var(--color-text);
+}
+
 body[data-page="library"] .library-page {
   margin: 0 auto;
   padding: 0 var(--library-page-pad) 180px;

@@ -6,6 +6,12 @@ body[data-page="updates"] {
   min-height: 100vh;
 }
 
+html.dark-theme body[data-page="updates"] {
+  --updates-ink: #f0f0f0;
+  --updates-muted: #a0a0a0;
+  --updates-soft: #2c2c2e;
+}
+
 body[data-page="updates"] .updates-page {
   margin: 0 auto;
   padding: 0 32px 180px;
