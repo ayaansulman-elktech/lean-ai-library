@@ -512,40 +512,135 @@
       }
 
       const contentKind = getContentKind(article);
+      let sourceIndex = null;
+      try {
+        sourceIndex = await fetchJson(`generated/content/${encodeURIComponent(article.category)}/${encodeURIComponent(article.slug)}/index.json`);
+      } catch {
+        // Older or hand-authored entries may not have a generated source index.
+      }
+      const articleFiles = getArticleFiles(article, sourceIndex);
 
       document.title = `${article.name} - Cognitive Shift`;
-      target.innerHTML = renderArticleDetail(article, contentKind);
+      target.innerHTML = renderArticleDetail(article, contentKind, articleFiles);
 
-      if (contentKind === "md") {
-        const markdownTarget = target.querySelector("[data-markdown-target]");
-        const response = await fetch(article.contentPath, { cache: "no-store" });
-        markdownTarget.textContent = response.ok
-          ? await response.text()
-          : "Markdown preview unavailable.";
+      const copyButton = target.querySelector("[data-copy-command]");
+      if (copyButton) {
+        copyButton.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(copyButton.dataset.copyCommand);
+            copyButton.classList.add("is-copied");
+            copyButton.setAttribute("aria-label", "Command copied");
+            window.setTimeout(() => {
+              copyButton.classList.remove("is-copied");
+              copyButton.setAttribute("aria-label", "Copy install command");
+            }, 1600);
+          } catch {
+            copyButton.setAttribute("aria-label", "Unable to copy command");
+          }
+        });
       }
+
+      const media = target.querySelector(".article-media");
+      const showFileTree = () => {
+        media.innerHTML = renderFileTree(article, articleFiles);
+        media.querySelectorAll("[data-file-index]").forEach((button) => {
+          button.addEventListener("click", () => openFile(articleFiles[Number(button.dataset.fileIndex)]));
+        });
+      };
+
+      const renderMarkdown = (rawMarkdown) => {
+        const markdownTarget = media.querySelector("[data-markdown-target]");
+        if (window.marked && window.DOMPurify) {
+          if (window.hljs) {
+            marked.setOptions({
+              highlight(code, lang) {
+                if (lang && hljs.getLanguage(lang)) return hljs.highlight(code, { language: lang }).value;
+                return hljs.highlightAuto(code).value;
+              }
+            });
+          }
+          markdownTarget.innerHTML = DOMPurify.sanitize(marked.parse(rawMarkdown));
+        } else {
+          markdownTarget.textContent = rawMarkdown;
+        }
+      };
+
+      const openFile = async (file) => {
+        if (!file) return;
+        media.innerHTML = renderFileViewer(file);
+        media.querySelector("[data-back-to-files]").addEventListener("click", showFileTree);
+
+        if (file.kind === "json") {
+          let jsonContent = file.content || "";
+          if (!jsonContent && file.path) {
+            try {
+              const response = await fetch(file.path, { cache: "no-store" });
+              jsonContent = response.ok ? await response.text() : "File preview unavailable.";
+            } catch {
+              jsonContent = "File preview unavailable.";
+            }
+          }
+          try {
+            jsonContent = JSON.stringify(JSON.parse(jsonContent), null, 2);
+          } catch {
+            // Keep non-JSON error text readable.
+          }
+          media.querySelector("[data-code-target]").textContent = jsonContent;
+          return;
+        }
+
+        let rawMarkdown = file.content || "";
+        if (!rawMarkdown && file.path) {
+          try {
+            const response = await fetch(file.path, { cache: "no-store" });
+            rawMarkdown = response.ok ? await response.text() : "Markdown preview unavailable.";
+          } catch {
+            rawMarkdown = "Markdown preview unavailable.";
+          }
+        }
+        renderMarkdown(rawMarkdown || "Markdown preview unavailable.");
+      };
+
+      if (contentKind !== "pdf") showFileTree();
     } catch (error) {
       target.innerHTML = `<p class="status-message">${escapeHtml(error.message)}</p>`;
     }
   }
 
-  function renderArticleDetail(article, contentKind) {
-    const coverPath = article.coverPreviewPath || article.coverPath;
+  function renderArticleDetail(article, contentKind, files) {
+    const coverPath = article.coverPreviewPath || article.coverPath || 'assets/default_thumbnail.png';
+    const version = escapeHtml(article.version || "0.1.0");
+    const lastUpdated = escapeHtml(article.lastUpdated || article.updatedAt || "07/10/26");
+    const command = `npx cognitiveshift ${article.slug}`;
+
     return `
       <article class="article-layout" data-article-type="${escapeAttribute(contentKind)}" data-content-kind="${escapeAttribute(contentKind)}">
         <div class="article-media">
-          ${renderViewer(article, contentKind)}
+          ${renderViewer(article, contentKind, files)}
         </div>
         <aside class="article-sidebar">
           <img class="article-sidebar-cover" src="${escapeAttribute(coverPath)}" alt="">
           <h1>${escapeHtml(article.name)}</h1>
-          <p>${escapeHtml(article.description || article.shortDescription || "")}</p>
+          <p class="article-subtitle">${escapeHtml(article.description || article.shortDescription || "")}</p>
           <a class="download-button" href="${escapeAttribute(article.contentPath)}" download>download</a>
+
+          <div class="npx-command-block">
+            <code class="npx-text">${escapeHtml(command)}</code>
+            <button class="npx-copy-btn" type="button" aria-label="Copy install command" data-copy-command="${escapeAttribute(command)}">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+            </button>
+          </div>
+
+          <div class="article-footer-meta">
+            <div>version: ${version}</div>
+            <div>last updated: ${lastUpdated}</div>
+          </div>
         </aside>
       </article>
     `;
   }
 
-  function renderViewer(article, contentKind) {
+  function renderViewer(article, contentKind, files) {
     if (contentKind === "pdf") {
       const pdfSrc = `${article.contentPath}#toolbar=0&navpanes=0&scrollbar=0&view=FitH&pagemode=none`;
       return `
@@ -555,28 +650,134 @@
       `;
     }
 
-    if (contentKind === "md") {
-      return '<pre class="markdown-preview" data-markdown-target>Loading markdown...</pre>';
-    }
+    return renderFileTree(article, files);
 
-    if (contentKind === "folder") {
+    if (contentKind === "md") {
       return `
-        <div class="file-preview file-preview--folder">
-          <span class="folder-preview-icon" aria-hidden="true"></span>
-          <p>no preview available</p>
+        <div class="viewer-header">
+          <a class="viewer-back-btn" href="library.html" data-history-back>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m15 18-6-6 6-6"/></svg>
+            back to files
+          </a>
+        </div>
+        <div class="markdown-body" data-markdown-target>
+          <div style="display:flex;height:100%;align-items:center;justify-content:center;color:#666;">
+            Loading...
+          </div>
         </div>
       `;
     }
 
+    // Default or Folder view
     return `
-      <div class="file-preview">
-        <p>This document type is available as a download.</p>
-        <p><a href="${escapeAttribute(article.contentPath)}" download>Download ${escapeHtml(article.name)}</a></p>
+      <div class="file-tree-viewer">
+        <div class="file-tree-content">
+          <div>${escapeHtml(article.slug)}/</div>
+          <div class="file-tree-row"><span>├── </span><button>block.json</button></div>
+          <div class="file-tree-row"><span>└── </span><button>README.md</button></div>
+        </div>
       </div>
     `;
   }
 
+  function renderFileTree(article, files) {
+    return `
+      <div class="file-tree-viewer">
+        <div class="file-tree-content">
+          <div>${escapeHtml(article.slug)}/</div>
+          ${files.map((file, index) => `
+            <div class="file-tree-row">
+              <span>${index === files.length - 1 ? "└──" : "├──"} </span>
+              <button type="button" data-file-index="${index}">${escapeHtml(file.name)}</button>
+            </div>
+          `).join("")}
+        </div>
+      </div>
+    `;
+  }
+
+  function renderFileViewer(file) {
+    return `
+      <div class="viewer-header">
+        <button class="viewer-back-btn" type="button" data-back-to-files>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m15 18-6-6 6-6"/></svg>
+          back to files
+        </button>
+        <span class="viewer-file-name">${escapeHtml(file.name)}</span>
+      </div>
+      ${file.kind === "json"
+        ? '<pre class="file-code-view" data-code-target></pre>'
+        : '<div class="markdown-body" data-markdown-target><p>Loading...</p></div>'}
+    `;
+  }
+
+  function getArticleFiles(article, sourceIndex) {
+    const generatedKeys = new Set(["contentPath", "coverPath", "coverPreviewPath", "readme", "skill", "files"]);
+    const manifest = Object.fromEntries(Object.entries(article).filter(([key]) => !generatedKeys.has(key)));
+    const sourceFiles = flattenFileTree(sourceIndex?.fileTree || []);
+    const repository = sourceIndex?.repository || {};
+    const repositoryBase = getRepositoryRawBase(repository);
+    const files = sourceFiles.map((file) => ({
+      name: file.name,
+      kind: file.name.toLowerCase().endsWith(".json") ? "json" : "md",
+      path: repositoryBase ? `${repositoryBase}/${file.path.split("/").map(encodeURIComponent).join("/")}` : ""
+    }));
+
+    if (!files.length) files.push({ name: "block.json", kind: "json", content: JSON.stringify(manifest, null, 2) });
+
+    const readme = files.find((file) => file.name.toLowerCase() === "readme.md");
+    const skill = files.find((file) => file.name.toLowerCase() === "skill.md");
+    if (article.readme) {
+      if (readme) readme.content = article.readme;
+      else files.push({ name: "README.md", kind: "md", content: article.readme });
+    }
+    if (article.skill) {
+      if (skill) skill.content = article.skill;
+      else files.push({ name: "SKILL.md", kind: "md", content: article.skill });
+    }
+    if (article.contentPath && getContentKind(article) === "md") {
+      files.push({
+        name: article.contentPath.split("/").pop() || `${article.slug}.md`,
+        kind: "md",
+        path: article.contentPath
+      });
+    }
+
+    (Array.isArray(article.files) ? article.files : []).forEach((file) => {
+      if (typeof file === "string") {
+        files.push({ name: file.split("/").pop(), kind: file.endsWith(".json") ? "json" : "md", path: file });
+      } else if (file && file.name) {
+        files.push({
+          name: file.name,
+          kind: file.kind || (file.name.endsWith(".json") ? "json" : "md"),
+          content: file.content || "",
+          path: file.path || ""
+        });
+      }
+    });
+
+    return files.filter((file, index) => files.findIndex((candidate) => candidate.name === file.name) === index);
+  }
+
+  function flattenFileTree(nodes, parentPath = "") {
+    return nodes.flatMap((node) => {
+      const nodePath = node.path || [parentPath, node.name].filter(Boolean).join("/");
+      if (node.type === "directory") return flattenFileTree(node.children || [], nodePath);
+      if (!/\.(md|json)$/i.test(node.name)) return [];
+      return [{ name: nodePath, path: nodePath }];
+    });
+  }
+
+  function getRepositoryRawBase(repository) {
+    const match = String(repository.url || "").match(/^https:\/\/github\.com\/([^/]+)\/([^/#]+?)(?:\.git)?$/i);
+    if (!match || !repository.branch || !repository.path) return "";
+    const repoPath = String(repository.path).split("/").map(encodeURIComponent).join("/");
+    return `https://raw.githubusercontent.com/${match[1]}/${match[2]}/${encodeURIComponent(repository.branch)}/${repoPath}`;
+  }
+
   function getContentKind(article) {
+    if (article.readme || article.skill) return "md";
+
     const contentPath = String(article.contentPath || "").split(/[?#]/)[0].replace(/\/+$/, "").toLowerCase();
     const declaredType = String(article.type || "").toLowerCase();
 
