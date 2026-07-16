@@ -130,13 +130,26 @@
           section.classList.remove("is-search-first");
 
           const matchesCategory = activeSearchCategory === "all" || section.id === activeSearchCategory;
-          const matchesQuery = !query || section.textContent.toLowerCase().includes(query);
-          const shouldShow = matchesCategory && matchesQuery;
+          
+          let visibleCards = 0;
+          section.querySelectorAll(".article-card").forEach((card) => {
+            const matchesQuery = !query || card.dataset.search.includes(query);
+            card.hidden = !matchesQuery;
+            if (matchesQuery) visibleCards++;
+          });
+
+          const shouldShow = matchesCategory && (!query || visibleCards > 0);
           section.hidden = !shouldShow;
+          
           if (shouldShow) visibleSections.push(section);
         });
 
-        if (visibleSections[0]) visibleSections[0].classList.add("is-search-first");
+        if (visibleSections[0]) {
+          visibleSections[0].classList.add("is-search-first");
+          if (query.length > 0) {
+            visibleSections[0].scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }
         emptyEl.hidden = visibleSections.length !== 0;
         searchClear.hidden = false;
         syncSearchCategory();
@@ -163,6 +176,7 @@
         sectionsEl.querySelectorAll(".category-section").forEach((section) => {
           section.hidden = false;
           section.classList.remove("is-search-first");
+          section.querySelectorAll(".article-card").forEach(card => card.hidden = false);
         });
         emptyEl.hidden = true;
         searchClear.hidden = true;
@@ -205,11 +219,7 @@
 
       categoryLinks.forEach((link) => link.addEventListener("click", (event) => {
         if (isSearchMode) {
-          event.preventDefault();
-          activeSearchCategory = link.getAttribute("href").slice(1);
-          searchInput.value = "";
-          applySearchVisibility();
-          return;
+          exitSearchMode();
         }
 
         categoryLinks.forEach((item) => item.classList.toggle("is-active", item === link));

@@ -503,6 +503,10 @@ html.dark-theme .category-section--featured .design-card-label span {
   width: var(--card-width);
 }
 
+.article-card[hidden] {
+  display: none !important;
+}
+
 .article-cover-link {
   border-radius: var(--radius-cover);
   color: var(--color-text);
