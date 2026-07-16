@@ -1,4 +1,6 @@
 {
+  "schemaVersion": "1.0.0",
+  "id": "wireframe-studio",
   "factoryData": {
     "id": "wireframe-studio",
     "name": "Wireframing Studio",
@@ -14,5 +16,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {}
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/wireframe-studio/thumbnail.png",
+    "pdf": null
+  }
 }

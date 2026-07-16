@@ -470,17 +470,18 @@
   function renderArticleCard(article) {
     const coverPath = article.coverPreviewPath || article.coverPath || 'assets/default_thumbnail.png';
     const normalizedCat = normalizeCategory(article.category);
+    const usesDefaultThumbnail = coverPath === 'assets/default_thumbnail.png';
     const searchText = `${article.name} ${normalizedCat} ${article.shortDescription}`.toLowerCase();
     
     return `
       <article class="article-card design-card" data-category="${escapeAttribute(normalizedCat)}" data-search="${escapeAttribute(searchText)}" aria-label="${escapeAttribute(article.name)}">
         <a class="article-cover-link design-card-cover" href="article.html?id=${encodeURIComponent(article.slug)}">
           <img src="${escapeAttribute(coverPath)}" alt="">
-          <div class="design-card-label" aria-hidden="true">
+          ${usesDefaultThumbnail ? `<div class="design-card-label" aria-hidden="true">
             <span class="design-card-mark"></span>
             <strong>${escapeHtml(article.name)}</strong>
             <span>${escapeHtml(article.type || 'Article')}</span>
-          </div>
+          </div>` : ""}
         </a>
         <div class="article-meta-row">
           <p class="article-short">${escapeHtml(article.shortDescription || article.name)}</p>
@@ -504,21 +505,9 @@
     }
 
     try {
-      const articles = await fetchJson("data/articles.json");
-      const article = articles.find((item) => item.slug === slug);
-      if (!article) {
-        target.innerHTML = '<p class="status-message">Article not found.</p>';
-        return;
-      }
-
+      const article = await fetchJson(`data/articles/${encodeURIComponent(slug)}.json`);
       const contentKind = getContentKind(article);
-      let sourceIndex = null;
-      try {
-        sourceIndex = await fetchJson(`generated/content/${encodeURIComponent(article.category)}/${encodeURIComponent(article.slug)}/index.json`);
-      } catch {
-        // Older or hand-authored entries may not have a generated source index.
-      }
-      const articleFiles = getArticleFiles(article, sourceIndex);
+      const articleFiles = getArticleFiles(article);
 
       document.title = `${article.name} - Cognitive Shift`;
       target.innerHTML = renderArticleDetail(article, contentKind, articleFiles);
@@ -572,14 +561,7 @@
 
         if (file.kind === "json") {
           let jsonContent = file.content || "";
-          if (!jsonContent && file.path) {
-            try {
-              const response = await fetch(file.path, { cache: "no-store" });
-              jsonContent = response.ok ? await response.text() : "File preview unavailable.";
-            } catch {
-              jsonContent = "File preview unavailable.";
-            }
-          }
+          if (!jsonContent) jsonContent = "File preview unavailable.";
           try {
             jsonContent = JSON.stringify(JSON.parse(jsonContent), null, 2);
           } catch {
@@ -590,14 +572,6 @@
         }
 
         let rawMarkdown = file.content || "";
-        if (!rawMarkdown && file.path) {
-          try {
-            const response = await fetch(file.path, { cache: "no-store" });
-            rawMarkdown = response.ok ? await response.text() : "Markdown preview unavailable.";
-          } catch {
-            rawMarkdown = "Markdown preview unavailable.";
-          }
-        }
         renderMarkdown(rawMarkdown || "Markdown preview unavailable.");
       };
 
@@ -622,7 +596,7 @@
           <img class="article-sidebar-cover" src="${escapeAttribute(coverPath)}" alt="">
           <h1>${escapeHtml(article.name)}</h1>
           <p class="article-subtitle">${escapeHtml(article.description || article.shortDescription || "")}</p>
-          <a class="download-button" href="${escapeAttribute(article.contentPath)}" download>download</a>
+          ${article.contentPath ? `<a class="download-button" href="${escapeAttribute(article.contentPath)}" download>download</a>` : ""}
 
           <div class="npx-command-block">
             <code class="npx-text">${escapeHtml(command)}</code>
@@ -688,7 +662,7 @@
           ${files.map((file, index) => `
             <div class="file-tree-row">
               <span>${index === files.length - 1 ? "└──" : "├──"} </span>
-              <button type="button" data-file-index="${index}">${escapeHtml(file.name)}</button>
+              <button type="button" data-file-index="${index}" ${file.kind === "file" ? 'disabled title="Preview unavailable"' : ""}>${escapeHtml(file.name)}</button>
             </div>
           `).join("")}
         </div>
@@ -711,16 +685,15 @@
     `;
   }
 
-  function getArticleFiles(article, sourceIndex) {
+  function getArticleFiles(article) {
     const generatedKeys = new Set(["contentPath", "coverPath", "coverPreviewPath", "readme", "skill", "files"]);
     const manifest = Object.fromEntries(Object.entries(article).filter(([key]) => !generatedKeys.has(key)));
-    const sourceFiles = flattenFileTree(sourceIndex?.fileTree || []);
-    const repository = sourceIndex?.repository || {};
-    const repositoryBase = getRepositoryRawBase(repository);
+    const sourceFiles = flattenFileTree(article.fileTree || []);
     const files = sourceFiles.map((file) => ({
       name: file.name,
-      kind: file.name.toLowerCase().endsWith(".json") ? "json" : "md",
-      path: repositoryBase ? `${repositoryBase}/${file.path.split("/").map(encodeURIComponent).join("/")}` : ""
+      kind: file.name.toLowerCase().endsWith(".json") ? "json" : file.name.toLowerCase().endsWith(".md") ? "md" : "file",
+      path: "",
+      content: file.content || ""
     }));
 
     if (!files.length) files.push({ name: "block.json", kind: "json", content: JSON.stringify(manifest, null, 2) });
@@ -763,25 +736,18 @@
     return nodes.flatMap((node) => {
       const nodePath = node.path || [parentPath, node.name].filter(Boolean).join("/");
       if (node.type === "directory") return flattenFileTree(node.children || [], nodePath);
-      if (!/\.(md|json)$/i.test(node.name)) return [];
-      return [{ name: nodePath, path: nodePath }];
+      return [{ name: nodePath, path: nodePath, content: node.content || "" }];
     });
   }
 
-  function getRepositoryRawBase(repository) {
-    const match = String(repository.url || "").match(/^https:\/\/github\.com\/([^/]+)\/([^/#]+?)(?:\.git)?$/i);
-    if (!match || !repository.branch || !repository.path) return "";
-    const repoPath = String(repository.path).split("/").map(encodeURIComponent).join("/");
-    return `https://raw.githubusercontent.com/${match[1]}/${match[2]}/${encodeURIComponent(repository.branch)}/${repoPath}`;
-  }
 
   function getContentKind(article) {
-    if (article.readme || article.skill) return "md";
 
     const contentPath = String(article.contentPath || "").split(/[?#]/)[0].replace(/\/+$/, "").toLowerCase();
     const declaredType = String(article.type || "").toLowerCase();
 
     if (contentPath.endsWith(".pdf")) return "pdf";
+    if (article.readme || article.skill) return "md";
     if (contentPath.endsWith(".md")) return "md";
     if (contentPath.endsWith("/content") || contentPath === "content") return "folder";
     if (declaredType === "pdf" || declaredType === "md" || declaredType === "folder") return declaredType;

@@ -1,23 +1,144 @@
 {
+  "schemaVersion": "1.0.0",
+  "id": "wireframing",
   "factoryData": {
     "id": "wireframing",
+    "type": "agent",
+    "category": "agent-library",
     "name": "wireframing",
-    "type": "library",
-    "category": "mcp",
-    "description": "See README.md for details.",
-    "shortDescription": "Block for wireframing",
+    "shortDescription": "Wireframing agent: charter -> A-grade flow wireframe.",
+    "description": "Wireframing agent: charter -> A-grade flow wireframe.",
     "keywords": [
       "wireframing"
     ],
-    "version": "0.1.0",
-    "githubPath": "libraries/mcp/blocks/wireframing",
-    "readme": "# Wireframing MCP\r\n\r\nThe MCP server behind the wireframing skill: given a project charter + screen spec, it places\r\nelements per page, links screens, and returns the wireframe plus an **editable flow** a human can\r\nadjust (add a button → target, rename, add content). The `agents/wireframing` skill drives this\r\nserver; the `wireframe-studio` editor is the human face of the same shared `WireframeSpec`.\r\n\r\nGrading and HTML generation are **reused** from `agents/wireframing` (`spec` / `generate` / `audit`) —\r\none source of truth, not reimplemented here.\r\n\r\n## Layout\r\n```\r\nlibraries/mcp/wireframing/\r\n├── src/wireframing_mcp/\r\n│   ├── core.py      # pure tool logic (offline): new/add_screen/place_element/add_action/\r\n│   │                #   link_screens/unlink/remove_screen/rename_screen/audit/export_html\r\n│   ├── server.py    # MCP transport — exposes core as MCP tools (FastMCP)\r\n│   └── bridge.py    # HTTP bridge (CORS) so the browser studio shares the same spec\r\n└── tests/test_core.py\r\n```\r\n\r\n## Run\r\n\r\n**Tests** (offline, no keys, no MCP SDK):\r\n```bash\r\ncd libraries/mcp/wireframing && python -m pytest -q\r\n```\r\n\r\n**MCP server** (for agents — Codex / Claude):\r\n```bash\r\npip install \"wireframing-mcp[server]\"     # installs the `mcp` transport\r\npython -m wireframing_mcp.server\r\n```\r\nTools: `new_wireframe`, `add_screen`, `rename_screen`, `place_element`, `add_action`,\r\n`link_screens`, `unlink`, `remove_screen`, `audit`, `export_html`, `get_spec`, `load_spec`.\r\n\r\n**HTTP bridge** (for the human `wireframe-studio` editor — stdlib only, no install):\r\n```bash\r\npython -m wireframing_mcp.bridge          # http://localhost:8765\r\n```\r\n`GET /spec` · `POST /spec` · `GET /audit` · `GET /health`. In the studio, click **⇅ MCP** →\r\n**Push** / **Pull** to share the flow. The shared contract is the factory `WireframeSpec`\r\n(`{screens:[{id,title,elements,links,actions}]}`); the studio projects its rich layout to/from it.\r\n\r\n## How it fits\r\n```\r\ncharter ─▶ wireframing agent ─┐\r\n                              ├─▶ Wireframing MCP (one shared WireframeSpec) ─▶ audit (A–F) ─▶ export HTML\r\nwireframe-studio (human) ─────┘        ▲ reuses agents/wireframing spec/generate/audit\r\n```\r\n`navigation-flow` (sibling MCP) grades a flow; this server's `audit` uses the same canonical logic.\r\n",
-    "assets": [],
-    "examples": [],
-    "dependencies": [
-      "pydantic>=2.6"
-    ],
-    "related": []
+    "sourcePath": "agents/wireframing",
+    "fileTree": [
+      {
+        "name": "agents",
+        "type": "directory",
+        "path": "agents",
+        "children": [
+          {
+            "name": "openai.yaml",
+            "type": "file",
+            "path": "agents/openai.yaml"
+          }
+        ]
+      },
+      {
+        "name": "assets",
+        "type": "directory",
+        "path": "assets",
+        "children": [
+          {
+            "name": "wireframe-template",
+            "type": "directory",
+            "path": "assets/wireframe-template",
+            "children": [
+              {
+                "name": "base.html",
+                "type": "file",
+                "path": "assets/wireframe-template/base.html"
+              },
+              {
+                "name": "styles.css",
+                "type": "file",
+                "path": "assets/wireframe-template/styles.css"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "references",
+        "type": "directory",
+        "path": "references",
+        "children": [
+          {
+            "name": "flow-rules.md",
+            "type": "file",
+            "path": "references/flow-rules.md",
+            "content": "# Flow-audit rules\n\nThe wireframe must score \"A\" before hand-off. Thresholds (tune per niche):\n\n- Clicks to a key action (login / checkout / cancel): ≤ N\n- Features per page: ≤ N\n- Max navigation depth: ≤ N\n- Orphan pages / dead buttons: 0\n\nScoring lives in `scripts/flow_audit.py`. Best-practice reference flows come from\n`libraries/memory` (App-Benchmark).\n"
+          }
+        ]
+      },
+      {
+        "name": "src",
+        "type": "directory",
+        "path": "src",
+        "children": [
+          {
+            "name": "wireframing",
+            "type": "directory",
+            "path": "src/wireframing",
+            "children": [
+              {
+                "name": "__init__.py",
+                "type": "file",
+                "path": "src/wireframing/__init__.py"
+              },
+              {
+                "name": "agent.py",
+                "type": "file",
+                "path": "src/wireframing/agent.py"
+              },
+              {
+                "name": "audit.py",
+                "type": "file",
+                "path": "src/wireframing/audit.py"
+              },
+              {
+                "name": "charter.py",
+                "type": "file",
+                "path": "src/wireframing/charter.py"
+              },
+              {
+                "name": "generate.py",
+                "type": "file",
+                "path": "src/wireframing/generate.py"
+              },
+              {
+                "name": "spec.py",
+                "type": "file",
+                "path": "src/wireframing/spec.py"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "tests",
+        "type": "directory",
+        "path": "tests",
+        "children": [
+          {
+            "name": "test_charter.py",
+            "type": "file",
+            "path": "tests/test_charter.py"
+          },
+          {
+            "name": "test_wireframing.py",
+            "type": "file",
+            "path": "tests/test_wireframing.py"
+          }
+        ]
+      },
+      {
+        "name": "pyproject.toml",
+        "type": "file",
+        "path": "pyproject.toml"
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "path": "SKILL.md",
+        "content": "---\nname: wireframing\ndescription: Generate a link-complete HTML/CSS wireframe from a project charter and loop until the user flow scores \"A\". Use when starting any new app's design phase.\nallowed-tools: Read, Write, Bash\n---\n# Wireframing agent\n\nA real agent (`src/wireframing/`, built on `agent-core`): charter → LLM screen-spec →\ngenerate HTML → flow-audit → revise loop until the flow grades **\"A\"**.\n\n1. The LLM turns the charter into a validated screen spec (`WireframeSpec`).\n2. `generate` writes one link-complete HTML page per screen (real links, no orphans).\n3. `audit` grades the flow A–F against the thresholds below; if not A, the audit issues are\n   fed back to the LLM and the spec is revised (bounded by `max_iterations`).\n4. Stop at A; hand to human check; then to the prototype/design step.\n\n## Run\n```python\nfrom wireframing import WireframingAgent          # see README of libraries/agent-core for the AgentContext\nres = WireframingAgent(ctx, out_dir=\"...\").run(charter_text)   # res.output[\"grade\"] == \"A\"\n```\nDeterministic pieces are also CLI-runnable: `python -m wireframing.generate` / `python -m wireframing.audit`.\n\n## Flow-audit thresholds (see `references/flow-rules.md`)\n- clicks-to-key-action ≤ 3 · features per page ≤ 7 · max navigation depth ≤ 4 · zero orphan pages / dead links\n\n> This loop is the fix for hallucinated flows (buttons to nowhere, unlinked pages).\n"
+      }
+    ]
   },
-  "localOverrides": {}
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/wireframing/thumbnail.png",
+    "pdf": null
+  }
 }

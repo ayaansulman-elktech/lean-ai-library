@@ -1,47 +1,41 @@
 # Lean AI Library
 
-A beautifully designed, responsive Next.js directory and catalog interface that aggregates assets (models, libraries, applications, agents, etc.) from standard Github repositories into a unified, explorable library.
+A static catalog for models, libraries, applications, agents, and research articles. Content is
+
+For the complete architecture, Factory workflow, data rules, and every CLI command, see
+[LIBRARY.md](LIBRARY.md).
+imported from portable JSON feeds and can be curated locally without losing edits on later imports.
 
 ## Prerequisites
+
 - Node.js (v18+)
 - npm
+- Python 3.11+ only when producing feeds in the factory repository
 
 ## Getting Started
 
-Follow these steps to run the library locally on your machine:
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/ayaansulman-elktech/lean-ai-library.git
-cd lean-ai-library
-```
-
-### 2. Install Dependencies
-Install all the necessary packages for both the Next.js frontend and the CLI parser:
 ```bash
 npm install
-```
-
-### 3. Build the Catalog (Critical Step)
-This project relies on a custom CLI pipeline that automatically clones the `lean-ai-factory` repository, scans it for assets (`article.json`, `README.md`, `SKILL.md`), validates the metadata, and generates the static JSON files required by the frontend. 
-
-**You MUST run this command before starting the server:**
-```bash
 npm run cli -- build
+npm start
 ```
-*Note: This command clones the target repository into `.tmp-factory`, parses the assets, generates the `catalog.json` file inside the `generated/` directory, and finally cleans up the temporary files.*
 
-### 4. Run the Development Server
-Once the catalog is built, start the Next.js development server:
+Open [http://127.0.0.1:4173](http://127.0.0.1:4173).
+
+## Import and edit content
+
 ```bash
-npm run dev
+npm run cli -- feed import path/to/library-feeds --dry-run
+npm run cli -- feed import path/to/library-feeds
+npm run cli -- article edit iris --short-description "Custom text"
+npm run cli -- article attach iris --thumbnail cover.png
+npm run cli -- article attach iris --pdf research.pdf
 ```
-
-### 5. Explore
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the Library! 
-
----
 
 ## How it works
-- **CLI Pipeline**: The pipeline (`cli/index.ts`) handles asset discovery and metadata parsing. It strictly validates fields like `shortDescription`, `description`, `name`, and `keywords` against specific character limits.
-- **Frontend**: A Next.js App Router application showcasing the assets in a beautiful, Apple-inspired interface, utilizing fluid typography and dynamic UI components.
+
+- Factory feeds replace imported `factoryData` only.
+- Library edits live in `localOverrides`; thumbnails and PDFs are local attachments.
+- The build command generates lightweight catalog JSON plus one offline detail JSON per article.
+- The vanilla browser frontend reads only files under `data/` and local article attachments.
+

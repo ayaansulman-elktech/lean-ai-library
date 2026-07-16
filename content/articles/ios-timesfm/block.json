@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "ios-timesfm",
+  "factoryData": {
+    "id": "ios-timesfm",
+    "type": "model",
+    "category": "ios-ready",
+    "name": "TimesFM",
+    "shortDescription": "Time-series forecasting",
+    "description": "Time-series forecasting",
+    "keywords": [
+      "ios",
+      "model",
+      "raw"
+    ],
+    "fileTree": []
+  },
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": null,
+    "pdf": null
+  }
+}

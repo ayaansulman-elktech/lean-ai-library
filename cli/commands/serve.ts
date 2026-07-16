@@ -7,7 +7,7 @@ export const serveCommand = new Command('serve')
   .action(() => {
     console.log(chalk.blue('Starting local dev server...'));
     try {
-      execSync('npm run dev', { stdio: 'inherit', cwd: process.cwd() });
+      execSync('npm start', { stdio: 'inherit', cwd: process.cwd() });
     } catch (e: any) {
       console.error(chalk.red('Failed to start dev server'), e.message);
     }

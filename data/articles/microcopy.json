@@ -1,0 +1,100 @@
+{
+  "id": "microcopy",
+  "type": "agent",
+  "category": "agent-library",
+  "name": "microcopy",
+  "shortDescription": "Apple-HIG microcopy per wireframe screen, checked for length/style, feeding swiftui-gen.",
+  "description": "Apple-HIG microcopy per wireframe screen, checked for length/style, feeding swiftui-gen.",
+  "keywords": [
+    "microcopy"
+  ],
+  "sourcePath": "agents/microcopy",
+  "fileTree": [
+    {
+      "name": "agents",
+      "type": "directory",
+      "path": "agents",
+      "children": [
+        {
+          "name": "openai.yaml",
+          "type": "file",
+          "path": "agents/openai.yaml"
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "directory",
+      "path": "references",
+      "children": [
+        {
+          "name": "voice-and-tone.md",
+          "type": "file",
+          "path": "references/voice-and-tone.md",
+          "content": "# Voice & tone (Apple HIG writing)\n\nThe rules the microcopy agent follows. Copy should feel like the system wrote it, not marketing.\n\n## Principles\n- **Short and human.** Say the least that's clear. Cut filler (\"simply\", \"just\", \"easily\").\n- **Benefit-led.** Tell the user what they get, not what the app does.\n- **Speak to the persona.** Match their words and context; no jargon.\n- **Sentence case** for content (titles, body). **Title Case** for buttons.\n- **No shouting.** Never ALL CAPS; no exclamation-mark spam.\n\n## Slot rules\n| Slot | Rule |\n|---|---|\n| Title | ≤ 40 chars; one clear idea; sentence case |\n| Body / element | one benefit or instruction; concrete, not abstract |\n| Button | 1–4 words, ≤ 22 chars, **no trailing period**, action verb (\"Take a selfie\", \"Continue\") |\n| Link | short, scannable; the destination's value (\"See your palette\") |\n| Empty state | reassure + one next step |\n| Paywall | value first, price second; honest, no dark patterns |\n\n## Examples\n- ✅ \"Take a selfie\" · ❌ \"CLICK HERE TO START THE ANALYSIS NOW!\"\n- ✅ \"Your season is Autumn\" · ❌ \"We have successfully computed your seasonal palette result.\"\n- ✅ \"See your palette\" · ❌ \"Proceed\"\n"
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "directory",
+      "path": "src",
+      "children": [
+        {
+          "name": "microcopy",
+          "type": "directory",
+          "path": "src/microcopy",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "src/microcopy/__init__.py"
+            },
+            {
+              "name": "agent.py",
+              "type": "file",
+              "path": "src/microcopy/agent.py"
+            },
+            {
+              "name": "checks.py",
+              "type": "file",
+              "path": "src/microcopy/checks.py"
+            },
+            {
+              "name": "spec.py",
+              "type": "file",
+              "path": "src/microcopy/spec.py"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "directory",
+      "path": "tests",
+      "children": [
+        {
+          "name": "test_microcopy.py",
+          "type": "file",
+          "path": "tests/test_microcopy.py"
+        }
+      ]
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml"
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "content": "---\nname: microcopy\ndescription: Write Apple-HIG UI copy (title, element text, button labels, links) for each wireframe screen, tuned to the persona voice, checked for length/style. Use after wireframing, feeding swiftui-gen.\nallowed-tools: Read, Write, Bash\n---\n# Microcopy agent\n\nStep 4 of the design-automation pipeline (deck p.60): the words. LLM writes concise, benefit-led\ncopy per screen slot; a deterministic checker enforces the HIG rules (see `references/voice-and-tone.md`)\nand re-asks once on failure.\n\n```python\nfrom microcopy import MicrocopyAgent\nres = MicrocopyAgent(ctx).run({\n    \"spec\": wireframe_result[\"spec\"],     # {screens: [...]} from the wireframing agent\n    \"persona\": \"…\", \"voice\": \"warm, clear\",\n    \"app\": \"ColorMatching\",\n})\nres.output[\"copy\"]         # {screen_id: {title, elements{}, actions{}, links{}}} -> feed swiftui-gen\nres.output[\"all_passed\"]   # gate\n```\n\n**Rules enforced:** title ≤ 40 chars; button labels 1–4 words, ≤ 22 chars, no trailing period,\nnever ALL CAPS; every wireframe element gets copy. Generation is **per screen** so each can be\nreviewed and adjusted independently.\n"
+    }
+  ],
+  "slug": "microcopy",
+  "contentPath": "",
+  "coverPath": "content/articles/microcopy/thumbnail.png",
+  "coverPreviewPath": "content/articles/microcopy/thumbnail.png"
+}

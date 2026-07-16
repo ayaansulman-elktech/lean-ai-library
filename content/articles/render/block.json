@@ -1,4 +1,6 @@
 {
+  "schemaVersion": "1.0.0",
+  "id": "render",
   "factoryData": {
     "id": "render",
     "name": "rendering",
@@ -15,5 +17,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {}
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/render/thumbnail.png",
+    "pdf": null
+  }
 }

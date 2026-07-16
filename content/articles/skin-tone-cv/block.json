@@ -1,4 +1,6 @@
 {
+  "schemaVersion": "1.0.0",
+  "id": "skin-tone-cv",
   "factoryData": {
     "id": "skin-tone-cv",
     "name": "skin-tone-cv (model card)",
@@ -14,5 +16,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {}
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/skin-tone-cv/thumbnail.png",
+    "pdf": null
+  }
 }

@@ -1,4 +1,6 @@
 {
+  "schemaVersion": "1.0.0",
+  "id": "references",
   "factoryData": {
     "id": "references",
     "name": "References (from competition)",
@@ -14,5 +16,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {}
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/references/thumbnail.png",
+    "pdf": null
+  }
 }

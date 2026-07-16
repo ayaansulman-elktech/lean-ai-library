@@ -1,4 +1,6 @@
 {
+  "schemaVersion": "1.0.0",
+  "id": "agent-core",
   "factoryData": {
     "id": "agent-core",
     "name": "agent-core",
@@ -17,5 +19,9 @@
     ],
     "related": []
   },
-  "localOverrides": {}
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/agent-core/thumbnail.png",
+    "pdf": null
+  }
 }

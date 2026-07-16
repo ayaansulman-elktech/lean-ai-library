@@ -1,4 +1,6 @@
 {
+  "schemaVersion": "1.0.0",
+  "id": "ml-core",
   "factoryData": {
     "id": "ml-core",
     "name": "ml-core",
@@ -19,5 +21,9 @@
     ],
     "related": []
   },
-  "localOverrides": {}
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/ml-core/thumbnail.png",
+    "pdf": null
+  }
 }

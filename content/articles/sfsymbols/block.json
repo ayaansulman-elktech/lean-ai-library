@@ -1,4 +1,6 @@
 {
+  "schemaVersion": "1.0.0",
+  "id": "sfsymbols",
   "factoryData": {
     "id": "sfsymbols",
     "name": "SF Symbols",
@@ -14,5 +16,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {}
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/sfsymbols/thumbnail.png",
+    "pdf": null
+  }
 }

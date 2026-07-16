@@ -1,4 +1,6 @@
 {
+  "schemaVersion": "1.0.0",
+  "id": "face_parsing",
   "factoryData": {
     "id": "face_parsing",
     "name": "face-parsing",
@@ -22,5 +24,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {}
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/face_parsing/thumbnail.png",
+    "pdf": null
+  }
 }

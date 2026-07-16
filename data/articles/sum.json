@@ -1,0 +1,83 @@
+{
+  "id": "sum",
+  "type": "model",
+  "category": "model-library",
+  "name": "sum",
+  "shortDescription": "Predicts where viewers look on a still screen or image.",
+  "description": "SUM (Saliency Unification through Mamba) predicts a human-attention heatmap for a still image, with a UI/web-page condition tuned for interface screens. Used by ux-audit to check the primary action is the visual hot-spot. Real weights run in iOS Ready; offline, a real pixel-based classical model or a deterministic mock stands in. The adapter is the shared vis_models.saliency core, re-exported here.",
+  "keywords": [
+    "saliency",
+    "image",
+    "attention",
+    "ui",
+    "ux"
+  ],
+  "sourcePath": "libraries/models/blocks/sum",
+  "fileTree": [
+    {
+      "name": "src",
+      "type": "directory",
+      "path": "src",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "src/__init__.py"
+        },
+        {
+          "name": "metrics.py",
+          "type": "file",
+          "path": "src/metrics.py"
+        },
+        {
+          "name": "mock.py",
+          "type": "file",
+          "path": "src/mock.py"
+        },
+        {
+          "name": "model.py",
+          "type": "file",
+          "path": "src/model.py"
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "directory",
+      "path": "tests",
+      "children": [
+        {
+          "name": "test_model.py",
+          "type": "file",
+          "path": "tests/test_model.py"
+        }
+      ]
+    },
+    {
+      "name": "__init__.py",
+      "type": "file",
+      "path": "__init__.py"
+    },
+    {
+      "name": "block.json",
+      "type": "file",
+      "path": "block.json",
+      "content": "{\n  \"name\": \"sum\",\n  \"version\": \"0.1.0\",\n  \"task\": \"image saliency (still-screen attention)\",\n  \"summary\": \"Predicts where viewers look on a still screen or image.\",\n  \"description\": \"SUM (Saliency Unification through Mamba) predicts a human-attention heatmap for a still image, with a UI/web-page condition tuned for interface screens. Used by ux-audit to check the primary action is the visual hot-spot. Real weights run in iOS Ready; offline, a real pixel-based classical model or a deterministic mock stands in. The adapter is the shared vis_models.saliency core, re-exported here.\",\n  \"keywords\": [\"saliency\", \"image\", \"attention\", \"ui\", \"ux\"],\n  \"inputs\": \"image (screen / screenshot)\",\n  \"outputs\": \"attention heatmap (vis_models SaliencyMap)\",\n  \"license\": \"MIT\",\n  \"source\": \"https://github.com/Arhosseini77/SUM\",\n  \"status\": \"raw\",\n  \"apple_native\": {\n    \"framework\": \"Vision (VNGenerateAttentionBasedSaliencyImageRequest)\",\n    \"verdict\": \"partial\",\n    \"note\": \"Vision offers general attention-based saliency on-device, but not a UI/web-page-tuned model — SUM's interface condition is why it's used. Vision is a reasonable on-device fallback.\"\n  },\n  \"adapter\": \"blocks.sum.src.model:SUMSaliencyModel\",\n  \"mock\": \"blocks.sum.src.mock:MockSaliencyModel\",\n  \"deps\": [\"vis_models.saliency\"],\n  \"weights\": \"ios-ready/raw/SUM\",\n  \"ready_build\": null,\n  \"mcp\": null\n}\n"
+    },
+    {
+      "name": "cover.svg",
+      "type": "file",
+      "path": "cover.svg"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "content": "# sum (model card)\n\nStill-image saliency — where viewers look on a screen\n([Arhosseini77/SUM](https://github.com/Arhosseini77/SUM), *Saliency Unification through Mamba*).\n\n- **Task:** predict a human-attention heatmap for a still screen/image (UI/web-page condition).\n- **Inputs:** an image (screen or screenshot). **Outputs:** a `vis_models` `SaliencyMap`.\n- **Status:** `raw` — the adapter is the shared `vis_models.saliency` core (used by ux-audit). Real\n  `.pth` weights run in iOS Ready (`ios-ready/raw/SUM`); offline it falls back to a real\n  pixel-based classical model, or a deterministic mock when forced.\n- **Apple-native:** *partial* — Vision's `VNGenerateAttentionBasedSaliencyImageRequest` gives\n  general on-device saliency, but not a UI-tuned model; SUM's interface condition is why it's used.\n\n## Use\n```python\nfrom blocks.sum.src import build\nfrom blocks.sum.src.metrics import analyze\nfrom vis_models.saliency import Region\n\nmodel = build()                              # real SUM on the farm; classical pixel model elsewhere\nsmap  = model.predict(\"screen.png\")\nanalyze(smap, Region(0.25, 0.80, 0.50, 0.12))   # does attention peak on the primary action?\n```\n\nThe SUM vs ViNet split: **SUM = still screens, ViNet = video/onboarding clips.**\n\n## Running the real model (iOS Ready)\nFetch the SUM repo + checkpoint into `ios-ready/raw/SUM/`, install `torch`, then `build()` returns\nthe real `SUMSaliencyModel` (`is_available()` gates the fallback).\n"
+    }
+  ],
+  "slug": "sum",
+  "contentPath": "",
+  "coverPath": "content/articles/sum/thumbnail.png",
+  "coverPreviewPath": "content/articles/sum/thumbnail.png"
+}

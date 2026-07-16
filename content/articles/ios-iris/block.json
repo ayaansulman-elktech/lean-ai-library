@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "ios-iris",
+  "factoryData": {
+    "id": "ios-iris",
+    "type": "model",
+    "category": "ios-ready",
+    "name": "iris",
+    "shortDescription": "Iris/eye-landmark detection -> eye colour for color extraction",
+    "description": "Weights = one-time TFLite->PyTorch conversion (iris_landmark.pth); torch-only at runtime.",
+    "keywords": [
+      "ios",
+      "model",
+      "raw"
+    ],
+    "sourcePath": "libraries/ios-ready/raw/iris",
+    "fileTree": []
+  },
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/ios-iris/thumbnail.png",
+    "pdf": null
+  }
+}

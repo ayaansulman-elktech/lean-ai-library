@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "ux-attention-pattern",
+  "factoryData": {
+    "id": "ux-attention-pattern",
+    "type": "library",
+    "category": "code-library",
+    "name": "ux-attention-pattern",
+    "shortDescription": "Run a screen through the attention modules and decide which iOS reading flow it follows, and whether that's healthy.",
+    "description": "Tuned for iOS app screens (narrow, vertical, component-driven), grounded in NN/g eye-tracking research + Apple HIG. Uses the attention modules (vis_models.saliency — real SUM when weights are on the box, else the classical pixel model, else the deterministic mock) to predict a screen's attention, then classifies the reading flow from the grid's row/column profiles: vertical (layer-cake column of sections — good), gutenberg (top anchor + bottom terminal CTA in the thumb zone — good), focused (single hero/action — good), f-skim (top-left text-wall skim — warn), scattered (no hierarchy — bad). If a cta point is given, a gutenberg/vertical screen is only fully good when attention reaches the CTA. The rule core (classify_pattern) is pure stdlib; the image layer depends on vis_models.saliency.",
+    "keywords": [
+      "ux",
+      "attention",
+      "saliency",
+      "reading-pattern",
+      "ios",
+      "layer-cake",
+      "gutenberg",
+      "f-pattern",
+      "audit"
+    ],
+    "sourcePath": "libraries/code/blocks/ux_attention_pattern",
+    "fileTree": [
+      {
+        "name": "src",
+        "type": "directory",
+        "path": "src",
+        "children": [
+          {
+            "name": "__init__.py",
+            "type": "file",
+            "path": "src/__init__.py"
+          },
+          {
+            "name": "patterns.py",
+            "type": "file",
+            "path": "src/patterns.py"
+          },
+          {
+            "name": "ux_attention_pattern.py",
+            "type": "file",
+            "path": "src/ux_attention_pattern.py"
+          }
+        ]
+      },
+      {
+        "name": "tests",
+        "type": "directory",
+        "path": "tests",
+        "children": [
+          {
+            "name": "test_attention.py",
+            "type": "file",
+            "path": "tests/test_attention.py"
+          },
+          {
+            "name": "test_patterns.py",
+            "type": "file",
+            "path": "tests/test_patterns.py"
+          }
+        ]
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "path": "__init__.py"
+      },
+      {
+        "name": "block.json",
+        "type": "file",
+        "path": "block.json",
+        "content": "{\n  \"name\": \"ux-attention-pattern\",\n  \"version\": \"0.1.0\",\n  \"task\": \"classify an iOS screen's reading pattern (vertical/gutenberg/f-skim/focused/scattered) and judge it\",\n  \"summary\": \"Run a screen through the attention modules and decide which iOS reading flow it follows, and whether that's healthy.\",\n  \"description\": \"Tuned for iOS app screens (narrow, vertical, component-driven), grounded in NN/g eye-tracking research + Apple HIG. Uses the attention modules (vis_models.saliency — real SUM when weights are on the box, else the classical pixel model, else the deterministic mock) to predict a screen's attention, then classifies the reading flow from the grid's row/column profiles: vertical (layer-cake column of sections — good), gutenberg (top anchor + bottom terminal CTA in the thumb zone — good), focused (single hero/action — good), f-skim (top-left text-wall skim — warn), scattered (no hierarchy — bad). If a cta point is given, a gutenberg/vertical screen is only fully good when attention reaches the CTA. The rule core (classify_pattern) is pure stdlib; the image layer depends on vis_models.saliency.\",\n  \"keywords\": [\"ux\", \"attention\", \"saliency\", \"reading-pattern\", \"ios\", \"layer-cake\", \"gutenberg\", \"f-pattern\", \"audit\"],\n  \"inputs\": \"a screen image (path) for audit_attention; or an attention grid (values,width,height) for classify_pattern\",\n  \"outputs\": \"{ pattern, level, good, confidence, focal, dispersion, features, reasons }\",\n  \"lang\": \"python\",\n  \"license\": \"proprietary\",\n  \"source\": \"\",\n  \"status\": \"stable\",\n  \"entry\": \"blocks.ux_attention_pattern.src.patterns:classify_pattern\",\n  \"swift\": null,\n  \"deps\": [\"vis_models.saliency\"],\n  \"mcp\": null\n}\n"
+      },
+      {
+        "name": "cover.svg",
+        "type": "file",
+        "path": "cover.svg"
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "path": "README.md",
+        "content": "# ux-attention-pattern (code block)\n\nDecides **which reading pattern an iOS screen follows — and whether it's healthy.** The attention\ncompanion to `ux-position-mask` (geometry): this one uses the *attention* signal. Tuned for iOS\n(narrow, vertical, component-driven), grounded in NN/g eye-tracking research + Apple HIG.\n\n- **`audit_attention(path, backend=\"sum\")`** — runs the screen through the attention modules\n  (`vis_models.saliency`: real **SUM** on the farm, classical/mock offline) → attention map → classify.\n- **`classify_pattern(values, width, height, cta=None)`** — the pure, stdlib rule core (the\n  `entry`): reads the grid's row/column profiles and classifies the flow. If a `cta` point is given,\n  a gutenberg/vertical screen is only fully *good* when attention reaches the CTA in the thumb zone.\n\n## The iOS pattern set\n| Pattern | Screen | Verdict |\n|---|---|---|\n| **vertical** | centered column of sections (layer-cake: nav title → cards → tab bar) | ✅ good |\n| **gutenberg** | top anchor + bottom terminal CTA (onboarding / paywall / hero) | ✅ good |\n| **focused** | one dominant hero/action | ✅ good |\n| **f-skim** | top-left concentration on an unstructured text wall | ⚠️ warn — add sections/bold |\n| **scattered** | no column, order, or terminal action | ❌ bad |\n\n*Web F/Z collapse into vertical motion on phones: F → an f-skim, Z → a gutenberg top-to-bottom flow.*\n\n**Output:** `{ pattern, level (good|ok|warn|bad), good, confidence, focal, dispersion, features, reasons }`.\n\n**Depends on** `vis_models.saliency` (the SUM/ViNet attention modules). The rule core has no deps and\nis always exercised in CI; the image layer runs offline via the mock. On real screens, the classical\nfallback is diffuse — accurate attention needs the SUM weights on an iOS Ready host.\n"
+      }
+    ]
+  },
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/ux-attention-pattern/thumbnail.png",
+    "pdf": null
+  }
+}

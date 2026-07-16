@@ -1,0 +1,19 @@
+{
+  "id": "ios-moodboard-purity",
+  "type": "model",
+  "category": "ios-ready",
+  "name": "moodboard-purity",
+  "shortDescription": "Moodboard aesthetic extraction (palette, tags) + coherence/purity score -> per-app universe",
+  "description": "Runs in-process from raw/moodboard-purity via vis_models.moodboard. Real scoring needs SigLIP2 (google/siglip2-base-patch16-224) in data/huggingface; without it the adapter reports unavailable and build_moodboard falls back to the mock.",
+  "keywords": [
+    "ios",
+    "model",
+    "raw"
+  ],
+  "sourcePath": "libraries/ios-ready/raw/moodboard-purity",
+  "fileTree": [],
+  "slug": "ios-moodboard-purity",
+  "contentPath": "",
+  "coverPath": "assets/default_thumbnail.png",
+  "coverPreviewPath": ""
+}

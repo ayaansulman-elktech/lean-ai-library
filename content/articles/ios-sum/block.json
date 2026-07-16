@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "ios-sum",
+  "factoryData": {
+    "id": "ios-sum",
+    "type": "model",
+    "category": "ios-ready",
+    "name": "SUM",
+    "shortDescription": "Image saliency (where humans look) — UI/marketing",
+    "description": "Image saliency (where humans look) — UI/marketing",
+    "keywords": [
+      "ios",
+      "model",
+      "raw"
+    ],
+    "sourcePath": "libraries/ios-ready/raw/SUM",
+    "fileTree": []
+  },
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/ios-sum/thumbnail.png",
+    "pdf": null
+  }
+}

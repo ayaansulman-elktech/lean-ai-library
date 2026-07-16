@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "ios-skin-tone-cv",
+  "factoryData": {
+    "id": "ios-skin-tone-cv",
+    "type": "model",
+    "category": "ios-ready",
+    "name": "skin-tone-cv",
+    "shortDescription": "Extract skin/hair/eye tones from a selfie -> features for seasonal palette",
+    "description": "Extract skin/hair/eye tones from a selfie -> features for seasonal palette",
+    "keywords": [
+      "ios",
+      "model",
+      "raw"
+    ],
+    "sourcePath": "libraries/ios-ready/raw/skin-tone-cv",
+    "fileTree": [
+      {
+        "name": "README.md",
+        "type": "file",
+        "path": "README.md",
+        "content": "# skin-tone-cv (model card)\n\n- **Task:** extract skin / hair / eye tones from a selfie → features for seasonal palette.\n- **Status:** raw → ready (Phase-1 reference model that proves the pipeline).\n- **Inputs:** image. **Outputs:** tone features / palette class.\n- **Source / license:** <fill>.\n- **Ready build:** `../../ready/skin-tone-cv.mlpackage` (CoreML, on-device).\n"
+      }
+    ]
+  },
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/ios-skin-tone-cv/thumbnail.png",
+    "pdf": null
+  }
+}

@@ -1,4 +1,6 @@
 {
+  "schemaVersion": "1.0.0",
+  "id": "rag",
   "factoryData": {
     "id": "rag",
     "name": "rag",
@@ -15,5 +17,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {}
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/rag/thumbnail.png",
+    "pdf": null
+  }
 }

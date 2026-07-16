@@ -1,4 +1,6 @@
 {
+  "schemaVersion": "1.0.0",
+  "id": "design-system",
   "factoryData": {
     "id": "design-system",
     "name": "Lean Design System",
@@ -15,5 +17,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {}
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/design-system/thumbnail.png",
+    "pdf": null
+  }
 }

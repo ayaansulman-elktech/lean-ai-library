@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "ios-vinet",
+  "factoryData": {
+    "id": "ios-vinet",
+    "type": "model",
+    "category": "ios-ready",
+    "name": "ViNet",
+    "shortDescription": "Video saliency — onboarding clips (ViNet-S / ViNet++)",
+    "description": "Original ViNet weights unpublished; targets the maintained ViNet-S. Checkpoint vinet_s_dhf1k.pt.",
+    "keywords": [
+      "ios",
+      "model",
+      "raw"
+    ],
+    "sourcePath": "libraries/ios-ready/raw/ViNet",
+    "fileTree": []
+  },
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/ios-vinet/thumbnail.png",
+    "pdf": null
+  }
+}

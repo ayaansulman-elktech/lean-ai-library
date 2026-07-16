@@ -1,0 +1,75 @@
+{
+  "id": "mcp-purity",
+  "type": "library",
+  "category": "mcp-library",
+  "name": "purity",
+  "shortDescription": "Purity MCP: moodboard coherence scoring + the per-app universe (tokens.override.json), any agent can call.",
+  "description": "Purity MCP: moodboard coherence scoring + the per-app universe (tokens.override.json), any agent can call.",
+  "keywords": [
+    "purity"
+  ],
+  "sourcePath": "libraries/mcp/purity",
+  "fileTree": [
+    {
+      "name": "src",
+      "type": "directory",
+      "path": "src",
+      "children": [
+        {
+          "name": "purity_mcp",
+          "type": "directory",
+          "path": "src/purity_mcp",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "src/purity_mcp/__init__.py"
+            },
+            {
+              "name": "core.py",
+              "type": "file",
+              "path": "src/purity_mcp/core.py"
+            },
+            {
+              "name": "server.py",
+              "type": "file",
+              "path": "src/purity_mcp/server.py"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "directory",
+      "path": "tests",
+      "children": [
+        {
+          "name": "test_core.py",
+          "type": "file",
+          "path": "tests/test_core.py"
+        },
+        {
+          "name": "test_server.py",
+          "type": "file",
+          "path": "tests/test_server.py"
+        }
+      ]
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "content": "# Purity MCP\n\nTurns a folder of persona images into an app's visual identity.\n\nGiven a moodboard, it extracts the palette and aesthetic tags, scores how coherently the images\nhang together (\"purity\"), and projects the result into `apps/<app>/universe/tokens.override.json` —\nthe per-app design tokens that override the shared design system.\n\nIt exposes this over MCP, so any agent can call it, and over a plain Python API.\n\n---\n\n## Quick start\n\n```bash\n# 1. Fetch the analysis backend and its models (~4GB, downloaded outside git)\nscripts/fetch-moodboard.sh --captions\n\n# 2. Install what the models need\npython -m pip install \"transformers==4.57.1\" sentencepiece torch einops timm accelerate num2words\n\n# 3. Confirm it can really run\nscripts/fetch-moodboard.sh          # prints is_available(): True\n```\n\nThen, from Python:\n\n```python\nfrom vis_models.moodboard import build_moodboard, write_universe\n\nmodel = build_moodboard(\"purity\")\nresult = model.analyze(\"apps/color-matching/universe/moodboard/\")\n\nprint(result.coherence)   # 0.0–1.0\nprint(result.palette)     # ['#0E1B2A', '#FBFAF7', '#D98C5F']\nprint(result.metrics)     # latentPurity, spectralPurity, dissonance, outliers, …\n\nwrite_universe(result, \"apps/color-matching/universe/tokens.override.json\", app=\"color-matching\")\n```\n\nOr as an MCP server:\n\n```bash\npip install \"purity-mcp[server]\"\npython -m purity_mcp.server\n```\n\n---\n\n## MCP tools\n\n| Tool | Arguments | Returns |\n| --- | --- | --- |\n| `health` | — | which backend is active, and why |\n| `score_moodboard` | `folder`, `depth`, `allow_heuristic` | palette, tags, coherence, metrics, issues, notes |\n| `to_tokens` | `folder`, `app`, `depth` | a DTCG token override (does not write) |\n| `write_tokens` | `folder`, `out_path`, `app`, `depth`, `force`, `min_coherence` | path written |\n\n`depth` is `fast`, `balanced` (default), or `deep` — it selects how much captioning and analysis\nwork the backend does, trading time for richer aesthetic tags.\n\nEvery tool takes its `folder` explicitly and the server keeps no state between calls, so two\nagents sharing one server cannot cross-contaminate each other's results.\n\nA moodboard is **one flat folder** of images. Subfolders are ignored. Accepted extensions:\n`.png .jpg .jpeg .webp .heic`, matched case-insensitively.\n\n---\n\n## What you get back\n\n```json\n{\n  \"palette\":       [\"#FBFAF7\", \"#0E1B2A\", \"#D98C5F\"],\n  \"aesthetic_tags\": [\"central balance\", \"negative space\", \"minimal\", \"soft focus\"],\n  \"coherence\":     0.5271,\n  \"ml_ran\":        true,\n  \"metrics\": {\n    \"latentPurity\": 0.6484,      \"spectralPurity\": 0.2244,\n    \"harmonicity\":  0.2113,      \"dissonance\":     0.2866,\n    \"aestheticRegimeCount\": 4,   \"clusterCount\":   2,\n    \"dominantAesthetic\": \"Earth Tones\",\n    \"saturated\": false,          \"outliers\": []\n  },\n  \"issues\": [],\n  \"notes\":  [\"aestheticRegimeCount is at its upstream cap — …\"]\n}\n```\n\n`palette` is dominant-first. `issues` blocks token generation (see the gate, below); an empty list\nmeans the moodboard is good to use. `notes` are advisory and never refuse.\n\n---\n\n## Reading the score\n\n**Do not read `coherence` alone.** Three properties of the underlying score make it misleading\non its own.\n\n### `coherence` saturates\n\nThe scoring formula clamps to `[0, 1]`, and several genuinely different moodboards all land on\nexactly `1.0`. You cannot rank two strong boards by this number. Compare `metrics.latentPurity`\nand `metrics.spectralPurity` instead. When it happens, `metrics.saturated` is `true` and the\nboard is blocked from generating tokens.\n\n### There is no pure / hybrid / dissonant label\n\nAn earlier version reported a `verdict` derived from `aestheticRegimeCount` and `dissonanceScore`.\nEight labelled moodboards, scored through the real backend, killed it:\n\n| board | intent | coherence | latentPurity | regimes |\n|---|---|---|---|---|\n| ukiyo-e prints | pure | 0.5235 | 0.6289 | 6 |\n| botanical engravings | pure | 0.4934 | 0.5872 | 6 |\n| Greek pottery | pure | 0.5339 | 0.6532 | 6 |\n| Impressionist paintings | pure | 0.4998 | 0.5943 | 6 |\n| prints + abstracts | hybrid | 0.4972 | 0.5902 | 6 |\n| gothic + pop art | hybrid | 0.4926 | 0.5781 | 6 |\n| mixed grab-bag A | dissonant | 0.4821 | 0.5609 | 6 |\n| mixed grab-bag B | dissonant | 0.5095 | 0.6078 | 6 |\n\nEvery metric overlaps across every label pair, and a deliberately incoherent board outscored six\nbotanical engravings. `aestheticRegimeCount` is 6 for all of them because upstream caps it — it\nmeasures graph richness, not how many aesthetics are present. So the label was noise dressed as a\njudgment, and it is gone. The raw metrics pass through untouched.\n\nAnyone re-adding a classification should first show it separates a labelled set.\n\n### `ml_ran: false` means the score means something else\n\nIf the vision model cannot load, the backend still returns a `coherence` between 0 and 1 — but it\nis computed from colors alone, with no understanding of symbols, style, or emotion. It is a\ndifferent measurement wearing the same name and the same range.\n\nEvery result reports `ml_ran`. When it is `false`, the score is not comparable to a real run and\nmust not drive design tokens. The library enforces this rather than trusting the caller.\n\n---\n\n## The gate\n\n`write_universe` (and the `write_tokens` tool) refuses exactly one thing by default:\n\n- **`ml_ran` is `false`** — a colour-only score, a different quantity under the same name\n\nThat is a fact about the pipeline, not a judgment about the images. Everything else is advisory.\n\n**No minimum coherence ships**, because none is validated: all eight boards above scored 0.48–0.53,\nso any default would admit or reject them all. The module once defaulted to `0.6`, which rejected\nevery real moodboard including the pure ones. If you calibrate a threshold on your own boards, pass\n`min_coherence` and it will be enforced.\n\nA refused write leaves no file behind. `force=True` overrides once you've read the issues.\n\nCall `blocking_issues(result)` to check without writing, and `advisory_notes(result)` for the\nsaturation / outlier / regime-cap warnings that never refuse.\n\n---\n\n## How the tokens are derived\n\n| Token | Chosen as |\n| --- | --- |\n| `color.brand` | the darkest color in the palette |\n| `color.surface` | the lightest color |\n| `color.accent` | the most saturated of the remaining colors |\n| `typography.display` | font chosen from the aesthetic tags |\n| `radius.md` | corner radius chosen from the aesthetic tags |\n\nTag-to-font and tag-to-radius mappings live at the top of `universe.py` and are meant to be edited.\n\n---\n\n## Architecture\n\n```\nagent ──MCP──> purity-mcp ──> vis_models.moodboard ──> moodboard-purity backend\n              (transport)     (scoring, gate, tokens)   (vision models, in-process)\n```\n\n- **`libraries/mcp/purity/`** — this package. MCP transport and folder handling only.\n- **`libraries/models/src/vis_models/moodboard/`** — the logic, and the single source of truth:\n  - `base.py` — `MoodboardResult`, color helpers\n  - `adapter.py` — runs the real backend\n  - `mock.py` — deterministic offline stand-in\n  - `metrics.py` — reads the backend's output, enforces the payload contract\n  - `universe.py` — the gate and the token projection\n- **`libraries/ios-ready/raw/moodboard-purity/`** — the vendored analysis backend and its model\n  weights. Excluded from git; fetched with `scripts/fetch-moodboard.sh`.\n\nThe backend runs in-process. There is no server to start and no port to manage.\n\n`build_moodboard(\"purity\")` returns the real backend when it can genuinely run, and the\ndeterministic mock otherwise. It never quietly downgrades to a color-only score.\n\n---\n\n## Setup details\n\n`scripts/fetch-moodboard.sh` downloads the backend source plus model weights into\n`libraries/ios-ready/raw/moodboard-purity/`. Both are excluded from git — **no model ever enters the\nrepository.** The script is safe to re-run; it skips work already done, and finishes by reporting\nwhether real scoring is actually enabled.\n\n| Flag | Effect |\n| --- | --- |\n| *(none)* | backend source + the image model (SigLIP2, ~1.5GB) |\n| `--captions` | also the caption model (SmolVLM2, ~2.6GB) — richer aesthetic tags |\n| `--repo-only` | source only, no weights |\n\nTwo dependency requirements are strict:\n\n- **`transformers` must be `4.57.1`.** On 5.x the model's text encoder fails with\n  `'BaseModelOutputWithPooling' object has no attribute 'norm'`, and tag fusion degrades silently.\n- **`sentencepiece` is required.** Without it the tokenizer raises, the backend catches the error,\n  and every run falls back to color-only scoring while the weights sit on disk looking installed.\n\n`is_available()` checks both, so it cannot report readiness it doesn't have.\n\n---\n\n## Environment variables\n\n| Variable | Effect |\n| --- | --- |\n| `MOODBOARD_ENABLE_ML=0` | force color-only scoring; `is_available()` becomes `False` |\n| `MOODBOARD_CAPTION_BACKEND=fast` | use SmolVLM2 for captions (recommended) |\n| `MOODBOARD_ENABLE_OWLV2=0` | skip object detection; faster |\n| `HF_HOME` | override where model weights are read from |\n\n---\n\n## Troubleshooting\n\n| Symptom | Cause | Fix |\n| --- | --- | --- |\n| `build_moodboard(\"purity\")` returns the mock | backend can't run | run `scripts/fetch-moodboard.sh` and read its report |\n| `ml_ran: false` with weights installed | a dependency is missing | install `sentencepiece`; pin `transformers==4.57.1` |\n| `refusing to write the universe` | heuristic-fallback score, or below your `min_coherence` | read `issues`; fix the install, or pass `force=True` |\n| `MalformedAnalysis` | backend output changed shape | the error names the missing field |\n| `no images` | wrong folder, or images in subfolders | a moodboard is one flat folder |\n\nThe library raises `MalformedAnalysis` rather than substituting `0.0` for a missing value, because\na zeroed score reads as a confident, plausible, and wrong result.\n\n---\n\n## Tests\n\n```bash\ncd libraries/mcp/purity && python -m pytest -q     # transport, folder handling\ncd libraries/models     && python -m pytest -q     # scoring, gate, token projection\n```\n\nBoth suites run offline with no models installed. The output contract is tested against a real\ncaptured backend response (`libraries/models/tests/fixtures/analyze_heuristic.json`). Tests that\nrequire the backend or its weights skip automatically when those are absent.\n\n---\n\n## Calibration\n\nThe quality thresholds were validated, not guessed. Eight moodboards were assembled from\npublic-domain artwork with a known intent (four coherent, two deliberate hybrids, two incoherent)\nand scored through the real backend. Two constants did not survive:\n\n- A `verdict` label derived from `aestheticRegimeCount` — removed. No metric separated the label\n  groups; a deliberately incoherent board outscored a genuinely coherent one.\n- A `0.6` minimum coherence — removed as a default. Every board, including the coherent ones,\n  scored 0.48–0.53, so the gate rejected them all.\n\nWhat survives is the one check with a mechanism behind it rather than a threshold: a score the\nvision model did not produce cannot drive design tokens.\n\nTo recalibrate against your own boards, score them, put the numbers beside the images, and set\n`min_coherence` only if a cut-off genuinely separates the ones you accept from the ones you don't.\n"
+    }
+  ],
+  "slug": "mcp-purity",
+  "contentPath": "",
+  "coverPath": "content/articles/mcp-purity/thumbnail.png",
+  "coverPreviewPath": "content/articles/mcp-purity/thumbnail.png"
+}

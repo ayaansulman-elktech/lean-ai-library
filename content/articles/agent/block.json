@@ -1,4 +1,6 @@
 {
+  "schemaVersion": "1.0.0",
+  "id": "agent",
   "factoryData": {
     "id": "agent",
     "name": "agent-name-here",
@@ -14,5 +16,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {}
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/agent/thumbnail.png",
+    "pdf": null
+  }
 }

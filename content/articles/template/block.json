@@ -1,4 +1,6 @@
 {
+  "schemaVersion": "1.0.0",
+  "id": "template",
   "factoryData": {
     "id": "_template",
     "name": "_template",
@@ -17,5 +19,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {}
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/template/thumbnail.png",
+    "pdf": null
+  }
 }

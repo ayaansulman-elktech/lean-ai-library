@@ -1,32 +1,487 @@
 {
+  "schemaVersion": "1.0.0",
+  "id": "skill-optimizer",
   "factoryData": {
     "id": "skill-optimizer",
-    "name": "skill-optimizer",
     "type": "agent",
-    "category": "agents",
-    "description": "See README.md for details.",
-    "shortDescription": "Block for skill-optimizer",
+    "category": "agent-library",
+    "name": "skill-optimizer",
+    "shortDescription": "Build-time MLOps platform that optimizes SKILL.md files as ML artifacts.",
+    "description": "Build-time MLOps platform that optimizes SKILL.md files as ML artifacts.",
     "keywords": [
-      "skill optimizer"
+      "skill",
+      "optimizer"
     ],
-    "version": "0.1.0",
-    "githubPath": "libraries/agents/blocks/skill-optimizer",
-    "readme": "# Skill Optimizer\r\n\r\nBuild-time MLOps platform that optimizes `SKILL.md` files as ML artifacts. Optuna proposes a\r\nSkill configuration → an Agent LLM proposes a variation → a Generator LLM writes the candidate\r\nSkill → the Skill is run to produce an output → a Judge panel scores it → MLflow logs\r\neverything → repeat while `score < goal` → validate on held-out then frozen datasets.\r\n\r\n## Quickstart (offline, no API keys)\r\n\r\n```bash\r\npip install -e \".[dev]\"\r\n\r\n# All commands run with the mock provider — no keys needed.\r\nskill-opt validate-config                       # load + check the 5 YAMLs\r\nskill-opt calibrate-judge --offline             # judge ranks good > bad\r\nskill-opt run --offline --no-track              # one candidate end-to-end\r\nskill-opt optimize-skill --offline --trials 10  # search -> artifacts/best_SKILL.md\r\nskill-opt validate --offline                    # generalization on D_test\r\nskill-opt validate --offline --final            # frozen D_guard final validation\r\nskill-opt portability --offline                 # score preservation across models\r\nskill-opt compress --offline                    # shrink tokens, keep the score\r\n```\r\n\r\nTo go live: put API keys in `.env` (see `.env.example`) and drop `--offline`. The configs\r\nship with real model IDs already.\r\n\r\n**Render-based scoring** (default) judges the *rendered* page, not raw HTML. It needs the\r\nbrowser engine — install once:\r\n\r\n```bash\r\npip install -e \".[render]\"\r\npython -m playwright install chromium\r\n```\r\n\r\nWithout it the runner falls back to judging HTML text (set `execution.mode: static_only` in\r\n`configs/output-metrics.yaml` to force that).\r\n\r\n**Watch a run live:** start the dashboard, then run optimize *with* tracking (no `--no-track`):\r\n\r\n```bash\r\nmlflow ui --backend-store-uri sqlite:///mlflow.db   # open http://127.0.0.1:5000\r\nskill-opt optimize-skill --trials 30                 # watch trials appear\r\n```\r\n\r\n## Layout\r\n\r\n```\r\nconfigs/      the 4 core YAMLs (+ providers.yaml) — the control surface\r\nsrc/skill_optimizer/\r\n  config/     pydantic models that load + validate the YAMLs\r\n  providers/  LiteLLM gateway, generator/judge pools, cost meter, mock provider\r\n  datasets/   D_wm / D_test / D_guard loaders\r\n  genome/     genome <-> SKILL.md assembly\r\n  generator/  Generator LLM -> candidate SKILL.md\r\n  runner/     execute a Skill -> output\r\n  evaluation/ metrics, judge panel, Skill Score\r\n  tracking/   MLflow wrapper + lineage\r\n  cli.py\r\ntests/        unit + integration (mock providers; no real spend in CI)\r\n```\r\n\r\n## Design principles\r\n\r\n- **Evaluation-first.** The judge is the only real risk — build and *calibrate* it before the optimizer exists.\r\n- **Vertical slices, not horizontal layers.** Every slice runs end-to-end.\r\n- **Config is the control surface.** Behaviour changes live in the YAMLs, not in code.\r\n- **Reproducibility by construction.** Every candidate links genome + Optuna trial ID + MLflow run ID + outputs + scores.\r\n- **Cost visible from line one.** Tokens/$ are metered per call and aggregated per trial, under a hard budget cap.\r\n\r\n## Key seams\r\n\r\nEverything depends on three interfaces, so providers, judges, and runners are swappable\r\nand mockable in tests without touching the optimization loop:\r\n\r\n- `providers.LLMGateway.complete(pool, messages) -> Response{text, tokens, cost}`\r\n- `runner.Runner.run(skill) -> Output{artifacts, render?}`\r\n- `evaluation.Judge.score(skill, output) -> Scores`\r\n",
-    "skill": "# Skill Optimizer\r\n\r\nA full build-time MLOps platform (not a thin script) that optimizes the factory's own\r\nskills. See **`README.md`** for the architecture, design principles, and key seams.\r\n\r\n## Run it (offline, no keys)\r\n```bash\r\npip install -e \".[dev]\"\r\nskill-opt validate-config\r\nskill-opt calibrate-judge --offline          # judge must rank good > bad, reproducibly\r\nskill-opt optimize-skill --offline --trials 10\r\nskill-opt validate --offline                 # generalization on the held-out set\r\n```\r\nDrop `--offline` and set keys in `.env` (see `.env.example`) to run live.\r\nAn eval dataset root must be supplied — the standalone pilot data is not bundled.\r\n\r\n## Where it fits\r\n- **Meta layer / AI Engineers own it** — it improves skills the Sprint Engineers consume.\r\n- The control surface is the YAMLs in `configs/`; behavior changes live there, not in code.\r\n- Generated output (`mlruns/`, `artifacts/`, `mlflow.db`) is gitignored; only\r\n  source / config / docs / tests are committed.\r\n\r\n## To make it useful for THIS factory\r\nRe-point its eval datasets + objective from the generic pilot task to the factory's real\r\nskills (wireframing prompts, the ux-audit rubric, app-generation skills) on larger, real briefs.\r\n",
-    "assets": [],
-    "examples": [],
-    "dependencies": [
-      "pydantic>=2.6",
-      "pyyaml>=6.0",
-      "litellm>=1.40",
-      "optuna>=3.6",
-      "mlflow>=2.12",
-      "tiktoken>=0.7",
-      "typer>=0.12",
-      "rich>=13.7",
-      "python-dotenv>=1.0"
-    ],
-    "related": []
+    "sourcePath": "agents/skill-optimizer",
+    "fileTree": [
+      {
+        "name": "agents",
+        "type": "directory",
+        "path": "agents",
+        "children": [
+          {
+            "name": "openai.yaml",
+            "type": "file",
+            "path": "agents/openai.yaml"
+          }
+        ]
+      },
+      {
+        "name": "configs",
+        "type": "directory",
+        "path": "configs",
+        "children": [
+          {
+            "name": "objective-skill-metrics.yaml",
+            "type": "file",
+            "path": "configs/objective-skill-metrics.yaml"
+          },
+          {
+            "name": "output-metrics.yaml",
+            "type": "file",
+            "path": "configs/output-metrics.yaml"
+          },
+          {
+            "name": "providers.yaml",
+            "type": "file",
+            "path": "configs/providers.yaml"
+          },
+          {
+            "name": "skill-genomes.yaml",
+            "type": "file",
+            "path": "configs/skill-genomes.yaml"
+          },
+          {
+            "name": "skill-metrics.yaml",
+            "type": "file",
+            "path": "configs/skill-metrics.yaml"
+          }
+        ]
+      },
+      {
+        "name": "mlruns",
+        "type": "directory",
+        "path": "mlruns",
+        "children": [
+          {
+            "name": "skill-opt",
+            "type": "directory",
+            "path": "mlruns/skill-opt",
+            "children": [
+              {
+                "name": "run_1783890098.json",
+                "type": "file",
+                "path": "mlruns/skill-opt/run_1783890098.json",
+                "content": "{\n  \"run_id\": 1783890098,\n  \"task\": \"Sort array locally\",\n  \"baseline\": \"Write a Python function to solve the task.\",\n  \"trials\": [\n    {\n      \"mutation_id\": 1,\n      \"prompt\": \"Write a Python function to solve the task. Be concise and use no standard libraries.\",\n      \"response\": \"def Sort_array_locally(): return True\",\n      \"score\": {\n        \"final_score\": 99.92,\n        \"metrics\": {\n          \"tokens\": 4,\n          \"compactness\": 100,\n          \"safety\": 100\n        }\n      }\n    },\n    {\n      \"mutation_id\": 2,\n      \"prompt\": \"Write a verbose Python function with docstrings to solve the task.\",\n      \"response\": \"# Let's solve Sort array locally\\nimport os\\n\\ndef Sort_array_locally():\\n    # Do something\\n    return True\\n\",\n      \"score\": {\n        \"final_score\": 97.3,\n        \"metrics\": {\n          \"tokens\": 15,\n          \"compactness\": 94,\n          \"safety\": 100\n        }\n      }\n    },\n    {\n      \"mutation_id\": 3,\n      \"prompt\": \"Write a Python function to solve the task. Use minimal tokens and high compactness.\",\n      \"response\": \"# Let's solve Sort array locally\\nimport os\\n\\ndef Sort_array_locally():\\n    # Do something\\n    return True\\n\",\n      \"score\": {\n        \"final_score\": 97.3,\n        \"metrics\": {\n          \"tokens\": 15,\n          \"compactness\": 94,\n          \"safety\": 100\n        }\n      }\n    }\n  ]\n}"
+              },
+              {
+                "name": "run_1783896352.json",
+                "type": "file",
+                "path": "mlruns/skill-opt/run_1783896352.json",
+                "content": "{\n  \"run_id\": 1783896352,\n  \"task\": \"Sort array locally\",\n  \"baseline\": \"Write a Python function to solve the task.\",\n  \"trials\": [\n    {\n      \"mutation_id\": 1,\n      \"prompt\": \"Write a Python function to solve the task. Be concise and use no standard libraries.\",\n      \"response\": \"def Sort_array_locally(): return True\",\n      \"score\": {\n        \"final_score\": 99.92,\n        \"metrics\": {\n          \"tokens\": 4,\n          \"compactness\": 100,\n          \"safety\": 100\n        }\n      }\n    },\n    {\n      \"mutation_id\": 2,\n      \"prompt\": \"Write a verbose Python function with docstrings to solve the task.\",\n      \"response\": \"# Let's solve Sort array locally\\nimport os\\n\\ndef Sort_array_locally():\\n    # Do something\\n    return True\\n\",\n      \"score\": {\n        \"final_score\": 97.3,\n        \"metrics\": {\n          \"tokens\": 15,\n          \"compactness\": 94,\n          \"safety\": 100\n        }\n      }\n    },\n    {\n      \"mutation_id\": 3,\n      \"prompt\": \"Write a Python function to solve the task. Use minimal tokens and high compactness.\",\n      \"response\": \"# Let's solve Sort array locally\\nimport os\\n\\ndef Sort_array_locally():\\n    # Do something\\n    return True\\n\",\n      \"score\": {\n        \"final_score\": 97.3,\n        \"metrics\": {\n          \"tokens\": 15,\n          \"compactness\": 94,\n          \"safety\": 100\n        }\n      }\n    }\n  ]\n}"
+              },
+              {
+                "name": "run_1783928220.json",
+                "type": "file",
+                "path": "mlruns/skill-opt/run_1783928220.json",
+                "content": "{\n  \"run_id\": 1783928220,\n  \"task\": \"Sort array locally\",\n  \"baseline\": \"Write a Python function to solve the task.\",\n  \"trials\": [\n    {\n      \"mutation_id\": 1,\n      \"prompt\": \"Write a Python function to solve the task. Be concise and use no standard libraries.\",\n      \"response\": \"def Sort_array_locally(): return True\",\n      \"score\": {\n        \"final_score\": 99.92,\n        \"metrics\": {\n          \"tokens\": 4,\n          \"compactness\": 100,\n          \"safety\": 100\n        }\n      }\n    },\n    {\n      \"mutation_id\": 2,\n      \"prompt\": \"Write a verbose Python function with docstrings to solve the task.\",\n      \"response\": \"# Let's solve Sort array locally\\nimport os\\n\\ndef Sort_array_locally():\\n    # Do something\\n    return True\\n\",\n      \"score\": {\n        \"final_score\": 97.3,\n        \"metrics\": {\n          \"tokens\": 15,\n          \"compactness\": 94,\n          \"safety\": 100\n        }\n      }\n    },\n    {\n      \"mutation_id\": 3,\n      \"prompt\": \"Write a Python function to solve the task. Use minimal tokens and high compactness.\",\n      \"response\": \"# Let's solve Sort array locally\\nimport os\\n\\ndef Sort_array_locally():\\n    # Do something\\n    return True\\n\",\n      \"score\": {\n        \"final_score\": 97.3,\n        \"metrics\": {\n          \"tokens\": 15,\n          \"compactness\": 94,\n          \"safety\": 100\n        }\n      }\n    }\n  ]\n}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "src",
+        "type": "directory",
+        "path": "src",
+        "children": [
+          {
+            "name": "skill_optimizer",
+            "type": "directory",
+            "path": "src/skill_optimizer",
+            "children": [
+              {
+                "name": "config",
+                "type": "directory",
+                "path": "src/skill_optimizer/config",
+                "children": [
+                  {
+                    "name": "__init__.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/config/__init__.py"
+                  },
+                  {
+                    "name": "models.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/config/models.py"
+                  }
+                ]
+              },
+              {
+                "name": "datasets",
+                "type": "directory",
+                "path": "src/skill_optimizer/datasets",
+                "children": [
+                  {
+                    "name": "__init__.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/datasets/__init__.py"
+                  },
+                  {
+                    "name": "loader.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/datasets/loader.py"
+                  }
+                ]
+              },
+              {
+                "name": "evaluation",
+                "type": "directory",
+                "path": "src/skill_optimizer/evaluation",
+                "children": [
+                  {
+                    "name": "__init__.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/evaluation/__init__.py"
+                  },
+                  {
+                    "name": "evaluator.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/evaluation/evaluator.py"
+                  },
+                  {
+                    "name": "judge.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/evaluation/judge.py"
+                  },
+                  {
+                    "name": "score.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/evaluation/score.py"
+                  },
+                  {
+                    "name": "structural.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/evaluation/structural.py"
+                  }
+                ]
+              },
+              {
+                "name": "generator",
+                "type": "directory",
+                "path": "src/skill_optimizer/generator",
+                "children": [
+                  {
+                    "name": "__init__.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/generator/__init__.py"
+                  },
+                  {
+                    "name": "generator.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/generator/generator.py"
+                  }
+                ]
+              },
+              {
+                "name": "genome",
+                "type": "directory",
+                "path": "src/skill_optimizer/genome",
+                "children": [
+                  {
+                    "name": "__init__.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/genome/__init__.py"
+                  },
+                  {
+                    "name": "builder.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/genome/builder.py"
+                  },
+                  {
+                    "name": "sections.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/genome/sections.py"
+                  }
+                ]
+              },
+              {
+                "name": "optimization",
+                "type": "directory",
+                "path": "src/skill_optimizer/optimization",
+                "children": [
+                  {
+                    "name": "__init__.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/optimization/__init__.py"
+                  },
+                  {
+                    "name": "agent.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/optimization/agent.py"
+                  },
+                  {
+                    "name": "dspy_gepa.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/optimization/dspy_gepa.py"
+                  },
+                  {
+                    "name": "optimizer.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/optimization/optimizer.py"
+                  },
+                  {
+                    "name": "reflective.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/optimization/reflective.py"
+                  },
+                  {
+                    "name": "sampler.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/optimization/sampler.py"
+                  }
+                ]
+              },
+              {
+                "name": "providers",
+                "type": "directory",
+                "path": "src/skill_optimizer/providers",
+                "children": [
+                  {
+                    "name": "__init__.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/providers/__init__.py"
+                  },
+                  {
+                    "name": "gateway.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/providers/gateway.py"
+                  },
+                  {
+                    "name": "meter.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/providers/meter.py"
+                  }
+                ]
+              },
+              {
+                "name": "runner",
+                "type": "directory",
+                "path": "src/skill_optimizer/runner",
+                "children": [
+                  {
+                    "name": "__init__.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/runner/__init__.py"
+                  },
+                  {
+                    "name": "multifile_runner.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/runner/multifile_runner.py"
+                  },
+                  {
+                    "name": "runner.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/runner/runner.py"
+                  }
+                ]
+              },
+              {
+                "name": "tracking",
+                "type": "directory",
+                "path": "src/skill_optimizer/tracking",
+                "children": [
+                  {
+                    "name": "__init__.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/tracking/__init__.py"
+                  },
+                  {
+                    "name": "mlflow_tracker.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/tracking/mlflow_tracker.py"
+                  }
+                ]
+              },
+              {
+                "name": "validation",
+                "type": "directory",
+                "path": "src/skill_optimizer/validation",
+                "children": [
+                  {
+                    "name": "__init__.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/validation/__init__.py"
+                  },
+                  {
+                    "name": "compression.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/validation/compression.py"
+                  },
+                  {
+                    "name": "portability.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/validation/portability.py"
+                  },
+                  {
+                    "name": "validator.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/validation/validator.py"
+                  }
+                ]
+              },
+              {
+                "name": "__init__.py",
+                "type": "file",
+                "path": "src/skill_optimizer/__init__.py"
+              },
+              {
+                "name": "cli.py",
+                "type": "file",
+                "path": "src/skill_optimizer/cli.py"
+              },
+              {
+                "name": "env.py",
+                "type": "file",
+                "path": "src/skill_optimizer/env.py"
+              },
+              {
+                "name": "pipeline.py",
+                "type": "file",
+                "path": "src/skill_optimizer/pipeline.py"
+              },
+              {
+                "name": "py.typed",
+                "type": "file",
+                "path": "src/skill_optimizer/py.typed"
+              },
+              {
+                "name": "types.py",
+                "type": "file",
+                "path": "src/skill_optimizer/types.py"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "tests",
+        "type": "directory",
+        "path": "tests",
+        "children": [
+          {
+            "name": "integration",
+            "type": "directory",
+            "path": "tests/integration",
+            "children": [
+              {
+                "name": "test_dspy_gepa_offline.py",
+                "type": "file",
+                "path": "tests/integration/test_dspy_gepa_offline.py"
+              },
+              {
+                "name": "test_evolve_offline.py",
+                "type": "file",
+                "path": "tests/integration/test_evolve_offline.py"
+              },
+              {
+                "name": "test_optimize_offline.py",
+                "type": "file",
+                "path": "tests/integration/test_optimize_offline.py"
+              },
+              {
+                "name": "test_pipeline_offline.py",
+                "type": "file",
+                "path": "tests/integration/test_pipeline_offline.py"
+              },
+              {
+                "name": "test_validation_offline.py",
+                "type": "file",
+                "path": "tests/integration/test_validation_offline.py"
+              }
+            ]
+          },
+          {
+            "name": "unit",
+            "type": "directory",
+            "path": "tests/unit",
+            "children": [
+              {
+                "name": "test_clean_skill.py",
+                "type": "file",
+                "path": "tests/unit/test_clean_skill.py"
+              },
+              {
+                "name": "test_config.py",
+                "type": "file",
+                "path": "tests/unit/test_config.py"
+              },
+              {
+                "name": "test_datasets.py",
+                "type": "file",
+                "path": "tests/unit/test_datasets.py"
+              },
+              {
+                "name": "test_evaluation.py",
+                "type": "file",
+                "path": "tests/unit/test_evaluation.py"
+              },
+              {
+                "name": "test_genome.py",
+                "type": "file",
+                "path": "tests/unit/test_genome.py"
+              },
+              {
+                "name": "test_runner.py",
+                "type": "file",
+                "path": "tests/unit/test_runner.py"
+              }
+            ]
+          },
+          {
+            "name": "__init__.py",
+            "type": "file",
+            "path": "tests/__init__.py"
+          },
+          {
+            "name": "conftest.py",
+            "type": "file",
+            "path": "tests/conftest.py"
+          }
+        ]
+      },
+      {
+        "name": "LICENSE",
+        "type": "file",
+        "path": "LICENSE"
+      },
+      {
+        "name": "optimize.py",
+        "type": "file",
+        "path": "optimize.py"
+      },
+      {
+        "name": "pyproject.toml",
+        "type": "file",
+        "path": "pyproject.toml"
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "path": "README.md",
+        "content": "# Skill Optimizer\n\nBuild-time MLOps platform that optimizes `SKILL.md` files as ML artifacts. Optuna proposes a\nSkill configuration → an Agent LLM proposes a variation → a Generator LLM writes the candidate\nSkill → the Skill is run to produce an output → a Judge panel scores it → MLflow logs\neverything → repeat while `score < goal` → validate on held-out then frozen datasets.\n\n## Quickstart (offline, no API keys)\n\n```bash\npip install -e \".[dev]\"\n\n# All commands run with the mock provider — no keys needed.\nskill-opt validate-config                       # load + check the 5 YAMLs\nskill-opt calibrate-judge --offline             # judge ranks good > bad\nskill-opt run --offline --no-track              # one candidate end-to-end\nskill-opt optimize-skill --offline --trials 10  # search -> artifacts/best_SKILL.md\nskill-opt validate --offline                    # generalization on D_test\nskill-opt validate --offline --final            # frozen D_guard final validation\nskill-opt portability --offline                 # score preservation across models\nskill-opt compress --offline                    # shrink tokens, keep the score\n```\n\nTo go live: put API keys in `.env` (see `.env.example`) and drop `--offline`. The configs\nship with real model IDs already.\n\n**Render-based scoring** (default) judges the *rendered* page, not raw HTML. It needs the\nbrowser engine — install once:\n\n```bash\npip install -e \".[render]\"\npython -m playwright install chromium\n```\n\nWithout it the runner falls back to judging HTML text (set `execution.mode: static_only` in\n`configs/output-metrics.yaml` to force that).\n\n**Watch a run live:** start the dashboard, then run optimize *with* tracking (no `--no-track`):\n\n```bash\nmlflow ui --backend-store-uri sqlite:///mlflow.db   # open http://127.0.0.1:5000\nskill-opt optimize-skill --trials 30                 # watch trials appear\n```\n\n## Layout\n\n```\nconfigs/      the 4 core YAMLs (+ providers.yaml) — the control surface\nsrc/skill_optimizer/\n  config/     pydantic models that load + validate the YAMLs\n  providers/  LiteLLM gateway, generator/judge pools, cost meter, mock provider\n  datasets/   D_wm / D_test / D_guard loaders\n  genome/     genome <-> SKILL.md assembly\n  generator/  Generator LLM -> candidate SKILL.md\n  runner/     execute a Skill -> output\n  evaluation/ metrics, judge panel, Skill Score\n  tracking/   MLflow wrapper + lineage\n  cli.py\ntests/        unit + integration (mock providers; no real spend in CI)\n```\n\n## Design principles\n\n- **Evaluation-first.** The judge is the only real risk — build and *calibrate* it before the optimizer exists.\n- **Vertical slices, not horizontal layers.** Every slice runs end-to-end.\n- **Config is the control surface.** Behaviour changes live in the YAMLs, not in code.\n- **Reproducibility by construction.** Every candidate links genome + Optuna trial ID + MLflow run ID + outputs + scores.\n- **Cost visible from line one.** Tokens/$ are metered per call and aggregated per trial, under a hard budget cap.\n\n## Key seams\n\nEverything depends on three interfaces, so providers, judges, and runners are swappable\nand mockable in tests without touching the optimization loop:\n\n- `providers.LLMGateway.complete(pool, messages) -> Response{text, tokens, cost}`\n- `runner.Runner.run(skill) -> Output{artifacts, render?}`\n- `evaluation.Judge.score(skill, output) -> Scores`\n"
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "path": "SKILL.md",
+        "content": "---\nname: skill-optimizer\ndescription: Optimize a SKILL.md as an ML artifact (Optuna/GEPA search -> generate -> run -> judge-panel score -> MLflow -> validate on held-out then frozen sets). Use to harden a skill's quality or make it hold quality on a cheaper model. AI-Engineer / meta tool.\nallowed-tools: Bash, Read, Write\n---\n# Skill Optimizer\n\nA full build-time MLOps platform (not a thin script) that optimizes the factory's own\nskills. See **`README.md`** for the architecture, design principles, and key seams.\n\n## Run it (offline, no keys)\n```bash\npip install -e \".[dev]\"\nskill-opt validate-config\nskill-opt calibrate-judge --offline          # judge must rank good > bad, reproducibly\nskill-opt optimize-skill --offline --trials 10\nskill-opt validate --offline                 # generalization on the held-out set\n```\nDrop `--offline` and set keys in `.env` (see `.env.example`) to run live.\nAn eval dataset root must be supplied — the standalone pilot data is not bundled.\n\n## Where it fits\n- **Meta layer / AI Engineers own it** — it improves skills the Sprint Engineers consume.\n- The control surface is the YAMLs in `configs/`; behavior changes live there, not in code.\n- Generated output (`mlruns/`, `artifacts/`, `mlflow.db`) is gitignored; only\n  source / config / docs / tests are committed.\n\n## To make it useful for THIS factory\nRe-point its eval datasets + objective from the generic pilot task to the factory's real\nskills (wireframing prompts, the ux-audit rubric, app-generation skills) on larger, real briefs.\n"
+      }
+    ]
   },
-  "localOverrides": {}
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/skill-optimizer/thumbnail.png",
+    "pdf": null
+  }
 }

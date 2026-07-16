@@ -1,4 +1,6 @@
 {
+  "schemaVersion": "1.0.0",
+  "id": "ux_position_mask",
   "factoryData": {
     "id": "ux_position_mask",
     "name": "ux-position-mask",
@@ -22,5 +24,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {}
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/ux_position_mask/thumbnail.png",
+    "pdf": null
+  }
 }

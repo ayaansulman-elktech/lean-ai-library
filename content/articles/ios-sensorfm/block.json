@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "ios-sensorfm",
+  "factoryData": {
+    "id": "ios-sensorfm",
+    "type": "model",
+    "category": "ios-ready",
+    "name": "SensorFM",
+    "shortDescription": "General intelligence and interface for wearable health data",
+    "description": "General intelligence and interface for wearable health data",
+    "keywords": [
+      "ios",
+      "model",
+      "raw"
+    ],
+    "fileTree": []
+  },
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": null,
+    "pdf": null
+  }
+}

@@ -1,4 +1,6 @@
 {
+  "schemaVersion": "1.0.0",
+  "id": "composition",
   "factoryData": {
     "id": "composition",
     "name": "composition",
@@ -16,5 +18,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {}
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/composition/thumbnail.png",
+    "pdf": null
+  }
 }

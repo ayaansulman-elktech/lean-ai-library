@@ -1,0 +1,104 @@
+{
+  "id": "apple-docs-rag",
+  "type": "agent",
+  "category": "agent-library",
+  "name": "apple-docs-rag",
+  "shortDescription": "RAG agent: grounded answers about Apple development, with citations.",
+  "description": "RAG agent: grounded answers about Apple development, with citations.",
+  "keywords": [
+    "apple",
+    "docs",
+    "rag"
+  ],
+  "sourcePath": "agents/apple-docs-rag",
+  "fileTree": [
+    {
+      "name": "agents",
+      "type": "directory",
+      "path": "agents",
+      "children": [
+        {
+          "name": "openai.yaml",
+          "type": "file",
+          "path": "agents/openai.yaml"
+        }
+      ]
+    },
+    {
+      "name": "corpus",
+      "type": "directory",
+      "path": "corpus",
+      "children": [
+        {
+          "name": "core-ml.md",
+          "type": "file",
+          "path": "corpus/core-ml.md",
+          "content": "# Core ML\nsource: https://developer.apple.com/documentation/coreml\n\nCore ML is Apple's framework for running machine-learning models **on device** (iOS, macOS,\nwatchOS, tvOS, visionOS) — local inference with no server, low latency, and privacy by default.\n\n- **Conversion:** use the `coremltools` Python package to convert trained models from TensorFlow,\n  PyTorch, or scikit-learn into the Core ML format (`.mlpackage` / `.mlmodel`).\n- **Model types:** neural networks, tree ensembles, SVMs, generalized linear models, and pipelines,\n  plus vision models (image classifiers, object detectors) and tabular models.\n- **Integration flow:** convert the model → add it to the Xcode project → call the generated Swift\n  API to make predictions. Core ML optimizes execution across CPU, GPU, and the Neural Engine.\n- **Factory relevance:** this is how iOS Ready ships an \"on-device\" capability — train/evaluate in\n  Python, convert with coremltools, then run inside the app with zero token cost.\n"
+        },
+        {
+          "name": "foundation-models.md",
+          "type": "file",
+          "path": "corpus/foundation-models.md",
+          "content": "# Foundation Models framework\nsource: https://developer.apple.com/documentation/foundationmodels\n\nThe Foundation Models framework gives a native **Swift API** to the **on-device large language\nmodel** that powers Apple Intelligence.\n\n- **On-device + private + free:** inference runs locally, works offline, and has **no token cost**\n  (no server calls).\n- **Guided generation:** annotate Swift types (e.g. `@Generable` / `@Guide`) to get **structured,\n  type-safe output** directly from the model.\n- **Tool calling:** the model can call app-provided tools to fetch data or take actions.\n- **Availability + limits:** requires Apple Intelligence–capable devices and recent OS versions;\n  the on-device model is **small** (a few billion parameters) with a **limited context window**, so\n  it suits focused tasks, not heavy long-context reasoning — push complex work to Core ML models or\n  rethink the feature.\n- **Factory relevance:** the \"local-AI-first\" pillar — use it for on-device text features to keep\n  cost at zero and data on the phone.\n"
+        },
+        {
+          "name": "human-interface-guidelines.md",
+          "type": "file",
+          "path": "corpus/human-interface-guidelines.md",
+          "content": "# Human Interface Guidelines (HIG)\nsource: https://developer.apple.com/design/human-interface-guidelines\n\nApple's design guidance for building apps that feel native across its platforms.\n\n- **Principles:** clarity, deference (content first), and depth (meaningful layering/motion).\n- **Native components & conventions:** prefer system controls, navigation patterns, and layouts so\n  the app behaves the way users already expect; this also helps App Store ranking and trust.\n- **SF Symbols:** use Apple's icon set for consistent, accessible iconography that adapts to weight,\n  scale, and rendering mode.\n- **Accessibility:** support Dynamic Type, sufficient contrast, VoiceOver, and adequate hit targets\n  (≥ 44×44 pt).\n- **Factory relevance:** the Lean Design System encodes HIG so every app is Apple-native by default;\n  the more faithful to HIG, the lower the cognitive load and the better the store visibility.\n"
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "directory",
+      "path": "src",
+      "children": [
+        {
+          "name": "apple_docs_rag",
+          "type": "directory",
+          "path": "src/apple_docs_rag",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "src/apple_docs_rag/__init__.py"
+            },
+            {
+              "name": "agent.py",
+              "type": "file",
+              "path": "src/apple_docs_rag/agent.py"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "directory",
+      "path": "tests",
+      "children": [
+        {
+          "name": "test_apple_docs_rag.py",
+          "type": "file",
+          "path": "tests/test_apple_docs_rag.py"
+        }
+      ]
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "path": "pyproject.toml"
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "content": "---\nname: apple-docs-rag\ndescription: Answer Apple-development questions (App Store guidelines, Core ML, Foundation Models, HIG) grounded ONLY in an indexed doc corpus, with citations. Use when an agent needs an authoritative Apple answer instead of guessing.\nallowed-tools: Read, Bash\n---\n# Apple-docs RAG\n\nGrounds agents in real Apple docs instead of letting them hallucinate. Retrieves the most\nrelevant chunks from `corpus/` and answers **using only that context**, with `[Title]` citations;\nreturns `grounded: false` (\"Not found in the indexed Apple docs.\") when the corpus doesn't cover it.\n\n```python\nfrom apple_docs_rag import AppleDocsRAGAgent\nres = AppleDocsRAGAgent(ctx).run(\"Does Core ML run on device?\")\nres.output[\"answer\"]      # with [Core ML] citation\nres.output[\"grounded\"]    # False if not in the corpus\nres.output[\"sources\"]     # the source URLs\n```\n\n- **Corpus** (`corpus/*.md`): App Store guidelines (4.3-focused), Core ML, Foundation Models, HIG.\n  Add more docs by dropping `*.md` files (a `source:` line becomes the citation URL).\n- **Retrieval**: `libraries/rag` TF-IDF (no deps, offline). Pluggable seam for an embedding\n  retriever later (semantic recall via the ml-core providers).\n"
+    }
+  ],
+  "slug": "apple-docs-rag",
+  "contentPath": "",
+  "coverPath": "content/articles/apple-docs-rag/thumbnail.png",
+  "coverPreviewPath": "content/articles/apple-docs-rag/thumbnail.png"
+}

@@ -1,4 +1,6 @@
 {
+  "schemaVersion": "1.0.0",
+  "id": "code",
   "factoryData": {
     "id": "code",
     "name": "Code library",
@@ -15,5 +17,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {}
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/code/thumbnail.png",
+    "pdf": null
+  }
 }

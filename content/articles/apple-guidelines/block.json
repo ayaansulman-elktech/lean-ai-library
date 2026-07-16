@@ -1,4 +1,6 @@
 {
+  "schemaVersion": "1.0.0",
+  "id": "apple-guidelines",
   "factoryData": {
     "id": "apple-guidelines",
     "name": "apple-guidelines",
@@ -16,5 +18,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {}
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/apple-guidelines/thumbnail.png",
+    "pdf": null
+  }
 }

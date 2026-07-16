@@ -1,4 +1,6 @@
 {
+  "schemaVersion": "1.0.0",
+  "id": "platforms",
   "factoryData": {
     "id": "platforms",
     "name": "Platforms",
@@ -14,5 +16,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {}
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/platforms/thumbnail.png",
+    "pdf": null
+  }
 }

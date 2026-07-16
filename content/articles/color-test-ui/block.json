@@ -1,4 +1,6 @@
 {
+  "schemaVersion": "1.0.0",
+  "id": "color-test-ui",
   "factoryData": {
     "id": "color-test-ui",
     "name": "Color test UI",
@@ -14,5 +16,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {}
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/color-test-ui/thumbnail.png",
+    "pdf": null
+  }
 }

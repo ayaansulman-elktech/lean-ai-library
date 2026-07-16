@@ -1,4 +1,6 @@
 {
+  "schemaVersion": "1.0.0",
+  "id": "ai-farm",
   "factoryData": {
     "id": "ai-farm",
     "name": "AI Farm",
@@ -14,5 +16,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {}
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/ai-farm/thumbnail.png",
+    "pdf": null
+  }
 }

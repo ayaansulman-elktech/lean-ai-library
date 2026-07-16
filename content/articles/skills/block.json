@@ -1,4 +1,6 @@
 {
+  "schemaVersion": "1.0.0",
+  "id": "skills",
   "factoryData": {
     "id": "skills",
     "name": "Skill library",
@@ -14,5 +16,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {}
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/skills/thumbnail.png",
+    "pdf": null
+  }
 }
