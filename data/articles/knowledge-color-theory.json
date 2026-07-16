@@ -26,6 +26,11 @@
       "content": "# Seasonal color analysis (corpus)\n\nReference used by the Color Matching app to map extracted tones -> a season.\nThis is the knowledge corpus, not code; the CV model feeds features, this maps them.\n\n## The 4 seasons (12-subtype model simplified)\n| Season | Undertone | Contrast | Palette feel |\n|---|---|---|---|\n| Spring | Warm | Medium-high | Bright, warm, clear |\n| Summer | Cool | Low-medium | Soft, cool, muted |\n| Autumn | Warm | Medium | Deep, warm, earthy |\n| Winter | Cool | High | Bright, cool, saturated |\n\n## Decision inputs (from skin-tone-cv features)\n- Undertone: warm vs cool (skin + eye hue).\n- Value: light vs deep (overall luminance).\n- Chroma: muted vs bright (saturation tolerance).\n\n## Output\nSeason label + a palette of N recommended hex swatches + 2-3 colors to avoid.\nOutfit match (in-app) scores a garment's dominant hue against the palette.\n\n> Sources / citations to add as the corpus grows. Keep entries small and mergeable.\n"
     }
   ],
+  "package": {
+    "format": "zip",
+    "path": "packages/knowledge-color-theory.zip",
+    "sha256": "3c6b393bf54a8e4fee5f01a2e066291e16aa1675a9c8a44177e7f828d3081b60"
+  },
   "slug": "knowledge-color-theory",
   "contentPath": "",
   "coverPath": "content/articles/knowledge-color-theory/thumbnail.png",

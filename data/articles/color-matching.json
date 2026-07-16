@@ -72,6 +72,11 @@
       "content": "# Color matching\n\nTwo independent approaches, **seasonal first**.\n\n**1. Seasonal (primary)** — classify a color's undertone + value into a **season**, then **compute**\na recommended palette + colors to avoid. This is the Color-Matching app's core (skin tone → \"your\ncolors\"). See `libraries/knowledge/color-theory/` (`color-theory.md`, `seasons.md`).\n\n```python\nfrom color_matching import seasonal_match, seasonal_match_from_colors\n\nseasonal_match(\"#FF6600\")          # {season:\"Spring\", undertone, value, chroma, feel, palette[], avoid[]}\nseasonal_match_from_colors(extracted)   # pass color_extraction output; uses the dominant/skin tone\n```\n- **Classify** by undertone × value (from `seasons.md`): warm+light → **Spring**, warm+deep →\n  **Autumn**, cool+light → **Summer**, cool+deep → **Winter**.\n- **Compute the palette by rule** (per `color-rules.md` \"computed, not hand-picked\"): take harmonic\n  hues off the person's own color (base + analogous + complementary + triadic) and render each into\n  the **season's saturation/lightness band** (Spring = bright+light, Autumn = deep+muted, …), add a\n  rule-based neutral (+ black/white contrast for Winter). `avoid` = the same hues in the **opposite**\n  season's band. So the palette **varies per person** — it's not a static table.\n\n**2. Harmonies (secondary)** — classic color-wheel schemes off a base color.\n\n```python\nfrom color_matching import harmonies, complementary, triadic\nharmonies(\"#0E1B2A\")               # complementary / analogous / triadic / split / tetradic / mono\ncomplementary(\"#FF0000\")           # -> [\"#FF0000\", \"#00FFFF\"]\n```\n\n`match(hex)` returns **both**, seasonal on top. Pure Python (stdlib `colorsys`), no dependencies.\nCLI: `python color_matching.py \"#FF6600\"`. Visual test: `../color-test-ui/index.html`.\n"
     }
   ],
+  "package": {
+    "format": "zip",
+    "path": "packages/color-matching.zip",
+    "sha256": "cb827f8baa90536d7536c35114ef65dc26f61d9cfcee6cca3056a617e856c9e3"
+  },
   "slug": "color-matching",
   "contentPath": "",
   "coverPath": "content/articles/color-matching/thumbnail.png",

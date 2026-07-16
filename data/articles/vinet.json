@@ -84,6 +84,11 @@
       "content": "# vinet (model card)\n\nVideo saliency — per-frame human-attention heatmaps for a clip. Targets **ViNet-S**\n([ViNet++ / vinet_v2](https://github.com/ViNet-Saliency/vinet_v2), U-Net decoder over an S3D\nbackbone).\n\n> **Why ViNet-S, not the original ViNet:** the original ViNet's pretrained weights are no longer\n> published (dead link). ViNet-S is its maintained successor — same task, ~36MB, CPU-runnable.\n\n- **Task:** predict where viewers look across the frames of a video (e.g. an onboarding clip).\n- **Inputs:** a clip — a folder of frames, or a list of frame paths. ViNet-S uses a 32-frame\n  window per forward; the adapter slides it to yield one map per frame.\n- **Outputs:** one `vis_models` `SaliencyMap` per frame; `metrics.analyze_clip` reduces the\n  sequence to \"does attention settle on the primary action by the end?\".\n- **Status:** `raw` — Python adapter + offline mock. Real `.pt` weights run in iOS Ready\n  (`ios-ready/raw/ViNet`); CI uses the deterministic mock.\n- **Apple-native:** none — Apple exposes no video attention/saliency-prediction API.\n\n## Use\n```python\nfrom blocks.vinet.src import build\nfrom blocks.vinet.src.metrics import analyze_clip\nfrom vis_models.saliency import Region\n\nmodel = build()                              # real ViNet-S when torch + weights are on the box\nmaps  = model.predict(\"clip/frames\")         # list[SaliencyMap], one per frame\nanalyze_clip(maps, Region(0.30, 0.72, 0.40, 0.16))   # -> settles_on_cta, mean/final attention, …\n```\n\n## Running the real model (iOS Ready / any torch box)\nFetch the `vinet_v2` repo and a ViNet-S checkpoint (`vinet_s_dhf1k.pt`, from the repo's Google\nDrive bundle) under `ios-ready/raw/` — the adapter auto-discovers `ViNet_S_model.py` and a\n`vinet_s*.pt` weight. Then `build()` returns the real `ViNetModel` (`is_available()` gates the\nfallback). Preprocessing (224×384 + ImageNet norm, 32-frame clip) matches the repo; verified\nrunning on CPU.\n"
     }
   ],
+  "package": {
+    "format": "zip",
+    "path": "packages/vinet.zip",
+    "sha256": "0112bad7d08570cf94875e2ca7636889fd022f5ad1557c5f4fba7b68bf60b9de"
+  },
   "slug": "vinet",
   "contentPath": "",
   "coverPath": "content/articles/vinet/thumbnail.png",

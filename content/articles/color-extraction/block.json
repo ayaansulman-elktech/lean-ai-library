@@ -74,7 +74,12 @@
         "previewable": true,
         "content": "# Color extraction\n\n**What:** image → its dominant colors with coverage percentages.\n**In / out:** `image_path` → `[{\"hex\": \"#RRGGBB\", \"percentage\": <float>}, …]` (sorted desc).\n**First needed by:** Color Matching (Sprint 1) — the selfie's tones feed the palette match.\n\n```python\nfrom color_extraction import extract_colors, extract_from_pixels\n\nextract_colors(\"selfie.jpg\", n=8)          # top 8 colors + % (needs Pillow)\nextract_from_pixels(pixels, n=8)           # pure-Python core (tested, no deps)\n```\n\n- Near-identical colors are grouped (channel quantization) → a few meaningful swatches, not\n  thousands of near-duplicates. `n=None` returns every bucket.\n- Pure-Python core is dependency-free and tested; `extract_colors()` needs **Pillow**\n  (`pip install pillow`). CLI: `python color_extraction.py image.jpg [n]`.\n- Visual test: `../color-test-ui/index.html`.\n"
       }
-    ]
+    ],
+    "package": {
+      "format": "zip",
+      "path": "packages/color-extraction.zip",
+      "sha256": "b745e84de71556510b06e4902f3ab4369630903ec25b9a75d2d67dd019534529"
+    }
   },
   "localOverrides": {},
   "attachments": {

@@ -86,6 +86,11 @@
       "compliance"
     ],
     "sourcePath": "agents/apple-compliance",
+    "package": {
+      "format": "zip",
+      "path": "packages/apple-compliance.zip",
+      "sha256": "3e511a098d18b855ad5a36e48b1e4af610776c7ff95a5f935acc33ec9f8fef86"
+    },
     "slug": "apple-compliance",
     "contentPath": "",
     "coverPath": "content/articles/apple-compliance/thumbnail.png",
@@ -104,6 +109,11 @@
       "rag"
     ],
     "sourcePath": "agents/apple-docs-rag",
+    "package": {
+      "format": "zip",
+      "path": "packages/apple-docs-rag.zip",
+      "sha256": "d7acae69b1b862b236fc8e39dd9e432f1ee761aaa3b389485fe6a08ca937726d"
+    },
     "slug": "apple-docs-rag",
     "contentPath": "",
     "coverPath": "content/articles/apple-docs-rag/thumbnail.png",
@@ -306,6 +316,11 @@
       "color-matching"
     ],
     "sourcePath": "libraries/code/blocks/color_extraction",
+    "package": {
+      "format": "zip",
+      "path": "packages/color-extraction.zip",
+      "sha256": "b745e84de71556510b06e4902f3ab4369630903ec25b9a75d2d67dd019534529"
+    },
     "slug": "color-extraction",
     "contentPath": "",
     "coverPath": "content/articles/color-extraction/thumbnail.png",
@@ -326,6 +341,11 @@
       "color-matching"
     ],
     "sourcePath": "libraries/code/blocks/color_matching",
+    "package": {
+      "format": "zip",
+      "path": "packages/color-matching.zip",
+      "sha256": "cb827f8baa90536d7536c35114ef65dc26f61d9cfcee6cca3056a617e856c9e3"
+    },
     "slug": "color-matching",
     "contentPath": "",
     "coverPath": "content/articles/color-matching/thumbnail.png",
@@ -452,6 +472,11 @@
       "non-commercial"
     ],
     "sourcePath": "libraries/models/blocks/face_editor",
+    "package": {
+      "format": "zip",
+      "path": "packages/face-editor.zip",
+      "sha256": "48cf9843cf1dff1086fc4b17957472d53bde3d007579fb8806e7e0b93e0acdee"
+    },
     "slug": "face-editor",
     "contentPath": "",
     "coverPath": "assets/default_thumbnail.png",
@@ -473,6 +498,11 @@
       "color-matching"
     ],
     "sourcePath": "libraries/models/blocks/face_parsing",
+    "package": {
+      "format": "zip",
+      "path": "packages/face-parsing.zip",
+      "sha256": "efffc286153648e8de874fc0cc2e81e8f534e716d5e0bfe4bf2bc6190e479f1b"
+    },
     "slug": "face-parsing",
     "contentPath": "",
     "coverPath": "content/articles/face-parsing/thumbnail.png",
@@ -543,6 +573,11 @@
       "raw"
     ],
     "sourcePath": "libraries/ios-ready/raw/celebamask-hq",
+    "package": {
+      "format": "zip",
+      "path": "packages/ios-celebamask-hq.zip",
+      "sha256": "7e79ebe619e3546e178b9d85ff6bec09d7b024c287e48a53ea7d269088fe9b1d"
+    },
     "slug": "ios-celebamask-hq",
     "contentPath": "",
     "coverPath": "assets/default_thumbnail.png",
@@ -561,6 +596,11 @@
       "raw"
     ],
     "sourcePath": "libraries/ios-ready/raw/face-parsing",
+    "package": {
+      "format": "zip",
+      "path": "packages/ios-face-parsing.zip",
+      "sha256": "7e79ebe619e3546e178b9d85ff6bec09d7b024c287e48a53ea7d269088fe9b1d"
+    },
     "slug": "ios-face-parsing",
     "contentPath": "",
     "coverPath": "content/articles/ios-face-parsing/thumbnail.png",
@@ -579,6 +619,11 @@
       "raw"
     ],
     "sourcePath": "libraries/ios-ready/raw/iris",
+    "package": {
+      "format": "zip",
+      "path": "packages/ios-iris.zip",
+      "sha256": "7e79ebe619e3546e178b9d85ff6bec09d7b024c287e48a53ea7d269088fe9b1d"
+    },
     "slug": "ios-iris",
     "contentPath": "",
     "coverPath": "content/articles/ios-iris/thumbnail.png",
@@ -597,6 +642,11 @@
       "raw"
     ],
     "sourcePath": "libraries/ios-ready/raw/moodboard-purity",
+    "package": {
+      "format": "zip",
+      "path": "packages/ios-moodboard-purity.zip",
+      "sha256": "7e79ebe619e3546e178b9d85ff6bec09d7b024c287e48a53ea7d269088fe9b1d"
+    },
     "slug": "ios-moodboard-purity",
     "contentPath": "",
     "coverPath": "assets/default_thumbnail.png",
@@ -615,6 +665,11 @@
       "raw"
     ],
     "sourcePath": "",
+    "package": {
+      "format": "zip",
+      "path": "packages/ios-sensorfm.zip",
+      "sha256": "1a16a2e200509b89db118d5f08bbc86583c599ff9025750d86789997e89efcd5"
+    },
     "slug": "ios-sensorfm",
     "contentPath": "",
     "coverPath": "assets/default_thumbnail.png",
@@ -633,6 +688,11 @@
       "raw"
     ],
     "sourcePath": "libraries/ios-ready/raw/skin-tone-cv",
+    "package": {
+      "format": "zip",
+      "path": "packages/ios-skin-tone-cv.zip",
+      "sha256": "0e5d78e48c1de72fe466f5f2b10c340bb5347d6477efe6f34823357cf3563fb5"
+    },
     "slug": "ios-skin-tone-cv",
     "contentPath": "",
     "coverPath": "content/articles/ios-skin-tone-cv/thumbnail.png",
@@ -651,6 +711,11 @@
       "raw"
     ],
     "sourcePath": "libraries/ios-ready/raw/SUM",
+    "package": {
+      "format": "zip",
+      "path": "packages/ios-sum.zip",
+      "sha256": "7e79ebe619e3546e178b9d85ff6bec09d7b024c287e48a53ea7d269088fe9b1d"
+    },
     "slug": "ios-sum",
     "contentPath": "",
     "coverPath": "content/articles/ios-sum/thumbnail.png",
@@ -669,6 +734,11 @@
       "raw"
     ],
     "sourcePath": "",
+    "package": {
+      "format": "zip",
+      "path": "packages/ios-timesfm.zip",
+      "sha256": "7770d88b2400c3b3cf068326bc985884a7149a8a59c2565b1c094faaa5f98a92"
+    },
     "slug": "ios-timesfm",
     "contentPath": "",
     "coverPath": "assets/default_thumbnail.png",
@@ -687,6 +757,11 @@
       "raw"
     ],
     "sourcePath": "libraries/ios-ready/raw/ViNet",
+    "package": {
+      "format": "zip",
+      "path": "packages/ios-vinet.zip",
+      "sha256": "7e79ebe619e3546e178b9d85ff6bec09d7b024c287e48a53ea7d269088fe9b1d"
+    },
     "slug": "ios-vinet",
     "contentPath": "",
     "coverPath": "content/articles/ios-vinet/thumbnail.png",
@@ -707,6 +782,11 @@
       "color-matching"
     ],
     "sourcePath": "libraries/models/blocks/iris",
+    "package": {
+      "format": "zip",
+      "path": "packages/iris.zip",
+      "sha256": "c373dd7e5403218edfa5411774f9748601416d289bd6812845cc7b348e7a78ff"
+    },
     "slug": "iris",
     "contentPath": "",
     "coverPath": "content/articles/iris/thumbnail.png",
@@ -742,6 +822,11 @@
       "guidelines"
     ],
     "sourcePath": "libraries/knowledge/apple-guidelines",
+    "package": {
+      "format": "zip",
+      "path": "packages/knowledge-apple-guidelines.zip",
+      "sha256": "5a7a8ebc699db082b0481f6c26d8bb2b3a65ce055511d51bbd45854f8d6cc8d1"
+    },
     "slug": "knowledge-apple-guidelines",
     "contentPath": "",
     "coverPath": "content/articles/knowledge-apple-guidelines/thumbnail.png",
@@ -759,6 +844,11 @@
       "theory"
     ],
     "sourcePath": "libraries/knowledge/color-theory",
+    "package": {
+      "format": "zip",
+      "path": "packages/knowledge-color-theory.zip",
+      "sha256": "3c6b393bf54a8e4fee5f01a2e066291e16aa1675a9c8a44177e7f828d3081b60"
+    },
     "slug": "knowledge-color-theory",
     "contentPath": "",
     "coverPath": "content/articles/knowledge-color-theory/thumbnail.png",
@@ -775,6 +865,11 @@
       "composition"
     ],
     "sourcePath": "libraries/knowledge/composition",
+    "package": {
+      "format": "zip",
+      "path": "packages/knowledge-composition.zip",
+      "sha256": "d14fe377cdec8de6dbcd4b6641d36550284bf96738ff10a440ee712f367d5b93"
+    },
     "slug": "knowledge-composition",
     "contentPath": "",
     "coverPath": "content/articles/knowledge-composition/thumbnail.png",
@@ -791,6 +886,11 @@
       "wireframing"
     ],
     "sourcePath": "libraries/knowledge/wireframing",
+    "package": {
+      "format": "zip",
+      "path": "packages/knowledge-wireframing.zip",
+      "sha256": "f95e5e7a99509011efb069aa33e1ea0b87512d0fc3f3f08e3e8f8cd3ba4c1fba"
+    },
     "slug": "knowledge-wireframing",
     "contentPath": "",
     "coverPath": "content/articles/knowledge-wireframing/thumbnail.png",
@@ -845,6 +945,11 @@
       "flow"
     ],
     "sourcePath": "libraries/mcp/navigation-flow",
+    "package": {
+      "format": "zip",
+      "path": "packages/mcp-navigation-flow.zip",
+      "sha256": "a5dd4c9e80f32456a0eae2d7daf9b434751d221723954435efdd758adafe7968"
+    },
     "slug": "mcp-navigation-flow",
     "contentPath": "",
     "coverPath": "content/articles/mcp-navigation-flow/thumbnail.png",
@@ -861,6 +966,11 @@
       "purity"
     ],
     "sourcePath": "libraries/mcp/purity",
+    "package": {
+      "format": "zip",
+      "path": "packages/mcp-purity.zip",
+      "sha256": "94797cf45649a9d4cdcfa5b869d00efb363ef9dc356f75a920d7fc65bc1c116e"
+    },
     "slug": "mcp-purity",
     "contentPath": "",
     "coverPath": "content/articles/mcp-purity/thumbnail.png",
@@ -877,6 +987,11 @@
       "wireframing"
     ],
     "sourcePath": "libraries/mcp/wireframing",
+    "package": {
+      "format": "zip",
+      "path": "packages/mcp-wireframing.zip",
+      "sha256": "47dfe61af58f2e5c5bde67a687a5c86834eeb63f7a9034062b44d4dc93a4e841"
+    },
     "slug": "mcp-wireframing",
     "contentPath": "",
     "coverPath": "content/articles/mcp-wireframing/thumbnail.png",
@@ -911,6 +1026,11 @@
       "microcopy"
     ],
     "sourcePath": "agents/microcopy",
+    "package": {
+      "format": "zip",
+      "path": "packages/microcopy.zip",
+      "sha256": "f1555d1b200d7dbd54bb468b723c4d70487212822ead33976b1da3fd3c2f9561"
+    },
     "slug": "microcopy",
     "contentPath": "",
     "coverPath": "content/articles/microcopy/thumbnail.png",
@@ -1104,6 +1224,11 @@
       "review"
     ],
     "sourcePath": "agents/security-review",
+    "package": {
+      "format": "zip",
+      "path": "packages/security-review.zip",
+      "sha256": "d5da63d375a653c805f649c4852477252bfd5ff6bc4535e8784b80619cd16402"
+    },
     "slug": "security-review",
     "contentPath": "",
     "coverPath": "content/articles/security-review/thumbnail.png",
@@ -1173,6 +1298,11 @@
       "optimizer"
     ],
     "sourcePath": "agents/skill-optimizer",
+    "package": {
+      "format": "zip",
+      "path": "packages/skill-optimizer.zip",
+      "sha256": "bcea102ba51a1562712358f780a830deda84d9c78ea57fbe3939dc76939cf507"
+    },
     "slug": "skill-optimizer",
     "contentPath": "",
     "coverPath": "content/articles/skill-optimizer/thumbnail.png",
@@ -1250,6 +1380,11 @@
       "ux"
     ],
     "sourcePath": "libraries/models/blocks/sum",
+    "package": {
+      "format": "zip",
+      "path": "packages/sum.zip",
+      "sha256": "5ecd0f4998e8255ad913b65e7a84223df4c2a380a91177422214ecae8f382d3a"
+    },
     "slug": "sum",
     "contentPath": "",
     "coverPath": "content/articles/sum/thumbnail.png",
@@ -1267,6 +1402,11 @@
       "gen"
     ],
     "sourcePath": "agents/swiftui-gen",
+    "package": {
+      "format": "zip",
+      "path": "packages/swiftui-gen.zip",
+      "sha256": "9bb96c458a9c24a3d27e1d71ab6e9be1d10eff83fcdd4a2ae744cc2b74de9ec5"
+    },
     "slug": "swiftui-gen",
     "contentPath": "",
     "coverPath": "content/articles/swiftui-gen/thumbnail.png",
@@ -1304,6 +1444,11 @@
       "tester"
     ],
     "sourcePath": "agents/tester",
+    "package": {
+      "format": "zip",
+      "path": "packages/tester.zip",
+      "sha256": "2d8041589578513ed8238ced45873b26982bcd03e82a6aa1526816f436ef9c22"
+    },
     "slug": "tester",
     "contentPath": "",
     "coverPath": "content/articles/tester/thumbnail.png",
@@ -1380,6 +1525,11 @@
       "audit"
     ],
     "sourcePath": "libraries/code/blocks/ux_attention_pattern",
+    "package": {
+      "format": "zip",
+      "path": "packages/ux-attention-pattern.zip",
+      "sha256": "d46fca24b150ea0d83504740df4efbe2392e4c4ce259439b1e407eb10c47e491"
+    },
     "slug": "ux-attention-pattern",
     "contentPath": "",
     "coverPath": "content/articles/ux-attention-pattern/thumbnail.png",
@@ -1397,6 +1547,11 @@
       "audit"
     ],
     "sourcePath": "agents/ux-audit",
+    "package": {
+      "format": "zip",
+      "path": "packages/ux-audit.zip",
+      "sha256": "43c2c8d563aaa87db1472d7cd624dde3119bccf9b03f1dacdc713b88563fa127"
+    },
     "slug": "ux-audit",
     "contentPath": "",
     "coverPath": "content/articles/ux-audit/thumbnail.png",
@@ -1421,6 +1576,11 @@
       "screenshot"
     ],
     "sourcePath": "libraries/code/blocks/ux_position_mask",
+    "package": {
+      "format": "zip",
+      "path": "packages/ux-position-mask.zip",
+      "sha256": "c07169f13e39dccbdf2b07d11a44913f55b8731106c4b5d90d5b21c1903baa95"
+    },
     "slug": "ux-position-mask",
     "contentPath": "",
     "coverPath": "content/articles/ux-position-mask/thumbnail.png",
@@ -1441,6 +1601,11 @@
       "vinet-s"
     ],
     "sourcePath": "libraries/models/blocks/vinet",
+    "package": {
+      "format": "zip",
+      "path": "packages/vinet.zip",
+      "sha256": "0112bad7d08570cf94875e2ca7636889fd022f5ad1557c5f4fba7b68bf60b9de"
+    },
     "slug": "vinet",
     "contentPath": "",
     "coverPath": "content/articles/vinet/thumbnail.png",
@@ -1488,6 +1653,11 @@
       "on-device"
     ],
     "sourcePath": "libraries/code/blocks/vision_camera",
+    "package": {
+      "format": "zip",
+      "path": "packages/vision-camera.zip",
+      "sha256": "74f483b3bd3cc683c5ee7330ba830108c62661fb7c2cd1cde69f52dac4ccab75"
+    },
     "slug": "vision-camera",
     "contentPath": "",
     "coverPath": "content/articles/vision-camera/thumbnail.png",
@@ -1522,6 +1692,11 @@
       "wireframing"
     ],
     "sourcePath": "agents/wireframing",
+    "package": {
+      "format": "zip",
+      "path": "packages/wireframing.zip",
+      "sha256": "8c52ef27518166e8e20644bae8b1012c4a34708df8d329aec59c47aca86aeb61"
+    },
     "slug": "wireframing",
     "contentPath": "",
     "coverPath": "content/articles/wireframing/thumbnail.png",

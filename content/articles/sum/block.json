@@ -86,7 +86,12 @@
         "previewable": true,
         "content": "# sum (model card)\n\nStill-image saliency — where viewers look on a screen\n([Arhosseini77/SUM](https://github.com/Arhosseini77/SUM), *Saliency Unification through Mamba*).\n\n- **Task:** predict a human-attention heatmap for a still screen/image (UI/web-page condition).\n- **Inputs:** an image (screen or screenshot). **Outputs:** a `vis_models` `SaliencyMap`.\n- **Status:** `raw` — the adapter is the shared `vis_models.saliency` core (used by ux-audit). Real\n  `.pth` weights run in iOS Ready (`ios-ready/raw/SUM`); offline it falls back to a real\n  pixel-based classical model, or a deterministic mock when forced.\n- **Apple-native:** *partial* — Vision's `VNGenerateAttentionBasedSaliencyImageRequest` gives\n  general on-device saliency, but not a UI-tuned model; SUM's interface condition is why it's used.\n\n## Use\n```python\nfrom blocks.sum.src import build\nfrom blocks.sum.src.metrics import analyze\nfrom vis_models.saliency import Region\n\nmodel = build()                              # real SUM on the farm; classical pixel model elsewhere\nsmap  = model.predict(\"screen.png\")\nanalyze(smap, Region(0.25, 0.80, 0.50, 0.12))   # does attention peak on the primary action?\n```\n\nThe SUM vs ViNet split: **SUM = still screens, ViNet = video/onboarding clips.**\n\n## Running the real model (iOS Ready)\nFetch the SUM repo + checkpoint into `ios-ready/raw/SUM/`, install `torch`, then `build()` returns\nthe real `SUMSaliencyModel` (`is_available()` gates the fallback).\n"
       }
-    ]
+    ],
+    "package": {
+      "format": "zip",
+      "path": "packages/sum.zip",
+      "sha256": "5ecd0f4998e8255ad913b65e7a84223df4c2a380a91177422214ecae8f382d3a"
+    }
   },
   "localOverrides": {},
   "attachments": {

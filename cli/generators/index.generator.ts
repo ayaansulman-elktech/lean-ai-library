@@ -31,7 +31,7 @@ export class IndexGenerator implements Generator {
     const articles = [];
     if (fs.existsSync(articlesDir)) {
       const dirs = fs.readdirSync(articlesDir).filter(d => !d.startsWith('.') && fs.statSync(path.join(articlesDir, d)).isDirectory());
-      
+
       for (const slug of dirs) {
         const dir = path.join(articlesDir, slug);
         const blockPath = path.join(dir, 'block.json');

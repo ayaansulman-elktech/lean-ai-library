@@ -21,7 +21,12 @@
         "path": ".gitkeep",
         "previewable": false
       }
-    ]
+    ],
+    "package": {
+      "format": "zip",
+      "path": "packages/ios-sum.zip",
+      "sha256": "7e79ebe619e3546e178b9d85ff6bec09d7b024c287e48a53ea7d269088fe9b1d"
+    }
   },
   "localOverrides": {},
   "attachments": {

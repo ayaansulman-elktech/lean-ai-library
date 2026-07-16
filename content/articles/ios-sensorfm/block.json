@@ -14,7 +14,12 @@
       "raw"
     ],
     "sourcePath": "",
-    "fileTree": []
+    "fileTree": [],
+    "package": {
+      "format": "zip",
+      "path": "packages/ios-sensorfm.zip",
+      "sha256": "1a16a2e200509b89db118d5f08bbc86583c599ff9025750d86789997e89efcd5"
+    }
   },
   "localOverrides": {},
   "attachments": {

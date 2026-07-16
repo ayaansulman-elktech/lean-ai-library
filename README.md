@@ -38,4 +38,3 @@ npm run cli -- article attach iris --pdf research.pdf
 - Library edits live in `localOverrides`; thumbnails and PDFs are local attachments.
 - The build command generates lightweight catalog JSON plus one offline detail JSON per article.
 - The vanilla browser frontend reads only files under `data/` and local article attachments.
-

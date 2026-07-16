@@ -92,7 +92,12 @@
         "previewable": true,
         "content": "# iris (model card)\n\nIris / eye-landmark detection — pupil center + iris boundary\n([Morris88826/MediaPipe_Iris](https://github.com/Morris88826/MediaPipe_Iris), a PyTorch port of\nGoogle's MediaPipe Iris).\n\n- **Task:** locate the **iris** (pupil center + boundary) and eye contour in an eye.\n- **Inputs:** an **eye crop**, or a **face image + a normalized eye box** `(x,y,w,h)` — the box comes\n  from **face-parsing** (Task 4), so the two compose: face-parsing finds the eye, iris pinpoints it.\n- **Outputs:** an `IrisResult` (center, radius, boundary points) + `metrics.eye_color` — the\n  person's **eye colour**, sampled from the iris ring (the Colors Matching payload).\n- **Status:** `raw`, self-contained (`deps: []`). Weights are a one-time TFLite→PyTorch conversion\n  (`iris_landmark.pth`, ~2.7MB); after that it's **torch-only** and CPU-fast. The upstream MediaPipe\n  face-mesh crop stage is skipped (we supply the eye box), so **no mediapipe/tensorflow at runtime**.\n- **Apple-native:** *partial* — Vision gives single **pupil points**, ARKit gives gaze/eye\n  transforms (TrueDepth), but neither localizes the **iris disc** on an arbitrary photo.\n\n## Use\n```python\nfrom blocks.iris.src import build\nfrom blocks.iris.src.metrics import eye_color\n\nmodel = build()                                    # real model when weights are on the box\nres   = model.predict(\"selfie.jpg\", eye_box=(0.36, 0.34, 0.10, 0.06))   # box from face-parsing\nres.center, res.radius                             # where the iris is (normalized in the crop)\neye_color(\"selfie.jpg\", res)                       # -> {\"rgb\": [...], \"hex\": \"#..\"} eye colour\n```\n\n## Producing the weights (one-time)\nThe repo ships `data/iris_landmark.tflite`; convert it to `iris_landmark.pth` (read the TFLite with\n`ai-edge-litert` — no full TensorFlow needed), then place it under `ios-ready/raw/iris/`. Done once on\nthe farm; the block auto-discovers `libs/iris.py` + the `.pth` and runs torch-only.\n"
       }
-    ]
+    ],
+    "package": {
+      "format": "zip",
+      "path": "packages/iris.zip",
+      "sha256": "c373dd7e5403218edfa5411774f9748601416d289bd6812845cc7b348e7a78ff"
+    }
   },
   "localOverrides": {},
   "attachments": {

@@ -108,7 +108,12 @@
         "previewable": true,
         "content": "---\nname: apple-docs-rag\ndescription: Answer Apple-development questions (App Store guidelines, Core ML, Foundation Models, HIG) grounded ONLY in an indexed doc corpus, with citations. Use when an agent needs an authoritative Apple answer instead of guessing.\nallowed-tools: Read, Bash\n---\n# Apple-docs RAG\n\nGrounds agents in real Apple docs instead of letting them hallucinate. Retrieves the most\nrelevant chunks from `corpus/` and answers **using only that context**, with `[Title]` citations;\nreturns `grounded: false` (\"Not found in the indexed Apple docs.\") when the corpus doesn't cover it.\n\n```python\nfrom apple_docs_rag import AppleDocsRAGAgent\nres = AppleDocsRAGAgent(ctx).run(\"Does Core ML run on device?\")\nres.output[\"answer\"]      # with [Core ML] citation\nres.output[\"grounded\"]    # False if not in the corpus\nres.output[\"sources\"]     # the source URLs\n```\n\n- **Corpus** (`corpus/*.md`): App Store guidelines (4.3-focused), Core ML, Foundation Models, HIG.\n  Add more docs by dropping `*.md` files (a `source:` line becomes the citation URL).\n- **Retrieval**: `libraries/rag` TF-IDF (no deps, offline). Pluggable seam for an embedding\n  retriever later (semantic recall via the ml-core providers).\n"
       }
-    ]
+    ],
+    "package": {
+      "format": "zip",
+      "path": "packages/apple-docs-rag.zip",
+      "sha256": "d7acae69b1b862b236fc8e39dd9e432f1ee761aaa3b389485fe6a08ca937726d"
+    }
   },
   "localOverrides": {},
   "attachments": {

@@ -1,4 +1,4 @@
-﻿# Lean AI Library â€” Complete Guide
+# Lean AI Library Ã¢â‚¬â€ Complete Guide
 
 This document explains how the Library works, how Factory data reaches the UI, how local changes
 
@@ -45,16 +45,16 @@ backend API.
 ```text
 AI Lean Factory
   portable export_library.py
-          â†“ Python exporter
+          Ã¢â€ â€œ Python exporter
   library-output/*.json
-          â†“ Library CLI import
+          Ã¢â€ â€œ Library CLI import
 Lean AI Library
   content/articles/<id>/block.json
-          â†“ Library build
+          Ã¢â€ â€œ Library build
   data/articles.json
   data/categories.json
   data/articles/<id>.json
-          â†“ Browser fetch
+          Ã¢â€ â€œ Browser fetch
   Home, Library, Updates, and Article pages
 ```
 
@@ -201,7 +201,7 @@ It contains three independent layers:
 The effective article uses this precedence:
 
 ```text
-local attachments â†’ localOverrides â†’ factoryData
+local attachments Ã¢â€ â€™ localOverrides Ã¢â€ â€™ factoryData
 ```
 
 Import replaces only `factoryData`. It does not overwrite:
@@ -500,4 +500,44 @@ node --check assets/app.js
 
 This is intentional. Imports never delete. Remove it explicitly with `article remove <id> --yes`.
 
+## Installing articles with npm
 
+Every visible article has a package under `cognitiveshift-cli/packages`. Factory-backed packages
+contain the full exported source folder. Older local articles contain the Markdown, PDF, and
+metadata that are actually stored by the Library.
+
+After the npm package is published, users can run these commands from any project:
+
+```bash
+npx cognitiveshift iris
+npx cognitiveshift iris --output ./models/iris
+npx cognitiveshift iris --output . --dry-run
+npx cognitiveshift iris --output . --force
+npx cognitiveshift --list
+```
+
+The safe default destination is `./<article-id>`. Existing files are never replaced unless the user
+passes `--force`.
+
+Importing portable JSON feeds also verifies their SHA-256 checksums and synchronizes the included
+ZIP packages into `cognitiveshift-cli/packages`. To release an update:
+
+```powershell
+cd cognitiveshift-cli
+npm test
+npm pack --dry-run
+npm login
+npm whoami
+npm publish
+```
+
+For later releases, increment the version first:
+
+```powershell
+npm version patch
+npm publish
+```
+
+Publish from `cognitiveshift-cli`, not from the Library repository root. The `cognitiveshift`
+package name appeared available when checked on July 16, 2026, but npm owns the final name
+reservation when the first publish succeeds.

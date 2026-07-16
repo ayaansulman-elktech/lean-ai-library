@@ -1,4 +1,4 @@
-﻿# JSON feed workflow
+# JSON feed workflow
 
 The complete operator manual is [LIBRARY.md](../LIBRARY.md).
 
@@ -40,4 +40,3 @@ The portable exporter is `tools/export_library.py` in the Library repository. Co
 to the Factory root, run `python export_library.py`, and move the generated `library-output` folder
 wherever you want before importing it. The Factory does not need permanent exporter files or feed
 manifests.
-

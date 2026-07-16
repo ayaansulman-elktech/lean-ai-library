@@ -11,7 +11,7 @@ export const buildCommand = new Command('build')
   .description('Build the static JSON indexes and copy content from the repository')
   .action(async () => {
     console.log(chalk.blue.bold('\nLean AI Library Generator\n'));
-    
+
     let config;
     try {
       config = loadConfig();
@@ -21,7 +21,7 @@ export const buildCommand = new Command('build')
     }
 
     // Default to the repo in config
-    const readerOptions = { 
+    const readerOptions = {
       repo: config.source.repository,
       branch: config.source.branch
     };
@@ -31,13 +31,13 @@ export const buildCommand = new Command('build')
     try {
       console.log(chalk.gray('Preparing repository...'));
       repoDir = await reader.prepare();
-      console.log(chalk.green(`✓ Repository ready at ${repoDir}\n`));
-      
+      console.log(chalk.green(`âœ“ Repository ready at ${repoDir}\n`));
+
       console.log(chalk.gray('Scanning repository...'));
       const discovery = new AssetDiscovery();
       const candidateDirs = await discovery.discover(repoDir);
-      console.log(chalk.green(`✓ Found ${candidateDirs.length} candidate assets\n`));
-      
+      console.log(chalk.green(`âœ“ Found ${candidateDirs.length} candidate assets\n`));
+
       console.log(chalk.gray('Parsing metadata...'));
       const pipeline = new ExtractionPipeline();
       const assets: Asset[] = [];
@@ -50,24 +50,24 @@ export const buildCommand = new Command('build')
       for (const dir of candidateDirs) {
         const asset = await pipeline.process({ repoDir, assetDir: dir });
         assets.push(asset);
-        
+
         if (asset.readme) parsedReadme++;
         if (asset.skill) parsedSkill++;
       }
-      
+
       const fs = await import('fs');
       candidateDirs.forEach(dir => {
         if (fs.existsSync(path.join(dir, 'pyproject.toml'))) parsedPyproject++;
         if (fs.existsSync(path.join(dir, 'package.json'))) parsedPackage++;
       });
 
-      console.log(chalk.green(`✓ Parsed ${parsedReadme} README files`));
-      console.log(chalk.green(`✓ Parsed ${parsedSkill} SKILL files`));
-      console.log(chalk.green(`✓ Parsed ${parsedPyproject} pyproject.toml files`));
-      console.log(chalk.green(`✓ Parsed ${parsedPackage} package.json files\n`));
+      console.log(chalk.green(`âœ“ Parsed ${parsedReadme} README files`));
+      console.log(chalk.green(`âœ“ Parsed ${parsedSkill} SKILL files`));
+      console.log(chalk.green(`âœ“ Parsed ${parsedPyproject} pyproject.toml files`));
+      console.log(chalk.green(`âœ“ Parsed ${parsedPackage} package.json files\n`));
 
       console.log(chalk.gray('Normalizing assets...'));
-      console.log(chalk.green(`✓ Generated ${assets.length} Asset objects\n`));
+      console.log(chalk.green(`âœ“ Generated ${assets.length} Asset objects\n`));
 
       console.log(chalk.gray('Upserting assets to content/articles/...'));
       const contentDir = path.join(process.cwd(), 'content', 'articles');
@@ -101,19 +101,19 @@ export const buildCommand = new Command('build')
         fs.writeFileSync(blockPath, JSON.stringify(newBlock, null, 2));
         upsertedCount++;
       }
-      
-      console.log(chalk.green(`✓ Upserted ${upsertedCount} assets\n`));
+
+      console.log(chalk.green(`âœ“ Upserted ${upsertedCount} assets\n`));
 
       console.log(chalk.gray('Generating frontend indexes...'));
-      
+
       const { IndexGenerator } = await import('../generators/index.generator');
       const indexGen = new IndexGenerator();
       const startGenTime = Date.now();
       await indexGen.generate({} as any);
       const buildDuration = ((Date.now() - startGenTime) / 1000).toFixed(1);
 
-      console.log(chalk.green(`✓ Generated data/articles.json`));
-      console.log(chalk.green(`✓ Generated data/categories.json\n`));
+      console.log(chalk.green(`âœ“ Generated data/articles.json`));
+      console.log(chalk.green(`âœ“ Generated data/categories.json\n`));
 
       const uniqueCategories = new Set(assets.map(a => a.category)).size;
 
@@ -123,7 +123,7 @@ export const buildCommand = new Command('build')
       console.log(`${chalk.yellow(uniqueCategories)} categories\n`);
 
       console.log(chalk.gray(`Completed in ${buildDuration}s\n`));
-      
+
     } catch (error) {
       console.error(chalk.red('\nBuild failed:'), error);
       process.exit(1);

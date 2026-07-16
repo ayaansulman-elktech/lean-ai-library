@@ -549,6 +549,11 @@
       "content": "---\nname: skill-optimizer\ndescription: Optimize a SKILL.md as an ML artifact (Optuna/GEPA search -> generate -> run -> judge-panel score -> MLflow -> validate on held-out then frozen sets). Use to harden a skill's quality or make it hold quality on a cheaper model. AI-Engineer / meta tool.\nallowed-tools: Bash, Read, Write\n---\n# Skill Optimizer\n\nA full build-time MLOps platform (not a thin script) that optimizes the factory's own\nskills. See **`README.md`** for the architecture, design principles, and key seams.\n\n## Run it (offline, no keys)\n```bash\npip install -e \".[dev]\"\nskill-opt validate-config\nskill-opt calibrate-judge --offline          # judge must rank good > bad, reproducibly\nskill-opt optimize-skill --offline --trials 10\nskill-opt validate --offline                 # generalization on the held-out set\n```\nDrop `--offline` and set keys in `.env` (see `.env.example`) to run live.\nAn eval dataset root must be supplied — the standalone pilot data is not bundled.\n\n## Where it fits\n- **Meta layer / AI Engineers own it** — it improves skills the Sprint Engineers consume.\n- The control surface is the YAMLs in `configs/`; behavior changes live there, not in code.\n- Generated output (`mlruns/`, `artifacts/`, `mlflow.db`) is gitignored; only\n  source / config / docs / tests are committed.\n\n## To make it useful for THIS factory\nRe-point its eval datasets + objective from the generic pilot task to the factory's real\nskills (wireframing prompts, the ux-audit rubric, app-generation skills) on larger, real briefs.\n"
     }
   ],
+  "package": {
+    "format": "zip",
+    "path": "packages/skill-optimizer.zip",
+    "sha256": "bcea102ba51a1562712358f780a830deda84d9c78ea57fbe3939dc76939cf507"
+  },
   "slug": "skill-optimizer",
   "contentPath": "",
   "coverPath": "content/articles/skill-optimizer/thumbnail.png",

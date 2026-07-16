@@ -56,7 +56,12 @@
         "previewable": true,
         "content": "# vision-camera (code snippet)\n\nReusable on-device capture + privacy helpers, seeded by Sprint 1 (Color Matching).\nAny app that takes a photo and analyzes it on-device should reuse these.\n\n## Contents (to add)\n- `CameraView.swift` - SwiftUI `UIViewControllerRepresentable` wrapping `AVCaptureSession` for a still capture.\n- `ImageCrypto.swift` - encrypt a captured image at rest (CryptoKit) before any persistence.\n\n## Why it's a library\nEvery \"scan something\" niche (color, skin, plant, food) repeats capture + encryption.\nWrite once here; apps import it. See `../README.md` for the rule.\n"
       }
-    ]
+    ],
+    "package": {
+      "format": "zip",
+      "path": "packages/vision-camera.zip",
+      "sha256": "74f483b3bd3cc683c5ee7330ba830108c62661fb7c2cd1cde69f52dac4ccab75"
+    }
   },
   "localOverrides": {},
   "attachments": {

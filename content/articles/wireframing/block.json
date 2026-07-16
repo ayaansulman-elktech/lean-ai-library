@@ -148,7 +148,12 @@
         "previewable": true,
         "content": "---\nname: wireframing\ndescription: Generate a link-complete HTML/CSS wireframe from a project charter and loop until the user flow scores \"A\". Use when starting any new app's design phase.\nallowed-tools: Read, Write, Bash\n---\n# Wireframing agent\n\nA real agent (`src/wireframing/`, built on `agent-core`): charter → LLM screen-spec →\ngenerate HTML → flow-audit → revise loop until the flow grades **\"A\"**.\n\n1. The LLM turns the charter into a validated screen spec (`WireframeSpec`).\n2. `generate` writes one link-complete HTML page per screen (real links, no orphans).\n3. `audit` grades the flow A–F against the thresholds below; if not A, the audit issues are\n   fed back to the LLM and the spec is revised (bounded by `max_iterations`).\n4. Stop at A; hand to human check; then to the prototype/design step.\n\n## Run\n```python\nfrom wireframing import WireframingAgent          # see README of libraries/agent-core for the AgentContext\nres = WireframingAgent(ctx, out_dir=\"...\").run(charter_text)   # res.output[\"grade\"] == \"A\"\n```\nDeterministic pieces are also CLI-runnable: `python -m wireframing.generate` / `python -m wireframing.audit`.\n\n## Flow-audit thresholds (see `references/flow-rules.md`)\n- clicks-to-key-action ≤ 3 · features per page ≤ 7 · max navigation depth ≤ 4 · zero orphan pages / dead links\n\n> This loop is the fix for hallucinated flows (buttons to nowhere, unlinked pages).\n"
       }
-    ]
+    ],
+    "package": {
+      "format": "zip",
+      "path": "packages/wireframing.zip",
+      "sha256": "8c52ef27518166e8e20644bae8b1012c4a34708df8d329aec59c47aca86aeb61"
+    }
   },
   "localOverrides": {},
   "attachments": {

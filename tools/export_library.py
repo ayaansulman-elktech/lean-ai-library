@@ -2,15 +2,17 @@
 """Portable Lean AI Factory -> Library JSON exporter.
 
 Copy this file into a Factory repository (or run it by absolute path), set the Factory root as the
-current directory, and run `python export_library.py`. It writes six standalone JSON feeds without
+current directory, and run `python export_library.py`. It writes six standalone JSON feeds plus installable article ZIP packages without
 modifying Factory source files.
 """
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import tomllib
+import zipfile
 from pathlib import Path
 from typing import Any
 
@@ -154,6 +156,29 @@ def feeds(factory_root: Path) -> list[tuple[str, dict[str, Any]]]:
     return output
 
 
+def package_files(directory: Path):
+    for item in sorted(directory.rglob("*")):
+        relative = item.relative_to(directory)
+        if any(part in IGNORED_TREE_DIRS or part == ".DS_Store" for part in relative.parts):
+            continue
+        if item.is_file() and not item.is_symlink():
+            yield item, relative
+
+
+def write_package(directory: Path, target: Path) -> str:
+    with zipfile.ZipFile(target, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
+        for source, relative in package_files(directory):
+            archive.write(source, relative.as_posix())
+    return hashlib.sha256(target.read_bytes()).hexdigest()
+
+def write_metadata_package(item: dict[str, Any], target: Path) -> str:
+    readme = f"# {item['name']}\n\n{item['description']}\n"
+    manifest = {key: value for key, value in item.items() if key not in {"fileTree", "package"}}
+    with zipfile.ZipFile(target, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
+        archive.writestr("README.md", readme)
+        archive.writestr("block.json", json.dumps(manifest, indent=2, ensure_ascii=False) + "\n")
+    return hashlib.sha256(target.read_bytes()).hexdigest()
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--factory-root", type=Path, default=Path.cwd(), help="Factory repository root; defaults to the current directory")
@@ -164,10 +189,29 @@ def main() -> int:
     if not (factory_root / "agents").is_dir() or not (factory_root / "libraries").is_dir():
         parser.error(f"Not a compatible Factory root: {factory_root}")
     output.mkdir(parents=True, exist_ok=True)
-    for filename, payload in feeds(factory_root):
+    packages = output / "packages"
+    packages.mkdir(parents=True, exist_ok=True)
+    for stale in packages.glob("*.zip"):
+        stale.unlink()
+
+    generated_feeds = feeds(factory_root)
+    for _, payload in generated_feeds:
+        for item in payload["articles"]:
+            source_path = str(item.get("sourcePath") or "")
+            source = factory_root / source_path
+            archive = packages / f"{item['id']}.zip"
+            checksum = write_package(source, archive) if source_path and source.is_dir() else write_metadata_package(item, archive)
+            item["package"] = {
+                "format": "zip",
+                "path": f"packages/{archive.name}",
+                "sha256": checksum,
+            }
+
+    for filename, payload in generated_feeds:
         target = output / f"{filename}.json"
         target.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         print(f"{target} ({len(payload['articles'])} articles)")
+    print(f"{packages} ({len(list(packages.glob('*.zip')))} installable packages)")
     return 0
 
 

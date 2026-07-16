@@ -105,7 +105,12 @@
         "previewable": true,
         "content": "---\nname: swiftui-gen\ndescription: Turn an A-graded wireframe (screen spec) + design tokens into token-driven SwiftUI, one screen at a time, statically checked (unknown tokens, hardcoded styles, unbalanced brackets). Use after wireframing, before the UX/security audits.\nallowed-tools: Read, Write, Bash\n---\n# SwiftUI generation agent\n\nThe **prototype** step of the design-automation pipeline (deck p.60 step 2): apply the design\nsystem onto the wireframe. LLM writes the view; a deterministic checker gates it and, on failure,\nre-asks once with the issues.\n\n```python\nfrom swiftui_gen import SwiftUIGenAgent\nres = SwiftUIGenAgent(ctx, out_dir=\"apps/color-matching/Sources\").run({\n    \"spec\": wireframe_result[\"spec\"],      # {screens: [...]} from the wireframing agent\n    \"tokens\": token_names,                  # from design-system/tokens/build/Tokens.swift\n    \"app\": \"ColorMatching\",\n    \"copy\": {\"onboarding\": {...}},          # optional micro-copy per screen (from microcopy agent)\n})\nres.output[\"files\"]        # [{screen_id, view, filename, swift, passed, issues}]\nres.output[\"all_passed\"]   # gate\n```\n\n**Hard rule:** screens must style **only** with `Tokens.*` — hardcoded colors/fonts/sizes fail the\ncheck (they'd break the per-app universe mechanism). Generation is **per screen** so each can be\naudited and adjusted independently. See `references/component-map.md` for the element→SwiftUI map.\n"
       }
-    ]
+    ],
+    "package": {
+      "format": "zip",
+      "path": "packages/swiftui-gen.zip",
+      "sha256": "9bb96c458a9c24a3d27e1d71ab6e9be1d10eff83fcdd4a2ae744cc2b74de9ec5"
+    }
   },
   "localOverrides": {},
   "attachments": {

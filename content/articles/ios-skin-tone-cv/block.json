@@ -22,7 +22,12 @@
         "previewable": true,
         "content": "# skin-tone-cv (model card)\n\n- **Task:** extract skin / hair / eye tones from a selfie → features for seasonal palette.\n- **Status:** raw → ready (Phase-1 reference model that proves the pipeline).\n- **Inputs:** image. **Outputs:** tone features / palette class.\n- **Source / license:** <fill>.\n- **Ready build:** `../../ready/skin-tone-cv.mlpackage` (CoreML, on-device).\n"
       }
-    ]
+    ],
+    "package": {
+      "format": "zip",
+      "path": "packages/ios-skin-tone-cv.zip",
+      "sha256": "0e5d78e48c1de72fe466f5f2b10c340bb5347d6477efe6f34823357cf3563fb5"
+    }
   },
   "localOverrides": {},
   "attachments": {

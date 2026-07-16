@@ -89,7 +89,12 @@
         "previewable": true,
         "content": "# Wireframing MCP\n\nThe MCP server behind the wireframing skill: given a project charter + screen spec, it places\nelements per page, links screens, and returns the wireframe plus an **editable flow** a human can\nadjust (add a button → target, rename, add content). The `agents/wireframing` skill drives this\nserver; the `wireframe-studio` editor is the human face of the same shared `WireframeSpec`.\n\nGrading and HTML generation are **reused** from `agents/wireframing` (`spec` / `generate` / `audit`) —\none source of truth, not reimplemented here.\n\n## Layout\n```\nlibraries/mcp/wireframing/\n├── src/wireframing_mcp/\n│   ├── core.py      # pure tool logic (offline): new/add_screen/place_element/add_action/\n│   │                #   link_screens/unlink/remove_screen/rename_screen/audit/export_html\n│   ├── server.py    # MCP transport — exposes core as MCP tools (FastMCP)\n│   └── bridge.py    # HTTP bridge (CORS) so the browser studio shares the same spec\n└── tests/test_core.py\n```\n\n## Run\n\n**Tests** (offline, no keys, no MCP SDK):\n```bash\ncd libraries/mcp/wireframing && python -m pytest -q\n```\n\n**MCP server** (for agents — Codex / Claude):\n```bash\npip install \"wireframing-mcp[server]\"     # installs the `mcp` transport\npython -m wireframing_mcp.server\n```\nTools: `new_wireframe`, `add_screen`, `rename_screen`, `place_element`, `add_action`,\n`link_screens`, `unlink`, `remove_screen`, `audit`, `export_html`, `get_spec`, `load_spec`.\n\n**HTTP bridge** (for the human `wireframe-studio` editor — stdlib only, no install):\n```bash\npython -m wireframing_mcp.bridge          # http://localhost:8765\n```\n`GET /spec` · `POST /spec` · `GET /audit` · `GET /health`. In the studio, click **⇅ MCP** →\n**Push** / **Pull** to share the flow. The shared contract is the factory `WireframeSpec`\n(`{screens:[{id,title,elements,links,actions}]}`); the studio projects its rich layout to/from it.\n\n## How it fits\n```\ncharter ─▶ wireframing agent ─┐\n                              ├─▶ Wireframing MCP (one shared WireframeSpec) ─▶ audit (A–F) ─▶ export HTML\nwireframe-studio (human) ─────┘        ▲ reuses agents/wireframing spec/generate/audit\n```\n`navigation-flow` (sibling MCP) grades a flow; this server's `audit` uses the same canonical logic.\n"
       }
-    ]
+    ],
+    "package": {
+      "format": "zip",
+      "path": "packages/mcp-wireframing.zip",
+      "sha256": "47dfe61af58f2e5c5bde67a687a5c86834eeb63f7a9034062b44d4dc93a4e841"
+    }
   },
   "localOverrides": {},
   "attachments": {

@@ -103,6 +103,11 @@
       "content": "---\nname: apple-compliance\ndescription: Pre-submission App Store Review gate. Assesses an app descriptor against the review guidelines, weighted toward Guideline 4.3 (Spam/duplicate). Use before submitting any app.\nallowed-tools: Read, Bash\n---\n# Apple Compliance gate\n\nThe existential gate for a high-volume app factory: **Guideline 4.3 (Spam)** bans near-duplicate\napps that differ only cosmetically. This agent (`src/apple_compliance/`, on `agent-core`) reviews\nan app descriptor and returns a structured `ComplianceReport`.\n\nTwo layers (like security-review):\n- **Deterministic checks** (`checks.py`, no LLM) — a **real 4.3 duplicate scan** that measures\n  lexical similarity of the app against its **sibling catalog** (not a self-reported \"how I differ\"\n  field), plus 2.3 metadata, 4.2 native/min-functionality (web-wrapper detection), 3.1 external\n  payments, and 5.1 privacy. Any **high-severity** finding **hard-blocks** regardless of the model.\n- **LLM review** for the judgement calls, given the deterministic findings as context.\n\n```python\nfrom apple_compliance import AppleComplianceAgent\nagent = AppleComplianceAgent(ctx, catalog=[sibling1, sibling2, ...])   # catalog powers the 4.3 scan\nres = agent.run({\"name\": ..., \"value\": ..., \"features\": [...], \"category\": ...})\nif not res.output[\"passes\"]:   # gate: block submission\n    ...\n```\nThe sibling catalog can also be passed per-run as the task's `\"siblings\"` key.\n\n- `verdict`: pass | flag | fail · `risk_level`: low | medium | high · `findings[]` (LLM + deterministic).\n- `static_findings[]`: the deterministic-only findings; any `high` here hard-blocks.\n- `passes()` blocks on a `fail`, any `high` overall risk, or any high-severity deterministic finding.\n- Canonical source: developer.apple.com/app-store/review/guidelines (see `references/guidelines.md`).\n"
     }
   ],
+  "package": {
+    "format": "zip",
+    "path": "packages/apple-compliance.zip",
+    "sha256": "3e511a098d18b855ad5a36e48b1e4af610776c7ff95a5f935acc33ec9f8fef86"
+  },
   "slug": "apple-compliance",
   "contentPath": "",
   "coverPath": "content/articles/apple-compliance/thumbnail.png",

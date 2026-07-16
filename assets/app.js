@@ -21,7 +21,7 @@
   function setupThemeToggle() {
     const toggleBtn = document.getElementById("theme-toggle");
     if (!toggleBtn) return;
-    
+
     toggleBtn.addEventListener("click", () => {
       const isDark = document.documentElement.classList.toggle("dark-theme");
       localStorage.setItem("theme", isDark ? "dark" : "light");
@@ -327,7 +327,7 @@
       document.title = `${category.name} - Cognitive Shift`;
       titleEl.textContent = category.name;
       descriptionEl.textContent = category.description || fallbackDescription;
-      
+
       const categoryArticles = articles.filter(a => normalizeCategory(a.category) === designCategory.slug);
       gridEl.innerHTML = categoryArticles.map(article => renderArticleCard(article)).join("");
 
@@ -382,7 +382,7 @@
           <section class="updates-group" id="${escapeAttribute(group.id)}" data-history-date="${escapeAttribute(group.date)}">
             <header class="updates-group-header">
               <h2>${escapeHtml(group.title)}</h2>
-              <p>${escapeHtml(group.date)} · ${group.articles.length} new blocks</p>
+              <p>${escapeHtml(group.date)} Â· ${group.articles.length} new blocks</p>
             </header>
             <div class="updates-grid">${cards}</div>
           </section>
@@ -472,7 +472,7 @@
     const normalizedCat = normalizeCategory(article.category);
     const usesDefaultThumbnail = coverPath === 'assets/default_thumbnail.png';
     const searchText = `${article.name} ${normalizedCat} ${article.shortDescription}`.toLowerCase();
-    
+
     return `
       <article class="article-card design-card" data-category="${escapeAttribute(normalizedCat)}" data-search="${escapeAttribute(searchText)}" aria-label="${escapeAttribute(article.name)}">
         <a class="article-cover-link design-card-cover" href="article.html?id=${encodeURIComponent(article.slug)}">
@@ -647,8 +647,8 @@
       <div class="file-tree-viewer">
         <div class="file-tree-content">
           <div>${escapeHtml(article.slug)}/</div>
-          <div class="file-tree-row"><span>├── </span><button>block.json</button></div>
-          <div class="file-tree-row"><span>└── </span><button>README.md</button></div>
+          <div class="file-tree-row"><span>â”œâ”€â”€ </span><button>block.json</button></div>
+          <div class="file-tree-row"><span>â””â”€â”€ </span><button>README.md</button></div>
         </div>
       </div>
     `;
@@ -661,7 +661,7 @@
           <div>${escapeHtml(article.slug)}/</div>
           ${files.map((file, index) => `
             <div class="file-tree-row">
-              <span>${index === files.length - 1 ? "└──" : "├──"} </span>
+              <span>${index === files.length - 1 ? "â””â”€â”€" : "â”œâ”€â”€"} </span>
               <button type="button" data-file-index="${index}" ${file.kind !== "md" ? 'disabled title="Only Markdown files can be previewed"' : ""}>${escapeHtml(file.name)}</button>
             </div>
           `).join("")}

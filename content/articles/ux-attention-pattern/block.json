@@ -90,7 +90,12 @@
         "previewable": true,
         "content": "# ux-attention-pattern (code block)\n\nDecides **which reading pattern an iOS screen follows — and whether it's healthy.** The attention\ncompanion to `ux-position-mask` (geometry): this one uses the *attention* signal. Tuned for iOS\n(narrow, vertical, component-driven), grounded in NN/g eye-tracking research + Apple HIG.\n\n- **`audit_attention(path, backend=\"sum\")`** — runs the screen through the attention modules\n  (`vis_models.saliency`: real **SUM** on the farm, classical/mock offline) → attention map → classify.\n- **`classify_pattern(values, width, height, cta=None)`** — the pure, stdlib rule core (the\n  `entry`): reads the grid's row/column profiles and classifies the flow. If a `cta` point is given,\n  a gutenberg/vertical screen is only fully *good* when attention reaches the CTA in the thumb zone.\n\n## The iOS pattern set\n| Pattern | Screen | Verdict |\n|---|---|---|\n| **vertical** | centered column of sections (layer-cake: nav title → cards → tab bar) | ✅ good |\n| **gutenberg** | top anchor + bottom terminal CTA (onboarding / paywall / hero) | ✅ good |\n| **focused** | one dominant hero/action | ✅ good |\n| **f-skim** | top-left concentration on an unstructured text wall | ⚠️ warn — add sections/bold |\n| **scattered** | no column, order, or terminal action | ❌ bad |\n\n*Web F/Z collapse into vertical motion on phones: F → an f-skim, Z → a gutenberg top-to-bottom flow.*\n\n**Output:** `{ pattern, level (good|ok|warn|bad), good, confidence, focal, dispersion, features, reasons }`.\n\n**Depends on** `vis_models.saliency` (the SUM/ViNet attention modules). The rule core has no deps and\nis always exercised in CI; the image layer runs offline via the mock. On real screens, the classical\nfallback is diffuse — accurate attention needs the SUM weights on an iOS Ready host.\n"
       }
-    ]
+    ],
+    "package": {
+      "format": "zip",
+      "path": "packages/ux-attention-pattern.zip",
+      "sha256": "d46fca24b150ea0d83504740df4efbe2392e4c4ce259439b1e407eb10c47e491"
+    }
   },
   "localOverrides": {},
   "attachments": {
