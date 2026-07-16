@@ -22,7 +22,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Forecasts future time-series values"
+    "shortDescription": "Forecasts future time-series values",
+    "description": "Forecasts future values from time-series data through a reusable model interface suitable for application and agent workflows."
   },
   "attachments": {
     "thumbnail": null,

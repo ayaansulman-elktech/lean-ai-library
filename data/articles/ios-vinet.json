@@ -4,7 +4,7 @@
   "category": "ios-ready",
   "name": "ViNet",
   "shortDescription": "Predicts attention across video frames",
-  "description": "Original ViNet weights unpublished; targets the maintained ViNet-S. Checkpoint vinet_s_dhf1k.pt.",
+  "description": "Predicts visual attention across video frames to evaluate onboarding clips, motion content, and other time-based experiences.",
   "keywords": [
     "ios",
     "model",

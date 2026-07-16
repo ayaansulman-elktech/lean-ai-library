@@ -116,7 +116,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Answers Apple questions with citations"
+    "shortDescription": "Answers Apple questions with citations",
+    "description": "Answers Apple development questions from a grounded documentation corpus and returns citations so developers can verify every recommendation."
   },
   "attachments": {
     "thumbnail": "content/articles/apple-docs-rag/thumbnail.png",

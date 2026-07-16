@@ -137,7 +137,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Builds and validates apps in Simulator"
+    "shortDescription": "Builds and validates apps in Simulator",
+    "description": "Builds an iOS application, launches it in Simulator, verifies that the core screen renders, and reports useful diagnostics when execution fails."
   },
   "attachments": {
     "thumbnail": "content/articles/tester/thumbnail.png",

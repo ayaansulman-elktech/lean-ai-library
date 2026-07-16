@@ -3,7 +3,7 @@
   "name": "Patterns (Apple-DNA libraries)",
   "type": "library",
   "category": "code-library",
-  "description": "Reusable interaction / experience patterns drawn from Apple's design DNA. One subfolder per library: Each entry documents **what it is, when to use it, and the components/tokens it touches**. These feed the prototype + universe-enhancing design steps.",
+  "description": "A reusable collection of Apple-inspired interaction and experience patterns, with guidance on when and how each pattern should be applied.",
   "shortDescription": "Provides reusable Apple UX patterns",
   "keywords": [],
   "githubPath": "design-system/patterns",

@@ -36,7 +36,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Applies color theory to product design"
+    "shortDescription": "Applies color theory to product design",
+    "description": "A design-focused color theory reference for choosing palettes, building contrast, communicating meaning, and supporting accessibility."
   },
   "attachments": {
     "thumbnail": "content/articles/knowledge-color-theory/thumbnail.png",

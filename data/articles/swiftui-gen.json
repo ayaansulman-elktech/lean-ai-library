@@ -4,7 +4,7 @@
   "category": "agent-library",
   "name": "swiftui-gen",
   "shortDescription": "Generates checked SwiftUI from wireframes",
-  "description": "Wireframe screen spec -> token-driven SwiftUI, one screen at a time, statically checked.",
+  "description": "Converts one token-driven wireframe screen at a time into SwiftUI and applies static checks before the generated code moves downstream.",
   "keywords": [
     "swiftui",
     "gen"

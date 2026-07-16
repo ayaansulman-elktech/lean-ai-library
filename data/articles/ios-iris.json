@@ -4,7 +4,7 @@
   "category": "ios-ready",
   "name": "iris",
   "shortDescription": "Detects iris landmarks and eye color",
-  "description": "Weights = one-time TFLite->PyTorch conversion (iris_landmark.pth); torch-only at runtime.",
+  "description": "Detects pupil, iris, and eye-contour landmarks so applications can reliably sample a person's eye color from an image.",
   "keywords": [
     "ios",
     "model",

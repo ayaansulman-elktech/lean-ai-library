@@ -16,7 +16,8 @@
     ]
   },
   "localOverrides": {
-    "shortDescription": "Turns research into applied AI guidance"
+    "shortDescription": "Turns research into applied AI guidance",
+    "description": "Turns current AI research and proven industry practices into concise implementation guidance for teams building applied AI systems."
   },
   "attachments": {
     "thumbnail": null,

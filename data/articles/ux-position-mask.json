@@ -4,7 +4,7 @@
   "category": "code-library",
   "name": "ux-position-mask",
   "shortDescription": "Audits reachability and safe areas",
-  "description": "Audits which elements of a screen are in good vs dangerous positions. Core rules (`audit`, pure stdlib): given elements with a role (primary/secondary/content) and a normalized box, return a per-element verdict (good/ok/dangerous) with reasons plus a score/grade — thumb-reach ergonomics (primary actions belong lower-center), rule-of-thirds active zones (key content where the eye lands first), and safe areas (status bar/notch, home indicator, edges). For an arbitrary screen *design*, `audit_image(path)` first runs a classical, offline detector (background subtraction + connected components + role heuristics; Pillow/numpy/scipy) to find the elements, then scores them. Migration path: when auditing *generated* screens, replace detection by reading element boxes from the known layout — the rules stay the same.",
+  "description": "Audits where interface elements sit relative to reachability, safe areas, active zones, and the importance of each action.",
   "keywords": [
     "ux",
     "audit",

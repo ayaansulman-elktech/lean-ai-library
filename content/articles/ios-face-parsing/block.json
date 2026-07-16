@@ -29,7 +29,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Segments skin, eyes, lips, and hair"
+    "shortDescription": "Segments skin, eyes, lips, and hair",
+    "description": "Segments a selfie into facial regions for color analysis and documents the licensing considerations of the pretrained model weights."
   },
   "attachments": {
     "thumbnail": "content/articles/ios-face-parsing/thumbnail.png",

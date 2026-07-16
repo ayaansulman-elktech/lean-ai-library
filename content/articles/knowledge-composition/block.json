@@ -35,7 +35,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Explains effective layout composition"
+    "shortDescription": "Explains effective layout composition",
+    "description": "A structured guide to visual composition, hierarchy, alignment, balance, spacing, and reading flow in digital product interfaces."
   },
   "attachments": {
     "thumbnail": "content/articles/knowledge-composition/thumbnail.png",

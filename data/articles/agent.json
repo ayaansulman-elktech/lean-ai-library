@@ -3,7 +3,7 @@
   "name": "agent-name-here",
   "type": "agent",
   "category": "agents",
-  "description": "What the agent achieves AND when to use it.",
+  "description": "Defines the purpose, trigger conditions, inputs, outputs, and operating boundaries for a reusable factory agent.",
   "shortDescription": "Defines when and how an agent should act",
   "keywords": [],
   "githubPath": "_templates/agent",

@@ -3,7 +3,7 @@
   "name": "Platforms",
   "type": "library",
   "category": "code-library",
-  "description": "The design system covers **every Apple surface**, not just the phone screen. Each subfolder holds the platform-specific component variants + Figma coverage notes: Components stay **token-driven**; these folders capture how an organism/template *adapts* per surface. Most niches use a subset — populate per app, don't pre-build all.",
+  "description": "Documents platform-specific component variants and design considerations for iPhone, iPad, Mac, Watch, TV, and other Apple surfaces.",
   "shortDescription": "Adapts components across Apple platforms",
   "keywords": [],
   "githubPath": "design-system/platforms",

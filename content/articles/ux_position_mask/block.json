@@ -25,7 +25,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Flags unsafe interface element positions"
+    "shortDescription": "Flags unsafe interface element positions",
+    "description": "Evaluates interface elements against thumb reach, active zones, safe areas, and role-specific positioning to flag risky placements."
   },
   "attachments": {
     "thumbnail": "content/articles/ux_position_mask/thumbnail.png",

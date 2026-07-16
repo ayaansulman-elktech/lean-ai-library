@@ -82,7 +82,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Extracts dominant image colors"
+    "shortDescription": "Extracts dominant image colors",
+    "description": "Extracts dominant colors from an image, consolidates near-identical shades, and reports how much of the image each color covers."
   },
   "attachments": {
     "thumbnail": "content/articles/color-extraction/thumbnail.png",

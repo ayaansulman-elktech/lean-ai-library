@@ -3,7 +3,7 @@
   "name": "Knowledge / memory modules",
   "type": "library",
   "category": "code-library",
-  "description": "Per-vertical corpora the apps and agents draw on. One folder per domain; each file names its source and how it's used in its own header. Seeded corpora: - `color-theory/` - `color-theory.md` — full color reference (properties, harmonies, the 7-step palette process,   60-30-10, accessibility, color meanings, cultural cautions). Source: `Color Theory.pdf`. - `seasons.md` — the seasonal-analysis subset used by the Color Matching app. - `wireframing/` - `wireframing-theory.md` — full wireframing theory. Source: `Wireframing.pdf`. - `wireframing.md` — curated flow-rules / iOS-pattern cheat-sheet. - `composition/` - `composition-theory.md` — full composition reference (composition types, elements and their   properties, contrast, similarity, repetition, rhythm, balance, hierarchy, grids, Gestalt,   focal points) applied to UI/screen design. Source: `Design Composition.pdf`. - `AppleComposition-guidelines.md` — full transcript of Apple's WWDC25 \"Get to know the new   design system\" session (Liquid Glass, concentricity, structure, continuity).   Source: youtube.com/watch?v=DS2ildqCrB0. - `apple-guidelines/` - `app-store-review-guidelines.md` — the full App Store Review Guidelines (all five sections).   Source: developer.apple.com/app-store/review/guidelines/.",
+  "description": "Organizes reusable, source-aware knowledge by domain so agents and applications can retrieve consistent guidance and reference material.",
   "shortDescription": "Stores reusable domain knowledge",
   "keywords": [],
   "githubPath": "libraries/knowledge",

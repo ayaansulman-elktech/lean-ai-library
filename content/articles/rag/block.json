@@ -18,7 +18,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Grounds agent answers in source documents"
+    "shortDescription": "Grounds agent answers in source documents",
+    "description": "A lightweight retrieval library that chunks source documents, ranks relevant passages, and grounds agent answers in traceable evidence."
   },
   "attachments": {
     "thumbnail": "content/articles/rag/thumbnail.png",

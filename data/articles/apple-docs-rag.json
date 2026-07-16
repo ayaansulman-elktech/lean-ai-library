@@ -4,7 +4,7 @@
   "category": "agent-library",
   "name": "apple-docs-rag",
   "shortDescription": "Answers Apple questions with citations",
-  "description": "RAG agent: grounded answers about Apple development, with citations.",
+  "description": "Answers Apple development questions from a grounded documentation corpus and returns citations so developers can verify every recommendation.",
   "keywords": [
     "apple",
     "docs",

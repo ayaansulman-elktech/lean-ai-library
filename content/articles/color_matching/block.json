@@ -25,7 +25,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Matches colors to seasonal palettes"
+    "shortDescription": "Matches colors to seasonal palettes",
+    "description": "Classifies a color into a seasonal palette and recommends complementary colors, harmonies, and colors that should be avoided."
   },
   "attachments": {
     "thumbnail": "content/articles/color_matching/thumbnail.png",

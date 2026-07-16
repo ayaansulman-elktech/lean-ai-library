@@ -17,7 +17,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Tests extraction and matching visually"
+    "shortDescription": "Tests extraction and matching visually",
+    "description": "A standalone visual interface for testing color extraction and seasonal matching without configuring a server or application project."
   },
   "attachments": {
     "thumbnail": "content/articles/color-test-ui/thumbnail.png",

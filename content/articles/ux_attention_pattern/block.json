@@ -25,7 +25,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Classifies attention and reading flow"
+    "shortDescription": "Classifies attention and reading flow",
+    "description": "Uses attention signals and established iOS reading behavior to classify a screen's visual flow and identify unhealthy presentation patterns."
   },
   "attachments": {
     "thumbnail": "content/articles/ux_attention_pattern/thumbnail.png",

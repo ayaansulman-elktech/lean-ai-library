@@ -4,7 +4,7 @@
   "category": "model-library",
   "name": "vinet",
   "shortDescription": "Tracks viewer attention across video",
-  "description": "ViNet-S (ViNet++, U-Net decoder over an S3D backbone) predicts a per-frame human-attention heatmap for a video. Targets the maintained successor because the original ViNet's weights are no longer published; ViNet-S is the same task, ~36MB, and CPU-runnable. Used to check that an onboarding clip leads the eye toward the primary action over time. Real weights run in iOS Ready (or any torch box); a deterministic mock stands in for CI.",
+  "description": "Produces per-frame attention heatmaps for video, helping teams assess where viewers look throughout motion and onboarding content.",
   "keywords": [
     "saliency",
     "video",

@@ -3,7 +3,7 @@
   "name": "Sprint orchestrator",
   "type": "library",
   "category": "code-library",
-  "description": "Chains the factory's agents into **one app sprint** with a single go/no-go verdict. This is the keystone that turns standalone agents into a production line.",
+  "description": "Coordinates the factory's specialist agents into a single application sprint and produces a combined result with an explicit go or no-go decision.",
   "shortDescription": "Orchestrates agents into one app sprint",
   "keywords": [],
   "version": "0.1.0",

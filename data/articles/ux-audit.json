@@ -4,7 +4,7 @@
   "category": "agent-library",
   "name": "ux-audit",
   "shortDescription": "Scores screens against HIG and attention",
-  "description": "UX audit agent: HIG checklist scoring + SUM saliency attention check for a screen.",
+  "description": "Scores a screen against Apple interface guidance and combines the result with saliency analysis to identify usability and attention problems.",
   "keywords": [
     "ux",
     "audit"

@@ -25,7 +25,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Segments facial features pixel by pixel"
+    "shortDescription": "Segments facial features pixel by pixel",
+    "description": "Uses semantic segmentation to create pixel-level masks for facial regions such as skin, eyes, lips, hair, and accessories."
   },
   "attachments": {
     "thumbnail": "content/articles/face_parsing/thumbnail.png",

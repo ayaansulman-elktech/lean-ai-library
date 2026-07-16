@@ -18,7 +18,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Provides reusable Swift and Python blocks"
+    "shortDescription": "Provides reusable Swift and Python blocks",
+    "description": "A collection of reusable Swift and Python blocks designed to be copied into projects, tested independently, and consumed by factory tools."
   },
   "attachments": {
     "thumbnail": "content/articles/code/thumbnail.png",

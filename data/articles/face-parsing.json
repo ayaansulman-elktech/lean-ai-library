@@ -4,7 +4,7 @@
   "category": "model-library",
   "name": "face-parsing",
   "shortDescription": "Creates masks for facial features",
-  "description": "BiSeNet (ResNet18/34) 19-class CelebAMask-HQ face parsing. Segments a face into parts (skin, eyes, lips, hair, ...) so the Colors Matching app can extract colors from each region. Real weights run in iOS Ready; a deterministic synthetic mask stands in for CI.",
+  "description": "Creates detailed masks for individual facial features so downstream tools can analyze colors, edit regions, or isolate components.",
   "keywords": [
     "segmentation",
     "face",

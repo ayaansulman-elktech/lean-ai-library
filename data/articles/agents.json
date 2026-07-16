@@ -3,7 +3,7 @@
   "name": "Subagent Architecture (V1)",
   "type": "agent",
   "category": "agents",
-  "description": "Dev-time **subagents** for the factory — specialized Codex agents that Codex spawns in parallel and collects into one result (codebase exploration, review, verification). Reference: Codex *Subagents* docs.",
+  "description": "A subagent architecture for dividing development work among focused specialists, running tasks in parallel, and combining their findings into one result.",
   "shortDescription": "Runs specialist subagents in parallel",
   "keywords": [],
   "githubPath": ".codex/agents",

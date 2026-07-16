@@ -97,7 +97,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Creates and audits editable flows"
+    "shortDescription": "Creates and audits editable flows",
+    "description": "Exposes tools for placing screens, linking flows, auditing structure, and exporting editable wireframes through a shared MCP interface."
   },
   "attachments": {
     "thumbnail": "content/articles/mcp-wireframing/thumbnail.png",

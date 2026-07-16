@@ -3,7 +3,7 @@
   "name": "vision-camera",
   "type": "library",
   "category": "code",
-  "description": "On-device capture and privacy helpers seeded by the Color-Matching app. ImageCrypto.swift encrypts a captured image at rest (CryptoKit) before any persistence; a SwiftUI capture view (AVCaptureSession) is planned. Every 'scan something' niche (color, skin, plant, food) repeats capture + encryption — written once here, imported by apps. Swift block: reused on-device, not exposed as a Python entry.",
+  "description": "Provides reusable SwiftUI camera capture and CryptoKit image encryption for applications that process sensitive images on device.",
   "shortDescription": "Captures and encrypts images on device",
   "keywords": [
     "on-device camera capture + image encryption at rest"

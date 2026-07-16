@@ -30,7 +30,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Extracts skin, hair, and eye tones"
+    "shortDescription": "Extracts skin, hair, and eye tones",
+    "description": "Extracts representative skin, hair, and eye tones from a selfie as structured features for seasonal palette recommendations."
   },
   "attachments": {
     "thumbnail": "content/articles/ios-skin-tone-cv/thumbnail.png",

@@ -3,7 +3,7 @@
   "name": "Model blocks",
   "type": "model",
   "category": "models",
-  "description": "Each model is **one self-contained folder** — the V1 architecture in [`../ARCHITECTURE.md`](../ARCHITECTURE.md). This folder holds the blocks; `_template/` is the canonical starting point (copy it to add a model).",
+  "description": "Defines the portable block structure used to package models with their metadata, files, documentation, dependencies, and usage information.",
   "shortDescription": "Organizes models as portable blocks",
   "keywords": [],
   "githubPath": "libraries/models/blocks",

@@ -17,7 +17,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Stores competitor screens and flows"
+    "shortDescription": "Stores competitor screens and flows",
+    "description": "A queryable collection of competitor screens, onboarding sequences, flows, and paywalls used to inform product and design decisions."
   },
   "attachments": {
     "thumbnail": "content/articles/memory/thumbnail.png",

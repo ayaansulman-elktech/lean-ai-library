@@ -97,6 +97,10 @@ async function editFlow(rl: ReturnType<typeof createInterface>): Promise<void> {
         console.log(chalk.yellow('Short description must be 42 characters or fewer.'));
         continue;
       }
+      if (field === 'description' && value.trim().length > 260) {
+        console.log(chalk.yellow('Description must be 260 characters or fewer.'));
+        continue;
+      }
       (record.localOverrides as any)[field] = field === 'keywords' ? value.split(',').map((item) => item.trim()).filter(Boolean) : value.trim();
     } else if (choice === '7') {
       pendingThumbnail = validateAttachment(stripQuotes(await rl.question('Enter thumbnail path: ')), ['.png', '.jpg', '.jpeg', '.webp', '.gif']);

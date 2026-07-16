@@ -2166,6 +2166,9 @@ body[data-page="article"] .article-sidebar p.article-subtitle {
   line-height: 1.35;
   margin: 0 0 36px;
   min-height: 0;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding-right: 8px; /* Give some space for the scrollbar if it appears */
 }
 
 body[data-page="article"] .download-button {

@@ -4,7 +4,7 @@
     "name": "agent-name-here",
     "type": "agent",
     "category": "agents",
-    "description": "What the agent achieves AND when to use it.",
+    "description": "Defines the purpose, trigger conditions, inputs, outputs, and operating boundaries for a reusable factory agent.",
     "shortDescription": "Defines when and how an agent should act",
     "keywords": [],
     "githubPath": "_templates/agent",
@@ -22,7 +22,7 @@
     "name": "agent-core",
     "type": "agent",
     "category": "agents",
-    "description": "The factory's **shared agent framework**, built on `ml-core`. A thin, production-minded base so every agent (wireframing, compliance, security, ux-audit) is consistent: budget-checked, cost-metered, observable, with structured output and memory.",
+    "description": "A shared production framework for factory agents, providing consistent execution, model access, error handling, and integration patterns.",
     "shortDescription": "Shared framework for production agents",
     "keywords": [],
     "version": "0.1.0",
@@ -43,7 +43,7 @@
     "name": "Subagent Architecture (V1)",
     "type": "agent",
     "category": "agents",
-    "description": "Dev-time **subagents** for the factory — specialized Codex agents that Codex spawns in parallel and collects into one result (codebase exploration, review, verification). Reference: Codex *Subagents* docs.",
+    "description": "A subagent architecture for dividing development work among focused specialists, running tasks in parallel, and combining their findings into one result.",
     "shortDescription": "Runs specialist subagents in parallel",
     "keywords": [],
     "githubPath": ".codex/agents",
@@ -61,7 +61,7 @@
     "name": "AI Farm",
     "type": "library",
     "category": "code-library",
-    "description": "Productionized models, each packaged as an MCP-compatible capability.",
+    "description": "Packages production-ready AI models as discoverable, testable capabilities that agents and applications can access through MCP-compatible interfaces.",
     "shortDescription": "Packages production models as MCP tools",
     "keywords": [],
     "githubPath": "libraries/ai-farm",
@@ -80,7 +80,7 @@
     "category": "agent-library",
     "name": "apple-compliance",
     "shortDescription": "Checks apps against App Store rules",
-    "description": "Apple App Store compliance gate (Guideline 4.3-weighted).",
+    "description": "Reviews an application against Apple App Store requirements, with added attention to Guideline 4.3 and common causes of review rejection.",
     "keywords": [
       "apple",
       "compliance"
@@ -102,7 +102,7 @@
     "category": "agent-library",
     "name": "apple-docs-rag",
     "shortDescription": "Answers Apple questions with citations",
-    "description": "RAG agent: grounded answers about Apple development, with citations.",
+    "description": "Answers Apple development questions from a grounded documentation corpus and returns citations so developers can verify every recommendation.",
     "keywords": [
       "apple",
       "docs",
@@ -124,7 +124,7 @@
     "name": "apple-guidelines",
     "type": "library",
     "category": "knowledge",
-    "description": "A lean-ai-factory block.",
+    "description": "A practical reference for applying Apple interface and App Store guidelines when designing, implementing, and reviewing applications.",
     "shortDescription": "Explains Apple interface guidelines",
     "keywords": [
       "apple guidelines"
@@ -146,7 +146,7 @@
     "category": "agentic",
     "name": "Language Model",
     "shortDescription": "Optimizes reusable AI skills",
-    "description": "Cognitive Shift transforms cutting-edge AI research from MIT and the best practices developed by leading Silicon Valley companies into directly applicable frameworks.",
+    "description": "Explains how reusable AI skills can be measured, refined, and optimized into dependable workflows for real production tasks.",
     "keywords": [
       "agentic",
       "llm",
@@ -164,7 +164,7 @@
     "category": "agentic",
     "name": "Language Model",
     "shortDescription": "Refines prompts into reliable workflows",
-    "description": "Cognitive Shift transforms cutting-edge AI research from MIT and the best practices developed by leading Silicon Valley companies into directly applicable frameworks.",
+    "description": "Shows how prompts and instructions can be structured into repeatable workflows with clearer triggers, outputs, and quality expectations.",
     "keywords": [
       "agentic",
       "llm",
@@ -182,7 +182,7 @@
     "category": "agentic",
     "name": "Language Model",
     "shortDescription": "Turns research into applied AI guidance",
-    "description": "Cognitive Shift transforms cutting-edge AI research from MIT and the best practices developed by leading Silicon Valley companies into directly applicable frameworks.",
+    "description": "Turns current AI research and proven industry practices into concise implementation guidance for teams building applied AI systems.",
     "keywords": [
       "agentic",
       "llm",
@@ -199,7 +199,7 @@
     "name": "Model blocks",
     "type": "model",
     "category": "models",
-    "description": "Each model is **one self-contained folder** — the V1 architecture in [`../ARCHITECTURE.md`](../ARCHITECTURE.md). This folder holds the blocks; `_template/` is the canonical starting point (copy it to add a model).",
+    "description": "Defines the portable block structure used to package models with their metadata, files, documentation, dependencies, and usage information.",
     "shortDescription": "Organizes models as portable blocks",
     "keywords": [],
     "githubPath": "libraries/models/blocks",
@@ -217,7 +217,7 @@
     "name": "Design project boilerplate",
     "type": "library",
     "category": "code-library",
-    "description": "The starter kit every new app's design copies: - the lean component set (atoms → templates) it will actually use, - the template screens (onboarding, paywall, core, settings), - a `tokens.override.json` skeleton for the universe, - the design checklist (hierarchy, contrast, scannability, flow…). Spinning up a niche = **copy this → generate the universe** (`tokens.override.json` + moodboard via the purity tool) → apply. Keeps every app Apple-native and consistent from screen one.",
+    "description": "A lean starter for Apple application design projects, including core components, common screens, tokens, and an organized working structure.",
     "shortDescription": "Starts lean Apple design projects",
     "keywords": [],
     "githubPath": "design-system/boilerplate",
@@ -235,7 +235,7 @@
     "name": "Code library",
     "type": "library",
     "category": "code-library",
-    "description": "Reusable Swift / Python code, packaged as **blocks** — one code unit per folder under `blocks/`, each self-describing (`block.json`), offline-tested, and MCP-ready. The full standard is in [`ARCHITECTURE.md`](ARCHITECTURE.md); `blocks/_template/` is the reference block to copy. **Rule:** if a sprint writes something twice, it becomes a block. New code is authored directly as a block; the discovery view is `catalog.json`.",
+    "description": "A collection of reusable Swift and Python blocks designed to be copied into projects, tested independently, and consumed by factory tools.",
     "shortDescription": "Provides reusable Swift and Python blocks",
     "keywords": [],
     "version": "0.1.0",
@@ -254,7 +254,7 @@
     "name": "color-extraction",
     "type": "library",
     "category": "code",
-    "description": "Upload an image and get its dominant colors as [{hex, percentage}] sorted by coverage. Near-identical colors are grouped by snapping each channel to a small grid, so the result is a handful of meaningful swatches rather than thousands of near-duplicates. The pure-Python core (extract_from_pixels) is dependency-free and tested; extract_colors() reads a file via Pillow (optional [image] extra). Feeds color-matching (the dominant/skin tone becomes the seasonal input).",
+    "description": "Analyzes an image, groups visually similar colors, and returns its dominant colors with estimated coverage percentages.",
     "shortDescription": "Finds dominant colors and coverage",
     "keywords": [
       "dominant color extraction from an image"
@@ -280,7 +280,7 @@
     "name": "color-matching",
     "type": "library",
     "category": "code",
-    "description": "Two independent approaches. SEASONAL (primary): from a base color's undertone + value, classify the season and return the season's recommended palette and colors to avoid — the Color-Matching app's core (skin tone -> 'your colors'). HARMONIES (secondary): complementary, analogous, triadic, split-complementary, tetradic, and monochromatic schemes off a base color. Pure Python (stdlib colorsys), no dependencies.",
+    "description": "Classifies a color into a seasonal palette and recommends complementary colors, harmonies, and colors that should be avoided.",
     "shortDescription": "Matches colors to seasonal palettes",
     "keywords": [
       "seasonal color analysis + color-wheel harmonies"
@@ -307,7 +307,7 @@
     "category": "code-library",
     "name": "color-extraction",
     "shortDescription": "Extracts dominant image colors",
-    "description": "Upload an image and get its dominant colors as [{hex, percentage}] sorted by coverage. Near-identical colors are grouped by snapping each channel to a small grid, so the result is a handful of meaningful swatches rather than thousands of near-duplicates. The pure-Python core (extract_from_pixels) is dependency-free and tested; extract_colors() reads a file via Pillow (optional [image] extra). Feeds color-matching (the dominant/skin tone becomes the seasonal input).",
+    "description": "Extracts dominant colors from an image, consolidates near-identical shades, and reports how much of the image each color covers.",
     "keywords": [
       "color",
       "extraction",
@@ -332,7 +332,7 @@
     "category": "code-library",
     "name": "color-matching",
     "shortDescription": "Builds seasonal color harmonies",
-    "description": "Two independent approaches. SEASONAL (primary): from a base color's undertone + value, classify the season and return the season's recommended palette and colors to avoid — the Color-Matching app's core (skin tone -> 'your colors'). HARMONIES (secondary): complementary, analogous, triadic, split-complementary, tetradic, and monochromatic schemes off a base color. Pure Python (stdlib colorsys), no dependencies.",
+    "description": "Builds seasonal palettes and classic color harmonies from an input color, including recommendations and combinations to avoid.",
     "keywords": [
       "color",
       "seasonal",
@@ -356,7 +356,7 @@
     "name": "Color test UI",
     "type": "library",
     "category": "code",
-    "description": "A self-contained `index.html` (no server) for visually testing the color code: - **Extract** — choose an image → see its dominant colors + percentages. - **Match** — pick a base color → see every harmony (complementary, analogous, triadic, split-complementary, tetradic, monochromatic) as swatches. Open `index.html` in any browser. The JS **mirrors** `color_extraction.py` / `color_matching.py` (same quantization + hue math) so it's a faithful visual check — the Python remains the source of truth for production.",
+    "description": "A standalone visual interface for testing color extraction and seasonal matching without configuring a server or application project.",
     "shortDescription": "Tests extraction and matching visually",
     "keywords": [],
     "githubPath": "libraries/code/color-test-ui",
@@ -374,7 +374,7 @@
     "name": "color-theory",
     "type": "library",
     "category": "knowledge",
-    "description": "A lean-ai-factory block.",
+    "description": "A practical color reference covering palette construction, contrast, emotional associations, branding, accessibility, and interface decisions.",
     "shortDescription": "Explains practical color decisions",
     "keywords": [
       "color theory"
@@ -395,7 +395,7 @@
     "name": "composition",
     "type": "library",
     "category": "knowledge",
-    "description": "A lean-ai-factory block.",
+    "description": "Explains how alignment, hierarchy, spacing, balance, rhythm, and visual weight create clear and effective interface compositions.",
     "shortDescription": "Guides balanced visual composition",
     "keywords": [
       "composition"
@@ -416,7 +416,7 @@
     "name": "Lean Design System",
     "type": "library",
     "category": "code-library",
-    "description": "Apple-native component shell. **Built once, shared by every app.**",
+    "description": "A shared Apple-native component system that gives factory applications consistent foundations, patterns, tokens, and implementation rules.",
     "shortDescription": "Provides shared Apple-native components",
     "keywords": [],
     "version": "0.1.0",
@@ -435,7 +435,7 @@
     "name": "face-parsing",
     "type": "model",
     "category": "models",
-    "description": "BiSeNet (ResNet18/34) 19-class CelebAMask-HQ face parsing. Segments a face into parts (skin, eyes, lips, hair, ...) so the Colors Matching app can extract colors from each region. Real weights run in the AI-farm; a deterministic synthetic mask stands in for CI.",
+    "description": "Uses semantic segmentation to create pixel-level masks for facial regions such as skin, eyes, lips, hair, and accessories.",
     "shortDescription": "Segments facial features pixel by pixel",
     "keywords": [
       "facial segmentation (skin/eyes/lips/hair)"
@@ -462,7 +462,7 @@
     "category": "model-library",
     "name": "face-editor",
     "shortDescription": "Edits faces through segmentation masks",
-    "description": "MaskGAN (CelebAMask-HQ, CVPR 2020). Reassign regions of the 19-class face parse - remove glasses, add a hat, reshape hair - and the generator regenerates the image to agree with the edited mask. Composes with blocks/face_parsing, which produces the mask. RESTRICTED LICENSE: non-commercial research and education only; must not reach apps/. Enforced in code - the real adapter is unavailable unless FACTORY_ALLOW_NONCOMMERCIAL=1, and build() returns the deterministic mock instead.",
+    "description": "Edits facial appearance by changing regions in a segmentation mask and regenerating a face that follows the modified structure.",
     "keywords": [
       "face",
       "editing",
@@ -488,7 +488,7 @@
     "category": "model-library",
     "name": "face-parsing",
     "shortDescription": "Creates masks for facial features",
-    "description": "BiSeNet (ResNet18/34) 19-class CelebAMask-HQ face parsing. Segments a face into parts (skin, eyes, lips, hair, ...) so the Colors Matching app can extract colors from each region. Real weights run in iOS Ready; a deterministic synthetic mask stands in for CI.",
+    "description": "Creates detailed masks for individual facial features so downstream tools can analyze colors, edit regions, or isolate components.",
     "keywords": [
       "segmentation",
       "face",
@@ -514,7 +514,7 @@
     "category": "skills-library",
     "name": "Folder test",
     "shortDescription": "Previews article folders and Markdown",
-    "description": "Test article using a content folder instead of a single PDF or Markdown file.",
+    "description": "Demonstrates how an article can expose a folder tree and open included Markdown documents directly in the Library interface.",
     "keywords": [
       "folder",
       "test"
@@ -529,7 +529,7 @@
     "name": "Foundations",
     "type": "library",
     "category": "code-library",
-    "description": "The lowest design layer — the raw decisions the tokens are derived from: color, typography, spacing, radius, elevation, motion, accessibility, breakpoints, grids. Foundations are *expressed* as machine-readable tokens in `../tokens/` (W3C DTCG); this folder documents the **rationale and rules** behind them. Humans set foundations here; agents only ever touch the derived tokens. - `color-rules.md` — how palettes are computed (not hand-picked); harmonies, 60-30-10, WCAG. - `typography.md` — the four type roles and the hierarchy rules. - `spacing.md` — the 4-pt spacing scale, radius, and elevation. - `accessibility.md` — contrast gate, hit targets, Dynamic Type, VoiceOver. - `materials.md` — Liquid Glass translucency (the `material.*` tokens). - `motion.md` — animation durations + easing (the `motion.*` tokens). - `breakpoints.md` — size classes + width thresholds (the `breakpoint.*` tokens). - `grids.md` — margins, gutters, columns, readable width.",
+    "description": "Defines the raw design decisions behind the system, including color, typography, spacing, radius, elevation, motion, grids, and accessibility.",
     "shortDescription": "Defines core visual design tokens",
     "keywords": [],
     "githubPath": "design-system/foundations",
@@ -547,7 +547,7 @@
     "name": "Illustrations (AD & prompts)",
     "type": "library",
     "category": "code-library",
-    "description": "The AI-generated illustration system: a **prompt library + style rules + generated assets**. Each entry pairs a prompt (with the model + settings used) to its rendered asset, so a niche's illustrations stay on-brand and reproducible. Style is driven by the per-app **universe** (palette / mood from the purity tool). Version prompts next to their outputs.",
+    "description": "A reusable illustration system containing art-direction rules, generation prompts, model settings, and the resulting visual assets.",
     "shortDescription": "Generates consistent illustration assets",
     "keywords": [],
     "githubPath": "design-system/illustrations",
@@ -566,7 +566,7 @@
     "category": "ios-ready",
     "name": "celebamask-hq",
     "shortDescription": "Regenerates faces from edited masks",
-    "description": "RESTRICTED. Must not reach apps/ or any shipped artifact. Enforced in code: blocks/face_editor is unavailable unless FACTORY_ALLOW_NONCOMMERCIAL=1, and build() returns the mock instead. Repo ships code only; the generator (latest_net_G.pth) is distributed separately. Cite Lee et al., CVPR 2020.",
+    "description": "Explores mask-guided facial editing with CelebAMask-HQ and MaskGAN while documenting the dataset's noncommercial licensing restrictions.",
     "keywords": [
       "ios",
       "model",
@@ -589,7 +589,7 @@
     "category": "ios-ready",
     "name": "face-parsing",
     "shortDescription": "Segments skin, eyes, lips, and hair",
-    "description": "Code is MIT. The pretrained BiSeNet weights are trained on CelebAMask-HQ, whose agreement forbids commercial exploitation of derived data. Confirm licensing before shipping in a paid app, or retrain on a permissive dataset.",
+    "description": "Segments a selfie into facial regions for color analysis and documents the licensing considerations of the pretrained model weights.",
     "keywords": [
       "ios",
       "model",
@@ -612,7 +612,7 @@
     "category": "ios-ready",
     "name": "iris",
     "shortDescription": "Detects iris landmarks and eye color",
-    "description": "Weights = one-time TFLite->PyTorch conversion (iris_landmark.pth); torch-only at runtime.",
+    "description": "Detects pupil, iris, and eye-contour landmarks so applications can reliably sample a person's eye color from an image.",
     "keywords": [
       "ios",
       "model",
@@ -635,7 +635,7 @@
     "category": "ios-ready",
     "name": "moodboard-purity",
     "shortDescription": "Scores moodboard style consistency",
-    "description": "Runs in-process from raw/moodboard-purity via vis_models.moodboard. Real scoring needs SigLIP2 (google/siglip2-base-patch16-224) in data/huggingface; without it the adapter reports unavailable and build_moodboard falls back to the mock.",
+    "description": "Extracts palette and style signals from a moodboard, then scores visual coherence to help define a consistent application universe.",
     "keywords": [
       "ios",
       "model",
@@ -658,7 +658,7 @@
     "category": "ios-ready",
     "name": "SensorFM",
     "shortDescription": "Interprets wearable health signals",
-    "description": "General intelligence and interface for wearable health data",
+    "description": "Provides a general model interface for interpreting wearable sensor and health time-series data across downstream applications.",
     "keywords": [
       "ios",
       "model",
@@ -681,7 +681,7 @@
     "category": "ios-ready",
     "name": "skin-tone-cv",
     "shortDescription": "Extracts skin, hair, and eye tones",
-    "description": "Extract skin/hair/eye tones from a selfie -> features for seasonal palette",
+    "description": "Extracts representative skin, hair, and eye tones from a selfie as structured features for seasonal palette recommendations.",
     "keywords": [
       "ios",
       "model",
@@ -704,7 +704,7 @@
     "category": "ios-ready",
     "name": "SUM",
     "shortDescription": "Predicts attention on static images",
-    "description": "Image saliency (where humans look) — UI/marketing",
+    "description": "Predicts where people are likely to look in a static image or interface and produces a saliency map for design evaluation.",
     "keywords": [
       "ios",
       "model",
@@ -727,7 +727,7 @@
     "category": "ios-ready",
     "name": "TimesFM",
     "shortDescription": "Forecasts future time-series values",
-    "description": "Time-series forecasting",
+    "description": "Forecasts future values from time-series data through a reusable model interface suitable for application and agent workflows.",
     "keywords": [
       "ios",
       "model",
@@ -750,7 +750,7 @@
     "category": "ios-ready",
     "name": "ViNet",
     "shortDescription": "Predicts attention across video frames",
-    "description": "Original ViNet weights unpublished; targets the maintained ViNet-S. Checkpoint vinet_s_dhf1k.pt.",
+    "description": "Predicts visual attention across video frames to evaluate onboarding clips, motion content, and other time-based experiences.",
     "keywords": [
       "ios",
       "model",
@@ -773,7 +773,7 @@
     "category": "model-library",
     "name": "iris",
     "shortDescription": "Locates irises for accurate color sampling",
-    "description": "MediaPipe Iris (PyTorch port) locates the pupil center + iris boundary and eye contour from a 64x64 eye crop. Used by Colors Matching to pull the person's eye colour from the precise iris disc (face-parsing gives the rough eye region; this pinpoints the iris). Weights are a one-time TFLite->PyTorch conversion (torch-only at runtime, CPU-fast); the upstream MediaPipe face-mesh crop stage is skipped in favour of a supplied eye box.",
+    "description": "Locates the pupil center, iris boundary, and eye contour from an eye crop so downstream tools can sample eye color accurately.",
     "keywords": [
       "iris",
       "eye",
@@ -797,7 +797,7 @@
     "name": "Knowledge / memory modules",
     "type": "library",
     "category": "code-library",
-    "description": "Per-vertical corpora the apps and agents draw on. One folder per domain; each file names its source and how it's used in its own header. Seeded corpora: - `color-theory/` - `color-theory.md` — full color reference (properties, harmonies, the 7-step palette process,   60-30-10, accessibility, color meanings, cultural cautions). Source: `Color Theory.pdf`. - `seasons.md` — the seasonal-analysis subset used by the Color Matching app. - `wireframing/` - `wireframing-theory.md` — full wireframing theory. Source: `Wireframing.pdf`. - `wireframing.md` — curated flow-rules / iOS-pattern cheat-sheet. - `composition/` - `composition-theory.md` — full composition reference (composition types, elements and their   properties, contrast, similarity, repetition, rhythm, balance, hierarchy, grids, Gestalt,   focal points) applied to UI/screen design. Source: `Design Composition.pdf`. - `AppleComposition-guidelines.md` — full transcript of Apple's WWDC25 \"Get to know the new   design system\" session (Liquid Glass, concentricity, structure, continuity).   Source: youtube.com/watch?v=DS2ildqCrB0. - `apple-guidelines/` - `app-store-review-guidelines.md` — the full App Store Review Guidelines (all five sections).   Source: developer.apple.com/app-store/review/guidelines/.",
+    "description": "Organizes reusable, source-aware knowledge by domain so agents and applications can retrieve consistent guidance and reference material.",
     "shortDescription": "Stores reusable domain knowledge",
     "keywords": [],
     "githubPath": "libraries/knowledge",
@@ -816,7 +816,7 @@
     "category": "knowledge-library",
     "name": "apple-guidelines",
     "shortDescription": "Documents Apple interface standards",
-    "description": "See the included Markdown documentation for implementation and usage details.",
+    "description": "A structured Apple guidelines reference for product design, interaction decisions, platform conventions, and application review preparation.",
     "keywords": [
       "apple",
       "guidelines"
@@ -838,7 +838,7 @@
     "category": "knowledge-library",
     "name": "color-theory",
     "shortDescription": "Applies color theory to product design",
-    "description": "See the included Markdown documentation for implementation and usage details.",
+    "description": "A design-focused color theory reference for choosing palettes, building contrast, communicating meaning, and supporting accessibility.",
     "keywords": [
       "color",
       "theory"
@@ -860,7 +860,7 @@
     "category": "knowledge-library",
     "name": "composition",
     "shortDescription": "Explains effective layout composition",
-    "description": "See the included Markdown documentation for implementation and usage details.",
+    "description": "A structured guide to visual composition, hierarchy, alignment, balance, spacing, and reading flow in digital product interfaces.",
     "keywords": [
       "composition"
     ],
@@ -881,7 +881,7 @@
     "category": "knowledge-library",
     "name": "wireframing",
     "shortDescription": "Documents reliable wireframing methods",
-    "description": "See the included Markdown documentation for implementation and usage details.",
+    "description": "Documents practical methods for turning product requirements into clear screen structures, navigation flows, and testable wireframes.",
     "keywords": [
       "wireframing"
     ],
@@ -901,7 +901,7 @@
     "name": "legal",
     "type": "library",
     "category": "code-library",
-    "description": "Generates a **Privacy Policy** + **Terms & Conditions** for an app from its data-use profile. Deterministic template filling — **not legal advice**. Every document is stamped *\"requires human/legal review before publishing\"* and `generate()` returns `review_required=True`. Why it exists: the App Store **requires a privacy policy** (Guideline 5.1). The compliance agent only *checks* for one; this produces a truthful first draft grounded in what the app actually does — especially **on-device** processing (no server → strong, honest privacy stance). Placeholders left as `[COMPANY]`, `[JURISDICTION]`, etc. are surfaced in `warnings` so nothing ships half-filled. **A lawyer must review the output before it goes live.**",
+    "description": "Generates draft privacy policies and terms from an application's declared data practices using deterministic templates. The output is not legal advice.",
     "shortDescription": "Drafts privacy policies and app terms",
     "keywords": [],
     "version": "0.1.0",
@@ -920,7 +920,7 @@
     "name": "MCP library",
     "type": "library",
     "category": "code-library",
-    "description": "Shared MCP servers/tools the agents call — e.g. the wireframing flow-audit server and the Figma sync server. One folder per server, each with its own README and run instructions. Keep auth/config out of the repo; document where it's injected.",
+    "description": "A collection of shared MCP servers that expose factory capabilities such as flow analysis, wireframing, and visual-coherence scoring to agents.",
     "shortDescription": "Provides shared tools for factory agents",
     "keywords": [],
     "githubPath": "libraries/mcp",
@@ -939,7 +939,7 @@
     "category": "mcp-library",
     "name": "navigation-flow",
     "shortDescription": "Audits navigation graphs and dead ends",
-    "description": "An MCP server that analyzes a screen flow: builds the navigation graph and computes clicks-to-action, navigation depth, orphan pages / dead ends, and features-per-page.",
+    "description": "Builds a graph from application screens and reports clicks to key actions, navigation depth, dead ends, orphan screens, and feature density.",
     "keywords": [
       "navigation",
       "flow"
@@ -961,7 +961,7 @@
     "category": "mcp-library",
     "name": "purity",
     "shortDescription": "Scores visual coherence through MCP",
-    "description": "Purity MCP: moodboard coherence scoring + the per-app universe (tokens.override.json), any agent can call.",
+    "description": "Exposes moodboard analysis and visual-coherence scoring through MCP, including generated design-token overrides for an application universe.",
     "keywords": [
       "purity"
     ],
@@ -982,7 +982,7 @@
     "category": "mcp-library",
     "name": "wireframing",
     "shortDescription": "Creates and audits editable flows",
-    "description": "Wireframing MCP: editable-flow tools (place/link/audit/export) any agent or the studio can call.",
+    "description": "Exposes tools for placing screens, linking flows, auditing structure, and exporting editable wireframes through a shared MCP interface.",
     "keywords": [
       "wireframing"
     ],
@@ -1002,7 +1002,7 @@
     "name": "App-Benchmark memory",
     "type": "library",
     "category": "code-library",
-    "description": "A queryable store of competitor **screens, flows, onboarding, and paywalls** — the \"memory app\" from the deck. - **Sources:** screensdesign.com (screens/flows), Sensor Tower (revenue), startups.rip (what failed). - `scripts/ingest.py` pulls and tags each screen by app / niche / screen-type into `benchmark.db`. - **Consumers:** the wireframing agent (best-practice flows) and feature decomposition (minimal feature set per niche). Phase 1: ingest the Color Matching competitor + 2–3 onboarding/paywall references under `sources/color-matching/`.",
+    "description": "A queryable collection of competitor screens, onboarding sequences, flows, and paywalls used to inform product and design decisions.",
     "shortDescription": "Stores competitor screens and flows",
     "keywords": [],
     "githubPath": "libraries/memory",
@@ -1021,7 +1021,7 @@
     "category": "agent-library",
     "name": "microcopy",
     "shortDescription": "Writes concise Apple-style interface copy",
-    "description": "Apple-HIG microcopy per wireframe screen, checked for length/style, feeding swiftui-gen.",
+    "description": "Generates concise interface copy for wireframe screens, checks it against Apple conventions and length limits, and prepares it for SwiftUI generation.",
     "keywords": [
       "microcopy"
     ],
@@ -1041,7 +1041,7 @@
     "name": "ml-core",
     "type": "library",
     "category": "code-library",
-    "description": "The factory's **shared LLM layer** — one tested, provider-agnostic gateway + cost meter + tracking that every agent and tool depends on. Extracted from the skill-optimizer so there's a single, hardened seam for all LLM calls (no per-tool reinvention).",
+    "description": "A provider-independent model gateway that centralizes LLM access, cost tracking, execution metadata, and shared behavior for factory agents.",
     "shortDescription": "Unifies model providers and cost tracking",
     "keywords": [],
     "version": "0.1.0",
@@ -1064,7 +1064,7 @@
     "name": "Models library (`vis_models`)",
     "type": "library",
     "category": "code-library",
-    "description": "The factory's **vision-model layer**. Two parts: - **`catalog.json`** — a human-readable discovery view over the AI-farm registry: model name, task, status, license, and the niche(s) it serves. It stores **no weights** (those live in `../ai-farm`). - **`src/vis_models/`** — the importable adapters Sprint Engineers and agents call. Today this is `saliency`.",
+    "description": "Catalogs the factory's computer-vision models, their tasks, readiness, licensing, dependencies, and the interfaces used to run them.",
     "shortDescription": "Catalogs reusable computer-vision models",
     "keywords": [],
     "version": "0.1.0",
@@ -1083,7 +1083,7 @@
     "name": "navigation-flow",
     "type": "library",
     "category": "mcp",
-    "description": "See README.md for details.",
+    "description": "Analyzes how users move between application screens and measures navigation depth, action distance, dead ends, and structural complexity.",
     "shortDescription": "Measures paths through app screens",
     "keywords": [
       "navigation flow"
@@ -1104,7 +1104,7 @@
     "name": "Patterns (Apple-DNA libraries)",
     "type": "library",
     "category": "code-library",
-    "description": "Reusable interaction / experience patterns drawn from Apple's design DNA. One subfolder per library: Each entry documents **what it is, when to use it, and the components/tokens it touches**. These feed the prototype + universe-enhancing design steps.",
+    "description": "A reusable collection of Apple-inspired interaction and experience patterns, with guidance on when and how each pattern should be applied.",
     "shortDescription": "Provides reusable Apple UX patterns",
     "keywords": [],
     "githubPath": "design-system/patterns",
@@ -1122,7 +1122,7 @@
     "name": "Platforms",
     "type": "library",
     "category": "code-library",
-    "description": "The design system covers **every Apple surface**, not just the phone screen. Each subfolder holds the platform-specific component variants + Figma coverage notes: Components stay **token-driven**; these folders capture how an organism/template *adapts* per surface. Most niches use a subset — populate per app, don't pre-build all.",
+    "description": "Documents platform-specific component variants and design considerations for iPhone, iPad, Mac, Watch, TV, and other Apple surfaces.",
     "shortDescription": "Adapts components across Apple platforms",
     "keywords": [],
     "githubPath": "design-system/platforms",
@@ -1140,7 +1140,7 @@
     "name": "purity",
     "type": "library",
     "category": "mcp",
-    "description": "See README.md for details.",
+    "description": "Measures whether a moodboard or interface follows a coherent visual universe and produces structured signals for downstream design tools.",
     "shortDescription": "Measures visual style consistency",
     "keywords": [
       "purity"
@@ -1161,7 +1161,7 @@
     "name": "rag",
     "type": "library",
     "category": "code-library",
-    "description": "A small, **dependency-free** retrieval library for grounding agents in a document corpus. - **`Corpus`** — documents chunked into pieces, each carrying its `source` (for citations). - **`load_corpus(dir)`** — index every `*.md` (uses a `source:` line as the citation URL). - **`LexicalRetriever`** — TF-IDF cosine over chunks. No external deps; a solid baseline for a focused doc set and fully offline-testable. - **`Retriever`** protocol — the seam for a future `EmbeddingRetriever` (semantic recall via the ml-core providers) that drops in without changing callers. Used by `agents/apple-docs-rag` to answer Apple-development questions with citations.",
+    "description": "A lightweight retrieval library that chunks source documents, ranks relevant passages, and grounds agent answers in traceable evidence.",
     "shortDescription": "Grounds agent answers in source documents",
     "keywords": [],
     "version": "0.1.0",
@@ -1180,7 +1180,7 @@
     "name": "References (from competition)",
     "type": "library",
     "category": "code-library",
-    "description": "Curated, **design-facing** views of competitor best-practice flows — the onboarding and paywall sequences worth copying (the \"97% familiar\" part of the strategy). - `onboarding/` — best-in-class onboarding flows. - `paywall/` — best-in-class paywall layouts. **Source of truth is `libraries/memory`** (the App-Benchmark DB). This folder holds the *curated selections + design notes* — which patterns to reuse and why — **not** the raw captures. Pull screens from `libraries/memory`; annotate the picks here. Don't duplicate the captures.",
+    "description": "Curates effective competitor onboarding, paywall, and product flows as design references while retaining their sources and intended use.",
     "shortDescription": "Curates proven competitor design flows",
     "keywords": [],
     "githubPath": "design-system/references",
@@ -1198,7 +1198,7 @@
     "name": "rendering",
     "type": "library",
     "category": "code-library",
-    "description": "Turns a screen into an **image + the primary-action region**, so the UX-audit's SUM saliency check can run on a *real* screen instead of a screenshot you supply by hand. Mirrors the `vis_models` saliency seam: **protocol + real backend + offline mock + factory**. Wireframes from the wireframing agent use a known structure (`button.action` / `a.nav`), so the CTA box is reliable offline. **Real PNGs** need `pip install \"rendering[browser]\"` + `playwright install chromium` (dev/farm); CI stays on the dependency-free mock.",
+    "description": "Turns an implemented screen into an image and identifies its primary-action region so attention and UX audits can evaluate the real interface.",
     "shortDescription": "Renders screens for attention analysis",
     "keywords": [],
     "version": "0.1.0",
@@ -1218,7 +1218,7 @@
     "category": "agent-library",
     "name": "security-review",
     "shortDescription": "Finds security risks in generated code",
-    "description": "Security-review gate: static scan + LLM review of generated app code.",
+    "description": "Combines deterministic static checks with model-assisted review to identify security risks in generated application code before release.",
     "keywords": [
       "security",
       "review"
@@ -1239,7 +1239,7 @@
     "name": "SF Symbols",
     "type": "library",
     "category": "code-library",
-    "description": "Catalog + usage rules for Apple **SF Symbols** (the native icon set). Documents which symbol maps to which action, weight/scale rules, and rendering mode (monochrome / hierarchical / palette) per token. Prefer SF Symbols over custom icons for Apple-native feel and built-in accessibility. No assets to vendor — the symbols ship with the OS; this folder is the **selection + usage policy**, not image files.",
+    "description": "Maps common interface actions to suitable SF Symbols and documents recommended weights, scales, rendering modes, and usage conventions.",
     "shortDescription": "Maps actions to suitable SF Symbols",
     "keywords": [],
     "githubPath": "design-system/sfsymbols",
@@ -1257,7 +1257,7 @@
     "name": "skill-name-here",
     "type": "library",
     "category": "code-library",
-    "description": "One line — what it does AND when to trigger it. Used for discovery.",
+    "description": "A template for documenting a reusable skill with clear trigger conditions, instructions, expected outputs, and discovery metadata.",
     "shortDescription": "Defines a reusable triggered workflow",
     "keywords": [],
     "githubPath": "_templates/skill",
@@ -1276,7 +1276,7 @@
     "category": "skills-library",
     "name": "Make it scroll",
     "shortDescription": "Builds scroll-driven web experiences",
-    "description": "Cognitive Shift transforms cutting-edge AI research from MIT and the best practices developed by leading Silicon Valley companies into directly applicable frameworks.",
+    "description": "Demonstrates how to build a polished scroll-driven web experience with coordinated content, motion, and interaction behavior.",
     "keywords": [
       "skill",
       "website"
@@ -1292,7 +1292,7 @@
     "category": "agent-library",
     "name": "skill-optimizer",
     "shortDescription": "Optimizes skills as measurable artifacts",
-    "description": "Build-time MLOps platform that optimizes SKILL.md files as ML artifacts.",
+    "description": "Treats SKILL.md instructions as measurable artifacts, evaluating and refining them at build time to improve reliability and task performance.",
     "keywords": [
       "skill",
       "optimizer"
@@ -1313,7 +1313,7 @@
     "name": "Skill library",
     "type": "library",
     "category": "code-library",
-    "description": "Reusable skills built from `_templates/skill` per the `CHARTER.md`. One folder per skill. - Cross-app skills live here. - Project-specific skills may live with their app instead. The four running tools (`wireframing`, `skill-optimizer`, `ux-audit`, `tester`) live under `/agents` because they are agents; pure skills land here.",
+    "description": "A collection of reusable factory workflows, each packaged with its own trigger conditions, instructions, references, and supporting resources.",
     "shortDescription": "Provides reusable factory workflows",
     "keywords": [],
     "githubPath": "libraries/skills",
@@ -1331,7 +1331,7 @@
     "name": "skin-tone-cv (model card)",
     "type": "application",
     "category": "ai-farm",
-    "description": "- **Task:** extract skin / hair / eye tones from a selfie → features for seasonal palette. - **Status:** raw → ready (Phase-1 reference model that proves the pipeline). - **Inputs:** image. **Outputs:** tone features / palette class. - **Source / license:** <fill>. - **Ready build:** `../../ready/skin-tone-cv.mlpackage` (CoreML, on-device).",
+    "description": "A model card for extracting skin, hair, and eye tones from selfies and converting them into features for seasonal color analysis.",
     "shortDescription": "Extracts tones for seasonal palettes",
     "keywords": [],
     "githubPath": "libraries/ai-farm/raw/skin-tone-cv",
@@ -1349,7 +1349,7 @@
     "name": "Sprint orchestrator",
     "type": "library",
     "category": "code-library",
-    "description": "Chains the factory's agents into **one app sprint** with a single go/no-go verdict. This is the keystone that turns standalone agents into a production line.",
+    "description": "Coordinates the factory's specialist agents into a single application sprint and produces a combined result with an explicit go or no-go decision.",
     "shortDescription": "Orchestrates agents into one app sprint",
     "keywords": [],
     "version": "0.1.0",
@@ -1371,7 +1371,7 @@
     "category": "model-library",
     "name": "sum",
     "shortDescription": "Predicts where viewers look on images",
-    "description": "SUM (Saliency Unification through Mamba) predicts a human-attention heatmap for a still image, with a UI/web-page condition tuned for interface screens. Used by ux-audit to check the primary action is the visual hot-spot. Real weights run in iOS Ready; offline, a real pixel-based classical model or a deterministic mock stands in. The adapter is the shared vis_models.saliency core, re-exported here.",
+    "description": "Generates human-attention heatmaps for static images and interfaces, including a condition tuned for evaluating web and application screens.",
     "keywords": [
       "saliency",
       "image",
@@ -1396,7 +1396,7 @@
     "category": "agent-library",
     "name": "swiftui-gen",
     "shortDescription": "Generates checked SwiftUI from wireframes",
-    "description": "Wireframe screen spec -> token-driven SwiftUI, one screen at a time, statically checked.",
+    "description": "Converts one token-driven wireframe screen at a time into SwiftUI and applies static checks before the generated code moves downstream.",
     "keywords": [
       "swiftui",
       "gen"
@@ -1417,7 +1417,7 @@
     "name": "_template",
     "type": "model",
     "category": "models",
-    "description": "Longer description: what it does, how, and any caveats.",
+    "description": "A documented starter structure for creating a portable factory block with clear metadata, implementation files, and usage guidance.",
     "shortDescription": "Scaffolds a documented factory block",
     "keywords": [
       "one line: what this model predicts / produces"
@@ -1439,7 +1439,7 @@
     "category": "agent-library",
     "name": "tester",
     "shortDescription": "Builds and validates apps in Simulator",
-    "description": "iOS build tester: compile + launch in the simulator, assert the core screen renders, diagnose crashes.",
+    "description": "Builds an iOS application, launches it in Simulator, verifies that the core screen renders, and reports useful diagnostics when execution fails.",
     "keywords": [
       "tester"
     ],
@@ -1459,7 +1459,7 @@
     "name": "ux-attention-pattern",
     "type": "library",
     "category": "code",
-    "description": "Tuned for iOS app screens (narrow, vertical, component-driven), grounded in NN/g eye-tracking research + Apple HIG. Uses the attention modules (vis_models.saliency — real SUM when weights are on the box, else the classical pixel model, else the deterministic mock) to predict a screen's attention, then classifies the reading flow from the grid's row/column profiles: vertical (layer-cake column of sections — good), gutenberg (top anchor + bottom terminal CTA in the thumb zone — good), focused (single hero/action — good), f-skim (top-left text-wall skim — warn), scattered (no hierarchy — bad). If a cta point is given, a gutenberg/vertical screen is only fully good when attention reaches the CTA. The rule core (classify_pattern) is pure stdlib; the image layer depends on vis_models.saliency.",
+    "description": "Uses attention signals and established iOS reading behavior to classify a screen's visual flow and identify unhealthy presentation patterns.",
     "shortDescription": "Classifies attention and reading flow",
     "keywords": [
       "classify an iOS screen's reading pattern (vertical/gutenberg/f-skim/focused/scattered) and judge it"
@@ -1485,7 +1485,7 @@
     "name": "ux-position-mask",
     "type": "library",
     "category": "code",
-    "description": "Audits which elements of a screen are in good vs dangerous positions. Core rules (`audit`, pure stdlib): given elements with a role (primary/secondary/content) and a normalized box, return a per-element verdict (good/ok/dangerous) with reasons plus a score/grade — thumb-reach ergonomics (primary actions belong lower-center), rule-of-thirds active zones (key content where the eye lands first), and safe areas (status bar/notch, home indicator, edges). For an arbitrary screen *design*, `audit_image(path)` first runs a classical, offline detector (background subtraction + connected components + role heuristics; Pillow/numpy/scipy) to find the elements, then scores them. Migration path: when auditing *generated* screens, replace detection by reading element boxes from the known layout — the rules stay the same.",
+    "description": "Evaluates interface elements against thumb reach, active zones, safe areas, and role-specific positioning to flag risky placements.",
     "shortDescription": "Flags unsafe interface element positions",
     "keywords": [
       "audit which screen elements sit in good vs dangerous positions"
@@ -1512,7 +1512,7 @@
     "category": "code-library",
     "name": "ux-attention-pattern",
     "shortDescription": "Evaluates visual reading patterns",
-    "description": "Tuned for iOS app screens (narrow, vertical, component-driven), grounded in NN/g eye-tracking research + Apple HIG. Uses the attention modules (vis_models.saliency — real SUM when weights are on the box, else the classical pixel model, else the deterministic mock) to predict a screen's attention, then classifies the reading flow from the grid's row/column profiles: vertical (layer-cake column of sections — good), gutenberg (top anchor + bottom terminal CTA in the thumb zone — good), focused (single hero/action — good), f-skim (top-left text-wall skim — warn), scattered (no hierarchy — bad). If a cta point is given, a gutenberg/vertical screen is only fully good when attention reaches the CTA. The rule core (classify_pattern) is pure stdlib; the image layer depends on vis_models.saliency.",
+    "description": "Analyzes an iOS screen's attention pattern and reading order to determine whether important content follows a healthy visual flow.",
     "keywords": [
       "ux",
       "attention",
@@ -1541,7 +1541,7 @@
     "category": "agent-library",
     "name": "ux-audit",
     "shortDescription": "Scores screens against HIG and attention",
-    "description": "UX audit agent: HIG checklist scoring + SUM saliency attention check for a screen.",
+    "description": "Scores a screen against Apple interface guidance and combines the result with saliency analysis to identify usability and attention problems.",
     "keywords": [
       "ux",
       "audit"
@@ -1563,7 +1563,7 @@
     "category": "code-library",
     "name": "ux-position-mask",
     "shortDescription": "Audits reachability and safe areas",
-    "description": "Audits which elements of a screen are in good vs dangerous positions. Core rules (`audit`, pure stdlib): given elements with a role (primary/secondary/content) and a normalized box, return a per-element verdict (good/ok/dangerous) with reasons plus a score/grade — thumb-reach ergonomics (primary actions belong lower-center), rule-of-thirds active zones (key content where the eye lands first), and safe areas (status bar/notch, home indicator, edges). For an arbitrary screen *design*, `audit_image(path)` first runs a classical, offline detector (background subtraction + connected components + role heuristics; Pillow/numpy/scipy) to find the elements, then scores them. Migration path: when auditing *generated* screens, replace detection by reading element boxes from the known layout — the rules stay the same.",
+    "description": "Audits where interface elements sit relative to reachability, safe areas, active zones, and the importance of each action.",
     "keywords": [
       "ux",
       "audit",
@@ -1592,7 +1592,7 @@
     "category": "model-library",
     "name": "vinet",
     "shortDescription": "Tracks viewer attention across video",
-    "description": "ViNet-S (ViNet++, U-Net decoder over an S3D backbone) predicts a per-frame human-attention heatmap for a video. Targets the maintained successor because the original ViNet's weights are no longer published; ViNet-S is the same task, ~36MB, and CPU-runnable. Used to check that an onboarding clip leads the eye toward the primary action over time. Real weights run in iOS Ready (or any torch box); a deterministic mock stands in for CI.",
+    "description": "Produces per-frame attention heatmaps for video, helping teams assess where viewers look throughout motion and onboarding content.",
     "keywords": [
       "saliency",
       "video",
@@ -1616,7 +1616,7 @@
     "name": "vision-camera",
     "type": "library",
     "category": "code",
-    "description": "On-device capture and privacy helpers seeded by the Color-Matching app. ImageCrypto.swift encrypts a captured image at rest (CryptoKit) before any persistence; a SwiftUI capture view (AVCaptureSession) is planned. Every 'scan something' niche (color, skin, plant, food) repeats capture + encryption — written once here, imported by apps. Swift block: reused on-device, not exposed as a Python entry.",
+    "description": "Provides reusable SwiftUI camera capture and CryptoKit image encryption for applications that process sensitive images on device.",
     "shortDescription": "Captures and encrypts images on device",
     "keywords": [
       "on-device camera capture + image encryption at rest"
@@ -1643,7 +1643,7 @@
     "category": "code-library",
     "name": "vision-camera",
     "shortDescription": "Provides secure SwiftUI image capture",
-    "description": "On-device capture and privacy helpers seeded by the Color-Matching app. ImageCrypto.swift encrypts a captured image at rest (CryptoKit) before any persistence; a SwiftUI capture view (AVCaptureSession) is planned. Every 'scan something' niche (color, skin, plant, food) repeats capture + encryption — written once here, imported by apps. Swift block: reused on-device, not exposed as a Python entry.",
+    "description": "A reusable secure-capture block for SwiftUI that encrypts captured images at rest before they are persisted or processed.",
     "keywords": [
       "swift",
       "camera",
@@ -1668,7 +1668,7 @@
     "name": "Wireframing Studio",
     "type": "library",
     "category": "code",
-    "description": "A production-grade, human-driven wireframing tool for the Lean AI Factory. It's the **editable-flow surface** the `libraries/mcp/wireframing` README promises — a person places elements, links screens, and adjusts the flow, with a **live A–F flow grade** that mirrors the factory's automated audit. Zero dependencies, no build step, no server. It's a single self-contained `index.html`.",
+    "description": "A human-driven workspace for creating, editing, linking, auditing, and exporting production-grade application wireframe flows.",
     "shortDescription": "Edits and exports production wireframes",
     "keywords": [],
     "githubPath": "libraries/code/wireframe-studio",
@@ -1687,7 +1687,7 @@
     "category": "agent-library",
     "name": "wireframing",
     "shortDescription": "Turns product charters into app flows",
-    "description": "Wireframing agent: charter -> A-grade flow wireframe.",
+    "description": "Turns a product charter into a structured application flow and produces clear wireframes designed to meet a high quality threshold.",
     "keywords": [
       "wireframing"
     ],

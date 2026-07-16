@@ -17,7 +17,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Curates proven competitor design flows"
+    "shortDescription": "Curates proven competitor design flows",
+    "description": "Curates effective competitor onboarding, paywall, and product flows as design references while retaining their sources and intended use."
   },
   "attachments": {
     "thumbnail": "content/articles/references/thumbnail.png",

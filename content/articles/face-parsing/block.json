@@ -107,7 +107,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Creates masks for facial features"
+    "shortDescription": "Creates masks for facial features",
+    "description": "Creates detailed masks for individual facial features so downstream tools can analyze colors, edit regions, or isolate components."
   },
   "attachments": {
     "thumbnail": "content/articles/face-parsing/thumbnail.png",

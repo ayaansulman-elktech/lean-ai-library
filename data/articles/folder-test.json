@@ -4,7 +4,7 @@
   "category": "skills-library",
   "name": "Folder test",
   "shortDescription": "Previews article folders and Markdown",
-  "description": "Test article using a content folder instead of a single PDF or Markdown file.",
+  "description": "Demonstrates how an article can expose a folder tree and open included Markdown documents directly in the Library interface.",
   "keywords": [
     "folder",
     "test"
@@ -18,7 +18,7 @@
       "name": "block.json",
       "type": "file",
       "path": "block.json",
-      "content": "{\n  \"id\": \"folder-test\",\n  \"type\": \"folder\",\n  \"category\": \"skills-library\",\n  \"name\": \"Folder test\",\n  \"shortDescription\": \"Previews article folders and Markdown\",\n  \"description\": \"Test article using a content folder instead of a single PDF or Markdown file.\",\n  \"keywords\": [\n    \"folder\",\n    \"test\"\n  ],\n  \"slug\": \"folder-test\",\n  \"contentPath\": \"\",\n  \"coverPath\": \"assets/default_thumbnail.png\",\n  \"coverPreviewPath\": \"\"\n}"
+      "content": "{\n  \"id\": \"folder-test\",\n  \"type\": \"folder\",\n  \"category\": \"skills-library\",\n  \"name\": \"Folder test\",\n  \"shortDescription\": \"Previews article folders and Markdown\",\n  \"description\": \"Demonstrates how an article can expose a folder tree and open included Markdown documents directly in the Library interface.\",\n  \"keywords\": [\n    \"folder\",\n    \"test\"\n  ],\n  \"slug\": \"folder-test\",\n  \"contentPath\": \"\",\n  \"coverPath\": \"assets/default_thumbnail.png\",\n  \"coverPreviewPath\": \"\"\n}"
     }
   ]
 }

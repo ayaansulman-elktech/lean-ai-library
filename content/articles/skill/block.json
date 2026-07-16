@@ -17,7 +17,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Defines a reusable triggered workflow"
+    "shortDescription": "Defines a reusable triggered workflow",
+    "description": "A template for documenting a reusable skill with clear trigger conditions, instructions, expected outputs, and discovery metadata."
   },
   "attachments": {
     "thumbnail": "content/articles/skill/thumbnail.png",

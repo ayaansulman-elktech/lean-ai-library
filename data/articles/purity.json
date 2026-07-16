@@ -3,7 +3,7 @@
   "name": "purity",
   "type": "library",
   "category": "mcp",
-  "description": "See README.md for details.",
+  "description": "Measures whether a moodboard or interface follows a coherent visual universe and produces structured signals for downstream design tools.",
   "shortDescription": "Measures visual style consistency",
   "keywords": [
     "purity"

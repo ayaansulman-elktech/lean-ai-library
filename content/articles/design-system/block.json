@@ -18,7 +18,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Provides shared Apple-native components"
+    "shortDescription": "Provides shared Apple-native components",
+    "description": "A shared Apple-native component system that gives factory applications consistent foundations, patterns, tokens, and implementation rules."
   },
   "attachments": {
     "thumbnail": "content/articles/design-system/thumbnail.png",

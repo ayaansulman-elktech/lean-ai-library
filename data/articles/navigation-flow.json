@@ -3,7 +3,7 @@
   "name": "navigation-flow",
   "type": "library",
   "category": "mcp",
-  "description": "See README.md for details.",
+  "description": "Analyzes how users move between application screens and measures navigation depth, action distance, dead ends, and structural complexity.",
   "shortDescription": "Measures paths through app screens",
   "keywords": [
     "navigation flow"

@@ -3,7 +3,7 @@
   "name": "Code library",
   "type": "library",
   "category": "code-library",
-  "description": "Reusable Swift / Python code, packaged as **blocks** — one code unit per folder under `blocks/`, each self-describing (`block.json`), offline-tested, and MCP-ready. The full standard is in [`ARCHITECTURE.md`](ARCHITECTURE.md); `blocks/_template/` is the reference block to copy. **Rule:** if a sprint writes something twice, it becomes a block. New code is authored directly as a block; the discovery view is `catalog.json`.",
+  "description": "A collection of reusable Swift and Python blocks designed to be copied into projects, tested independently, and consumed by factory tools.",
   "shortDescription": "Provides reusable Swift and Python blocks",
   "keywords": [],
   "version": "0.1.0",

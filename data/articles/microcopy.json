@@ -4,7 +4,7 @@
   "category": "agent-library",
   "name": "microcopy",
   "shortDescription": "Writes concise Apple-style interface copy",
-  "description": "Apple-HIG microcopy per wireframe screen, checked for length/style, feeding swiftui-gen.",
+  "description": "Generates concise interface copy for wireframe screens, checks it against Apple conventions and length limits, and prepares it for SwiftUI generation.",
   "keywords": [
     "microcopy"
   ],

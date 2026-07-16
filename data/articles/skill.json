@@ -3,7 +3,7 @@
   "name": "skill-name-here",
   "type": "library",
   "category": "code-library",
-  "description": "One line — what it does AND when to trigger it. Used for discovery.",
+  "description": "A template for documenting a reusable skill with clear trigger conditions, instructions, expected outputs, and discovery metadata.",
   "shortDescription": "Defines a reusable triggered workflow",
   "keywords": [],
   "githubPath": "_templates/skill",

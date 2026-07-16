@@ -3,7 +3,7 @@
   "name": "legal",
   "type": "library",
   "category": "code-library",
-  "description": "Generates a **Privacy Policy** + **Terms & Conditions** for an app from its data-use profile. Deterministic template filling — **not legal advice**. Every document is stamped *\"requires human/legal review before publishing\"* and `generate()` returns `review_required=True`. Why it exists: the App Store **requires a privacy policy** (Guideline 5.1). The compliance agent only *checks* for one; this produces a truthful first draft grounded in what the app actually does — especially **on-device** processing (no server → strong, honest privacy stance). Placeholders left as `[COMPANY]`, `[JURISDICTION]`, etc. are surfaced in `warnings` so nothing ships half-filled. **A lawyer must review the output before it goes live.**",
+  "description": "Generates draft privacy policies and terms from an application's declared data practices using deterministic templates. The output is not legal advice.",
   "shortDescription": "Drafts privacy policies and app terms",
   "keywords": [],
   "version": "0.1.0",

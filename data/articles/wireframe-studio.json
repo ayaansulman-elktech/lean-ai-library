@@ -3,7 +3,7 @@
   "name": "Wireframing Studio",
   "type": "library",
   "category": "code",
-  "description": "A production-grade, human-driven wireframing tool for the Lean AI Factory. It's the **editable-flow surface** the `libraries/mcp/wireframing` README promises — a person places elements, links screens, and adjusts the flow, with a **live A–F flow grade** that mirrors the factory's automated audit. Zero dependencies, no build step, no server. It's a single self-contained `index.html`.",
+  "description": "A human-driven workspace for creating, editing, linking, auditing, and exporting production-grade application wireframe flows.",
   "shortDescription": "Edits and exports production wireframes",
   "keywords": [],
   "githubPath": "libraries/code/wireframe-studio",

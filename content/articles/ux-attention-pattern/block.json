@@ -98,7 +98,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Evaluates visual reading patterns"
+    "shortDescription": "Evaluates visual reading patterns",
+    "description": "Analyzes an iOS screen's attention pattern and reading order to determine whether important content follows a healthy visual flow."
   },
   "attachments": {
     "thumbnail": "content/articles/ux-attention-pattern/thumbnail.png",

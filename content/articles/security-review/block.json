@@ -99,7 +99,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Finds security risks in generated code"
+    "shortDescription": "Finds security risks in generated code",
+    "description": "Combines deterministic static checks with model-assisted review to identify security risks in generated application code before release."
   },
   "attachments": {
     "thumbnail": "content/articles/security-review/thumbnail.png",

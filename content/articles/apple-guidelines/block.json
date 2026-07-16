@@ -19,7 +19,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Explains Apple interface guidelines"
+    "shortDescription": "Explains Apple interface guidelines",
+    "description": "A practical reference for applying Apple interface and App Store guidelines when designing, implementing, and reviewing applications."
   },
   "attachments": {
     "thumbnail": "content/articles/apple-guidelines/thumbnail.png",

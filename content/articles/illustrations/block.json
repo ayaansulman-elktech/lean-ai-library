@@ -17,7 +17,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Generates consistent illustration assets"
+    "shortDescription": "Generates consistent illustration assets",
+    "description": "A reusable illustration system containing art-direction rules, generation prompts, model settings, and the resulting visual assets."
   },
   "attachments": {
     "thumbnail": "content/articles/illustrations/thumbnail.png",

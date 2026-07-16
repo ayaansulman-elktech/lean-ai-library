@@ -25,7 +25,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Captures and encrypts images on device"
+    "shortDescription": "Captures and encrypts images on device",
+    "description": "Provides reusable SwiftUI camera capture and CryptoKit image encryption for applications that process sensitive images on device."
   },
   "attachments": {
     "thumbnail": "content/articles/vision_camera/thumbnail.png",
