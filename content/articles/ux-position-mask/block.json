@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "ux-position-mask",
+  "factoryData": {
+    "id": "ux-position-mask",
+    "type": "library",
+    "category": "code-library",
+    "name": "ux-position-mask",
+    "shortDescription": "Audit a screen design: detect its elements and flag which sit in good/dangerous positions (thumb reach, active zones, safe areas).",
+    "description": "Audits which elements of a screen are in good vs dangerous positions. Core rules (`audit`, pure stdlib): given elements with a role (primary/secondary/content) and a normalized box, return a per-element verdict (good/ok/dangerous) with reasons plus a score/grade — thumb-reach ergonomics (primary actions belong lower-center), rule-of-thirds active zones (key content where the eye lands first), and safe areas (status bar/notch, home indicator, edges). For an arbitrary screen *design*, `audit_image(path)` first runs a classical, offline detector (background subtraction + connected components + role heuristics; Pillow/numpy/scipy) to find the elements, then scores them. Migration path: when auditing *generated* screens, replace detection by reading element boxes from the known layout — the rules stay the same.",
+    "keywords": [
+      "ux",
+      "audit",
+      "layout",
+      "thumb-reach",
+      "rule-of-thirds",
+      "safe-area",
+      "position",
+      "detection",
+      "screenshot"
+    ],
+    "sourcePath": "libraries/code/blocks/ux_position_mask",
+    "fileTree": [
+      {
+        "name": "src",
+        "type": "directory",
+        "path": "src",
+        "children": [
+          {
+            "name": "__init__.py",
+            "type": "file",
+            "path": "src/__init__.py",
+            "previewable": false
+          },
+          {
+            "name": "detect.py",
+            "type": "file",
+            "path": "src/detect.py",
+            "previewable": false
+          },
+          {
+            "name": "ux_position_mask.py",
+            "type": "file",
+            "path": "src/ux_position_mask.py",
+            "previewable": false
+          }
+        ]
+      },
+      {
+        "name": "tests",
+        "type": "directory",
+        "path": "tests",
+        "children": [
+          {
+            "name": "test_detect.py",
+            "type": "file",
+            "path": "tests/test_detect.py",
+            "previewable": false
+          },
+          {
+            "name": "test_ux_position_mask.py",
+            "type": "file",
+            "path": "tests/test_ux_position_mask.py",
+            "previewable": false
+          }
+        ]
+      },
+      {
+        "name": "__init__.py",
+        "type": "file",
+        "path": "__init__.py",
+        "previewable": false
+      },
+      {
+        "name": "block.json",
+        "type": "file",
+        "path": "block.json",
+        "previewable": false
+      },
+      {
+        "name": "cover.svg",
+        "type": "file",
+        "path": "cover.svg",
+        "previewable": false
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "path": "README.md",
+        "previewable": true,
+        "content": "# ux-position-mask (code block)\n\nAudits a screen design: **which elements sit in good vs dangerous positions.** Two layers:\n\n- **`audit(elements)`** — the pure, stdlib rules engine. Maps each element onto a UX zone mask\n  (thumb reach, rule-of-thirds active zones, safe areas) → per-element verdict (good / ok /\n  dangerous) + reasons + score/grade. Inputs: `[{name, role, box:[x,y,w,h]}]`, normalized `[0,1]`,\n  origin top-left. Roles: `primary` (main CTA), `secondary` (supporting), `content` (hero/text/media).\n- **`audit_image(path)`** — for an arbitrary screen **design/screenshot**: a classical, offline\n  detector (background subtraction → connected components → role heuristics; Pillow/numpy/scipy)\n  finds the elements, then `audit` scores them. Best-effort — correct it in the tester UI.\n\n**Outputs:** `{ elements:[{verdict, reach, attention, reasons}], flags, score, grade, detected }`.\n\n**First needed by:** UX auditing (code.md Task 4). Complements the `ux-audit` agent's saliency check.\n\n**Migration path:** when auditing *generated* screens, drop `audit_image`'s detection and feed the\nelement boxes from the known layout into `audit` — the rules don't change.\n\n## The rules\nGrounded in the **Design Composition** knowledge corpus (`../../../knowledge/composition` — active\nvs passive zones, rule of thirds: *\"place header text, hero images, or CTA buttons in the active\nzones\"*) and the standard mobile thumb-zone reachability map.\n\n- **Thumb reach** (radial, one-handed — the dominant ~49% grip): a circular comfort zone centered\n  in the **lower-middle** of the screen (where the thumb rests and sweeps). The green **EASY**\n  circle sits lower-center and reaches up to about the middle; the yellow **OK** ring surrounds it;\n  the **top — especially the top corners — is red HARD** (out of reach one-handed). Primary actions\n  belong in the easy circle.\n- **Active zones** (rule of thirds / F-pattern top-weighting): the upper region and thirds lines get\n  the most attention → key content belongs there; passive zones get less.\n- **Safe areas**: elements crossing the status bar/notch, the home indicator, or the screen edges\n  are flagged dangerous (may be clipped or hard to tap).\n\n## Use\n```python\nfrom blocks.ux_position_mask.src.ux_position_mask import audit\naudit([{\"name\": \"Buy\", \"role\": \"primary\", \"box\": [0.2, 0.82, 0.6, 0.08]}])\n# -> primary action in the natural thumb zone -> \"good\"\n```\n\nGrounded in `../../../knowledge/composition` (active/passive zones, rule of thirds). Deterministic\nand offline — no model, no LLM.\n"
+      }
+    ],
+    "package": {
+      "format": "zip",
+      "path": "packages/ux-position-mask.zip",
+      "sha256": "c07169f13e39dccbdf2b07d11a44913f55b8731106c4b5d90d5b21c1903baa95"
+    }
+  },
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/ux-position-mask/thumbnail.png",
+    "pdf": null
+  }
+}

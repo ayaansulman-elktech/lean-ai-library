@@ -1,0 +1,27 @@
+{
+  "id": "platforms",
+  "name": "Platforms",
+  "type": "library",
+  "category": "code-library",
+  "description": "The design system covers **every Apple surface**, not just the phone screen. Each subfolder holds the platform-specific component variants + Figma coverage notes: Components stay **token-driven**; these folders capture how an organism/template *adapts* per surface. Most niches use a subset — populate per app, don't pre-build all.",
+  "shortDescription": "Platforms",
+  "keywords": [],
+  "githubPath": "design-system/platforms",
+  "readme": "# Platforms\r\n\r\nThe design system covers **every Apple surface**, not just the phone screen. Each\r\nsubfolder holds the platform-specific component variants + Figma coverage notes:\r\n\r\n| Folder | Surface |\r\n|---|---|\r\n| `iphone/` | primary app UI |\r\n| `ipad/` | adaptive / multi-column layouts |\r\n| `watch/` | complications, short glances |\r\n| `vision/` | spatial UI (visionOS) |\r\n| `widgets/` | Home / Lock Screen widgets |\r\n| `dynamic-island/` | Live Activities presentations |\r\n| `notifications/` | rich notification layouts |\r\n\r\nComponents stay **token-driven**; these folders capture how an organism/template\r\n*adapts* per surface. Most niches use a subset — populate per app, don't pre-build all.\r\n",
+  "assets": [],
+  "examples": [],
+  "dependencies": [],
+  "related": [],
+  "slug": "platforms",
+  "contentPath": "",
+  "coverPath": "content/articles/platforms/thumbnail.png",
+  "coverPreviewPath": "content/articles/platforms/thumbnail.png",
+  "fileTree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "content": "# Platforms\r\n\r\nThe design system covers **every Apple surface**, not just the phone screen. Each\r\nsubfolder holds the platform-specific component variants + Figma coverage notes:\r\n\r\n| Folder | Surface |\r\n|---|---|\r\n| `iphone/` | primary app UI |\r\n| `ipad/` | adaptive / multi-column layouts |\r\n| `watch/` | complications, short glances |\r\n| `vision/` | spatial UI (visionOS) |\r\n| `widgets/` | Home / Lock Screen widgets |\r\n| `dynamic-island/` | Live Activities presentations |\r\n| `notifications/` | rich notification layouts |\r\n\r\nComponents stay **token-driven**; these folders capture how an organism/template\r\n*adapts* per surface. Most niches use a subset — populate per app, don't pre-build all.\r\n"
+    }
+  ]
+}

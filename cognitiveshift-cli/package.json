@@ -1,0 +1,29 @@
+{
+  "name": "cognitiveshift",
+  "version": "1.0.0",
+  "description": "Install CognitiveShift Library articles into any project",
+  "type": "module",
+  "bin": {
+    "cognitiveshift": "bin/index.js"
+  },
+  "files": [
+    "bin",
+    "packages",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "pack:check": "npm pack --dry-run"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "chalk": "^5.6.2"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "agent-core",
+  "factoryData": {
+    "id": "agent-core",
+    "name": "agent-core",
+    "type": "agent",
+    "category": "agents",
+    "description": "The factory's **shared agent framework**, built on `ml-core`. A thin, production-minded base so every agent (wireframing, compliance, security, ux-audit) is consistent: budget-checked, cost-metered, observable, with structured output and memory.",
+    "shortDescription": "agent-core",
+    "keywords": [],
+    "version": "0.1.0",
+    "githubPath": "libraries/agent-core",
+    "readme": "# agent-core\r\n\r\nThe factory's **shared agent framework**, built on `ml-core`. A thin, production-minded base\r\nso every agent (wireframing, compliance, security, ux-audit) is consistent: budget-checked,\r\ncost-metered, observable, with structured output and memory.\r\n\r\n## What it gives you\r\n- **`Agent`** base — subclass it and implement `_run(task) -> output`. `run()` wraps that in the\r\n  contract: budget enforcement, step counting, cost accounting, MLflow tracking, and failures\r\n  returned as an `AgentResult` (never an uncaught crash).\r\n- **`Agent.llm(...)` / `Agent.llm_json(...)`** — budget-checked LLM calls; `llm_json` returns a\r\n  parsed (optionally pydantic-validated) JSON object with corrective retry.\r\n- **Memory** — `ShortTermMemory` (per run) + a `MemoryStore` protocol (`InMemoryStore` default;\r\n  back it with sqlite/files in prod).\r\n- **Tools** — a typed `ToolRegistry` of deterministic callables agents orchestrate.\r\n\r\n## Minimal agent\r\n```python\r\nfrom ml_core import load_providers, CostMeter, build_gateway\r\nfrom agent_core import Agent, AgentContext\r\n\r\nclass Summarize(Agent):\r\n    name = \"summarize\"\r\n    def _run(self, task: str) -> dict:\r\n        return self.llm_json(\r\n            system=\"You summarize. Reply JSON: {\\\"summary\\\": <=8 words}.\",\r\n            user=task,\r\n        )\r\n\r\ncfg = load_providers(\"../ml-core/providers.yaml\")\r\nctx = AgentContext(gateway=build_gateway(cfg, m := CostMeter(budget_usd=1.0), offline=True),\r\n                   meter=m, default_model=\"deepseek\")\r\nresult = Summarize(ctx).run(\"the cat sat on the mat\")\r\nprint(result.success, result.output, result.cost_usd)\r\n```\r\n\r\n## Design\r\n- **Built on ml-core** — all LLM calls go through the shared gateway/meter; agent-core adds the\r\n  loop/contract/memory/tools, nothing provider-specific.\r\n- **Injected context** — `AgentContext` makes agents fully testable with the mock gateway (no keys).\r\n- **Budget-first** — every LLM call checks the meter; over budget → `BudgetExceeded`, surfaced as\r\n  a failed `AgentResult`.\r\n\r\n## Test (offline, no keys)\r\n```bash\r\ncd libraries/agent-core\r\npython -m pytest          # mock gateway via ml-core; no providers, no spend\r\n```\r\n",
+    "assets": [],
+    "examples": [],
+    "dependencies": [
+      "pydantic>=2.6"
+    ],
+    "related": []
+  },
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/agent-core/thumbnail.png",
+    "pdf": null
+  }
+}

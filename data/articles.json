@@ -1,0 +1,1705 @@
+[
+  {
+    "id": "agent",
+    "name": "agent-name-here",
+    "type": "agent",
+    "category": "agents",
+    "description": "What the agent achieves AND when to use it.",
+    "shortDescription": "agent-name-here",
+    "keywords": [],
+    "githubPath": "_templates/agent",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "agent",
+    "contentPath": "",
+    "coverPath": "content/articles/agent/thumbnail.png",
+    "coverPreviewPath": "content/articles/agent/thumbnail.png"
+  },
+  {
+    "id": "agent-core",
+    "name": "agent-core",
+    "type": "agent",
+    "category": "agents",
+    "description": "The factory's **shared agent framework**, built on `ml-core`. A thin, production-minded base so every agent (wireframing, compliance, security, ux-audit) is consistent: budget-checked, cost-metered, observable, with structured output and memory.",
+    "shortDescription": "agent-core",
+    "keywords": [],
+    "version": "0.1.0",
+    "githubPath": "libraries/agent-core",
+    "assets": [],
+    "examples": [],
+    "dependencies": [
+      "pydantic>=2.6"
+    ],
+    "related": [],
+    "slug": "agent-core",
+    "contentPath": "",
+    "coverPath": "content/articles/agent-core/thumbnail.png",
+    "coverPreviewPath": "content/articles/agent-core/thumbnail.png"
+  },
+  {
+    "id": "agents",
+    "name": "Subagent Architecture (V1)",
+    "type": "agent",
+    "category": "agents",
+    "description": "Dev-time **subagents** for the factory — specialized Codex agents that Codex spawns in parallel and collects into one result (codebase exploration, review, verification). Reference: Codex *Subagents* docs.",
+    "shortDescription": "Subagent Architecture (V1)",
+    "keywords": [],
+    "githubPath": ".codex/agents",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "agents",
+    "contentPath": "",
+    "coverPath": "content/articles/agents/thumbnail.png",
+    "coverPreviewPath": "content/articles/agents/thumbnail.png"
+  },
+  {
+    "id": "ai-farm",
+    "name": "AI Farm",
+    "type": "library",
+    "category": "code-library",
+    "description": "Productionized models, each packaged as an MCP-compatible capability.",
+    "shortDescription": "AI Farm",
+    "keywords": [],
+    "githubPath": "libraries/ai-farm",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "ai-farm",
+    "contentPath": "",
+    "coverPath": "content/articles/ai-farm/thumbnail.png",
+    "coverPreviewPath": "content/articles/ai-farm/thumbnail.png"
+  },
+  {
+    "id": "apple-compliance",
+    "type": "agent",
+    "category": "agent-library",
+    "name": "apple-compliance",
+    "shortDescription": "Apple App Store compliance gate (Guideline 4.3-weighted).",
+    "description": "Apple App Store compliance gate (Guideline 4.3-weighted).",
+    "keywords": [
+      "apple",
+      "compliance"
+    ],
+    "sourcePath": "agents/apple-compliance",
+    "package": {
+      "format": "zip",
+      "path": "packages/apple-compliance.zip",
+      "sha256": "3e511a098d18b855ad5a36e48b1e4af610776c7ff95a5f935acc33ec9f8fef86"
+    },
+    "slug": "apple-compliance",
+    "contentPath": "",
+    "coverPath": "content/articles/apple-compliance/thumbnail.png",
+    "coverPreviewPath": "content/articles/apple-compliance/thumbnail.png"
+  },
+  {
+    "id": "apple-docs-rag",
+    "type": "agent",
+    "category": "agent-library",
+    "name": "apple-docs-rag",
+    "shortDescription": "RAG agent: grounded answers about Apple development, with citations.",
+    "description": "RAG agent: grounded answers about Apple development, with citations.",
+    "keywords": [
+      "apple",
+      "docs",
+      "rag"
+    ],
+    "sourcePath": "agents/apple-docs-rag",
+    "package": {
+      "format": "zip",
+      "path": "packages/apple-docs-rag.zip",
+      "sha256": "d7acae69b1b862b236fc8e39dd9e432f1ee761aaa3b389485fe6a08ca937726d"
+    },
+    "slug": "apple-docs-rag",
+    "contentPath": "",
+    "coverPath": "content/articles/apple-docs-rag/thumbnail.png",
+    "coverPreviewPath": "content/articles/apple-docs-rag/thumbnail.png"
+  },
+  {
+    "id": "apple-guidelines",
+    "name": "apple-guidelines",
+    "type": "library",
+    "category": "knowledge",
+    "description": "A lean-ai-factory block.",
+    "shortDescription": "Block for apple-guidelines",
+    "keywords": [
+      "apple guidelines"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/knowledge/blocks/apple-guidelines",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "apple-guidelines",
+    "contentPath": "",
+    "coverPath": "content/articles/apple-guidelines/thumbnail.png",
+    "coverPreviewPath": "content/articles/apple-guidelines/thumbnail.png"
+  },
+  {
+    "id": "article-1",
+    "type": "pdf",
+    "category": "agentic",
+    "name": "Language Model",
+    "shortDescription": "Skill optimization process",
+    "description": "Cognitive Shift transforms cutting-edge AI research from MIT and the best practices developed by leading Silicon Valley companies into directly applicable frameworks.",
+    "keywords": [
+      "agentic",
+      "llm",
+      "security",
+      "skill"
+    ],
+    "slug": "article-1",
+    "contentPath": "content/articles/article-1/content.pdf",
+    "coverPath": "content/articles/article-1/cover-preview.png",
+    "coverPreviewPath": "content/articles/article-1/cover-preview.png"
+  },
+  {
+    "id": "article-2",
+    "type": "pdf",
+    "category": "agentic",
+    "name": "Language Model",
+    "shortDescription": "Skill optimization process",
+    "description": "Cognitive Shift transforms cutting-edge AI research from MIT and the best practices developed by leading Silicon Valley companies into directly applicable frameworks.",
+    "keywords": [
+      "agentic",
+      "llm",
+      "security",
+      "skill"
+    ],
+    "slug": "article-2",
+    "contentPath": "content/articles/article-2/content.pdf",
+    "coverPath": "assets/default_thumbnail.png",
+    "coverPreviewPath": ""
+  },
+  {
+    "id": "article-3",
+    "type": "pdf",
+    "category": "agentic",
+    "name": "Language Model",
+    "shortDescription": "Skill optimization process",
+    "description": "Cognitive Shift transforms cutting-edge AI research from MIT and the best practices developed by leading Silicon Valley companies into directly applicable frameworks.",
+    "keywords": [
+      "agentic",
+      "llm",
+      "security",
+      "skill"
+    ],
+    "slug": "article-3",
+    "contentPath": "content/articles/article-3/content.pdf",
+    "coverPath": "content/articles/article-3/cover-preview.png",
+    "coverPreviewPath": "content/articles/article-3/cover-preview.png"
+  },
+  {
+    "id": "blocks",
+    "name": "Model blocks",
+    "type": "model",
+    "category": "models",
+    "description": "Each model is **one self-contained folder** — the V1 architecture in [`../ARCHITECTURE.md`](../ARCHITECTURE.md). This folder holds the blocks; `_template/` is the canonical starting point (copy it to add a model).",
+    "shortDescription": "Model blocks",
+    "keywords": [],
+    "githubPath": "libraries/models/blocks",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "blocks",
+    "contentPath": "",
+    "coverPath": "content/articles/blocks/thumbnail.png",
+    "coverPreviewPath": "content/articles/blocks/thumbnail.png"
+  },
+  {
+    "id": "boilerplate",
+    "name": "Design project boilerplate",
+    "type": "library",
+    "category": "code-library",
+    "description": "The starter kit every new app's design copies: - the lean component set (atoms → templates) it will actually use, - the template screens (onboarding, paywall, core, settings), - a `tokens.override.json` skeleton for the universe, - the design checklist (hierarchy, contrast, scannability, flow…). Spinning up a niche = **copy this → generate the universe** (`tokens.override.json` + moodboard via the purity tool) → apply. Keeps every app Apple-native and consistent from screen one.",
+    "shortDescription": "Design project boilerplate",
+    "keywords": [],
+    "githubPath": "design-system/boilerplate",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "boilerplate",
+    "contentPath": "",
+    "coverPath": "content/articles/boilerplate/thumbnail.png",
+    "coverPreviewPath": "content/articles/boilerplate/thumbnail.png"
+  },
+  {
+    "id": "code",
+    "name": "Code library",
+    "type": "library",
+    "category": "code-library",
+    "description": "Reusable Swift / Python code, packaged as **blocks** — one code unit per folder under `blocks/`, each self-describing (`block.json`), offline-tested, and MCP-ready. The full standard is in [`ARCHITECTURE.md`](ARCHITECTURE.md); `blocks/_template/` is the reference block to copy. **Rule:** if a sprint writes something twice, it becomes a block. New code is authored directly as a block; the discovery view is `catalog.json`.",
+    "shortDescription": "Code library",
+    "keywords": [],
+    "version": "0.1.0",
+    "githubPath": "libraries/code",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "code",
+    "contentPath": "",
+    "coverPath": "content/articles/code/thumbnail.png",
+    "coverPreviewPath": "content/articles/code/thumbnail.png"
+  },
+  {
+    "id": "color_extraction",
+    "name": "color-extraction",
+    "type": "library",
+    "category": "code",
+    "description": "Upload an image and get its dominant colors as [{hex, percentage}] sorted by coverage. Near-identical colors are grouped by snapping each channel to a small grid, so the result is a handful of meaningful swatches rather than thousands of near-duplicates. The pure-Python core (extract_from_pixels) is dependency-free and tested; extract_colors() reads a file via Pillow (optional [image] extra). Feeds color-matching (the dominant/skin tone becomes the seasonal input).",
+    "shortDescription": "Extract an image's dominant colors with their coverage percentages.",
+    "keywords": [
+      "dominant color extraction from an image"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/code/blocks/color_extraction",
+    "assets": [
+      {
+        "src": "cover.svg",
+        "alt": "cover"
+      }
+    ],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "color_extraction",
+    "contentPath": "",
+    "coverPath": "content/articles/color_extraction/thumbnail.png",
+    "coverPreviewPath": "content/articles/color_extraction/thumbnail.png"
+  },
+  {
+    "id": "color_matching",
+    "name": "color-matching",
+    "type": "library",
+    "category": "code",
+    "description": "Two independent approaches. SEASONAL (primary): from a base color's undertone + value, classify the season and return the season's recommended palette and colors to avoid — the Color-Matching app's core (skin tone -> 'your colors'). HARMONIES (secondary): complementary, analogous, triadic, split-complementary, tetradic, and monochromatic schemes off a base color. Pure Python (stdlib colorsys), no dependencies.",
+    "shortDescription": "Classify a color into a season (Spring/Summer/Autumn/Winter) with its palette and colors to avoid, plus classic harmonies.",
+    "keywords": [
+      "seasonal color analysis + color-wheel harmonies"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/code/blocks/color_matching",
+    "assets": [
+      {
+        "src": "cover.svg",
+        "alt": "cover"
+      }
+    ],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "color_matching",
+    "contentPath": "",
+    "coverPath": "content/articles/color_matching/thumbnail.png",
+    "coverPreviewPath": "content/articles/color_matching/thumbnail.png"
+  },
+  {
+    "id": "color-extraction",
+    "type": "library",
+    "category": "code-library",
+    "name": "color-extraction",
+    "shortDescription": "Extract an image's dominant colors with their coverage percentages.",
+    "description": "Upload an image and get its dominant colors as [{hex, percentage}] sorted by coverage. Near-identical colors are grouped by snapping each channel to a small grid, so the result is a handful of meaningful swatches rather than thousands of near-duplicates. The pure-Python core (extract_from_pixels) is dependency-free and tested; extract_colors() reads a file via Pillow (optional [image] extra). Feeds color-matching (the dominant/skin tone becomes the seasonal input).",
+    "keywords": [
+      "color",
+      "extraction",
+      "palette",
+      "image",
+      "color-matching"
+    ],
+    "sourcePath": "libraries/code/blocks/color_extraction",
+    "package": {
+      "format": "zip",
+      "path": "packages/color-extraction.zip",
+      "sha256": "b745e84de71556510b06e4902f3ab4369630903ec25b9a75d2d67dd019534529"
+    },
+    "slug": "color-extraction",
+    "contentPath": "",
+    "coverPath": "content/articles/color-extraction/thumbnail.png",
+    "coverPreviewPath": "content/articles/color-extraction/thumbnail.png"
+  },
+  {
+    "id": "color-matching",
+    "type": "library",
+    "category": "code-library",
+    "name": "color-matching",
+    "shortDescription": "Classify a color into a season (Spring/Summer/Autumn/Winter) with its palette and colors to avoid, plus classic harmonies.",
+    "description": "Two independent approaches. SEASONAL (primary): from a base color's undertone + value, classify the season and return the season's recommended palette and colors to avoid — the Color-Matching app's core (skin tone -> 'your colors'). HARMONIES (secondary): complementary, analogous, triadic, split-complementary, tetradic, and monochromatic schemes off a base color. Pure Python (stdlib colorsys), no dependencies.",
+    "keywords": [
+      "color",
+      "seasonal",
+      "palette",
+      "harmony",
+      "color-matching"
+    ],
+    "sourcePath": "libraries/code/blocks/color_matching",
+    "package": {
+      "format": "zip",
+      "path": "packages/color-matching.zip",
+      "sha256": "cb827f8baa90536d7536c35114ef65dc26f61d9cfcee6cca3056a617e856c9e3"
+    },
+    "slug": "color-matching",
+    "contentPath": "",
+    "coverPath": "content/articles/color-matching/thumbnail.png",
+    "coverPreviewPath": "content/articles/color-matching/thumbnail.png"
+  },
+  {
+    "id": "color-test-ui",
+    "name": "Color test UI",
+    "type": "library",
+    "category": "code",
+    "description": "A self-contained `index.html` (no server) for visually testing the color code: - **Extract** — choose an image → see its dominant colors + percentages. - **Match** — pick a base color → see every harmony (complementary, analogous, triadic, split-complementary, tetradic, monochromatic) as swatches. Open `index.html` in any browser. The JS **mirrors** `color_extraction.py` / `color_matching.py` (same quantization + hue math) so it's a faithful visual check — the Python remains the source of truth for production.",
+    "shortDescription": "Color test UI",
+    "keywords": [],
+    "githubPath": "libraries/code/color-test-ui",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "color-test-ui",
+    "contentPath": "",
+    "coverPath": "content/articles/color-test-ui/thumbnail.png",
+    "coverPreviewPath": "content/articles/color-test-ui/thumbnail.png"
+  },
+  {
+    "id": "color-theory",
+    "name": "color-theory",
+    "type": "library",
+    "category": "knowledge",
+    "description": "A lean-ai-factory block.",
+    "shortDescription": "Block for color-theory",
+    "keywords": [
+      "color theory"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/knowledge/blocks/color-theory",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "color-theory",
+    "contentPath": "",
+    "coverPath": "content/articles/color-theory/thumbnail.png",
+    "coverPreviewPath": "content/articles/color-theory/thumbnail.png"
+  },
+  {
+    "id": "composition",
+    "name": "composition",
+    "type": "library",
+    "category": "knowledge",
+    "description": "A lean-ai-factory block.",
+    "shortDescription": "Block for composition",
+    "keywords": [
+      "composition"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/knowledge/blocks/composition",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "composition",
+    "contentPath": "",
+    "coverPath": "content/articles/composition/thumbnail.png",
+    "coverPreviewPath": "content/articles/composition/thumbnail.png"
+  },
+  {
+    "id": "design-system",
+    "name": "Lean Design System",
+    "type": "library",
+    "category": "code-library",
+    "description": "Apple-native component shell. **Built once, shared by every app.**",
+    "shortDescription": "Lean Design System",
+    "keywords": [],
+    "version": "0.1.0",
+    "githubPath": "design-system",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "design-system",
+    "contentPath": "",
+    "coverPath": "content/articles/design-system/thumbnail.png",
+    "coverPreviewPath": "content/articles/design-system/thumbnail.png"
+  },
+  {
+    "id": "face_parsing",
+    "name": "face-parsing",
+    "type": "model",
+    "category": "models",
+    "description": "BiSeNet (ResNet18/34) 19-class CelebAMask-HQ face parsing. Segments a face into parts (skin, eyes, lips, hair, ...) so the Colors Matching app can extract colors from each region. Real weights run in the AI-farm; a deterministic synthetic mask stands in for CI.",
+    "shortDescription": "Per-pixel face-part masks from a selfie.",
+    "keywords": [
+      "facial segmentation (skin/eyes/lips/hair)"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/models/blocks/face_parsing",
+    "assets": [
+      {
+        "src": "cover.svg",
+        "alt": "cover"
+      }
+    ],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "face_parsing",
+    "contentPath": "",
+    "coverPath": "content/articles/face_parsing/thumbnail.png",
+    "coverPreviewPath": "content/articles/face_parsing/thumbnail.png"
+  },
+  {
+    "id": "face-editor",
+    "type": "model",
+    "category": "model-library",
+    "name": "face-editor",
+    "shortDescription": "Edit a face by editing its segmentation mask.",
+    "description": "MaskGAN (CelebAMask-HQ, CVPR 2020). Reassign regions of the 19-class face parse - remove glasses, add a hat, reshape hair - and the generator regenerates the image to agree with the edited mask. Composes with blocks/face_parsing, which produces the mask. RESTRICTED LICENSE: non-commercial research and education only; must not reach apps/. Enforced in code - the real adapter is unavailable unless FACTORY_ALLOW_NONCOMMERCIAL=1, and build() returns the deterministic mock instead.",
+    "keywords": [
+      "face",
+      "editing",
+      "segmentation",
+      "generative",
+      "maskgan",
+      "non-commercial"
+    ],
+    "sourcePath": "libraries/models/blocks/face_editor",
+    "package": {
+      "format": "zip",
+      "path": "packages/face-editor.zip",
+      "sha256": "48cf9843cf1dff1086fc4b17957472d53bde3d007579fb8806e7e0b93e0acdee"
+    },
+    "slug": "face-editor",
+    "contentPath": "",
+    "coverPath": "assets/default_thumbnail.png",
+    "coverPreviewPath": ""
+  },
+  {
+    "id": "face-parsing",
+    "type": "model",
+    "category": "model-library",
+    "name": "face-parsing",
+    "shortDescription": "Per-pixel face-part masks from a selfie.",
+    "description": "BiSeNet (ResNet18/34) 19-class CelebAMask-HQ face parsing. Segments a face into parts (skin, eyes, lips, hair, ...) so the Colors Matching app can extract colors from each region. Real weights run in iOS Ready; a deterministic synthetic mask stands in for CI.",
+    "keywords": [
+      "segmentation",
+      "face",
+      "hair",
+      "lips",
+      "eyes",
+      "color-matching"
+    ],
+    "sourcePath": "libraries/models/blocks/face_parsing",
+    "package": {
+      "format": "zip",
+      "path": "packages/face-parsing.zip",
+      "sha256": "efffc286153648e8de874fc0cc2e81e8f534e716d5e0bfe4bf2bc6190e479f1b"
+    },
+    "slug": "face-parsing",
+    "contentPath": "",
+    "coverPath": "content/articles/face-parsing/thumbnail.png",
+    "coverPreviewPath": "content/articles/face-parsing/thumbnail.png"
+  },
+  {
+    "id": "folder-test",
+    "type": "folder",
+    "category": "skills-library",
+    "name": "Folder test",
+    "shortDescription": "Folder content preview",
+    "description": "Test article using a content folder instead of a single PDF or Markdown file.",
+    "keywords": [
+      "folder",
+      "test"
+    ],
+    "slug": "folder-test",
+    "contentPath": "",
+    "coverPath": "assets/default_thumbnail.png",
+    "coverPreviewPath": ""
+  },
+  {
+    "id": "foundations",
+    "name": "Foundations",
+    "type": "library",
+    "category": "code-library",
+    "description": "The lowest design layer — the raw decisions the tokens are derived from: color, typography, spacing, radius, elevation, motion, accessibility, breakpoints, grids. Foundations are *expressed* as machine-readable tokens in `../tokens/` (W3C DTCG); this folder documents the **rationale and rules** behind them. Humans set foundations here; agents only ever touch the derived tokens. - `color-rules.md` — how palettes are computed (not hand-picked); harmonies, 60-30-10, WCAG. - `typography.md` — the four type roles and the hierarchy rules. - `spacing.md` — the 4-pt spacing scale, radius, and elevation. - `accessibility.md` — contrast gate, hit targets, Dynamic Type, VoiceOver. - `materials.md` — Liquid Glass translucency (the `material.*` tokens). - `motion.md` — animation durations + easing (the `motion.*` tokens). - `breakpoints.md` — size classes + width thresholds (the `breakpoint.*` tokens). - `grids.md` — margins, gutters, columns, readable width.",
+    "shortDescription": "Foundations",
+    "keywords": [],
+    "githubPath": "design-system/foundations",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "foundations",
+    "contentPath": "",
+    "coverPath": "content/articles/foundations/thumbnail.png",
+    "coverPreviewPath": "content/articles/foundations/thumbnail.png"
+  },
+  {
+    "id": "illustrations",
+    "name": "Illustrations (AD & prompts)",
+    "type": "library",
+    "category": "code-library",
+    "description": "The AI-generated illustration system: a **prompt library + style rules + generated assets**. Each entry pairs a prompt (with the model + settings used) to its rendered asset, so a niche's illustrations stay on-brand and reproducible. Style is driven by the per-app **universe** (palette / mood from the purity tool). Version prompts next to their outputs.",
+    "shortDescription": "Illustrations (AD & prompts)",
+    "keywords": [],
+    "githubPath": "design-system/illustrations",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "illustrations",
+    "contentPath": "",
+    "coverPath": "content/articles/illustrations/thumbnail.png",
+    "coverPreviewPath": "content/articles/illustrations/thumbnail.png"
+  },
+  {
+    "id": "ios-celebamask-hq",
+    "type": "model",
+    "category": "ios-ready",
+    "name": "celebamask-hq",
+    "shortDescription": "Mask-guided face editing (MaskGAN): edit the 19-class face mask -> regenerate the face",
+    "description": "RESTRICTED. Must not reach apps/ or any shipped artifact. Enforced in code: blocks/face_editor is unavailable unless FACTORY_ALLOW_NONCOMMERCIAL=1, and build() returns the mock instead. Repo ships code only; the generator (latest_net_G.pth) is distributed separately. Cite Lee et al., CVPR 2020.",
+    "keywords": [
+      "ios",
+      "model",
+      "raw"
+    ],
+    "sourcePath": "libraries/ios-ready/raw/celebamask-hq",
+    "package": {
+      "format": "zip",
+      "path": "packages/ios-celebamask-hq.zip",
+      "sha256": "7e79ebe619e3546e178b9d85ff6bec09d7b024c287e48a53ea7d269088fe9b1d"
+    },
+    "slug": "ios-celebamask-hq",
+    "contentPath": "",
+    "coverPath": "assets/default_thumbnail.png",
+    "coverPreviewPath": ""
+  },
+  {
+    "id": "ios-face-parsing",
+    "type": "model",
+    "category": "ios-ready",
+    "name": "face-parsing",
+    "shortDescription": "Facial segmentation (skin/eyes/lips/hair) for color extraction",
+    "description": "Code is MIT. The pretrained BiSeNet weights are trained on CelebAMask-HQ, whose agreement forbids commercial exploitation of derived data. Confirm licensing before shipping in a paid app, or retrain on a permissive dataset.",
+    "keywords": [
+      "ios",
+      "model",
+      "raw"
+    ],
+    "sourcePath": "libraries/ios-ready/raw/face-parsing",
+    "package": {
+      "format": "zip",
+      "path": "packages/ios-face-parsing.zip",
+      "sha256": "7e79ebe619e3546e178b9d85ff6bec09d7b024c287e48a53ea7d269088fe9b1d"
+    },
+    "slug": "ios-face-parsing",
+    "contentPath": "",
+    "coverPath": "content/articles/ios-face-parsing/thumbnail.png",
+    "coverPreviewPath": "content/articles/ios-face-parsing/thumbnail.png"
+  },
+  {
+    "id": "ios-iris",
+    "type": "model",
+    "category": "ios-ready",
+    "name": "iris",
+    "shortDescription": "Iris/eye-landmark detection -> eye colour for color extraction",
+    "description": "Weights = one-time TFLite->PyTorch conversion (iris_landmark.pth); torch-only at runtime.",
+    "keywords": [
+      "ios",
+      "model",
+      "raw"
+    ],
+    "sourcePath": "libraries/ios-ready/raw/iris",
+    "package": {
+      "format": "zip",
+      "path": "packages/ios-iris.zip",
+      "sha256": "7e79ebe619e3546e178b9d85ff6bec09d7b024c287e48a53ea7d269088fe9b1d"
+    },
+    "slug": "ios-iris",
+    "contentPath": "",
+    "coverPath": "content/articles/ios-iris/thumbnail.png",
+    "coverPreviewPath": "content/articles/ios-iris/thumbnail.png"
+  },
+  {
+    "id": "ios-moodboard-purity",
+    "type": "model",
+    "category": "ios-ready",
+    "name": "moodboard-purity",
+    "shortDescription": "Moodboard aesthetic extraction (palette, tags) + coherence/purity score -> per-app universe",
+    "description": "Runs in-process from raw/moodboard-purity via vis_models.moodboard. Real scoring needs SigLIP2 (google/siglip2-base-patch16-224) in data/huggingface; without it the adapter reports unavailable and build_moodboard falls back to the mock.",
+    "keywords": [
+      "ios",
+      "model",
+      "raw"
+    ],
+    "sourcePath": "libraries/ios-ready/raw/moodboard-purity",
+    "package": {
+      "format": "zip",
+      "path": "packages/ios-moodboard-purity.zip",
+      "sha256": "7e79ebe619e3546e178b9d85ff6bec09d7b024c287e48a53ea7d269088fe9b1d"
+    },
+    "slug": "ios-moodboard-purity",
+    "contentPath": "",
+    "coverPath": "assets/default_thumbnail.png",
+    "coverPreviewPath": ""
+  },
+  {
+    "id": "ios-sensorfm",
+    "type": "model",
+    "category": "ios-ready",
+    "name": "SensorFM",
+    "shortDescription": "General intelligence and interface for wearable health data",
+    "description": "General intelligence and interface for wearable health data",
+    "keywords": [
+      "ios",
+      "model",
+      "raw"
+    ],
+    "sourcePath": "",
+    "package": {
+      "format": "zip",
+      "path": "packages/ios-sensorfm.zip",
+      "sha256": "1a16a2e200509b89db118d5f08bbc86583c599ff9025750d86789997e89efcd5"
+    },
+    "slug": "ios-sensorfm",
+    "contentPath": "",
+    "coverPath": "assets/default_thumbnail.png",
+    "coverPreviewPath": ""
+  },
+  {
+    "id": "ios-skin-tone-cv",
+    "type": "model",
+    "category": "ios-ready",
+    "name": "skin-tone-cv",
+    "shortDescription": "Extract skin/hair/eye tones from a selfie -> features for seasonal palette",
+    "description": "Extract skin/hair/eye tones from a selfie -> features for seasonal palette",
+    "keywords": [
+      "ios",
+      "model",
+      "raw"
+    ],
+    "sourcePath": "libraries/ios-ready/raw/skin-tone-cv",
+    "package": {
+      "format": "zip",
+      "path": "packages/ios-skin-tone-cv.zip",
+      "sha256": "0e5d78e48c1de72fe466f5f2b10c340bb5347d6477efe6f34823357cf3563fb5"
+    },
+    "slug": "ios-skin-tone-cv",
+    "contentPath": "",
+    "coverPath": "content/articles/ios-skin-tone-cv/thumbnail.png",
+    "coverPreviewPath": "content/articles/ios-skin-tone-cv/thumbnail.png"
+  },
+  {
+    "id": "ios-sum",
+    "type": "model",
+    "category": "ios-ready",
+    "name": "SUM",
+    "shortDescription": "Image saliency (where humans look) — UI/marketing",
+    "description": "Image saliency (where humans look) — UI/marketing",
+    "keywords": [
+      "ios",
+      "model",
+      "raw"
+    ],
+    "sourcePath": "libraries/ios-ready/raw/SUM",
+    "package": {
+      "format": "zip",
+      "path": "packages/ios-sum.zip",
+      "sha256": "7e79ebe619e3546e178b9d85ff6bec09d7b024c287e48a53ea7d269088fe9b1d"
+    },
+    "slug": "ios-sum",
+    "contentPath": "",
+    "coverPath": "content/articles/ios-sum/thumbnail.png",
+    "coverPreviewPath": "content/articles/ios-sum/thumbnail.png"
+  },
+  {
+    "id": "ios-timesfm",
+    "type": "model",
+    "category": "ios-ready",
+    "name": "TimesFM",
+    "shortDescription": "Time-series forecasting",
+    "description": "Time-series forecasting",
+    "keywords": [
+      "ios",
+      "model",
+      "raw"
+    ],
+    "sourcePath": "",
+    "package": {
+      "format": "zip",
+      "path": "packages/ios-timesfm.zip",
+      "sha256": "7770d88b2400c3b3cf068326bc985884a7149a8a59c2565b1c094faaa5f98a92"
+    },
+    "slug": "ios-timesfm",
+    "contentPath": "",
+    "coverPath": "assets/default_thumbnail.png",
+    "coverPreviewPath": ""
+  },
+  {
+    "id": "ios-vinet",
+    "type": "model",
+    "category": "ios-ready",
+    "name": "ViNet",
+    "shortDescription": "Video saliency — onboarding clips (ViNet-S / ViNet++)",
+    "description": "Original ViNet weights unpublished; targets the maintained ViNet-S. Checkpoint vinet_s_dhf1k.pt.",
+    "keywords": [
+      "ios",
+      "model",
+      "raw"
+    ],
+    "sourcePath": "libraries/ios-ready/raw/ViNet",
+    "package": {
+      "format": "zip",
+      "path": "packages/ios-vinet.zip",
+      "sha256": "7e79ebe619e3546e178b9d85ff6bec09d7b024c287e48a53ea7d269088fe9b1d"
+    },
+    "slug": "ios-vinet",
+    "contentPath": "",
+    "coverPath": "content/articles/ios-vinet/thumbnail.png",
+    "coverPreviewPath": "content/articles/ios-vinet/thumbnail.png"
+  },
+  {
+    "id": "iris",
+    "type": "model",
+    "category": "model-library",
+    "name": "iris",
+    "shortDescription": "Locates the iris in an eye, so the eye colour can be sampled.",
+    "description": "MediaPipe Iris (PyTorch port) locates the pupil center + iris boundary and eye contour from a 64x64 eye crop. Used by Colors Matching to pull the person's eye colour from the precise iris disc (face-parsing gives the rough eye region; this pinpoints the iris). Weights are a one-time TFLite->PyTorch conversion (torch-only at runtime, CPU-fast); the upstream MediaPipe face-mesh crop stage is skipped in favour of a supplied eye box.",
+    "keywords": [
+      "iris",
+      "eye",
+      "landmarks",
+      "eye-color",
+      "color-matching"
+    ],
+    "sourcePath": "libraries/models/blocks/iris",
+    "package": {
+      "format": "zip",
+      "path": "packages/iris.zip",
+      "sha256": "c373dd7e5403218edfa5411774f9748601416d289bd6812845cc7b348e7a78ff"
+    },
+    "slug": "iris",
+    "contentPath": "",
+    "coverPath": "content/articles/iris/thumbnail.png",
+    "coverPreviewPath": "content/articles/iris/thumbnail.png"
+  },
+  {
+    "id": "knowledge",
+    "name": "Knowledge / memory modules",
+    "type": "library",
+    "category": "code-library",
+    "description": "Per-vertical corpora the apps and agents draw on. One folder per domain; each file names its source and how it's used in its own header. Seeded corpora: - `color-theory/` - `color-theory.md` — full color reference (properties, harmonies, the 7-step palette process,   60-30-10, accessibility, color meanings, cultural cautions). Source: `Color Theory.pdf`. - `seasons.md` — the seasonal-analysis subset used by the Color Matching app. - `wireframing/` - `wireframing-theory.md` — full wireframing theory. Source: `Wireframing.pdf`. - `wireframing.md` — curated flow-rules / iOS-pattern cheat-sheet. - `composition/` - `composition-theory.md` — full composition reference (composition types, elements and their   properties, contrast, similarity, repetition, rhythm, balance, hierarchy, grids, Gestalt,   focal points) applied to UI/screen design. Source: `Design Composition.pdf`. - `AppleComposition-guidelines.md` — full transcript of Apple's WWDC25 \"Get to know the new   design system\" session (Liquid Glass, concentricity, structure, continuity).   Source: youtube.com/watch?v=DS2ildqCrB0. - `apple-guidelines/` - `app-store-review-guidelines.md` — the full App Store Review Guidelines (all five sections).   Source: developer.apple.com/app-store/review/guidelines/.",
+    "shortDescription": "Knowledge / memory modules",
+    "keywords": [],
+    "githubPath": "libraries/knowledge",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "knowledge",
+    "contentPath": "",
+    "coverPath": "content/articles/knowledge/thumbnail.png",
+    "coverPreviewPath": "content/articles/knowledge/thumbnail.png"
+  },
+  {
+    "id": "knowledge-apple-guidelines",
+    "type": "folder",
+    "category": "knowledge-library",
+    "name": "apple-guidelines",
+    "shortDescription": "See the included Markdown documentation for implementation and usage details.",
+    "description": "See the included Markdown documentation for implementation and usage details.",
+    "keywords": [
+      "apple",
+      "guidelines"
+    ],
+    "sourcePath": "libraries/knowledge/apple-guidelines",
+    "package": {
+      "format": "zip",
+      "path": "packages/knowledge-apple-guidelines.zip",
+      "sha256": "5a7a8ebc699db082b0481f6c26d8bb2b3a65ce055511d51bbd45854f8d6cc8d1"
+    },
+    "slug": "knowledge-apple-guidelines",
+    "contentPath": "",
+    "coverPath": "content/articles/knowledge-apple-guidelines/thumbnail.png",
+    "coverPreviewPath": "content/articles/knowledge-apple-guidelines/thumbnail.png"
+  },
+  {
+    "id": "knowledge-color-theory",
+    "type": "folder",
+    "category": "knowledge-library",
+    "name": "color-theory",
+    "shortDescription": "See the included Markdown documentation for implementation and usage details.",
+    "description": "See the included Markdown documentation for implementation and usage details.",
+    "keywords": [
+      "color",
+      "theory"
+    ],
+    "sourcePath": "libraries/knowledge/color-theory",
+    "package": {
+      "format": "zip",
+      "path": "packages/knowledge-color-theory.zip",
+      "sha256": "3c6b393bf54a8e4fee5f01a2e066291e16aa1675a9c8a44177e7f828d3081b60"
+    },
+    "slug": "knowledge-color-theory",
+    "contentPath": "",
+    "coverPath": "content/articles/knowledge-color-theory/thumbnail.png",
+    "coverPreviewPath": "content/articles/knowledge-color-theory/thumbnail.png"
+  },
+  {
+    "id": "knowledge-composition",
+    "type": "folder",
+    "category": "knowledge-library",
+    "name": "composition",
+    "shortDescription": "See the included Markdown documentation for implementation and usage details.",
+    "description": "See the included Markdown documentation for implementation and usage details.",
+    "keywords": [
+      "composition"
+    ],
+    "sourcePath": "libraries/knowledge/composition",
+    "package": {
+      "format": "zip",
+      "path": "packages/knowledge-composition.zip",
+      "sha256": "d14fe377cdec8de6dbcd4b6641d36550284bf96738ff10a440ee712f367d5b93"
+    },
+    "slug": "knowledge-composition",
+    "contentPath": "",
+    "coverPath": "content/articles/knowledge-composition/thumbnail.png",
+    "coverPreviewPath": "content/articles/knowledge-composition/thumbnail.png"
+  },
+  {
+    "id": "knowledge-wireframing",
+    "type": "folder",
+    "category": "knowledge-library",
+    "name": "wireframing",
+    "shortDescription": "See the included Markdown documentation for implementation and usage details.",
+    "description": "See the included Markdown documentation for implementation and usage details.",
+    "keywords": [
+      "wireframing"
+    ],
+    "sourcePath": "libraries/knowledge/wireframing",
+    "package": {
+      "format": "zip",
+      "path": "packages/knowledge-wireframing.zip",
+      "sha256": "f95e5e7a99509011efb069aa33e1ea0b87512d0fc3f3f08e3e8f8cd3ba4c1fba"
+    },
+    "slug": "knowledge-wireframing",
+    "contentPath": "",
+    "coverPath": "content/articles/knowledge-wireframing/thumbnail.png",
+    "coverPreviewPath": "content/articles/knowledge-wireframing/thumbnail.png"
+  },
+  {
+    "id": "legal",
+    "name": "legal",
+    "type": "library",
+    "category": "code-library",
+    "description": "Generates a **Privacy Policy** + **Terms & Conditions** for an app from its data-use profile. Deterministic template filling — **not legal advice**. Every document is stamped *\"requires human/legal review before publishing\"* and `generate()` returns `review_required=True`. Why it exists: the App Store **requires a privacy policy** (Guideline 5.1). The compliance agent only *checks* for one; this produces a truthful first draft grounded in what the app actually does — especially **on-device** processing (no server → strong, honest privacy stance). Placeholders left as `[COMPANY]`, `[JURISDICTION]`, etc. are surfaced in `warnings` so nothing ships half-filled. **A lawyer must review the output before it goes live.**",
+    "shortDescription": "legal",
+    "keywords": [],
+    "version": "0.1.0",
+    "githubPath": "libraries/legal",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "legal",
+    "contentPath": "",
+    "coverPath": "content/articles/legal/thumbnail.png",
+    "coverPreviewPath": "content/articles/legal/thumbnail.png"
+  },
+  {
+    "id": "mcp",
+    "name": "MCP library",
+    "type": "library",
+    "category": "code-library",
+    "description": "Shared MCP servers/tools the agents call — e.g. the wireframing flow-audit server and the Figma sync server. One folder per server, each with its own README and run instructions. Keep auth/config out of the repo; document where it's injected.",
+    "shortDescription": "MCP library",
+    "keywords": [],
+    "githubPath": "libraries/mcp",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "mcp",
+    "contentPath": "",
+    "coverPath": "content/articles/mcp/thumbnail.png",
+    "coverPreviewPath": "content/articles/mcp/thumbnail.png"
+  },
+  {
+    "id": "mcp-navigation-flow",
+    "type": "library",
+    "category": "mcp-library",
+    "name": "navigation-flow",
+    "shortDescription": "An MCP server that analyzes a screen flow: builds the navigation graph and computes clicks-to-action, navigation depth, orphan pages / dead ends, and features-per-page.",
+    "description": "An MCP server that analyzes a screen flow: builds the navigation graph and computes clicks-to-action, navigation depth, orphan pages / dead ends, and features-per-page.",
+    "keywords": [
+      "navigation",
+      "flow"
+    ],
+    "sourcePath": "libraries/mcp/navigation-flow",
+    "package": {
+      "format": "zip",
+      "path": "packages/mcp-navigation-flow.zip",
+      "sha256": "a5dd4c9e80f32456a0eae2d7daf9b434751d221723954435efdd758adafe7968"
+    },
+    "slug": "mcp-navigation-flow",
+    "contentPath": "",
+    "coverPath": "content/articles/mcp-navigation-flow/thumbnail.png",
+    "coverPreviewPath": "content/articles/mcp-navigation-flow/thumbnail.png"
+  },
+  {
+    "id": "mcp-purity",
+    "type": "library",
+    "category": "mcp-library",
+    "name": "purity",
+    "shortDescription": "Purity MCP: moodboard coherence scoring + the per-app universe (tokens.override.json), any agent can call.",
+    "description": "Purity MCP: moodboard coherence scoring + the per-app universe (tokens.override.json), any agent can call.",
+    "keywords": [
+      "purity"
+    ],
+    "sourcePath": "libraries/mcp/purity",
+    "package": {
+      "format": "zip",
+      "path": "packages/mcp-purity.zip",
+      "sha256": "94797cf45649a9d4cdcfa5b869d00efb363ef9dc356f75a920d7fc65bc1c116e"
+    },
+    "slug": "mcp-purity",
+    "contentPath": "",
+    "coverPath": "content/articles/mcp-purity/thumbnail.png",
+    "coverPreviewPath": "content/articles/mcp-purity/thumbnail.png"
+  },
+  {
+    "id": "mcp-wireframing",
+    "type": "library",
+    "category": "mcp-library",
+    "name": "wireframing",
+    "shortDescription": "Wireframing MCP: editable-flow tools (place/link/audit/export) any agent or the studio can call.",
+    "description": "Wireframing MCP: editable-flow tools (place/link/audit/export) any agent or the studio can call.",
+    "keywords": [
+      "wireframing"
+    ],
+    "sourcePath": "libraries/mcp/wireframing",
+    "package": {
+      "format": "zip",
+      "path": "packages/mcp-wireframing.zip",
+      "sha256": "47dfe61af58f2e5c5bde67a687a5c86834eeb63f7a9034062b44d4dc93a4e841"
+    },
+    "slug": "mcp-wireframing",
+    "contentPath": "",
+    "coverPath": "content/articles/mcp-wireframing/thumbnail.png",
+    "coverPreviewPath": "content/articles/mcp-wireframing/thumbnail.png"
+  },
+  {
+    "id": "memory",
+    "name": "App-Benchmark memory",
+    "type": "library",
+    "category": "code-library",
+    "description": "A queryable store of competitor **screens, flows, onboarding, and paywalls** — the \"memory app\" from the deck. - **Sources:** screensdesign.com (screens/flows), Sensor Tower (revenue), startups.rip (what failed). - `scripts/ingest.py` pulls and tags each screen by app / niche / screen-type into `benchmark.db`. - **Consumers:** the wireframing agent (best-practice flows) and feature decomposition (minimal feature set per niche). Phase 1: ingest the Color Matching competitor + 2–3 onboarding/paywall references under `sources/color-matching/`.",
+    "shortDescription": "App-Benchmark memory",
+    "keywords": [],
+    "githubPath": "libraries/memory",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "memory",
+    "contentPath": "",
+    "coverPath": "content/articles/memory/thumbnail.png",
+    "coverPreviewPath": "content/articles/memory/thumbnail.png"
+  },
+  {
+    "id": "microcopy",
+    "type": "agent",
+    "category": "agent-library",
+    "name": "microcopy",
+    "shortDescription": "Apple-HIG microcopy per wireframe screen, checked for length/style, feeding swiftui-gen.",
+    "description": "Apple-HIG microcopy per wireframe screen, checked for length/style, feeding swiftui-gen.",
+    "keywords": [
+      "microcopy"
+    ],
+    "sourcePath": "agents/microcopy",
+    "package": {
+      "format": "zip",
+      "path": "packages/microcopy.zip",
+      "sha256": "f1555d1b200d7dbd54bb468b723c4d70487212822ead33976b1da3fd3c2f9561"
+    },
+    "slug": "microcopy",
+    "contentPath": "",
+    "coverPath": "content/articles/microcopy/thumbnail.png",
+    "coverPreviewPath": "content/articles/microcopy/thumbnail.png"
+  },
+  {
+    "id": "ml-core",
+    "name": "ml-core",
+    "type": "library",
+    "category": "code-library",
+    "description": "The factory's **shared LLM layer** — one tested, provider-agnostic gateway + cost meter + tracking that every agent and tool depends on. Extracted from the skill-optimizer so there's a single, hardened seam for all LLM calls (no per-tool reinvention).",
+    "shortDescription": "ml-core",
+    "keywords": [],
+    "version": "0.1.0",
+    "githubPath": "libraries/ml-core",
+    "assets": [],
+    "examples": [],
+    "dependencies": [
+      "pydantic>=2.6",
+      "pyyaml>=6.0",
+      "python-dotenv>=1.0"
+    ],
+    "related": [],
+    "slug": "ml-core",
+    "contentPath": "",
+    "coverPath": "content/articles/ml-core/thumbnail.png",
+    "coverPreviewPath": "content/articles/ml-core/thumbnail.png"
+  },
+  {
+    "id": "models",
+    "name": "Models library (`vis_models`)",
+    "type": "library",
+    "category": "code-library",
+    "description": "The factory's **vision-model layer**. Two parts: - **`catalog.json`** — a human-readable discovery view over the AI-farm registry: model name, task, status, license, and the niche(s) it serves. It stores **no weights** (those live in `../ai-farm`). - **`src/vis_models/`** — the importable adapters Sprint Engineers and agents call. Today this is `saliency`.",
+    "shortDescription": "Models library (`vis_models`)",
+    "keywords": [],
+    "version": "0.1.0",
+    "githubPath": "libraries/models",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "models",
+    "contentPath": "",
+    "coverPath": "content/articles/models/thumbnail.png",
+    "coverPreviewPath": "content/articles/models/thumbnail.png"
+  },
+  {
+    "id": "navigation-flow",
+    "name": "navigation-flow",
+    "type": "library",
+    "category": "mcp",
+    "description": "See README.md for details.",
+    "shortDescription": "Block for navigation-flow",
+    "keywords": [
+      "navigation flow"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/mcp/blocks/navigation-flow",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "navigation-flow",
+    "contentPath": "",
+    "coverPath": "content/articles/navigation-flow/thumbnail.png",
+    "coverPreviewPath": "content/articles/navigation-flow/thumbnail.png"
+  },
+  {
+    "id": "patterns",
+    "name": "Patterns (Apple-DNA libraries)",
+    "type": "library",
+    "category": "code-library",
+    "description": "Reusable interaction / experience patterns drawn from Apple's design DNA. One subfolder per library: Each entry documents **what it is, when to use it, and the components/tokens it touches**. These feed the prototype + universe-enhancing design steps.",
+    "shortDescription": "Patterns (Apple-DNA libraries)",
+    "keywords": [],
+    "githubPath": "design-system/patterns",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "patterns",
+    "contentPath": "",
+    "coverPath": "content/articles/patterns/thumbnail.png",
+    "coverPreviewPath": "content/articles/patterns/thumbnail.png"
+  },
+  {
+    "id": "platforms",
+    "name": "Platforms",
+    "type": "library",
+    "category": "code-library",
+    "description": "The design system covers **every Apple surface**, not just the phone screen. Each subfolder holds the platform-specific component variants + Figma coverage notes: Components stay **token-driven**; these folders capture how an organism/template *adapts* per surface. Most niches use a subset — populate per app, don't pre-build all.",
+    "shortDescription": "Platforms",
+    "keywords": [],
+    "githubPath": "design-system/platforms",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "platforms",
+    "contentPath": "",
+    "coverPath": "content/articles/platforms/thumbnail.png",
+    "coverPreviewPath": "content/articles/platforms/thumbnail.png"
+  },
+  {
+    "id": "purity",
+    "name": "purity",
+    "type": "library",
+    "category": "mcp",
+    "description": "See README.md for details.",
+    "shortDescription": "Block for purity",
+    "keywords": [
+      "purity"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/mcp/blocks/purity",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "purity",
+    "contentPath": "",
+    "coverPath": "content/articles/purity/thumbnail.png",
+    "coverPreviewPath": "content/articles/purity/thumbnail.png"
+  },
+  {
+    "id": "rag",
+    "name": "rag",
+    "type": "library",
+    "category": "code-library",
+    "description": "A small, **dependency-free** retrieval library for grounding agents in a document corpus. - **`Corpus`** — documents chunked into pieces, each carrying its `source` (for citations). - **`load_corpus(dir)`** — index every `*.md` (uses a `source:` line as the citation URL). - **`LexicalRetriever`** — TF-IDF cosine over chunks. No external deps; a solid baseline for a focused doc set and fully offline-testable. - **`Retriever`** protocol — the seam for a future `EmbeddingRetriever` (semantic recall via the ml-core providers) that drops in without changing callers. Used by `agents/apple-docs-rag` to answer Apple-development questions with citations.",
+    "shortDescription": "rag",
+    "keywords": [],
+    "version": "0.1.0",
+    "githubPath": "libraries/rag",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "rag",
+    "contentPath": "",
+    "coverPath": "content/articles/rag/thumbnail.png",
+    "coverPreviewPath": "content/articles/rag/thumbnail.png"
+  },
+  {
+    "id": "references",
+    "name": "References (from competition)",
+    "type": "library",
+    "category": "code-library",
+    "description": "Curated, **design-facing** views of competitor best-practice flows — the onboarding and paywall sequences worth copying (the \"97% familiar\" part of the strategy). - `onboarding/` — best-in-class onboarding flows. - `paywall/` — best-in-class paywall layouts. **Source of truth is `libraries/memory`** (the App-Benchmark DB). This folder holds the *curated selections + design notes* — which patterns to reuse and why — **not** the raw captures. Pull screens from `libraries/memory`; annotate the picks here. Don't duplicate the captures.",
+    "shortDescription": "References (from competition)",
+    "keywords": [],
+    "githubPath": "design-system/references",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "references",
+    "contentPath": "",
+    "coverPath": "content/articles/references/thumbnail.png",
+    "coverPreviewPath": "content/articles/references/thumbnail.png"
+  },
+  {
+    "id": "render",
+    "name": "rendering",
+    "type": "library",
+    "category": "code-library",
+    "description": "Turns a screen into an **image + the primary-action region**, so the UX-audit's SUM saliency check can run on a *real* screen instead of a screenshot you supply by hand. Mirrors the `vis_models` saliency seam: **protocol + real backend + offline mock + factory**. Wireframes from the wireframing agent use a known structure (`button.action` / `a.nav`), so the CTA box is reliable offline. **Real PNGs** need `pip install \"rendering[browser]\"` + `playwright install chromium` (dev/farm); CI stays on the dependency-free mock.",
+    "shortDescription": "rendering",
+    "keywords": [],
+    "version": "0.1.0",
+    "githubPath": "libraries/render",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "render",
+    "contentPath": "",
+    "coverPath": "content/articles/render/thumbnail.png",
+    "coverPreviewPath": "content/articles/render/thumbnail.png"
+  },
+  {
+    "id": "security-review",
+    "type": "agent",
+    "category": "agent-library",
+    "name": "security-review",
+    "shortDescription": "Security-review gate: static scan + LLM review of generated app code.",
+    "description": "Security-review gate: static scan + LLM review of generated app code.",
+    "keywords": [
+      "security",
+      "review"
+    ],
+    "sourcePath": "agents/security-review",
+    "package": {
+      "format": "zip",
+      "path": "packages/security-review.zip",
+      "sha256": "d5da63d375a653c805f649c4852477252bfd5ff6bc4535e8784b80619cd16402"
+    },
+    "slug": "security-review",
+    "contentPath": "",
+    "coverPath": "content/articles/security-review/thumbnail.png",
+    "coverPreviewPath": "content/articles/security-review/thumbnail.png"
+  },
+  {
+    "id": "sfsymbols",
+    "name": "SF Symbols",
+    "type": "library",
+    "category": "code-library",
+    "description": "Catalog + usage rules for Apple **SF Symbols** (the native icon set). Documents which symbol maps to which action, weight/scale rules, and rendering mode (monochrome / hierarchical / palette) per token. Prefer SF Symbols over custom icons for Apple-native feel and built-in accessibility. No assets to vendor — the symbols ship with the OS; this folder is the **selection + usage policy**, not image files.",
+    "shortDescription": "SF Symbols",
+    "keywords": [],
+    "githubPath": "design-system/sfsymbols",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "sfsymbols",
+    "contentPath": "",
+    "coverPath": "content/articles/sfsymbols/thumbnail.png",
+    "coverPreviewPath": "content/articles/sfsymbols/thumbnail.png"
+  },
+  {
+    "id": "skill",
+    "name": "skill-name-here",
+    "type": "library",
+    "category": "code-library",
+    "description": "One line — what it does AND when to trigger it. Used for discovery.",
+    "shortDescription": "skill-name-here",
+    "keywords": [],
+    "githubPath": "_templates/skill",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "skill",
+    "contentPath": "",
+    "coverPath": "content/articles/skill/thumbnail.png",
+    "coverPreviewPath": "content/articles/skill/thumbnail.png"
+  },
+  {
+    "id": "skill-1",
+    "type": "md",
+    "category": "skills-library",
+    "name": "Make it scroll",
+    "shortDescription": "Scroll driven website",
+    "description": "Cognitive Shift transforms cutting-edge AI research from MIT and the best practices developed by leading Silicon Valley companies into directly applicable frameworks.",
+    "keywords": [
+      "skill",
+      "website"
+    ],
+    "slug": "skill-1",
+    "contentPath": "content/articles/skill-1/content.md",
+    "coverPath": "assets/default_thumbnail.png",
+    "coverPreviewPath": ""
+  },
+  {
+    "id": "skill-optimizer",
+    "type": "agent",
+    "category": "agent-library",
+    "name": "skill-optimizer",
+    "shortDescription": "Build-time MLOps platform that optimizes SKILL.md files as ML artifacts.",
+    "description": "Build-time MLOps platform that optimizes SKILL.md files as ML artifacts.",
+    "keywords": [
+      "skill",
+      "optimizer"
+    ],
+    "sourcePath": "agents/skill-optimizer",
+    "package": {
+      "format": "zip",
+      "path": "packages/skill-optimizer.zip",
+      "sha256": "bcea102ba51a1562712358f780a830deda84d9c78ea57fbe3939dc76939cf507"
+    },
+    "slug": "skill-optimizer",
+    "contentPath": "",
+    "coverPath": "content/articles/skill-optimizer/thumbnail.png",
+    "coverPreviewPath": "content/articles/skill-optimizer/thumbnail.png"
+  },
+  {
+    "id": "skills",
+    "name": "Skill library",
+    "type": "library",
+    "category": "code-library",
+    "description": "Reusable skills built from `_templates/skill` per the `CHARTER.md`. One folder per skill. - Cross-app skills live here. - Project-specific skills may live with their app instead. The four running tools (`wireframing`, `skill-optimizer`, `ux-audit`, `tester`) live under `/agents` because they are agents; pure skills land here.",
+    "shortDescription": "Skill library",
+    "keywords": [],
+    "githubPath": "libraries/skills",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "skills",
+    "contentPath": "",
+    "coverPath": "content/articles/skills/thumbnail.png",
+    "coverPreviewPath": "content/articles/skills/thumbnail.png"
+  },
+  {
+    "id": "skin-tone-cv",
+    "name": "skin-tone-cv (model card)",
+    "type": "application",
+    "category": "ai-farm",
+    "description": "- **Task:** extract skin / hair / eye tones from a selfie → features for seasonal palette. - **Status:** raw → ready (Phase-1 reference model that proves the pipeline). - **Inputs:** image. **Outputs:** tone features / palette class. - **Source / license:** <fill>. - **Ready build:** `../../ready/skin-tone-cv.mlpackage` (CoreML, on-device).",
+    "shortDescription": "skin-tone-cv (model card)",
+    "keywords": [],
+    "githubPath": "libraries/ai-farm/raw/skin-tone-cv",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "skin-tone-cv",
+    "contentPath": "",
+    "coverPath": "content/articles/skin-tone-cv/thumbnail.png",
+    "coverPreviewPath": "content/articles/skin-tone-cv/thumbnail.png"
+  },
+  {
+    "id": "sprint",
+    "name": "Sprint orchestrator",
+    "type": "library",
+    "category": "code-library",
+    "description": "Chains the factory's agents into **one app sprint** with a single go/no-go verdict. This is the keystone that turns standalone agents into a production line.",
+    "shortDescription": "Sprint orchestrator",
+    "keywords": [],
+    "version": "0.1.0",
+    "githubPath": "pipelines/sprint",
+    "assets": [],
+    "examples": [],
+    "dependencies": [
+      "pydantic>=2.6"
+    ],
+    "related": [],
+    "slug": "sprint",
+    "contentPath": "",
+    "coverPath": "content/articles/sprint/thumbnail.png",
+    "coverPreviewPath": "content/articles/sprint/thumbnail.png"
+  },
+  {
+    "id": "sum",
+    "type": "model",
+    "category": "model-library",
+    "name": "sum",
+    "shortDescription": "Predicts where viewers look on a still screen or image.",
+    "description": "SUM (Saliency Unification through Mamba) predicts a human-attention heatmap for a still image, with a UI/web-page condition tuned for interface screens. Used by ux-audit to check the primary action is the visual hot-spot. Real weights run in iOS Ready; offline, a real pixel-based classical model or a deterministic mock stands in. The adapter is the shared vis_models.saliency core, re-exported here.",
+    "keywords": [
+      "saliency",
+      "image",
+      "attention",
+      "ui",
+      "ux"
+    ],
+    "sourcePath": "libraries/models/blocks/sum",
+    "package": {
+      "format": "zip",
+      "path": "packages/sum.zip",
+      "sha256": "5ecd0f4998e8255ad913b65e7a84223df4c2a380a91177422214ecae8f382d3a"
+    },
+    "slug": "sum",
+    "contentPath": "",
+    "coverPath": "content/articles/sum/thumbnail.png",
+    "coverPreviewPath": "content/articles/sum/thumbnail.png"
+  },
+  {
+    "id": "swiftui-gen",
+    "type": "agent",
+    "category": "agent-library",
+    "name": "swiftui-gen",
+    "shortDescription": "Wireframe screen spec -> token-driven SwiftUI, one screen at a time, statically checked.",
+    "description": "Wireframe screen spec -> token-driven SwiftUI, one screen at a time, statically checked.",
+    "keywords": [
+      "swiftui",
+      "gen"
+    ],
+    "sourcePath": "agents/swiftui-gen",
+    "package": {
+      "format": "zip",
+      "path": "packages/swiftui-gen.zip",
+      "sha256": "9bb96c458a9c24a3d27e1d71ab6e9be1d10eff83fcdd4a2ae744cc2b74de9ec5"
+    },
+    "slug": "swiftui-gen",
+    "contentPath": "",
+    "coverPath": "content/articles/swiftui-gen/thumbnail.png",
+    "coverPreviewPath": "content/articles/swiftui-gen/thumbnail.png"
+  },
+  {
+    "id": "template",
+    "name": "_template",
+    "type": "model",
+    "category": "models",
+    "description": "Longer description: what it does, how, and any caveats.",
+    "shortDescription": "one-line description shown in the gallery",
+    "keywords": [
+      "one line: what this model predicts / produces"
+    ],
+    "version": "0.0.0",
+    "githubPath": "libraries/models/blocks/_template",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "template",
+    "contentPath": "",
+    "coverPath": "content/articles/template/thumbnail.png",
+    "coverPreviewPath": "content/articles/template/thumbnail.png"
+  },
+  {
+    "id": "tester",
+    "type": "agent",
+    "category": "agent-library",
+    "name": "tester",
+    "shortDescription": "iOS build tester: compile + launch in the simulator, assert the core screen renders, diagnose crashes.",
+    "description": "iOS build tester: compile + launch in the simulator, assert the core screen renders, diagnose crashes.",
+    "keywords": [
+      "tester"
+    ],
+    "sourcePath": "agents/tester",
+    "package": {
+      "format": "zip",
+      "path": "packages/tester.zip",
+      "sha256": "2d8041589578513ed8238ced45873b26982bcd03e82a6aa1526816f436ef9c22"
+    },
+    "slug": "tester",
+    "contentPath": "",
+    "coverPath": "content/articles/tester/thumbnail.png",
+    "coverPreviewPath": "content/articles/tester/thumbnail.png"
+  },
+  {
+    "id": "ux_attention_pattern",
+    "name": "ux-attention-pattern",
+    "type": "library",
+    "category": "code",
+    "description": "Tuned for iOS app screens (narrow, vertical, component-driven), grounded in NN/g eye-tracking research + Apple HIG. Uses the attention modules (vis_models.saliency — real SUM when weights are on the box, else the classical pixel model, else the deterministic mock) to predict a screen's attention, then classifies the reading flow from the grid's row/column profiles: vertical (layer-cake column of sections — good), gutenberg (top anchor + bottom terminal CTA in the thumb zone — good), focused (single hero/action — good), f-skim (top-left text-wall skim — warn), scattered (no hierarchy — bad). If a cta point is given, a gutenberg/vertical screen is only fully good when attention reaches the CTA. The rule core (classify_pattern) is pure stdlib; the image layer depends on vis_models.saliency.",
+    "shortDescription": "Run a screen through the attention modules and decide which iOS reading flow it follows, and whether that's healthy.",
+    "keywords": [
+      "classify an iOS screen's reading pattern (vertical/gutenberg/f-skim/focused/scattered) and judge it"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/code/blocks/ux_attention_pattern",
+    "assets": [
+      {
+        "src": "cover.svg",
+        "alt": "cover"
+      }
+    ],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "ux_attention_pattern",
+    "contentPath": "",
+    "coverPath": "content/articles/ux_attention_pattern/thumbnail.png",
+    "coverPreviewPath": "content/articles/ux_attention_pattern/thumbnail.png"
+  },
+  {
+    "id": "ux_position_mask",
+    "name": "ux-position-mask",
+    "type": "library",
+    "category": "code",
+    "description": "Audits which elements of a screen are in good vs dangerous positions. Core rules (`audit`, pure stdlib): given elements with a role (primary/secondary/content) and a normalized box, return a per-element verdict (good/ok/dangerous) with reasons plus a score/grade — thumb-reach ergonomics (primary actions belong lower-center), rule-of-thirds active zones (key content where the eye lands first), and safe areas (status bar/notch, home indicator, edges). For an arbitrary screen *design*, `audit_image(path)` first runs a classical, offline detector (background subtraction + connected components + role heuristics; Pillow/numpy/scipy) to find the elements, then scores them. Migration path: when auditing *generated* screens, replace detection by reading element boxes from the known layout — the rules stay the same.",
+    "shortDescription": "Audit a screen design: detect its elements and flag which sit in good/dangerous positions (thumb reach, active zones, safe areas).",
+    "keywords": [
+      "audit which screen elements sit in good vs dangerous positions"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/code/blocks/ux_position_mask",
+    "assets": [
+      {
+        "src": "cover.svg",
+        "alt": "cover"
+      }
+    ],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "ux_position_mask",
+    "contentPath": "",
+    "coverPath": "content/articles/ux_position_mask/thumbnail.png",
+    "coverPreviewPath": "content/articles/ux_position_mask/thumbnail.png"
+  },
+  {
+    "id": "ux-attention-pattern",
+    "type": "library",
+    "category": "code-library",
+    "name": "ux-attention-pattern",
+    "shortDescription": "Run a screen through the attention modules and decide which iOS reading flow it follows, and whether that's healthy.",
+    "description": "Tuned for iOS app screens (narrow, vertical, component-driven), grounded in NN/g eye-tracking research + Apple HIG. Uses the attention modules (vis_models.saliency — real SUM when weights are on the box, else the classical pixel model, else the deterministic mock) to predict a screen's attention, then classifies the reading flow from the grid's row/column profiles: vertical (layer-cake column of sections — good), gutenberg (top anchor + bottom terminal CTA in the thumb zone — good), focused (single hero/action — good), f-skim (top-left text-wall skim — warn), scattered (no hierarchy — bad). If a cta point is given, a gutenberg/vertical screen is only fully good when attention reaches the CTA. The rule core (classify_pattern) is pure stdlib; the image layer depends on vis_models.saliency.",
+    "keywords": [
+      "ux",
+      "attention",
+      "saliency",
+      "reading-pattern",
+      "ios",
+      "layer-cake",
+      "gutenberg",
+      "f-pattern",
+      "audit"
+    ],
+    "sourcePath": "libraries/code/blocks/ux_attention_pattern",
+    "package": {
+      "format": "zip",
+      "path": "packages/ux-attention-pattern.zip",
+      "sha256": "d46fca24b150ea0d83504740df4efbe2392e4c4ce259439b1e407eb10c47e491"
+    },
+    "slug": "ux-attention-pattern",
+    "contentPath": "",
+    "coverPath": "content/articles/ux-attention-pattern/thumbnail.png",
+    "coverPreviewPath": "content/articles/ux-attention-pattern/thumbnail.png"
+  },
+  {
+    "id": "ux-audit",
+    "type": "agent",
+    "category": "agent-library",
+    "name": "ux-audit",
+    "shortDescription": "UX audit agent: HIG checklist scoring + SUM saliency attention check for a screen.",
+    "description": "UX audit agent: HIG checklist scoring + SUM saliency attention check for a screen.",
+    "keywords": [
+      "ux",
+      "audit"
+    ],
+    "sourcePath": "agents/ux-audit",
+    "package": {
+      "format": "zip",
+      "path": "packages/ux-audit.zip",
+      "sha256": "43c2c8d563aaa87db1472d7cd624dde3119bccf9b03f1dacdc713b88563fa127"
+    },
+    "slug": "ux-audit",
+    "contentPath": "",
+    "coverPath": "content/articles/ux-audit/thumbnail.png",
+    "coverPreviewPath": "content/articles/ux-audit/thumbnail.png"
+  },
+  {
+    "id": "ux-position-mask",
+    "type": "library",
+    "category": "code-library",
+    "name": "ux-position-mask",
+    "shortDescription": "Audit a screen design: detect its elements and flag which sit in good/dangerous positions (thumb reach, active zones, safe areas).",
+    "description": "Audits which elements of a screen are in good vs dangerous positions. Core rules (`audit`, pure stdlib): given elements with a role (primary/secondary/content) and a normalized box, return a per-element verdict (good/ok/dangerous) with reasons plus a score/grade — thumb-reach ergonomics (primary actions belong lower-center), rule-of-thirds active zones (key content where the eye lands first), and safe areas (status bar/notch, home indicator, edges). For an arbitrary screen *design*, `audit_image(path)` first runs a classical, offline detector (background subtraction + connected components + role heuristics; Pillow/numpy/scipy) to find the elements, then scores them. Migration path: when auditing *generated* screens, replace detection by reading element boxes from the known layout — the rules stay the same.",
+    "keywords": [
+      "ux",
+      "audit",
+      "layout",
+      "thumb-reach",
+      "rule-of-thirds",
+      "safe-area",
+      "position",
+      "detection",
+      "screenshot"
+    ],
+    "sourcePath": "libraries/code/blocks/ux_position_mask",
+    "package": {
+      "format": "zip",
+      "path": "packages/ux-position-mask.zip",
+      "sha256": "c07169f13e39dccbdf2b07d11a44913f55b8731106c4b5d90d5b21c1903baa95"
+    },
+    "slug": "ux-position-mask",
+    "contentPath": "",
+    "coverPath": "content/articles/ux-position-mask/thumbnail.png",
+    "coverPreviewPath": "content/articles/ux-position-mask/thumbnail.png"
+  },
+  {
+    "id": "vinet",
+    "type": "model",
+    "category": "model-library",
+    "name": "vinet",
+    "shortDescription": "Predicts where viewers look across the frames of a video clip.",
+    "description": "ViNet-S (ViNet++, U-Net decoder over an S3D backbone) predicts a per-frame human-attention heatmap for a video. Targets the maintained successor because the original ViNet's weights are no longer published; ViNet-S is the same task, ~36MB, and CPU-runnable. Used to check that an onboarding clip leads the eye toward the primary action over time. Real weights run in iOS Ready (or any torch box); a deterministic mock stands in for CI.",
+    "keywords": [
+      "saliency",
+      "video",
+      "attention",
+      "onboarding",
+      "vinet-s"
+    ],
+    "sourcePath": "libraries/models/blocks/vinet",
+    "package": {
+      "format": "zip",
+      "path": "packages/vinet.zip",
+      "sha256": "0112bad7d08570cf94875e2ca7636889fd022f5ad1557c5f4fba7b68bf60b9de"
+    },
+    "slug": "vinet",
+    "contentPath": "",
+    "coverPath": "content/articles/vinet/thumbnail.png",
+    "coverPreviewPath": "content/articles/vinet/thumbnail.png"
+  },
+  {
+    "id": "vision_camera",
+    "name": "vision-camera",
+    "type": "library",
+    "category": "code",
+    "description": "On-device capture and privacy helpers seeded by the Color-Matching app. ImageCrypto.swift encrypts a captured image at rest (CryptoKit) before any persistence; a SwiftUI capture view (AVCaptureSession) is planned. Every 'scan something' niche (color, skin, plant, food) repeats capture + encryption — written once here, imported by apps. Swift block: reused on-device, not exposed as a Python entry.",
+    "shortDescription": "Reusable SwiftUI capture + CryptoKit image encryption for any on-device 'scan something' niche.",
+    "keywords": [
+      "on-device camera capture + image encryption at rest"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/code/blocks/vision_camera",
+    "assets": [
+      {
+        "src": "cover.svg",
+        "alt": "cover"
+      }
+    ],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "vision_camera",
+    "contentPath": "",
+    "coverPath": "content/articles/vision_camera/thumbnail.png",
+    "coverPreviewPath": "content/articles/vision_camera/thumbnail.png"
+  },
+  {
+    "id": "vision-camera",
+    "type": "library",
+    "category": "code-library",
+    "name": "vision-camera",
+    "shortDescription": "Reusable SwiftUI capture + CryptoKit image encryption for any on-device 'scan something' niche.",
+    "description": "On-device capture and privacy helpers seeded by the Color-Matching app. ImageCrypto.swift encrypts a captured image at rest (CryptoKit) before any persistence; a SwiftUI capture view (AVCaptureSession) is planned. Every 'scan something' niche (color, skin, plant, food) repeats capture + encryption — written once here, imported by apps. Swift block: reused on-device, not exposed as a Python entry.",
+    "keywords": [
+      "swift",
+      "camera",
+      "capture",
+      "cryptokit",
+      "encryption",
+      "on-device"
+    ],
+    "sourcePath": "libraries/code/blocks/vision_camera",
+    "package": {
+      "format": "zip",
+      "path": "packages/vision-camera.zip",
+      "sha256": "74f483b3bd3cc683c5ee7330ba830108c62661fb7c2cd1cde69f52dac4ccab75"
+    },
+    "slug": "vision-camera",
+    "contentPath": "",
+    "coverPath": "content/articles/vision-camera/thumbnail.png",
+    "coverPreviewPath": "content/articles/vision-camera/thumbnail.png"
+  },
+  {
+    "id": "wireframe-studio",
+    "name": "Wireframing Studio",
+    "type": "library",
+    "category": "code",
+    "description": "A production-grade, human-driven wireframing tool for the Lean AI Factory. It's the **editable-flow surface** the `libraries/mcp/wireframing` README promises — a person places elements, links screens, and adjusts the flow, with a **live A–F flow grade** that mirrors the factory's automated audit. Zero dependencies, no build step, no server. It's a single self-contained `index.html`.",
+    "shortDescription": "Wireframing Studio",
+    "keywords": [],
+    "githubPath": "libraries/code/wireframe-studio",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": [],
+    "slug": "wireframe-studio",
+    "contentPath": "",
+    "coverPath": "content/articles/wireframe-studio/thumbnail.png",
+    "coverPreviewPath": "content/articles/wireframe-studio/thumbnail.png"
+  },
+  {
+    "id": "wireframing",
+    "type": "agent",
+    "category": "agent-library",
+    "name": "wireframing",
+    "shortDescription": "Wireframing agent: charter -> A-grade flow wireframe.",
+    "description": "Wireframing agent: charter -> A-grade flow wireframe.",
+    "keywords": [
+      "wireframing"
+    ],
+    "sourcePath": "agents/wireframing",
+    "package": {
+      "format": "zip",
+      "path": "packages/wireframing.zip",
+      "sha256": "8c52ef27518166e8e20644bae8b1012c4a34708df8d329aec59c47aca86aeb61"
+    },
+    "slug": "wireframing",
+    "contentPath": "",
+    "coverPath": "content/articles/wireframing/thumbnail.png",
+    "coverPreviewPath": "content/articles/wireframing/thumbnail.png"
+  }
+]

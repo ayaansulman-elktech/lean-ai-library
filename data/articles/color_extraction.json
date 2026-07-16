@@ -1,0 +1,35 @@
+{
+  "id": "color_extraction",
+  "name": "color-extraction",
+  "type": "library",
+  "category": "code",
+  "description": "Upload an image and get its dominant colors as [{hex, percentage}] sorted by coverage. Near-identical colors are grouped by snapping each channel to a small grid, so the result is a handful of meaningful swatches rather than thousands of near-duplicates. The pure-Python core (extract_from_pixels) is dependency-free and tested; extract_colors() reads a file via Pillow (optional [image] extra). Feeds color-matching (the dominant/skin tone becomes the seasonal input).",
+  "shortDescription": "Extract an image's dominant colors with their coverage percentages.",
+  "keywords": [
+    "dominant color extraction from an image"
+  ],
+  "version": "0.1.0",
+  "githubPath": "libraries/code/blocks/color_extraction",
+  "readme": "# Color extraction\r\n\r\n**What:** image → its dominant colors with coverage percentages.\r\n**In / out:** `image_path` → `[{\"hex\": \"#RRGGBB\", \"percentage\": <float>}, …]` (sorted desc).\r\n**First needed by:** Color Matching (Sprint 1) — the selfie's tones feed the palette match.\r\n\r\n```python\r\nfrom color_extraction import extract_colors, extract_from_pixels\r\n\r\nextract_colors(\"selfie.jpg\", n=8)          # top 8 colors + % (needs Pillow)\r\nextract_from_pixels(pixels, n=8)           # pure-Python core (tested, no deps)\r\n```\r\n\r\n- Near-identical colors are grouped (channel quantization) → a few meaningful swatches, not\r\n  thousands of near-duplicates. `n=None` returns every bucket.\r\n- Pure-Python core is dependency-free and tested; `extract_colors()` needs **Pillow**\r\n  (`pip install pillow`). CLI: `python color_extraction.py image.jpg [n]`.\r\n- Visual test: `../color-test-ui/index.html`.\r\n",
+  "assets": [
+    {
+      "src": "cover.svg",
+      "alt": "cover"
+    }
+  ],
+  "examples": [],
+  "dependencies": [],
+  "related": [],
+  "slug": "color_extraction",
+  "contentPath": "",
+  "coverPath": "content/articles/color_extraction/thumbnail.png",
+  "coverPreviewPath": "content/articles/color_extraction/thumbnail.png",
+  "fileTree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "content": "# Color extraction\r\n\r\n**What:** image → its dominant colors with coverage percentages.\r\n**In / out:** `image_path` → `[{\"hex\": \"#RRGGBB\", \"percentage\": <float>}, …]` (sorted desc).\r\n**First needed by:** Color Matching (Sprint 1) — the selfie's tones feed the palette match.\r\n\r\n```python\r\nfrom color_extraction import extract_colors, extract_from_pixels\r\n\r\nextract_colors(\"selfie.jpg\", n=8)          # top 8 colors + % (needs Pillow)\r\nextract_from_pixels(pixels, n=8)           # pure-Python core (tested, no deps)\r\n```\r\n\r\n- Near-identical colors are grouped (channel quantization) → a few meaningful swatches, not\r\n  thousands of near-duplicates. `n=None` returns every bucket.\r\n- Pure-Python core is dependency-free and tested; `extract_colors()` needs **Pillow**\r\n  (`pip install pillow`). CLI: `python color_extraction.py image.jpg [n]`.\r\n- Visual test: `../color-test-ui/index.html`.\r\n"
+    }
+  ]
+}

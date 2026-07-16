@@ -1,13 +1,15 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
-import { buildCommand } from './commands/build';
-import { publishCommand } from './commands/publish';
-import { validateCommand } from './commands/validate';
-import { testCommand } from './commands/test';
-import { doctorCommand } from './commands/doctor';
+import { generateCommand } from './commands/generate';
+import { staticPublishCommand } from './commands/publish-static';
+import { catalogValidateCommand, catalogTestCommand, catalogDoctorCommand } from './commands/quality';
 import { serveCommand } from './commands/serve';
+import { feedCommand } from './commands/feed';
+import { articleCommand } from './commands/article';
 
+import { runInteractiveCli } from './interactive';
+import { thumbnailsCommand } from './commands/thumbnails';
 const program = new Command();
 
 program
@@ -15,11 +17,22 @@ program
   .description('Generator CLI for the Lean AI Library platform')
   .version('1.0.0');
 
-program.addCommand(buildCommand);
-program.addCommand(publishCommand);
-program.addCommand(validateCommand);
-program.addCommand(testCommand);
-program.addCommand(doctorCommand);
+program.addCommand(generateCommand);
+program.addCommand(staticPublishCommand);
+program.addCommand(catalogValidateCommand);
+program.addCommand(catalogTestCommand);
+program.addCommand(catalogDoctorCommand);
 program.addCommand(serveCommand);
+program.addCommand(feedCommand);
+program.addCommand(articleCommand);
 
-program.parse();
+program.addCommand(thumbnailsCommand);
+async function main() {
+  if (process.argv.length <= 2) await runInteractiveCli();
+  else program.parse();
+}
+
+main().catch((error) => {
+  console.error(error.message || error);
+  process.exitCode = 1;
+});

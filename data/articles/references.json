@@ -1,0 +1,27 @@
+{
+  "id": "references",
+  "name": "References (from competition)",
+  "type": "library",
+  "category": "code-library",
+  "description": "Curated, **design-facing** views of competitor best-practice flows — the onboarding and paywall sequences worth copying (the \"97% familiar\" part of the strategy). - `onboarding/` — best-in-class onboarding flows. - `paywall/` — best-in-class paywall layouts. **Source of truth is `libraries/memory`** (the App-Benchmark DB). This folder holds the *curated selections + design notes* — which patterns to reuse and why — **not** the raw captures. Pull screens from `libraries/memory`; annotate the picks here. Don't duplicate the captures.",
+  "shortDescription": "References (from competition)",
+  "keywords": [],
+  "githubPath": "design-system/references",
+  "readme": "# References (from competition)\r\n\r\nCurated, **design-facing** views of competitor best-practice flows — the onboarding and\r\npaywall sequences worth copying (the \"97% familiar\" part of the strategy).\r\n\r\n- `onboarding/` — best-in-class onboarding flows.\r\n- `paywall/` — best-in-class paywall layouts.\r\n\r\n**Source of truth is `libraries/memory`** (the App-Benchmark DB). This folder holds the\r\n*curated selections + design notes* — which patterns to reuse and why — **not** the raw\r\ncaptures. Pull screens from `libraries/memory`; annotate the picks here. Don't duplicate\r\nthe captures.\r\n",
+  "assets": [],
+  "examples": [],
+  "dependencies": [],
+  "related": [],
+  "slug": "references",
+  "contentPath": "",
+  "coverPath": "content/articles/references/thumbnail.png",
+  "coverPreviewPath": "content/articles/references/thumbnail.png",
+  "fileTree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "content": "# References (from competition)\r\n\r\nCurated, **design-facing** views of competitor best-practice flows — the onboarding and\r\npaywall sequences worth copying (the \"97% familiar\" part of the strategy).\r\n\r\n- `onboarding/` — best-in-class onboarding flows.\r\n- `paywall/` — best-in-class paywall layouts.\r\n\r\n**Source of truth is `libraries/memory`** (the App-Benchmark DB). This folder holds the\r\n*curated selections + design notes* — which patterns to reuse and why — **not** the raw\r\ncaptures. Pull screens from `libraries/memory`; annotate the picks here. Don't duplicate\r\nthe captures.\r\n"
+    }
+  ]
+}

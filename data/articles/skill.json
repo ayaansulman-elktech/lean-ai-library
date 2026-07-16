@@ -1,0 +1,27 @@
+{
+  "id": "skill",
+  "name": "skill-name-here",
+  "type": "library",
+  "category": "code-library",
+  "description": "One line — what it does AND when to trigger it. Used for discovery.",
+  "shortDescription": "skill-name-here",
+  "keywords": [],
+  "githubPath": "_templates/skill",
+  "skill": "# <Skill Name>\r\n\r\nInstructions the model follows when this skill is active. Be concrete and\r\nstep-by-step. Keep this body short; push detail into `references/`.\r\n\r\n## Steps\r\n1. ...\r\n2. ...\r\n\r\n## Notes\r\n- Deterministic helpers live in `scripts/`.\r\n- Long / optional docs live in `references/` (read on demand).\r\n- Templates, images, fonts live in `assets/`.\r\n",
+  "assets": [],
+  "examples": [],
+  "dependencies": [],
+  "related": [],
+  "slug": "skill",
+  "contentPath": "",
+  "coverPath": "content/articles/skill/thumbnail.png",
+  "coverPreviewPath": "content/articles/skill/thumbnail.png",
+  "fileTree": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "content": "# <Skill Name>\r\n\r\nInstructions the model follows when this skill is active. Be concrete and\r\nstep-by-step. Keep this body short; push detail into `references/`.\r\n\r\n## Steps\r\n1. ...\r\n2. ...\r\n\r\n## Notes\r\n- Deterministic helpers live in `scripts/`.\r\n- Long / optional docs live in `references/` (read on demand).\r\n- Templates, images, fonts live in `assets/`.\r\n"
+    }
+  ]
+}

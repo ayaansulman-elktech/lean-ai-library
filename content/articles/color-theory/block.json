@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "color-theory",
+  "factoryData": {
+    "id": "color-theory",
+    "name": "color-theory",
+    "type": "library",
+    "category": "knowledge",
+    "description": "A lean-ai-factory block.",
+    "shortDescription": "Block for color-theory",
+    "keywords": [
+      "color theory"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/knowledge/blocks/color-theory",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": []
+  },
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/color-theory/thumbnail.png",
+    "pdf": null
+  }
+}

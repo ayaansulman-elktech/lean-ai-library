@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "code",
+  "factoryData": {
+    "id": "code",
+    "name": "Code library",
+    "type": "library",
+    "category": "code-library",
+    "description": "Reusable Swift / Python code, packaged as **blocks** — one code unit per folder under `blocks/`, each self-describing (`block.json`), offline-tested, and MCP-ready. The full standard is in [`ARCHITECTURE.md`](ARCHITECTURE.md); `blocks/_template/` is the reference block to copy. **Rule:** if a sprint writes something twice, it becomes a block. New code is authored directly as a block; the discovery view is `catalog.json`.",
+    "shortDescription": "Code library",
+    "keywords": [],
+    "version": "0.1.0",
+    "githubPath": "libraries/code",
+    "readme": "# Code library\r\n\r\nReusable Swift / Python code, packaged as **blocks** — one code unit per folder under `blocks/`,\r\neach self-describing (`block.json`), offline-tested, and MCP-ready. The full standard is in\r\n[`ARCHITECTURE.md`](ARCHITECTURE.md); `blocks/_template/` is the reference block to copy.\r\n\r\n**Rule:** if a sprint writes something twice, it becomes a block. New code is authored directly as\r\na block; the discovery view is `catalog.json`.\r\n\r\n## Blocks (`blocks/`)\r\n- `color-matching/` — seasonal color analysis (Spring/Summer/Autumn/Winter → palette + avoid) + color-wheel harmonies. Python.\r\n- `color-extraction/` — an image's dominant colors with coverage %. Python.\r\n- `vision-camera/` — on-device capture + CryptoKit image encryption. Swift.\r\n- `ux-position-mask/` — flag which screen elements sit in good/dangerous positions (thumb reach, active zones, safe areas). Python.\r\n- `ux-attention-pattern/` — classify a screen's reading flow (F / Z / focused / scattered) from its attention map and judge it. Python (uses the saliency attention modules).\r\n\r\n## Local UIs / tools (not blocks)\r\nSmall web UIs used to exercise blocks during development — no `block.json`, not MCP seams, some\r\ngitignored (local-only): `color-test-ui/`, `wireframe-studio/`, `face-parsing-ui/`, `vinet-ui/`.\r\n\r\n## Test\r\n```\r\ncd blocks && pytest        # all code blocks, offline\r\n```\r\n",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": []
+  },
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/code/thumbnail.png",
+    "pdf": null
+  }
+}

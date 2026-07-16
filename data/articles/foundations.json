@@ -1,0 +1,27 @@
+{
+  "id": "foundations",
+  "name": "Foundations",
+  "type": "library",
+  "category": "code-library",
+  "description": "The lowest design layer — the raw decisions the tokens are derived from: color, typography, spacing, radius, elevation, motion, accessibility, breakpoints, grids. Foundations are *expressed* as machine-readable tokens in `../tokens/` (W3C DTCG); this folder documents the **rationale and rules** behind them. Humans set foundations here; agents only ever touch the derived tokens. - `color-rules.md` — how palettes are computed (not hand-picked); harmonies, 60-30-10, WCAG. - `typography.md` — the four type roles and the hierarchy rules. - `spacing.md` — the 4-pt spacing scale, radius, and elevation. - `accessibility.md` — contrast gate, hit targets, Dynamic Type, VoiceOver. - `materials.md` — Liquid Glass translucency (the `material.*` tokens). - `motion.md` — animation durations + easing (the `motion.*` tokens). - `breakpoints.md` — size classes + width thresholds (the `breakpoint.*` tokens). - `grids.md` — margins, gutters, columns, readable width.",
+  "shortDescription": "Foundations",
+  "keywords": [],
+  "githubPath": "design-system/foundations",
+  "readme": "# Foundations\r\n\r\nThe lowest design layer — the raw decisions the tokens are derived from: color,\r\ntypography, spacing, radius, elevation, motion, accessibility, breakpoints, grids.\r\n\r\nFoundations are *expressed* as machine-readable tokens in `../tokens/` (W3C DTCG);\r\nthis folder documents the **rationale and rules** behind them. Humans set foundations\r\nhere; agents only ever touch the derived tokens.\r\n\r\n- `color-rules.md` — how palettes are computed (not hand-picked); harmonies, 60-30-10, WCAG.\r\n- `typography.md` — the four type roles and the hierarchy rules.\r\n- `spacing.md` — the 4-pt spacing scale, radius, and elevation.\r\n- `accessibility.md` — contrast gate, hit targets, Dynamic Type, VoiceOver.\r\n- `materials.md` — Liquid Glass translucency (the `material.*` tokens).\r\n- `motion.md` — animation durations + easing (the `motion.*` tokens).\r\n- `breakpoints.md` — size classes + width thresholds (the `breakpoint.*` tokens).\r\n- `grids.md` — margins, gutters, columns, readable width.\r\n\r\nColor theory behind `color-rules.md` lives in the knowledge corpus:\r\n`../../libraries/knowledge/color-theory/color-theory.md`.\r\n",
+  "assets": [],
+  "examples": [],
+  "dependencies": [],
+  "related": [],
+  "slug": "foundations",
+  "contentPath": "",
+  "coverPath": "content/articles/foundations/thumbnail.png",
+  "coverPreviewPath": "content/articles/foundations/thumbnail.png",
+  "fileTree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "content": "# Foundations\r\n\r\nThe lowest design layer — the raw decisions the tokens are derived from: color,\r\ntypography, spacing, radius, elevation, motion, accessibility, breakpoints, grids.\r\n\r\nFoundations are *expressed* as machine-readable tokens in `../tokens/` (W3C DTCG);\r\nthis folder documents the **rationale and rules** behind them. Humans set foundations\r\nhere; agents only ever touch the derived tokens.\r\n\r\n- `color-rules.md` — how palettes are computed (not hand-picked); harmonies, 60-30-10, WCAG.\r\n- `typography.md` — the four type roles and the hierarchy rules.\r\n- `spacing.md` — the 4-pt spacing scale, radius, and elevation.\r\n- `accessibility.md` — contrast gate, hit targets, Dynamic Type, VoiceOver.\r\n- `materials.md` — Liquid Glass translucency (the `material.*` tokens).\r\n- `motion.md` — animation durations + easing (the `motion.*` tokens).\r\n- `breakpoints.md` — size classes + width thresholds (the `breakpoint.*` tokens).\r\n- `grids.md` — margins, gutters, columns, readable width.\r\n\r\nColor theory behind `color-rules.md` lives in the knowledge corpus:\r\n`../../libraries/knowledge/color-theory/color-theory.md`.\r\n"
+    }
+  ]
+}

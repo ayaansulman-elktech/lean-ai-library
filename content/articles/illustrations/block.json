@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "illustrations",
+  "factoryData": {
+    "id": "illustrations",
+    "name": "Illustrations (AD & prompts)",
+    "type": "library",
+    "category": "code-library",
+    "description": "The AI-generated illustration system: a **prompt library + style rules + generated assets**. Each entry pairs a prompt (with the model + settings used) to its rendered asset, so a niche's illustrations stay on-brand and reproducible. Style is driven by the per-app **universe** (palette / mood from the purity tool). Version prompts next to their outputs.",
+    "shortDescription": "Illustrations (AD & prompts)",
+    "keywords": [],
+    "githubPath": "design-system/illustrations",
+    "readme": "# Illustrations (AD & prompts)\r\n\r\nThe AI-generated illustration system: a **prompt library + style rules + generated assets**.\r\n\r\nEach entry pairs a prompt (with the model + settings used) to its rendered asset, so a\r\nniche's illustrations stay on-brand and reproducible. Style is driven by the per-app\r\n**universe** (palette / mood from the purity tool). Version prompts next to their outputs.\r\n",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": []
+  },
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/illustrations/thumbnail.png",
+    "pdf": null
+  }
+}

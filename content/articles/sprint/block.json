@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "sprint",
+  "factoryData": {
+    "id": "sprint",
+    "name": "Sprint orchestrator",
+    "type": "library",
+    "category": "code-library",
+    "description": "Chains the factory's agents into **one app sprint** with a single go/no-go verdict. This is the keystone that turns standalone agents into a production line.",
+    "shortDescription": "Sprint orchestrator",
+    "keywords": [],
+    "version": "0.1.0",
+    "githubPath": "pipelines/sprint",
+    "readme": "# Sprint orchestrator\r\n\r\nChains the factory's agents into **one app sprint** with a single go/no-go verdict. This is the\r\nkeystone that turns standalone agents into a production line.\r\n\r\n```\r\ncharter ─▶ wireframe ─▶ UX audit (+ SUM saliency) ─▶ Apple compliance ─▶ security ─▶ report\r\n           advisory      gate: grade + attention      hard gate: 4.3       hard gate\r\n```\r\n\r\n```python\r\nfrom sprint_orchestrator import SprintOrchestrator\r\nfrom vis_models.saliency import build_saliency\r\n\r\norch = SprintOrchestrator(ctx, out_dir=\"out\", saliency=build_saliency(\"sum\"), min_ux_grade=\"C\")\r\nreport = orch.run({\r\n    \"app\": \"color-matching\",\r\n    \"charter\": \"A weekly color-matching app.\",\r\n    \"descriptor\": {...},                 # for the Apple 4.3 compliance check\r\n    \"code\": {\"ContentView.swift\": \"...\"},# for the security scan\r\n    \"screenshot\": \"screen.png\",          # optional → enables the saliency check\r\n    \"cta_region\": [0.25, 0.80, 0.50, 0.12],\r\n})\r\nreport.passed     # overall go/no-go\r\nreport.summary    # \"color-matching: GO — 3/3 gates passed.\"\r\n```\r\n\r\n## Stages & gates\r\n| Stage | Agent | Blocking? | Passes when |\r\n|---|---|---|---|\r\n| wireframe | `wireframing` | no (advisory) | records the flow grade; agent loops toward A internally |\r\n| ux-audit | `ux-audit` | **yes** | grade ≥ `min_ux_grade` **and** (if a screenshot + saliency model are given) predicted attention lands on the CTA |\r\n| apple-compliance | `apple-compliance` | **yes** | not a Guideline 4.3 spam/duplicate; `passes()` |\r\n| security-review | `security-review` | **yes** | no high-severity finding (incl. iOS: secrets, ATS, Keychain) |\r\n\r\n**Saliency is wired into the UX gate.** Supply `screenshot` + `cta_region` and a `vis_models`\r\nsaliency model and the sprint fails if attention misses the primary action — even when the UX\r\ngrade, compliance, and security all pass. Omit them and the saliency check is skipped (the UX gate\r\nfalls back to grade only).\r\n\r\n## Properties\r\n- All agents share one `AgentContext`, so **spend accrues on one meter** and `report.cost_usd` is\r\n  the whole-sprint cost.\r\n- Every stage runs under the agent-core contract: a failing agent becomes a failed stage, never a\r\n  crash.\r\n- Fully **offline-testable** (mock gateway + mock saliency); writes `out/sprint-report.json`.\r\n",
+    "assets": [],
+    "examples": [],
+    "dependencies": [
+      "pydantic>=2.6"
+    ],
+    "related": []
+  },
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/sprint/thumbnail.png",
+    "pdf": null
+  }
+}

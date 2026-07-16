@@ -1,0 +1,24 @@
+{
+  "id": "ios-timesfm",
+  "type": "model",
+  "category": "ios-ready",
+  "name": "TimesFM",
+  "shortDescription": "Time-series forecasting",
+  "description": "Time-series forecasting",
+  "keywords": [
+    "ios",
+    "model",
+    "raw"
+  ],
+  "sourcePath": "",
+  "fileTree": [],
+  "package": {
+    "format": "zip",
+    "path": "packages/ios-timesfm.zip",
+    "sha256": "7770d88b2400c3b3cf068326bc985884a7149a8a59c2565b1c094faaa5f98a92"
+  },
+  "slug": "ios-timesfm",
+  "contentPath": "",
+  "coverPath": "assets/default_thumbnail.png",
+  "coverPreviewPath": ""
+}

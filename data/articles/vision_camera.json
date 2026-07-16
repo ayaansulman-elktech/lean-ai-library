@@ -1,0 +1,35 @@
+{
+  "id": "vision_camera",
+  "name": "vision-camera",
+  "type": "library",
+  "category": "code",
+  "description": "On-device capture and privacy helpers seeded by the Color-Matching app. ImageCrypto.swift encrypts a captured image at rest (CryptoKit) before any persistence; a SwiftUI capture view (AVCaptureSession) is planned. Every 'scan something' niche (color, skin, plant, food) repeats capture + encryption — written once here, imported by apps. Swift block: reused on-device, not exposed as a Python entry.",
+  "shortDescription": "Reusable SwiftUI capture + CryptoKit image encryption for any on-device 'scan something' niche.",
+  "keywords": [
+    "on-device camera capture + image encryption at rest"
+  ],
+  "version": "0.1.0",
+  "githubPath": "libraries/code/blocks/vision_camera",
+  "readme": "# vision-camera (code snippet)\r\n\r\nReusable on-device capture + privacy helpers, seeded by Sprint 1 (Color Matching).\r\nAny app that takes a photo and analyzes it on-device should reuse these.\r\n\r\n## Contents (to add)\r\n- `CameraView.swift` - SwiftUI `UIViewControllerRepresentable` wrapping `AVCaptureSession` for a still capture.\r\n- `ImageCrypto.swift` - encrypt a captured image at rest (CryptoKit) before any persistence.\r\n\r\n## Why it's a library\r\nEvery \"scan something\" niche (color, skin, plant, food) repeats capture + encryption.\r\nWrite once here; apps import it. See `../README.md` for the rule.\r\n",
+  "assets": [
+    {
+      "src": "cover.svg",
+      "alt": "cover"
+    }
+  ],
+  "examples": [],
+  "dependencies": [],
+  "related": [],
+  "slug": "vision_camera",
+  "contentPath": "",
+  "coverPath": "content/articles/vision_camera/thumbnail.png",
+  "coverPreviewPath": "content/articles/vision_camera/thumbnail.png",
+  "fileTree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "content": "# vision-camera (code snippet)\r\n\r\nReusable on-device capture + privacy helpers, seeded by Sprint 1 (Color Matching).\r\nAny app that takes a photo and analyzes it on-device should reuse these.\r\n\r\n## Contents (to add)\r\n- `CameraView.swift` - SwiftUI `UIViewControllerRepresentable` wrapping `AVCaptureSession` for a still capture.\r\n- `ImageCrypto.swift` - encrypt a captured image at rest (CryptoKit) before any persistence.\r\n\r\n## Why it's a library\r\nEvery \"scan something\" niche (color, skin, plant, food) repeats capture + encryption.\r\nWrite once here; apps import it. See `../README.md` for the rule.\r\n"
+    }
+  ]
+}

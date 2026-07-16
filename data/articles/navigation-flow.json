@@ -1,0 +1,30 @@
+{
+  "id": "navigation-flow",
+  "name": "navigation-flow",
+  "type": "library",
+  "category": "mcp",
+  "description": "See README.md for details.",
+  "shortDescription": "Block for navigation-flow",
+  "keywords": [
+    "navigation flow"
+  ],
+  "version": "0.1.0",
+  "githubPath": "libraries/mcp/blocks/navigation-flow",
+  "readme": "# Navigation / Flow Analysis MCP\r\n\r\nAn MCP server that analyzes a screen flow: builds the navigation graph and computes\r\nclicks-to-action, navigation depth, orphan pages / dead ends, and features-per-page.\r\n\r\nThe wireframing agent calls it to grade a flow (the \"A score\" loop). The deterministic\r\nlogic mirrors `agents/wireframing/scripts/flow_audit.py`; exposing it as an MCP lets any\r\nagent (Codex / Claude) call it directly.\r\n\r\n_Server implementation: TODO._\r\n",
+  "assets": [],
+  "examples": [],
+  "dependencies": [],
+  "related": [],
+  "slug": "navigation-flow",
+  "contentPath": "",
+  "coverPath": "content/articles/navigation-flow/thumbnail.png",
+  "coverPreviewPath": "content/articles/navigation-flow/thumbnail.png",
+  "fileTree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "content": "# Navigation / Flow Analysis MCP\r\n\r\nAn MCP server that analyzes a screen flow: builds the navigation graph and computes\r\nclicks-to-action, navigation depth, orphan pages / dead ends, and features-per-page.\r\n\r\nThe wireframing agent calls it to grade a flow (the \"A score\" loop). The deterministic\r\nlogic mirrors `agents/wireframing/scripts/flow_audit.py`; exposing it as an MCP lets any\r\nagent (Codex / Claude) call it directly.\r\n\r\n_Server implementation: TODO._\r\n"
+    }
+  ]
+}

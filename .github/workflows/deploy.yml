@@ -1,8 +1,8 @@
-name: Deploy Next.js site to Pages
+name: Deploy Lean AI Library to Pages
 
 on:
   push:
-    branches: ["github-pages-configs"] # Listen to the new branch
+    branches: ["github-pages-configs"]
   workflow_dispatch:
 
 permissions:
@@ -11,8 +11,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -20,35 +20,39 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: npm
-          
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        
+
       - name: Install dependencies
         run: npm ci
-        
-      # CRITICAL STEP: Build our Catalog metadata first!
-      - name: Build Catalog CLI
-        env:
-          FACTORY_TOKEN: ${{ secrets.FACTORY_TOKEN }}
-        run: npm run cli -- build
-        
-      # Now build the Next.js static site
-      - name: Build with Next.js
-        env:
-          NEXT_PUBLIC_BASE_PATH: /lean-ai-library
-        run: npx next build
-        
+
+      - name: Build and validate Library
+        run: |
+          npm run cli -- build
+          npm run cli -- validate
+          npm test
+          npx tsc --noEmit
+          node --check assets/app.js
+
+      - name: Stage static site
+        run: |
+          mkdir -p _site
+          cp home.html _site/index.html
+          cp home.html library.html article.html manifest.html updates.html _site/
+          cp -R assets content data _site/
+          touch _site/.nojekyll
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./_site
 
   deploy:
     environment:

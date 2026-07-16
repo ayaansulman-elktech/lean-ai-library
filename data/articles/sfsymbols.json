@@ -1,0 +1,27 @@
+{
+  "id": "sfsymbols",
+  "name": "SF Symbols",
+  "type": "library",
+  "category": "code-library",
+  "description": "Catalog + usage rules for Apple **SF Symbols** (the native icon set). Documents which symbol maps to which action, weight/scale rules, and rendering mode (monochrome / hierarchical / palette) per token. Prefer SF Symbols over custom icons for Apple-native feel and built-in accessibility. No assets to vendor — the symbols ship with the OS; this folder is the **selection + usage policy**, not image files.",
+  "shortDescription": "SF Symbols",
+  "keywords": [],
+  "githubPath": "design-system/sfsymbols",
+  "readme": "# SF Symbols\r\n\r\nCatalog + usage rules for Apple **SF Symbols** (the native icon set).\r\n\r\nDocuments which symbol maps to which action, weight/scale rules, and rendering mode\r\n(monochrome / hierarchical / palette) per token. Prefer SF Symbols over custom icons for\r\nApple-native feel and built-in accessibility.\r\n\r\nNo assets to vendor — the symbols ship with the OS; this folder is the **selection +\r\nusage policy**, not image files.\r\n",
+  "assets": [],
+  "examples": [],
+  "dependencies": [],
+  "related": [],
+  "slug": "sfsymbols",
+  "contentPath": "",
+  "coverPath": "content/articles/sfsymbols/thumbnail.png",
+  "coverPreviewPath": "content/articles/sfsymbols/thumbnail.png",
+  "fileTree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "content": "# SF Symbols\r\n\r\nCatalog + usage rules for Apple **SF Symbols** (the native icon set).\r\n\r\nDocuments which symbol maps to which action, weight/scale rules, and rendering mode\r\n(monochrome / hierarchical / palette) per token. Prefer SF Symbols over custom icons for\r\nApple-native feel and built-in accessibility.\r\n\r\nNo assets to vendor — the symbols ship with the OS; this folder is the **selection +\r\nusage policy**, not image files.\r\n"
+    }
+  ]
+}
