@@ -4,7 +4,7 @@
   "category": "agent-library",
   "name": "apple-compliance",
   "shortDescription": "Checks apps against App Store rules",
-  "description": "Apple App Store compliance gate (Guideline 4.3-weighted).",
+  "description": "Reviews an application against Apple App Store requirements, with added attention to Guideline 4.3 and common causes of review rejection.",
   "keywords": [
     "apple",
     "compliance"

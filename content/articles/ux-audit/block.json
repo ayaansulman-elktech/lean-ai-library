@@ -146,7 +146,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Scores screens against HIG and attention"
+    "shortDescription": "Scores screens against HIG and attention",
+    "description": "Scores a screen against Apple interface guidance and combines the result with saliency analysis to identify usability and attention problems."
   },
   "attachments": {
     "thumbnail": "content/articles/ux-audit/thumbnail.png",

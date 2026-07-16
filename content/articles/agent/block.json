@@ -17,7 +17,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Defines when and how an agent should act"
+    "shortDescription": "Defines when and how an agent should act",
+    "description": "Defines the purpose, trigger conditions, inputs, outputs, and operating boundaries for a reusable factory agent."
   },
   "attachments": {
     "thumbnail": "content/articles/agent/thumbnail.png",

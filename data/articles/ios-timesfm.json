@@ -4,7 +4,7 @@
   "category": "ios-ready",
   "name": "TimesFM",
   "shortDescription": "Forecasts future time-series values",
-  "description": "Time-series forecasting",
+  "description": "Forecasts future values from time-series data through a reusable model interface suitable for application and agent workflows.",
   "keywords": [
     "ios",
     "model",

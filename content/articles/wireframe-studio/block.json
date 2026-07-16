@@ -17,7 +17,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Edits and exports production wireframes"
+    "shortDescription": "Edits and exports production wireframes",
+    "description": "A human-driven workspace for creating, editing, linking, auditing, and exporting production-grade application wireframe flows."
   },
   "attachments": {
     "thumbnail": "content/articles/wireframe-studio/thumbnail.png",

@@ -4,7 +4,7 @@
   "category": "ios-ready",
   "name": "celebamask-hq",
   "shortDescription": "Regenerates faces from edited masks",
-  "description": "RESTRICTED. Must not reach apps/ or any shipped artifact. Enforced in code: blocks/face_editor is unavailable unless FACTORY_ALLOW_NONCOMMERCIAL=1, and build() returns the mock instead. Repo ships code only; the generator (latest_net_G.pth) is distributed separately. Cite Lee et al., CVPR 2020.",
+  "description": "Explores mask-guided facial editing with CelebAMask-HQ and MaskGAN while documenting the dataset's noncommercial licensing restrictions.",
   "keywords": [
     "ios",
     "model",

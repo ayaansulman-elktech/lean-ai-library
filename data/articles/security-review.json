@@ -4,7 +4,7 @@
   "category": "agent-library",
   "name": "security-review",
   "shortDescription": "Finds security risks in generated code",
-  "description": "Security-review gate: static scan + LLM review of generated app code.",
+  "description": "Combines deterministic static checks with model-assisted review to identify security risks in generated application code before release.",
   "keywords": [
     "security",
     "review"

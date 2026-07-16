@@ -112,7 +112,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Writes concise Apple-style interface copy"
+    "shortDescription": "Writes concise Apple-style interface copy",
+    "description": "Generates concise interface copy for wireframe screens, checks it against Apple conventions and length limits, and prepares it for SwiftUI generation."
   },
   "attachments": {
     "thumbnail": "content/articles/microcopy/thumbnail.png",

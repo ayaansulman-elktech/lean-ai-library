@@ -19,7 +19,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Explains practical color decisions"
+    "shortDescription": "Explains practical color decisions",
+    "description": "A practical color reference covering palette construction, contrast, emotional associations, branding, accessibility, and interface decisions."
   },
   "attachments": {
     "thumbnail": "content/articles/color-theory/thumbnail.png",

@@ -35,7 +35,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Documents reliable wireframing methods"
+    "shortDescription": "Documents reliable wireframing methods",
+    "description": "Documents practical methods for turning product requirements into clear screen structures, navigation flows, and testable wireframes."
   },
   "attachments": {
     "thumbnail": "content/articles/knowledge-wireframing/thumbnail.png",

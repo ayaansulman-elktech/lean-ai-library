@@ -113,7 +113,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Checks apps against App Store rules"
+    "shortDescription": "Checks apps against App Store rules",
+    "description": "Reviews an application against Apple App Store requirements, with added attention to Guideline 4.3 and common causes of review rejection."
   },
   "attachments": {
     "thumbnail": "content/articles/apple-compliance/thumbnail.png",

@@ -17,7 +17,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Starts lean Apple design projects"
+    "shortDescription": "Starts lean Apple design projects",
+    "description": "A lean starter for Apple application design projects, including core components, common screens, tokens, and an organized working structure."
   },
   "attachments": {
     "thumbnail": "content/articles/boilerplate/thumbnail.png",

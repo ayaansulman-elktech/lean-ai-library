@@ -20,7 +20,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Shared framework for production agents"
+    "shortDescription": "Shared framework for production agents",
+    "description": "A shared production framework for factory agents, providing consistent execution, model access, error handling, and integration patterns."
   },
   "attachments": {
     "thumbnail": "content/articles/agent-core/thumbnail.png",

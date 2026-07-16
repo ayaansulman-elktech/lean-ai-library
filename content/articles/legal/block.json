@@ -18,7 +18,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Drafts privacy policies and app terms"
+    "shortDescription": "Drafts privacy policies and app terms",
+    "description": "Generates draft privacy policies and terms from an application's declared data practices using deterministic templates. The output is not legal advice."
   },
   "attachments": {
     "thumbnail": "content/articles/legal/thumbnail.png",

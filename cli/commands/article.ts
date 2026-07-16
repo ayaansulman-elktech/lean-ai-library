@@ -33,6 +33,7 @@ articleCommand.command('edit').argument('<id>')
       type: options.type, category: options.category
     };
     if (typeof values.shortDescription === 'string' && values.shortDescription.length > 42) throw new Error('Short description must be 42 characters or fewer.');
+    if (typeof values.description === 'string' && values.description.length > 260) throw new Error('Description must be 260 characters or fewer.');
     for (const [key, value] of Object.entries(values)) if (value !== undefined) overrides[key] = value;
     for (const field of (options.reset as string[] | undefined) || []) {
       if (!editableFields.includes(field as typeof editableFields[number])) throw new Error(`Cannot reset unknown field: ${field}`);

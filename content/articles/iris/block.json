@@ -100,7 +100,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Locates irises for accurate color sampling"
+    "shortDescription": "Locates irises for accurate color sampling",
+    "description": "Locates the pupil center, iris boundary, and eye contour from an eye crop so downstream tools can sample eye color accurately."
   },
   "attachments": {
     "thumbnail": "content/articles/iris/thumbnail.png",

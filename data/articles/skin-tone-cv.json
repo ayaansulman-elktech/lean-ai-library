@@ -3,7 +3,7 @@
   "name": "skin-tone-cv (model card)",
   "type": "application",
   "category": "ai-farm",
-  "description": "- **Task:** extract skin / hair / eye tones from a selfie → features for seasonal palette. - **Status:** raw → ready (Phase-1 reference model that proves the pipeline). - **Inputs:** image. **Outputs:** tone features / palette class. - **Source / license:** <fill>. - **Ready build:** `../../ready/skin-tone-cv.mlpackage` (CoreML, on-device).",
+  "description": "A model card for extracting skin, hair, and eye tones from selfies and converting them into features for seasonal color analysis.",
   "shortDescription": "Extracts tones for seasonal palettes",
   "keywords": [],
   "githubPath": "libraries/ai-farm/raw/skin-tone-cv",

@@ -16,7 +16,8 @@
     ]
   },
   "localOverrides": {
-    "shortDescription": "Refines prompts into reliable workflows"
+    "shortDescription": "Refines prompts into reliable workflows",
+    "description": "Shows how prompts and instructions can be structured into repeatable workflows with clearer triggers, outputs, and quality expectations."
   },
   "attachments": {
     "thumbnail": null,

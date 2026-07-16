@@ -107,7 +107,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Edits faces through segmentation masks"
+    "shortDescription": "Edits faces through segmentation masks",
+    "description": "Edits facial appearance by changing regions in a segmentation mask and regenerating a face that follows the modified structure."
   },
   "attachments": {
     "thumbnail": null,

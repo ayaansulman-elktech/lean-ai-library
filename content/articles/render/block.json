@@ -18,7 +18,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Renders screens for attention analysis"
+    "shortDescription": "Renders screens for attention analysis",
+    "description": "Turns an implemented screen into an image and identifies its primary-action region so attention and UX audits can evaluate the real interface."
   },
   "attachments": {
     "thumbnail": "content/articles/render/thumbnail.png",

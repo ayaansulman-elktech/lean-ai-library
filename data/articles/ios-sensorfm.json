@@ -4,7 +4,7 @@
   "category": "ios-ready",
   "name": "SensorFM",
   "shortDescription": "Interprets wearable health signals",
-  "description": "General intelligence and interface for wearable health data",
+  "description": "Provides a general model interface for interpreting wearable sensor and health time-series data across downstream applications.",
   "keywords": [
     "ios",
     "model",

@@ -4,7 +4,7 @@
   "category": "knowledge-library",
   "name": "apple-guidelines",
   "shortDescription": "Documents Apple interface standards",
-  "description": "See the included Markdown documentation for implementation and usage details.",
+  "description": "A structured Apple guidelines reference for product design, interaction decisions, platform conventions, and application review preparation.",
   "keywords": [
     "apple",
     "guidelines"

@@ -17,7 +17,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Extracts tones for seasonal palettes"
+    "shortDescription": "Extracts tones for seasonal palettes",
+    "description": "A model card for extracting skin, hair, and eye tones from selfies and converting them into features for seasonal color analysis."
   },
   "attachments": {
     "thumbnail": "content/articles/skin-tone-cv/thumbnail.png",

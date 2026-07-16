@@ -3,7 +3,7 @@
   "name": "AI Farm",
   "type": "library",
   "category": "code-library",
-  "description": "Productionized models, each packaged as an MCP-compatible capability.",
+  "description": "Packages production-ready AI models as discoverable, testable capabilities that agents and applications can access through MCP-compatible interfaces.",
   "shortDescription": "Packages production models as MCP tools",
   "keywords": [],
   "githubPath": "libraries/ai-farm",

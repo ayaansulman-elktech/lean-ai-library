@@ -94,7 +94,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Predicts where viewers look on images"
+    "shortDescription": "Predicts where viewers look on images",
+    "description": "Generates human-attention heatmaps for static images and interfaces, including a condition tuned for evaluating web and application screens."
   },
   "attachments": {
     "thumbnail": "content/articles/sum/thumbnail.png",

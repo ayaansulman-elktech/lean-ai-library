@@ -22,7 +22,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Unifies model providers and cost tracking"
+    "shortDescription": "Unifies model providers and cost tracking",
+    "description": "A provider-independent model gateway that centralizes LLM access, cost tracking, execution metadata, and shared behavior for factory agents."
   },
   "attachments": {
     "thumbnail": "content/articles/ml-core/thumbnail.png",

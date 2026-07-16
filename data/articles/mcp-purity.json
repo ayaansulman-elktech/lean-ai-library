@@ -4,7 +4,7 @@
   "category": "mcp-library",
   "name": "purity",
   "shortDescription": "Scores visual coherence through MCP",
-  "description": "Purity MCP: moodboard coherence scoring + the per-app universe (tokens.override.json), any agent can call.",
+  "description": "Exposes moodboard analysis and visual-coherence scoring through MCP, including generated design-token overrides for an application universe.",
   "keywords": [
     "purity"
   ],

@@ -16,7 +16,8 @@
     ]
   },
   "localOverrides": {
-    "shortDescription": "Optimizes reusable AI skills"
+    "shortDescription": "Optimizes reusable AI skills",
+    "description": "Explains how reusable AI skills can be measured, refined, and optimized into dependable workflows for real production tasks."
   },
   "attachments": {
     "thumbnail": null,

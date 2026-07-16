@@ -29,7 +29,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Scores moodboard style consistency"
+    "shortDescription": "Scores moodboard style consistency",
+    "description": "Extracts palette and style signals from a moodboard, then scores visual coherence to help define a consistent application universe."
   },
   "attachments": {
     "thumbnail": null,

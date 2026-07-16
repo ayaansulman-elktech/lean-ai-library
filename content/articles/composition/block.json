@@ -19,7 +19,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Guides balanced visual composition"
+    "shortDescription": "Guides balanced visual composition",
+    "description": "Explains how alignment, hierarchy, spacing, balance, rhythm, and visual weight create clear and effective interface compositions."
   },
   "attachments": {
     "thumbnail": "content/articles/composition/thumbnail.png",

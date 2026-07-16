@@ -4,7 +4,7 @@
   "category": "code-library",
   "name": "color-matching",
   "shortDescription": "Builds seasonal color harmonies",
-  "description": "Two independent approaches. SEASONAL (primary): from a base color's undertone + value, classify the season and return the season's recommended palette and colors to avoid — the Color-Matching app's core (skin tone -> 'your colors'). HARMONIES (secondary): complementary, analogous, triadic, split-complementary, tetradic, and monochromatic schemes off a base color. Pure Python (stdlib colorsys), no dependencies.",
+  "description": "Builds seasonal palettes and classic color harmonies from an input color, including recommendations and combinations to avoid.",
   "keywords": [
     "color",
     "seasonal",

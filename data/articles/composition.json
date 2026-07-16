@@ -3,7 +3,7 @@
   "name": "composition",
   "type": "library",
   "category": "knowledge",
-  "description": "A lean-ai-factory block.",
+  "description": "Explains how alignment, hierarchy, spacing, balance, rhythm, and visual weight create clear and effective interface compositions.",
   "shortDescription": "Guides balanced visual composition",
   "keywords": [
     "composition"
@@ -23,7 +23,7 @@
       "name": "block.json",
       "type": "file",
       "path": "block.json",
-      "content": "{\n  \"id\": \"composition\",\n  \"name\": \"composition\",\n  \"type\": \"library\",\n  \"category\": \"knowledge\",\n  \"description\": \"A lean-ai-factory block.\",\n  \"shortDescription\": \"Guides balanced visual composition\",\n  \"keywords\": [\n    \"composition\"\n  ],\n  \"version\": \"0.1.0\",\n  \"githubPath\": \"libraries/knowledge/blocks/composition\",\n  \"assets\": [],\n  \"examples\": [],\n  \"dependencies\": [],\n  \"related\": [],\n  \"slug\": \"composition\",\n  \"contentPath\": \"\",\n  \"coverPath\": \"content/articles/composition/thumbnail.png\",\n  \"coverPreviewPath\": \"content/articles/composition/thumbnail.png\"\n}"
+      "content": "{\n  \"id\": \"composition\",\n  \"name\": \"composition\",\n  \"type\": \"library\",\n  \"category\": \"knowledge\",\n  \"description\": \"Explains how alignment, hierarchy, spacing, balance, rhythm, and visual weight create clear and effective interface compositions.\",\n  \"shortDescription\": \"Guides balanced visual composition\",\n  \"keywords\": [\n    \"composition\"\n  ],\n  \"version\": \"0.1.0\",\n  \"githubPath\": \"libraries/knowledge/blocks/composition\",\n  \"assets\": [],\n  \"examples\": [],\n  \"dependencies\": [],\n  \"related\": [],\n  \"slug\": \"composition\",\n  \"contentPath\": \"\",\n  \"coverPath\": \"content/articles/composition/thumbnail.png\",\n  \"coverPreviewPath\": \"content/articles/composition/thumbnail.png\"\n}"
     }
   ]
 }

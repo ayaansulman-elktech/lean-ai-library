@@ -3,7 +3,7 @@
   "name": "apple-guidelines",
   "type": "library",
   "category": "knowledge",
-  "description": "A lean-ai-factory block.",
+  "description": "A practical reference for applying Apple interface and App Store guidelines when designing, implementing, and reviewing applications.",
   "shortDescription": "Explains Apple interface guidelines",
   "keywords": [
     "apple guidelines"
@@ -23,7 +23,7 @@
       "name": "block.json",
       "type": "file",
       "path": "block.json",
-      "content": "{\n  \"id\": \"apple-guidelines\",\n  \"name\": \"apple-guidelines\",\n  \"type\": \"library\",\n  \"category\": \"knowledge\",\n  \"description\": \"A lean-ai-factory block.\",\n  \"shortDescription\": \"Explains Apple interface guidelines\",\n  \"keywords\": [\n    \"apple guidelines\"\n  ],\n  \"version\": \"0.1.0\",\n  \"githubPath\": \"libraries/knowledge/blocks/apple-guidelines\",\n  \"assets\": [],\n  \"examples\": [],\n  \"dependencies\": [],\n  \"related\": [],\n  \"slug\": \"apple-guidelines\",\n  \"contentPath\": \"\",\n  \"coverPath\": \"content/articles/apple-guidelines/thumbnail.png\",\n  \"coverPreviewPath\": \"content/articles/apple-guidelines/thumbnail.png\"\n}"
+      "content": "{\n  \"id\": \"apple-guidelines\",\n  \"name\": \"apple-guidelines\",\n  \"type\": \"library\",\n  \"category\": \"knowledge\",\n  \"description\": \"A practical reference for applying Apple interface and App Store guidelines when designing, implementing, and reviewing applications.\",\n  \"shortDescription\": \"Explains Apple interface guidelines\",\n  \"keywords\": [\n    \"apple guidelines\"\n  ],\n  \"version\": \"0.1.0\",\n  \"githubPath\": \"libraries/knowledge/blocks/apple-guidelines\",\n  \"assets\": [],\n  \"examples\": [],\n  \"dependencies\": [],\n  \"related\": [],\n  \"slug\": \"apple-guidelines\",\n  \"contentPath\": \"\",\n  \"coverPath\": \"content/articles/apple-guidelines/thumbnail.png\",\n  \"coverPreviewPath\": \"content/articles/apple-guidelines/thumbnail.png\"\n}"
     }
   ]
 }

@@ -17,7 +17,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Organizes models as portable blocks"
+    "shortDescription": "Organizes models as portable blocks",
+    "description": "Defines the portable block structure used to package models with their metadata, files, documentation, dependencies, and usage information."
   },
   "attachments": {
     "thumbnail": "content/articles/blocks/thumbnail.png",

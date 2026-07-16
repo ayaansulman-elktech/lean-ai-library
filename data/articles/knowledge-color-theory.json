@@ -4,7 +4,7 @@
   "category": "knowledge-library",
   "name": "color-theory",
   "shortDescription": "Applies color theory to product design",
-  "description": "See the included Markdown documentation for implementation and usage details.",
+  "description": "A design-focused color theory reference for choosing palettes, building contrast, communicating meaning, and supporting accessibility.",
   "keywords": [
     "color",
     "theory"

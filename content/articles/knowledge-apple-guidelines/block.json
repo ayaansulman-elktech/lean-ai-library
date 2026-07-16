@@ -29,7 +29,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Documents Apple interface standards"
+    "shortDescription": "Documents Apple interface standards",
+    "description": "A structured Apple guidelines reference for product design, interaction decisions, platform conventions, and application review preparation."
   },
   "attachments": {
     "thumbnail": "content/articles/knowledge-apple-guidelines/thumbnail.png",

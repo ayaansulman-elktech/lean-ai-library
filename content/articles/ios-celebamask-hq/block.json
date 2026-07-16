@@ -29,7 +29,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Regenerates faces from edited masks"
+    "shortDescription": "Regenerates faces from edited masks",
+    "description": "Explores mask-guided facial editing with CelebAMask-HQ and MaskGAN while documenting the dataset's noncommercial licensing restrictions."
   },
   "attachments": {
     "thumbnail": null,

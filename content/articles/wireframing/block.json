@@ -156,7 +156,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Turns product charters into app flows"
+    "shortDescription": "Turns product charters into app flows",
+    "description": "Turns a product charter into a structured application flow and produces clear wireframes designed to meet a high quality threshold."
   },
   "attachments": {
     "thumbnail": "content/articles/wireframing/thumbnail.png",

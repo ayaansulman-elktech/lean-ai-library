@@ -20,7 +20,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Measures visual style consistency"
+    "shortDescription": "Measures visual style consistency",
+    "description": "Measures whether a moodboard or interface follows a coherent visual universe and produces structured signals for downstream design tools."
   },
   "attachments": {
     "thumbnail": "content/articles/purity/thumbnail.png",

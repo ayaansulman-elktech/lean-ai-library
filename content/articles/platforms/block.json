@@ -17,7 +17,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Adapts components across Apple platforms"
+    "shortDescription": "Adapts components across Apple platforms",
+    "description": "Documents platform-specific component variants and design considerations for iPhone, iPad, Mac, Watch, TV, and other Apple surfaces."
   },
   "attachments": {
     "thumbnail": "content/articles/platforms/thumbnail.png",

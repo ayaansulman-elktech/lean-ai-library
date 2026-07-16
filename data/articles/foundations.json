@@ -3,7 +3,7 @@
   "name": "Foundations",
   "type": "library",
   "category": "code-library",
-  "description": "The lowest design layer — the raw decisions the tokens are derived from: color, typography, spacing, radius, elevation, motion, accessibility, breakpoints, grids. Foundations are *expressed* as machine-readable tokens in `../tokens/` (W3C DTCG); this folder documents the **rationale and rules** behind them. Humans set foundations here; agents only ever touch the derived tokens. - `color-rules.md` — how palettes are computed (not hand-picked); harmonies, 60-30-10, WCAG. - `typography.md` — the four type roles and the hierarchy rules. - `spacing.md` — the 4-pt spacing scale, radius, and elevation. - `accessibility.md` — contrast gate, hit targets, Dynamic Type, VoiceOver. - `materials.md` — Liquid Glass translucency (the `material.*` tokens). - `motion.md` — animation durations + easing (the `motion.*` tokens). - `breakpoints.md` — size classes + width thresholds (the `breakpoint.*` tokens). - `grids.md` — margins, gutters, columns, readable width.",
+  "description": "Defines the raw design decisions behind the system, including color, typography, spacing, radius, elevation, motion, grids, and accessibility.",
   "shortDescription": "Defines core visual design tokens",
   "keywords": [],
   "githubPath": "design-system/foundations",

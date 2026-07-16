@@ -29,7 +29,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Predicts attention across video frames"
+    "shortDescription": "Predicts attention across video frames",
+    "description": "Predicts visual attention across video frames to evaluate onboarding clips, motion content, and other time-based experiences."
   },
   "attachments": {
     "thumbnail": "content/articles/ios-vinet/thumbnail.png",

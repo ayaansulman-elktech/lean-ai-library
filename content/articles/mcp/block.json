@@ -17,7 +17,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Provides shared tools for factory agents"
+    "shortDescription": "Provides shared tools for factory agents",
+    "description": "A collection of shared MCP servers that expose factory capabilities such as flow analysis, wireframing, and visual-coherence scoring to agents."
   },
   "attachments": {
     "thumbnail": "content/articles/mcp/thumbnail.png",

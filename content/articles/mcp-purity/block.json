@@ -91,7 +91,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Scores visual coherence through MCP"
+    "shortDescription": "Scores visual coherence through MCP",
+    "description": "Exposes moodboard analysis and visual-coherence scoring through MCP, including generated design-token overrides for an application universe."
   },
   "attachments": {
     "thumbnail": "content/articles/mcp-purity/thumbnail.png",

@@ -29,7 +29,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Detects iris landmarks and eye color"
+    "shortDescription": "Detects iris landmarks and eye color",
+    "description": "Detects pupil, iris, and eye-contour landmarks so applications can reliably sample a person's eye color from an image."
   },
   "attachments": {
     "thumbnail": "content/articles/ios-iris/thumbnail.png",

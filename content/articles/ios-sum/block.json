@@ -29,7 +29,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Predicts attention on static images"
+    "shortDescription": "Predicts attention on static images",
+    "description": "Predicts where people are likely to look in a static image or interface and produces a saliency map for design evaluation."
   },
   "attachments": {
     "thumbnail": "content/articles/ios-sum/thumbnail.png",

@@ -3,7 +3,7 @@
   "name": "Skill library",
   "type": "library",
   "category": "code-library",
-  "description": "Reusable skills built from `_templates/skill` per the `CHARTER.md`. One folder per skill. - Cross-app skills live here. - Project-specific skills may live with their app instead. The four running tools (`wireframing`, `skill-optimizer`, `ux-audit`, `tester`) live under `/agents` because they are agents; pure skills land here.",
+  "description": "A collection of reusable factory workflows, each packaged with its own trigger conditions, instructions, references, and supporting resources.",
   "shortDescription": "Provides reusable factory workflows",
   "keywords": [],
   "githubPath": "libraries/skills",

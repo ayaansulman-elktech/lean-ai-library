@@ -14,7 +14,8 @@
     ]
   },
   "localOverrides": {
-    "shortDescription": "Builds scroll-driven web experiences"
+    "shortDescription": "Builds scroll-driven web experiences",
+    "description": "Demonstrates how to build a polished scroll-driven web experience with coordinated content, motion, and interaction behavior."
   },
   "attachments": {
     "thumbnail": null,

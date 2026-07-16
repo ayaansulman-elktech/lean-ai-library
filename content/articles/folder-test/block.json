@@ -14,7 +14,8 @@
     ]
   },
   "localOverrides": {
-    "shortDescription": "Previews article folders and Markdown"
+    "shortDescription": "Previews article folders and Markdown",
+    "description": "Demonstrates how an article can expose a folder tree and open included Markdown documents directly in the Library interface."
   },
   "attachments": {
     "thumbnail": null,

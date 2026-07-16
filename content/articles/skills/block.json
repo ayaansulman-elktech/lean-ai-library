@@ -17,7 +17,8 @@
     "related": []
   },
   "localOverrides": {
-    "shortDescription": "Provides reusable factory workflows"
+    "shortDescription": "Provides reusable factory workflows",
+    "description": "A collection of reusable factory workflows, each packaged with its own trigger conditions, instructions, references, and supporting resources."
   },
   "attachments": {
     "thumbnail": "content/articles/skills/thumbnail.png",

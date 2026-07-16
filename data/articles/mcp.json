@@ -3,7 +3,7 @@
   "name": "MCP library",
   "type": "library",
   "category": "code-library",
-  "description": "Shared MCP servers/tools the agents call — e.g. the wireframing flow-audit server and the Figma sync server. One folder per server, each with its own README and run instructions. Keep auth/config out of the repo; document where it's injected.",
+  "description": "A collection of shared MCP servers that expose factory capabilities such as flow analysis, wireframing, and visual-coherence scoring to agents.",
   "shortDescription": "Provides shared tools for factory agents",
   "keywords": [],
   "githubPath": "libraries/mcp",

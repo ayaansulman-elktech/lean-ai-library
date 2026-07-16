@@ -3,7 +3,7 @@
   "name": "Color test UI",
   "type": "library",
   "category": "code",
-  "description": "A self-contained `index.html` (no server) for visually testing the color code: - **Extract** — choose an image → see its dominant colors + percentages. - **Match** — pick a base color → see every harmony (complementary, analogous, triadic, split-complementary, tetradic, monochromatic) as swatches. Open `index.html` in any browser. The JS **mirrors** `color_extraction.py` / `color_matching.py` (same quantization + hue math) so it's a faithful visual check — the Python remains the source of truth for production.",
+  "description": "A standalone visual interface for testing color extraction and seasonal matching without configuring a server or application project.",
   "shortDescription": "Tests extraction and matching visually",
   "keywords": [],
   "githubPath": "libraries/code/color-test-ui",

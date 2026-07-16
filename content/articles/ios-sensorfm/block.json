@@ -22,7 +22,8 @@
     }
   },
   "localOverrides": {
-    "shortDescription": "Interprets wearable health signals"
+    "shortDescription": "Interprets wearable health signals",
+    "description": "Provides a general model interface for interpreting wearable sensor and health time-series data across downstream applications."
   },
   "attachments": {
     "thumbnail": null,
