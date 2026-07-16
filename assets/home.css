@@ -79,10 +79,12 @@ body[data-page="home"] .library-toolbar {
 }
 
 body[data-page="home"] .library-toolbar.is-stuck {
-  left: 0;
+  left: 50%;
   margin: 0;
+  margin-left: -50vw;
   position: fixed;
   top: 0;
+  width: 100vw;
 }
 
 body[data-page="home"] .library-toolbar-inner {
