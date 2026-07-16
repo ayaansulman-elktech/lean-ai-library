@@ -11,7 +11,14 @@
     "raw"
   ],
   "sourcePath": "libraries/ios-ready/raw/celebamask-hq",
-  "fileTree": [],
+  "fileTree": [
+    {
+      "name": ".gitkeep",
+      "type": "file",
+      "path": ".gitkeep",
+      "previewable": false
+    }
+  ],
   "slug": "ios-celebamask-hq",
   "contentPath": "",
   "coverPath": "assets/default_thumbnail.png",

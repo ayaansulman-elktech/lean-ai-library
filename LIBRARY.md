@@ -1,6 +1,40 @@
-# Lean AI Library — Complete Guide
+﻿# Lean AI Library â€” Complete Guide
 
 This document explains how the Library works, how Factory data reaches the UI, how local changes
+
+## Current user workflow
+
+The supported workflow is portable and does not require permanent publishing changes in the
+Factory repository:
+
+1. Copy `tools/export_library.py` from this Library into the Factory root.
+2. Run `python export_library.py` in the Factory.
+3. Copy or move the generated `library-output` folder out of the Factory.
+4. Run `npm run cli` in the Library.
+5. Select **Add or update JSON files** and paste the `library-output` folder path.
+6. Confirm the preview; the CLI imports the data and rebuilds the UI collection.
+
+The exporter creates exactly `agents.json`, `code.json`, `knowledge.json`, `mcp.json`,
+`models.json`, and `ios.json`. Each article contains its complete folder tree. Every file is shown
+in the UI, but only Markdown files contain preview text and can be opened.
+
+Running `npm run cli` without a command opens this menu:
+
+```text
+1. Add or update JSON files
+2. Edit an existing article
+3. Build frontend data
+4. Validate the Library
+5. Start the Library
+6. Exit
+```
+
+The edit flow asks for the article ID (the value after `?id=` in its URL), then supports local
+name, short-description, description, keyword, type, category, thumbnail, and PDF changes. These
+are stored as Library overrides or attachments and survive future JSON imports.
+
+Any later references in this document to in-Factory publishing manifests describe the retired
+development workflow; use the portable process above.
 are preserved, and how to use every CLI command.
 
 ## 1. System overview
@@ -10,17 +44,17 @@ backend API.
 
 ```text
 AI Lean Factory
-  library-manifests/*/manifest.json
-          ↓ Python exporter
-  dist/library-feeds/*/block.json
-          ↓ Library CLI import
+  portable export_library.py
+          â†“ Python exporter
+  library-output/*.json
+          â†“ Library CLI import
 Lean AI Library
   content/articles/<id>/block.json
-          ↓ Library build
+          â†“ Library build
   data/articles.json
   data/categories.json
   data/articles/<id>.json
-          ↓ Browser fetch
+          â†“ Browser fetch
   Home, Library, Updates, and Article pages
 ```
 
@@ -48,55 +82,31 @@ npm install
 
 ## 3. Factory publishing workflow
 
-The Factory has two separate kinds of metadata.
-
-### Source manifests
-
-The six publishing sources are:
-
-```text
-library-manifests/agents/manifest.json
-library-manifests/code/manifest.json
-library-manifests/knowledge/manifest.json
-library-manifests/mcp/manifest.json
-library-manifests/models/manifest.json
-library-manifests/ios/manifest.json
-```
-
-These hold the curated article metadata and source paths. They are not imported by the Library
-directly.
-
-### Generated feeds
-
 Run these commands in the Factory:
 
 ```powershell
 cd "C:\path\to\ai-lean-factory"
-python scripts/bootstrap_library_manifests.py
-python scripts/export_library.py
+Copy-Item "C:\path\to\lean-ai-library\tools\export_library.py" ".\export_library.py"
+python export_library.py
 ```
-
-`bootstrap_library_manifests.py` recreates the six source manifests from the Factory structure and
-explicit metadata. Use it when deliberately reseeding the manifests; it can replace manual edits in
-those source manifests.
 
 `export_library.py` creates exactly six portable feeds:
 
 ```text
-dist/library-feeds/agents/block.json
-dist/library-feeds/code/block.json
-dist/library-feeds/knowledge/block.json
-dist/library-feeds/mcp/block.json
-dist/library-feeds/models/block.json
-dist/library-feeds/ios/block.json
+library-output/agents.json
+library-output/code.json
+library-output/knowledge.json
+library-output/mcp.json
+library-output/models.json
+library-output/ios.json
 ```
 
-Only the Python exporter creates these publishing `block.json` files. Existing native
+Only the portable Python exporter creates these feed files. Existing native
 `libraries/models/blocks/*/block.json` and `libraries/code/blocks/*/block.json` files describe
 Factory components and are not publishing feeds.
 
 Each exported feed includes article metadata, the source file tree, and embedded UTF-8 content for
-Markdown and JSON previews. Binary source files are listed in the tree but are not embedded.
+Markdown previews. Every other source file is listed in the tree but is not embedded or clickable.
 
 ## 4. Feed format
 
@@ -137,20 +147,20 @@ such as the Factory root.
 Always preview an import first:
 
 ```powershell
-npm run cli -- feed import "C:\path\to\ai-lean-factory" --dry-run
+npm run cli -- feed import "C:\exports\library-output" --dry-run
 ```
 
 Perform the import:
 
 ```powershell
-npm run cli -- feed import "C:\path\to\ai-lean-factory"
+npm run cli -- feed import "C:\exports\library-output"
 ```
 
 Other valid inputs:
 
 ```powershell
-npm run cli -- feed import "C:\path\to\ai-lean-factory\dist\library-feeds"
-npm run cli -- feed import "C:\path\to\ai-lean-factory\dist\library-feeds\models\block.json"
+npm run cli -- feed import "C:\exports\library-output"
+npm run cli -- feed import "C:\exports\library-output\models.json"
 ```
 
 Directory inputs are searched recursively. The importer reads only valid schema-versioned feeds and
@@ -191,7 +201,7 @@ It contains three independent layers:
 The effective article uses this precedence:
 
 ```text
-local attachments → localOverrides → factoryData
+local attachments â†’ localOverrides â†’ factoryData
 ```
 
 Import replaces only `factoryData`. It does not overwrite:
@@ -349,7 +359,7 @@ Detach it and return to the source-tree view:
 npm run cli -- article detach language-model --pdf
 ```
 
-Without a PDF, the article page displays the imported folder tree. Markdown and JSON files can be
+Without a PDF, the article page displays the imported folder tree. Markdown files can be
 opened as offline previews. Other source files remain visible but are not previewable.
 
 ## 12. Removing an article
@@ -445,26 +455,24 @@ npm run cli -- thumbnails import --help
 ```powershell
 # Factory: regenerate feeds after Factory changes
 cd "C:\path\to\ai-lean-factory"
-python scripts/bootstrap_library_manifests.py
-python scripts/export_library.py
-python -m pytest tests/test_library_export.py -q
+Copy-Item "C:\path\to\lean-ai-library\tools\export_library.py" ".\export_library.py"
+python export_library.py
 
-# Library: preview, import, validate, and serve
+# Move or copy the complete library-output folder outside the Factory.
+
+# Library: launch the guided interface, then choose Add/update JSON
 cd "C:\path\to\lean-ai-library"
-npm run cli -- feed import "C:\path\to\ai-lean-factory" --dry-run
-npm run cli -- feed import "C:\path\to\ai-lean-factory"
-npm run cli -- validate
-npm start
+npm run cli
 ```
 
 ## 17. Troubleshooting
 
 ### Import says no generated feeds were found
 
-Run `python scripts/export_library.py` in the Factory and confirm these files exist:
+Run `python export_library.py` in the Factory and confirm these files exist:
 
 ```text
-dist/library-feeds/*/block.json
+library-output/*.json
 ```
 
 ### A custom description disappeared
@@ -491,3 +499,5 @@ node --check assets/app.js
 ### An upstream article was removed but remains in the Library
 
 This is intentional. Imports never delete. Remove it explicitly with `article remove <id> --yes`.
+
+

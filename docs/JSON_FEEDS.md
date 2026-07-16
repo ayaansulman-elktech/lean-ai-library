@@ -1,4 +1,4 @@
-# JSON feed workflow
+﻿# JSON feed workflow
 
 The complete operator manual is [LIBRARY.md](../LIBRARY.md).
 
@@ -10,7 +10,7 @@ The site is static. Its source of truth is `content/articles/<id>/block.json`; b
 ```bash
 npm run cli -- feed import path/to/library-feeds/models/block.json --dry-run
 npm run cli -- feed import path/to/library-feeds
-npm run cli -- feed import "C:\\path\\to\\ai-lean-factory"
+npm run cli -- feed import "C:\\exports\\library-output"
 ```
 
 Directory inputs are searched recursively. Only generated schema-versioned feeds are imported;
@@ -36,4 +36,8 @@ npm run cli -- article remove iris --yes
 Run `npm run cli -- build` to regenerate `data/articles.json`, `data/categories.json`, and the
 per-article detail files. Mutation commands regenerate them automatically.
 
-The companion exporter lives in the factory repository at `scripts/export_library.py`.
+The portable exporter is `tools/export_library.py` in the Library repository. Copy that one file
+to the Factory root, run `python export_library.py`, and move the generated `library-output` folder
+wherever you want before importing it. The Factory does not need permanent exporter files or feed
+manifests.
+

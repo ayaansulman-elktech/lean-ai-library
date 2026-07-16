@@ -26,27 +26,32 @@
           {
             "name": "__init__.py",
             "type": "file",
-            "path": "src/__init__.py"
+            "path": "src/__init__.py",
+            "previewable": false
           },
           {
             "name": "image.py",
             "type": "file",
-            "path": "src/image.py"
+            "path": "src/image.py",
+            "previewable": false
           },
           {
             "name": "licensing.py",
             "type": "file",
-            "path": "src/licensing.py"
+            "path": "src/licensing.py",
+            "previewable": false
           },
           {
             "name": "mock.py",
             "type": "file",
-            "path": "src/mock.py"
+            "path": "src/mock.py",
+            "previewable": false
           },
           {
             "name": "model.py",
             "type": "file",
-            "path": "src/model.py"
+            "path": "src/model.py",
+            "previewable": false
           }
         ]
       },
@@ -58,35 +63,40 @@
           {
             "name": "test_licence_boundary.py",
             "type": "file",
-            "path": "tests/test_licence_boundary.py"
+            "path": "tests/test_licence_boundary.py",
+            "previewable": false
           },
           {
             "name": "test_model.py",
             "type": "file",
-            "path": "tests/test_model.py"
+            "path": "tests/test_model.py",
+            "previewable": false
           }
         ]
       },
       {
         "name": "__init__.py",
         "type": "file",
-        "path": "__init__.py"
+        "path": "__init__.py",
+        "previewable": false
       },
       {
         "name": "block.json",
         "type": "file",
         "path": "block.json",
-        "content": "{\n  \"name\": \"face-editor\",\n  \"version\": \"0.1.0\",\n  \"task\": \"mask-guided face editing (edit the face mask, regenerate the face)\",\n  \"summary\": \"Edit a face by editing its segmentation mask.\",\n  \"description\": \"MaskGAN (CelebAMask-HQ, CVPR 2020). Reassign regions of the 19-class face parse - remove glasses, add a hat, reshape hair - and the generator regenerates the image to agree with the edited mask. Composes with blocks/face_parsing, which produces the mask. RESTRICTED LICENSE: non-commercial research and education only; must not reach apps/. Enforced in code - the real adapter is unavailable unless FACTORY_ALLOW_NONCOMMERCIAL=1, and build() returns the deterministic mock instead.\",\n  \"keywords\": [\"face\", \"editing\", \"segmentation\", \"generative\", \"maskgan\", \"non-commercial\"],\n  \"inputs\": \"image (face, RGB) + target SegMask + source SegMask\",\n  \"outputs\": \"edited image (RGBImage)\",\n  \"license\": \"non-commercial research and education only\",\n  \"source\": \"https://github.com/switchablenorms/CelebAMask-HQ\",\n  \"status\": \"raw\",\n  \"apple_native\": {\n    \"framework\": \"none (Vision face landmarks + AVSemanticSegmentationMatte cover the mask side only)\",\n    \"verdict\": \"no\",\n    \"note\": \"Apple ships no generative face-region synthesis on-device. Vision gives landmarks and AVSemanticSegmentationMatte gives skin/hair mattes, which cover producing a mask, not regenerating pixels from an edited one. A shippable editor needs a commercially-licensed generator; this block's is not one.\"\n  },\n  \"adapter\": \"blocks.face_editor.src.model:MaskGANEditor\",\n  \"mock\": \"blocks.face_editor.src.mock:MockFaceEditor\",\n  \"deps\": [\"blocks.face_parsing.src\"],\n  \"weights\": \"ios-ready/raw/celebamask-hq\",\n  \"ready_build\": null,\n  \"mcp\": null\n}\n"
+        "previewable": false
       },
       {
         "name": "cover.svg",
         "type": "file",
-        "path": "cover.svg"
+        "path": "cover.svg",
+        "previewable": false
       },
       {
         "name": "README.md",
         "type": "file",
         "path": "README.md",
+        "previewable": true,
         "content": "# face-editor (model card)\n\nMask-guided face editing — edit the face mask, the model regenerates the face to match\n([CelebAMask-HQ / MaskGAN](https://github.com/switchablenorms/CelebAMask-HQ), CVPR 2020).\n\n- **Task:** given a face image and its 19-class parse, reassign regions (remove glasses, add a\n  hat, reshape hair) and regenerate the image so it agrees with the edited mask.\n- **Inputs:** an image + a target `SegMask` + the source `SegMask`. **Outputs:** an `RGBImage`.\n- **Status:** `raw` — real generator runs in iOS Ready (`ios-ready/raw/celebamask-hq`); CI uses a\n  deterministic mock that renders the mask as flat class colours.\n- **Composes with:** `blocks/face_parsing`, which produces the `SegMask` this block edits. Both\n  use the same 19 CelebAMask-HQ classes.\n\n## ⚠️ Licence: non-commercial research only\n\nCelebAMask-HQ restricts **the software** to *\"non-commercial research and educational purposes\"*,\nand its dataset agreement forbids commercial exploitation of *\"any portion of derived data\"* —\nwhich includes the trained generator.\n\nThis factory ships paid apps. **This block must not reach `apps/` or any shipped artifact.**\n\nThe restriction is enforced in code, not in this paragraph. `MaskGANEditor.is_available()` returns\n`False` unless the operator acknowledges the terms for that process:\n\n```bash\nFACTORY_ALLOW_NONCOMMERCIAL=1\n```\n\nWithout it, `build()` returns the mock — a machine holding the weights behaves exactly like a\nmachine that does not. This is a guard rail, not legal advice; whether a given use is permitted is\na decision for whoever owns licensing.\n\n**The gate guards the runtime; a second test guards the build.** Setting the flag in a script and\nshipping the output would slip past `is_available()`, so `tests/test_licence_boundary.py` fails if\n*any* file under `apps/`, `agents/`, `pipelines/` or `design-system/` references a restricted\nblock. It reads `license` from every `blocks/*/block.json`, so a future restricted block is covered\nwithout editing the test.\n\n**Permitted here:** research, evaluation, benchmarking a replacement, deciding whether the feature\nis worth building. **Not permitted:** anything whose output reaches a shipped app.\n\nIf you need this capability *in a product*, the block needs a different generator. The mask side is\nalready covered permissively (`face_parsing`, MIT code); the regeneration half is what carries the\nrestriction.\n\n## Use\n\n```python\nfrom blocks.face_editor import build, edit_mask\nfrom blocks.face_parsing.src import build as build_parser\n\nparser = build_parser()                      # real BiSeNet on the farm; mock elsewhere\nmask   = parser.predict(\"selfie.png\")        # 19-class SegMask\n\ntarget = edit_mask(mask, {\"eye_g\": \"skin\"})  # remove the glasses\neditor = build()                             # real MaskGAN only if licensed + weights present\nout    = editor.edit(\"selfie.png\", target, mask)\nout.save(\"edited.png\")                       # Pillow imported lazily\n```\n\n`edit_mask` reassigns whole classes and returns a new mask; it never mutates the source.\n\n## Setup (iOS Ready, research use only)\n\n```bash\ngit clone --depth 1 https://github.com/switchablenorms/CelebAMask-HQ.git \\\n  libraries/ios-ready/raw/celebamask-hq && rm -rf libraries/ios-ready/raw/celebamask-hq/.git\n```\n\nThe repo ships code only. The pretrained generator is distributed separately; place it at\n`MaskGAN_demo/checkpoints/label2face_512p/latest_net_G.pth`. Needs `torch` and Pillow.\n\nBoth the repo and its weights are gitignored under `ios-ready/raw/` — only `.gitkeep` is tracked, so\nno model or dataset enters the repository.\n\n## Notes\n\n- `demo.py` upstream is a PyQt5 GUI. The library entry underneath it is\n  `create_model(opt)` + `model.inference(label, label_ref, image_ref)` — edited mask, source mask,\n  source image. This block calls that directly; no Qt required.\n- `RGBImage` and `edit_mask` are dependency-free plain Python, so the mock, the edit ops and the\n  tests run in CI with no torch and no Pillow.\n- The generator was trained at 512×512; masks are nearest-upsampled to that before inference.\n\n## Apple-native alternatives\n\nNot covered on-device. Vision provides face landmarks and `AVSemanticSegmentationMatte` gives\nskin/hair mattes (see `blocks/face_parsing`), but Apple ships no generative face-region synthesis.\nA shippable editor needs a commercially-licensed generator.\n"
       }
     ]

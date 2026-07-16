@@ -11,7 +11,14 @@
     "raw"
   ],
   "sourcePath": "libraries/ios-ready/raw/SUM",
-  "fileTree": [],
+  "fileTree": [
+    {
+      "name": ".gitkeep",
+      "type": "file",
+      "path": ".gitkeep",
+      "previewable": false
+    }
+  ],
   "slug": "ios-sum",
   "contentPath": "",
   "coverPath": "content/articles/ios-sum/thumbnail.png",

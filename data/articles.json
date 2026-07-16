@@ -614,6 +614,7 @@
       "model",
       "raw"
     ],
+    "sourcePath": "",
     "slug": "ios-sensorfm",
     "contentPath": "",
     "coverPath": "assets/default_thumbnail.png",
@@ -667,6 +668,7 @@
       "model",
       "raw"
     ],
+    "sourcePath": "",
     "slug": "ios-timesfm",
     "contentPath": "",
     "coverPath": "assets/default_thumbnail.png",
@@ -733,8 +735,8 @@
     "type": "folder",
     "category": "knowledge-library",
     "name": "apple-guidelines",
-    "shortDescription": "See the included documentation for implementation and usage details.",
-    "description": "See the included documentation for implementation and usage details.",
+    "shortDescription": "See the included Markdown documentation for implementation and usage details.",
+    "description": "See the included Markdown documentation for implementation and usage details.",
     "keywords": [
       "apple",
       "guidelines"
@@ -750,8 +752,8 @@
     "type": "folder",
     "category": "knowledge-library",
     "name": "color-theory",
-    "shortDescription": "See the included documentation for implementation and usage details.",
-    "description": "See the included documentation for implementation and usage details.",
+    "shortDescription": "See the included Markdown documentation for implementation and usage details.",
+    "description": "See the included Markdown documentation for implementation and usage details.",
     "keywords": [
       "color",
       "theory"
@@ -767,8 +769,8 @@
     "type": "folder",
     "category": "knowledge-library",
     "name": "composition",
-    "shortDescription": "See the included documentation for implementation and usage details.",
-    "description": "See the included documentation for implementation and usage details.",
+    "shortDescription": "See the included Markdown documentation for implementation and usage details.",
+    "description": "See the included Markdown documentation for implementation and usage details.",
     "keywords": [
       "composition"
     ],
@@ -783,8 +785,8 @@
     "type": "folder",
     "category": "knowledge-library",
     "name": "wireframing",
-    "shortDescription": "See the included documentation for implementation and usage details.",
-    "description": "See the included documentation for implementation and usage details.",
+    "shortDescription": "See the included Markdown documentation for implementation and usage details.",
+    "description": "See the included Markdown documentation for implementation and usage details.",
     "keywords": [
       "wireframing"
     ],

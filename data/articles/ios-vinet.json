@@ -11,7 +11,14 @@
     "raw"
   ],
   "sourcePath": "libraries/ios-ready/raw/ViNet",
-  "fileTree": [],
+  "fileTree": [
+    {
+      "name": ".gitkeep",
+      "type": "file",
+      "path": ".gitkeep",
+      "previewable": false
+    }
+  ],
   "slug": "ios-vinet",
   "contentPath": "",
   "coverPath": "content/articles/ios-vinet/thumbnail.png",

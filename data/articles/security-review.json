@@ -19,7 +19,8 @@
         {
           "name": "openai.yaml",
           "type": "file",
-          "path": "agents/openai.yaml"
+          "path": "agents/openai.yaml",
+          "previewable": false
         }
       ]
     },
@@ -36,22 +37,26 @@
             {
               "name": "__init__.py",
               "type": "file",
-              "path": "src/security_review/__init__.py"
+              "path": "src/security_review/__init__.py",
+              "previewable": false
             },
             {
               "name": "agent.py",
               "type": "file",
-              "path": "src/security_review/agent.py"
+              "path": "src/security_review/agent.py",
+              "previewable": false
             },
             {
               "name": "models.py",
               "type": "file",
-              "path": "src/security_review/models.py"
+              "path": "src/security_review/models.py",
+              "previewable": false
             },
             {
               "name": "scan.py",
               "type": "file",
-              "path": "src/security_review/scan.py"
+              "path": "src/security_review/scan.py",
+              "previewable": false
             }
           ]
         }
@@ -65,19 +70,22 @@
         {
           "name": "test_security.py",
           "type": "file",
-          "path": "tests/test_security.py"
+          "path": "tests/test_security.py",
+          "previewable": false
         }
       ]
     },
     {
       "name": "pyproject.toml",
       "type": "file",
-      "path": "pyproject.toml"
+      "path": "pyproject.toml",
+      "previewable": false
     },
     {
       "name": "SKILL.md",
       "type": "file",
       "path": "SKILL.md",
+      "previewable": true,
       "content": "---\nname: security-review\ndescription: Security gate for generated iOS code — deterministic static scan (secrets, dangerous calls, and iOS specifics: UserDefaults secrets, Keychain, App Transport Security, weak crypto) plus an LLM review (injection, auth, secure storage, input validation). Use before shipping any generated code.\nallowed-tools: Read, Bash\n---\n# Security-review gate\n\nTwo layers (`src/security_review/`, on `agent-core`):\n1. **Static scan** (`scan.py`) — no LLM, no deps:\n   - generic: hardcoded secrets, `eval`/`exec`, `os.system`, `subprocess(shell=True)`, unsafe\n     `pickle`/`yaml.load`, disabled TLS.\n   - iOS/Swift: secrets in Swift source or `UserDefaults` (hard-block), Keychain accessibility,\n     App Transport Security (`NSAllowsArbitraryLoads` / insecure HTTP), weak crypto (MD5/SHA1,\n     DES/3DES/RC4), pasteboard, sensitive logging, secrets in `Info.plist`.\n2. **LLM review** — Swift/iOS-aware: injection, broken auth, secure storage (Keychain vs\n   UserDefaults), SSL pinning, missing input validation.\n\n```python\nfrom security_review import SecurityReviewAgent\nres = SecurityReviewAgent(ctx).run({\"app.py\": code, ...})\nif not res.output[\"passes\"]:    # gate: block ship\n    ...\n```\n\n**Hard rule:** any high-severity static finding (e.g. a hardcoded secret) is an automatic block,\nregardless of the LLM's verdict — the model can't talk it down.\n"
     }
   ],

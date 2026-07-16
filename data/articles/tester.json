@@ -18,7 +18,8 @@
         {
           "name": "openai.yaml",
           "type": "file",
-          "path": "agents/openai.yaml"
+          "path": "agents/openai.yaml",
+          "previewable": false
         }
       ]
     },
@@ -31,6 +32,7 @@
           "name": "test-notes.md",
           "type": "file",
           "path": "references/test-notes.md",
+          "previewable": true,
           "content": "# Tester notes\n\nScope = compile + launch + one assertion (core screen renders, no crash on launch).\n\n- `runner.smoke_test()`: deterministic orchestration + parsing; returns a `SmokeReport`\n  (`status` ∈ pass | build-failed | launch-failed | unavailable | error). The command runner is\n  injectable, so build/launch/parse/gate logic is unit-tested offline (no Mac) in CI.\n- `TesterAgent`: runs the smoke test under the agent-core contract; on failure, adds an LLM\n  diagnosis (likely cause + fix). Passing runs spend no tokens.\n- `scripts/build.sh`: `xcodebuild` for the app scheme (macOS).\n- `scripts/smoke.sh`: boot a simulator, install, launch, assert the core screen, capture crash log.\n\nThe `unavailable` status keeps off-macOS CI (Linux/Windows) inconclusive rather than a false fail —\nthe offline test suite exercises every path via a stubbed command runner.\n\nFull UI automation comes in a later step (deck Step 3+).\n"
         }
       ]
@@ -43,12 +45,14 @@
         {
           "name": "build.sh",
           "type": "file",
-          "path": "scripts/build.sh"
+          "path": "scripts/build.sh",
+          "previewable": false
         },
         {
           "name": "smoke.sh",
           "type": "file",
-          "path": "scripts/smoke.sh"
+          "path": "scripts/smoke.sh",
+          "previewable": false
         }
       ]
     },
@@ -65,27 +69,32 @@
             {
               "name": "__init__.py",
               "type": "file",
-              "path": "src/tester/__init__.py"
+              "path": "src/tester/__init__.py",
+              "previewable": false
             },
             {
               "name": "__main__.py",
               "type": "file",
-              "path": "src/tester/__main__.py"
+              "path": "src/tester/__main__.py",
+              "previewable": false
             },
             {
               "name": "agent.py",
               "type": "file",
-              "path": "src/tester/agent.py"
+              "path": "src/tester/agent.py",
+              "previewable": false
             },
             {
               "name": "models.py",
               "type": "file",
-              "path": "src/tester/models.py"
+              "path": "src/tester/models.py",
+              "previewable": false
             },
             {
               "name": "runner.py",
               "type": "file",
-              "path": "src/tester/runner.py"
+              "path": "src/tester/runner.py",
+              "previewable": false
             }
           ]
         }
@@ -99,19 +108,22 @@
         {
           "name": "test_tester.py",
           "type": "file",
-          "path": "tests/test_tester.py"
+          "path": "tests/test_tester.py",
+          "previewable": false
         }
       ]
     },
     {
       "name": "pyproject.toml",
       "type": "file",
-      "path": "pyproject.toml"
+      "path": "pyproject.toml",
+      "previewable": false
     },
     {
       "name": "SKILL.md",
       "type": "file",
       "path": "SKILL.md",
+      "previewable": true,
       "content": "---\nname: tester\ndescription: Smoke-test an iOS app build — compile, launch in the simulator, confirm the core screen renders without crash, and diagnose failures. Use at the end of a sprint day.\nallowed-tools: Bash, Read\n---\n# Tester\n\nCompiles an iOS app scheme, launches it in the simulator, and asserts it stays up (core screen\nrenders, no crash on launch). Scope = **compile + launch + one liveness assertion**, not full UI\nautomation. The gate is a clean `pass`; a build/launch failure is reported with the log tail, the\ncrash-log path, and an LLM-written diagnosis (likely cause + fix).\n\n## Layers\n- `src/tester/runner.py` — deterministic `smoke_test(app_dir, scheme, bundle_id)`. Orchestrates the\n  two shell scripts, parses the result, and returns a structured `SmokeReport`. No LLM. The command\n  runner is injectable, so the logic is unit-tested offline (no Mac) in CI.\n- `src/tester/agent.py` — `TesterAgent` on the agent-core contract (budget, cost, tracking). Runs\n  the smoke test; on a **build-failed / launch-failed** result it asks the model for a short\n  diagnosis. A passing run spends no tokens.\n- `scripts/build.sh` / `scripts/smoke.sh` — the real macOS `xcodebuild` + `simctl` capability.\n\n## Run it\n```\npython -m tester [APP_DIR] [SCHEME] [BUNDLE_ID]     # deterministic core, prints status\npython -m tester --json                              # full SmokeReport as JSON\n```\nExit code: `0` pass · `1` build/launch failure · `2` unavailable (not macOS / no Xcode) or error.\n\n`status` separates a broken app (`build-failed` / `launch-failed`) from \"can't run here\"\n(`unavailable`), so off-macOS runs are inconclusive rather than false failures.\n"
     }
   ],

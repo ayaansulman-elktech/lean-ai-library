@@ -662,7 +662,7 @@
           ${files.map((file, index) => `
             <div class="file-tree-row">
               <span>${index === files.length - 1 ? "└──" : "├──"} </span>
-              <button type="button" data-file-index="${index}" ${file.kind === "file" ? 'disabled title="Preview unavailable"' : ""}>${escapeHtml(file.name)}</button>
+              <button type="button" data-file-index="${index}" ${file.kind !== "md" ? 'disabled title="Only Markdown files can be previewed"' : ""}>${escapeHtml(file.name)}</button>
             </div>
           `).join("")}
         </div>
@@ -691,12 +691,12 @@
     const sourceFiles = flattenFileTree(article.fileTree || []);
     const files = sourceFiles.map((file) => ({
       name: file.name,
-      kind: file.name.toLowerCase().endsWith(".json") ? "json" : file.name.toLowerCase().endsWith(".md") ? "md" : "file",
+      kind: file.name.toLowerCase().endsWith(".md") ? "md" : "file",
       path: "",
       content: file.content || ""
     }));
 
-    if (!files.length) files.push({ name: "block.json", kind: "json", content: JSON.stringify(manifest, null, 2) });
+    if (!files.length) files.push({ name: "block.json", kind: "file", content: JSON.stringify(manifest, null, 2) });
 
     const readme = files.find((file) => file.name.toLowerCase() === "readme.md");
     const skill = files.find((file) => file.name.toLowerCase() === "skill.md");
@@ -718,11 +718,11 @@
 
     (Array.isArray(article.files) ? article.files : []).forEach((file) => {
       if (typeof file === "string") {
-        files.push({ name: file.split("/").pop(), kind: file.endsWith(".json") ? "json" : "md", path: file });
+        files.push({ name: file.split("/").pop(), kind: file.toLowerCase().endsWith(".md") ? "md" : "file", path: file });
       } else if (file && file.name) {
         files.push({
           name: file.name,
-          kind: file.kind || (file.name.endsWith(".json") ? "json" : "md"),
+          kind: file.name.toLowerCase().endsWith(".md") ? "md" : "file",
           content: file.content || "",
           path: file.path || ""
         });

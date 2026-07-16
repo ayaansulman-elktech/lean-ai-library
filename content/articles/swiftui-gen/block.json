@@ -22,7 +22,8 @@
           {
             "name": "openai.yaml",
             "type": "file",
-            "path": "agents/openai.yaml"
+            "path": "agents/openai.yaml",
+            "previewable": false
           }
         ]
       },
@@ -35,6 +36,7 @@
             "name": "component-map.md",
             "type": "file",
             "path": "references/component-map.md",
+            "previewable": true,
             "content": "# Wireframe element → SwiftUI + tokens\n\nThe map the agent follows to turn a wireframe screen into token-driven SwiftUI. Style **only**\nwith `Tokens.*` (from `design-system/tokens/build/Tokens.swift`); never hardcode colors/fonts/sizes.\n\n| Wireframe element | SwiftUI | Tokens |\n|---|---|---|\n| screen title | `Text(title).font(Tokens.typographyDisplay)` | `typographyDisplay`, `colorTextPrimary` |\n| section heading | `Text(...).font(Tokens.typographyTitle)` | `typographyTitle`, `colorTextPrimary` |\n| body text | `Text(...).font(Tokens.typographyBody)` | `typographyBody`, `colorTextSecondary` |\n| caption / legal | `Text(...).font(Tokens.typographyCaption)` | `typographyCaption`, `colorTextSecondary` |\n| primary action (`actions[]`) | `Button { } label: { ... }` filled | `colorBrand`, `colorTextInverse`, `radiusPill`, `spacingMd` |\n| secondary button | bordered `Button` | `colorSurface`, `colorNeutral200`, `radiusPill` |\n| link (`links[]`) | `NavigationLink { <target>View() } label: {…}` | `colorAccent` |\n| list row | `List` / `HStack` row | `colorSurface`, `colorNeutral200`, `spacingMd` |\n| image / media | `Image(...)` placeholder | `radiusMd`, `colorNeutral100` |\n| card | `VStack{…}.background(Tokens.colorSurface).cornerRadius(Tokens.radiusMd)` | `colorSurface`, `radiusMd` |\n\n## Layout rules\n- Root each screen in a `NavigationStack`; group content in a `VStack(spacing: Tokens.spacingMd)`.\n- Screen padding = `Tokens.spacingLg`; inter-element = `Tokens.spacingMd`.\n- One primary action per screen (`colorBrand` fill); everything else secondary/tinted.\n- Min 44pt hit targets. Respect safe areas. Support light/dark (tokens carry both via Color).\n\n## Naming\n- screen `id` → `PascalCaseView` (e.g. `outfit_scan` → `OutfitScanView`).\n- A `link.to` targets the destination screen's view: `NavigationLink { CaptureView() }`.\n"
           }
         ]
@@ -52,22 +54,26 @@
               {
                 "name": "__init__.py",
                 "type": "file",
-                "path": "src/swiftui_gen/__init__.py"
+                "path": "src/swiftui_gen/__init__.py",
+                "previewable": false
               },
               {
                 "name": "agent.py",
                 "type": "file",
-                "path": "src/swiftui_gen/agent.py"
+                "path": "src/swiftui_gen/agent.py",
+                "previewable": false
               },
               {
                 "name": "checks.py",
                 "type": "file",
-                "path": "src/swiftui_gen/checks.py"
+                "path": "src/swiftui_gen/checks.py",
+                "previewable": false
               },
               {
                 "name": "spec.py",
                 "type": "file",
-                "path": "src/swiftui_gen/spec.py"
+                "path": "src/swiftui_gen/spec.py",
+                "previewable": false
               }
             ]
           }
@@ -81,19 +87,22 @@
           {
             "name": "test_swiftui_gen.py",
             "type": "file",
-            "path": "tests/test_swiftui_gen.py"
+            "path": "tests/test_swiftui_gen.py",
+            "previewable": false
           }
         ]
       },
       {
         "name": "pyproject.toml",
         "type": "file",
-        "path": "pyproject.toml"
+        "path": "pyproject.toml",
+        "previewable": false
       },
       {
         "name": "SKILL.md",
         "type": "file",
         "path": "SKILL.md",
+        "previewable": true,
         "content": "---\nname: swiftui-gen\ndescription: Turn an A-graded wireframe (screen spec) + design tokens into token-driven SwiftUI, one screen at a time, statically checked (unknown tokens, hardcoded styles, unbalanced brackets). Use after wireframing, before the UX/security audits.\nallowed-tools: Read, Write, Bash\n---\n# SwiftUI generation agent\n\nThe **prototype** step of the design-automation pipeline (deck p.60 step 2): apply the design\nsystem onto the wireframe. LLM writes the view; a deterministic checker gates it and, on failure,\nre-asks once with the issues.\n\n```python\nfrom swiftui_gen import SwiftUIGenAgent\nres = SwiftUIGenAgent(ctx, out_dir=\"apps/color-matching/Sources\").run({\n    \"spec\": wireframe_result[\"spec\"],      # {screens: [...]} from the wireframing agent\n    \"tokens\": token_names,                  # from design-system/tokens/build/Tokens.swift\n    \"app\": \"ColorMatching\",\n    \"copy\": {\"onboarding\": {...}},          # optional micro-copy per screen (from microcopy agent)\n})\nres.output[\"files\"]        # [{screen_id, view, filename, swift, passed, issues}]\nres.output[\"all_passed\"]   # gate\n```\n\n**Hard rule:** screens must style **only** with `Tokens.*` — hardcoded colors/fonts/sizes fail the\ncheck (they'd break the per-app universe mechanism). Generation is **per screen** so each can be\naudited and adjusted independently. See `references/component-map.md` for the element→SwiftUI map.\n"
       }
     ]

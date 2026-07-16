@@ -11,7 +11,14 @@
     "raw"
   ],
   "sourcePath": "libraries/ios-ready/raw/face-parsing",
-  "fileTree": [],
+  "fileTree": [
+    {
+      "name": ".gitkeep",
+      "type": "file",
+      "path": ".gitkeep",
+      "previewable": false
+    }
+  ],
   "slug": "ios-face-parsing",
   "contentPath": "",
   "coverPath": "content/articles/ios-face-parsing/thumbnail.png",

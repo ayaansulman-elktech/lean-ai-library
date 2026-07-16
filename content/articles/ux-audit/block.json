@@ -22,7 +22,8 @@
           {
             "name": "openai.yaml",
             "type": "file",
-            "path": "agents/openai.yaml"
+            "path": "agents/openai.yaml",
+            "previewable": false
           }
         ]
       },
@@ -39,7 +40,8 @@
               {
                 "name": "report.html",
                 "type": "file",
-                "path": "assets/report-template/report.html"
+                "path": "assets/report-template/report.html",
+                "previewable": false
               }
             ]
           }
@@ -54,6 +56,7 @@
             "name": "ux-checklist.md",
             "type": "file",
             "path": "references/ux-checklist.md",
+            "previewable": true,
             "content": "# UX checklist\n\nScore each screen 0–5 on ten criteria — nine core UX checklist criteria plus `hig`:\n\n- Hierarchy, Patterns, Rhythm, Contrast, Consistency, Scannability, Readability, Emphasis, Flow\n- HIG: native components, SF Symbols, 44pt hit targets, safe areas, Dynamic Type\n- Reading pattern: does the eye follow F/Z toward the primary action?\n\n**Saliency** (`vis_models.saliency`): the predicted attention heatmap must peak on the primary\naction — `analyze(map, cta_region).passes` enforces it, and the report embeds the colour-mapped\nheatmap so weak spots are visible. Backends: **SUM** (deep, stills, weights in\n`libraries/ios-ready/raw/SUM`) → **classical** (real pixel-based center-surround + edge, stdlib-only,\nthe default when SUM is absent) → **mock** (deterministic, pixel-free, for CI/tests). **ViNet**\n(onboarding video) stays deferred.\n"
           }
         ]
@@ -66,7 +69,8 @@
           {
             "name": "saliency.py",
             "type": "file",
-            "path": "scripts/saliency.py"
+            "path": "scripts/saliency.py",
+            "previewable": false
           }
         ]
       },
@@ -83,22 +87,26 @@
               {
                 "name": "__init__.py",
                 "type": "file",
-                "path": "src/ux_audit/__init__.py"
+                "path": "src/ux_audit/__init__.py",
+                "previewable": false
               },
               {
                 "name": "agent.py",
                 "type": "file",
-                "path": "src/ux_audit/agent.py"
+                "path": "src/ux_audit/agent.py",
+                "previewable": false
               },
               {
                 "name": "models.py",
                 "type": "file",
-                "path": "src/ux_audit/models.py"
+                "path": "src/ux_audit/models.py",
+                "previewable": false
               },
               {
                 "name": "report.py",
                 "type": "file",
-                "path": "src/ux_audit/report.py"
+                "path": "src/ux_audit/report.py",
+                "previewable": false
               }
             ]
           }
@@ -112,19 +120,22 @@
           {
             "name": "test_ux_audit.py",
             "type": "file",
-            "path": "tests/test_ux_audit.py"
+            "path": "tests/test_ux_audit.py",
+            "previewable": false
           }
         ]
       },
       {
         "name": "pyproject.toml",
         "type": "file",
-        "path": "pyproject.toml"
+        "path": "pyproject.toml",
+        "previewable": false
       },
       {
         "name": "SKILL.md",
         "type": "file",
         "path": "SKILL.md",
+        "previewable": true,
         "content": "---\nname: ux-audit\ndescription: Audit a screen (or screen video) against the UX checklist and saliency, return a scored PDF. Use after a screen is designed and before sign-off.\nallowed-tools: Read, Write, Bash\n---\n# UX audit\n\nA real agent (`src/ux_audit/`, on `agent-core`): scores a screen 0-5 on the ten HIG-anchored\nchecklist criteria (`references/ux-checklist.md`, incl. `hig` conformance) and grades A-F.\n\n```python\nfrom ux_audit import UXAuditAgent\nres = UXAuditAgent(ctx).run(screen_html_or_description)   # res.output[\"grade\"], [\"scores\"], [\"average\"]\n```\n\n**Saliency attention check — live, from real pixels.** Add a rendered screenshot and the audit\npredicts an attention heatmap, checks it peaks on the primary action, and embeds a colour-mapped\nheatmap image in the report:\n\n```python\nres = UXAuditAgent(ctx).run({\"screen\": html, \"screenshot\": \"screen.png\",\n                             \"cta_region\": [0.25, 0.80, 0.50, 0.12]})\nres.output[\"saliency\"]   # {status, passes, primary_attention, focal_point, heatmap: \"data:image/png;base64,...\"}\n```\n\nBackends (`vis_models.saliency.build_saliency`), best → simplest:\n- **SUM** — deep model for stills; used when its weights are in `libraries/ios-ready/raw/SUM`.\n- **classical** *(default)* — a real, pixel-based center-surround + edge saliency, **stdlib-only**,\n  so it runs anywhere (no torch/weights). This is what `UXAuditAgent` auto-builds when you pass a\n  screenshot but no model.\n- **mock** — deterministic, pixel-ignoring; for unit tests/demos (`offline=True`).\n\nThe report renders the heatmap (cool = ignored, warm = high attention, white box = the CTA) so it\n**shows the weak areas**, not just scores them. **ViNet (onboarding video) stays deferred.**\n"
       }
     ]

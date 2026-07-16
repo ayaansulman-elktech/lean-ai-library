@@ -8,6 +8,7 @@ import { serveCommand } from './commands/serve';
 import { feedCommand } from './commands/feed';
 import { articleCommand } from './commands/article';
 
+import { runInteractiveCli } from './interactive';
 import { thumbnailsCommand } from './commands/thumbnails';
 const program = new Command();
 
@@ -26,4 +27,12 @@ program.addCommand(feedCommand);
 program.addCommand(articleCommand);
 
 program.addCommand(thumbnailsCommand);
-program.parse();
+async function main() {
+  if (process.argv.length <= 2) await runInteractiveCli();
+  else program.parse();
+}
+
+main().catch((error) => {
+  console.error(error.message || error);
+  process.exitCode = 1;
+});

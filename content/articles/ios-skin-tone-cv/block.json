@@ -19,6 +19,7 @@
         "name": "README.md",
         "type": "file",
         "path": "README.md",
+        "previewable": true,
         "content": "# skin-tone-cv (model card)\n\n- **Task:** extract skin / hair / eye tones from a selfie → features for seasonal palette.\n- **Status:** raw → ready (Phase-1 reference model that proves the pipeline).\n- **Inputs:** image. **Outputs:** tone features / palette class.\n- **Source / license:** <fill>.\n- **Ready build:** `../../ready/skin-tone-cv.mlpackage` (CoreML, on-device).\n"
       }
     ]

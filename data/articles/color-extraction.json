@@ -22,12 +22,14 @@
         {
           "name": "__init__.py",
           "type": "file",
-          "path": "src/__init__.py"
+          "path": "src/__init__.py",
+          "previewable": false
         },
         {
           "name": "color_extraction.py",
           "type": "file",
-          "path": "src/color_extraction.py"
+          "path": "src/color_extraction.py",
+          "previewable": false
         }
       ]
     },
@@ -39,30 +41,34 @@
         {
           "name": "test_color_extraction.py",
           "type": "file",
-          "path": "tests/test_color_extraction.py"
+          "path": "tests/test_color_extraction.py",
+          "previewable": false
         }
       ]
     },
     {
       "name": "__init__.py",
       "type": "file",
-      "path": "__init__.py"
+      "path": "__init__.py",
+      "previewable": false
     },
     {
       "name": "block.json",
       "type": "file",
       "path": "block.json",
-      "content": "{\n  \"name\": \"color-extraction\",\n  \"version\": \"0.1.0\",\n  \"task\": \"dominant color extraction from an image\",\n  \"summary\": \"Extract an image's dominant colors with their coverage percentages.\",\n  \"description\": \"Upload an image and get its dominant colors as [{hex, percentage}] sorted by coverage. Near-identical colors are grouped by snapping each channel to a small grid, so the result is a handful of meaningful swatches rather than thousands of near-duplicates. The pure-Python core (extract_from_pixels) is dependency-free and tested; extract_colors() reads a file via Pillow (optional [image] extra). Feeds color-matching (the dominant/skin tone becomes the seasonal input).\",\n  \"keywords\": [\"color\", \"extraction\", \"palette\", \"image\", \"color-matching\"],\n  \"inputs\": \"image file (path), or a list of (r,g,b) pixels\",\n  \"outputs\": \"[{hex, percentage}] sorted by coverage descending\",\n  \"lang\": \"python\",\n  \"license\": \"proprietary\",\n  \"source\": \"\",\n  \"status\": \"stable\",\n  \"entry\": \"blocks.color_extraction.src.color_extraction:extract_colors\",\n  \"swift\": null,\n  \"deps\": [],\n  \"mcp\": null\n}\n"
+      "previewable": false
     },
     {
       "name": "cover.svg",
       "type": "file",
-      "path": "cover.svg"
+      "path": "cover.svg",
+      "previewable": false
     },
     {
       "name": "README.md",
       "type": "file",
       "path": "README.md",
+      "previewable": true,
       "content": "# Color extraction\n\n**What:** image → its dominant colors with coverage percentages.\n**In / out:** `image_path` → `[{\"hex\": \"#RRGGBB\", \"percentage\": <float>}, …]` (sorted desc).\n**First needed by:** Color Matching (Sprint 1) — the selfie's tones feed the palette match.\n\n```python\nfrom color_extraction import extract_colors, extract_from_pixels\n\nextract_colors(\"selfie.jpg\", n=8)          # top 8 colors + % (needs Pillow)\nextract_from_pixels(pixels, n=8)           # pure-Python core (tested, no deps)\n```\n\n- Near-identical colors are grouped (channel quantization) → a few meaningful swatches, not\n  thousands of near-duplicates. `n=None` returns every bucket.\n- Pure-Python core is dependency-free and tested; `extract_colors()` needs **Pillow**\n  (`pip install pillow`). CLI: `python color_extraction.py image.jpg [n]`.\n- Visual test: `../color-test-ui/index.html`.\n"
     }
   ],

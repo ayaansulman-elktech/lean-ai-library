@@ -11,7 +11,14 @@
     "raw"
   ],
   "sourcePath": "libraries/ios-ready/raw/moodboard-purity",
-  "fileTree": [],
+  "fileTree": [
+    {
+      "name": ".gitkeep",
+      "type": "file",
+      "path": ".gitkeep",
+      "previewable": false
+    }
+  ],
   "slug": "ios-moodboard-purity",
   "contentPath": "",
   "coverPath": "assets/default_thumbnail.png",

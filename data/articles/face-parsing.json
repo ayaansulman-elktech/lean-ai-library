@@ -23,32 +23,38 @@
         {
           "name": "__init__.py",
           "type": "file",
-          "path": "src/__init__.py"
+          "path": "src/__init__.py",
+          "previewable": false
         },
         {
           "name": "labels.py",
           "type": "file",
-          "path": "src/labels.py"
+          "path": "src/labels.py",
+          "previewable": false
         },
         {
           "name": "metrics.py",
           "type": "file",
-          "path": "src/metrics.py"
+          "path": "src/metrics.py",
+          "previewable": false
         },
         {
           "name": "mock.py",
           "type": "file",
-          "path": "src/mock.py"
+          "path": "src/mock.py",
+          "previewable": false
         },
         {
           "name": "model.py",
           "type": "file",
-          "path": "src/model.py"
+          "path": "src/model.py",
+          "previewable": false
         },
         {
           "name": "segmask.py",
           "type": "file",
-          "path": "src/segmask.py"
+          "path": "src/segmask.py",
+          "previewable": false
         }
       ]
     },
@@ -60,30 +66,34 @@
         {
           "name": "test_model.py",
           "type": "file",
-          "path": "tests/test_model.py"
+          "path": "tests/test_model.py",
+          "previewable": false
         }
       ]
     },
     {
       "name": "__init__.py",
       "type": "file",
-      "path": "__init__.py"
+      "path": "__init__.py",
+      "previewable": false
     },
     {
       "name": "block.json",
       "type": "file",
       "path": "block.json",
-      "content": "{\n  \"name\": \"face-parsing\",\n  \"version\": \"0.1.0\",\n  \"task\": \"facial segmentation (skin/eyes/lips/hair)\",\n  \"summary\": \"Per-pixel face-part masks from a selfie.\",\n  \"description\": \"BiSeNet (ResNet18/34) 19-class CelebAMask-HQ face parsing. Segments a face into parts (skin, eyes, lips, hair, ...) so the Colors Matching app can extract colors from each region. Real weights run in iOS Ready; a deterministic synthetic mask stands in for CI.\",\n  \"keywords\": [\"segmentation\", \"face\", \"hair\", \"lips\", \"eyes\", \"color-matching\"],\n  \"inputs\": \"image (selfie, RGB)\",\n  \"outputs\": \"19-class segmentation mask (SegMask) + skin/eyes/lips/hair part groups\",\n  \"license\": \"MIT\",\n  \"source\": \"https://github.com/yakhyo/face-parsing\",\n  \"status\": \"raw\",\n  \"apple_native\": {\n    \"framework\": \"AVFoundation AVSemanticSegmentationMatte (skin/hair/teeth/glasses); Vision face landmarks\",\n    \"verdict\": \"partial\",\n    \"note\": \"Apple provides on-device per-pixel SKIN and HAIR mattes via AVSemanticSegmentationMatte (iOS 13+, produced at photo capture), plus eye/lip LANDMARKS via Vision. It has no per-pixel EYES/LIPS class and no unified face parse, and the mattes are capture-time only. face-parsing covers eyes+lips regions and runs on any image; for skin+hair on captured selfies, Apple's native mattes are a strong on-device alternative worth preferring. See README 'Apple-native alternatives'.\"\n  },\n  \"adapter\": \"blocks.face_parsing.src.model:FaceParsingModel\",\n  \"mock\": \"blocks.face_parsing.src.mock:MockFaceParsing\",\n  \"deps\": [],\n  \"weights\": \"ios-ready/raw/face-parsing\",\n  \"ready_build\": null,\n  \"mcp\": null\n}\n"
+      "previewable": false
     },
     {
       "name": "cover.svg",
       "type": "file",
-      "path": "cover.svg"
+      "path": "cover.svg",
+      "previewable": false
     },
     {
       "name": "README.md",
       "type": "file",
       "path": "README.md",
+      "previewable": true,
       "content": "# face-parsing (model card)\n\nFacial segmentation — per-pixel face-part masks\n([yakhyo/face-parsing](https://github.com/yakhyo/face-parsing), BiSeNet / ResNet18–34).\n\n- **Task:** segment a selfie into 19 CelebAMask-HQ classes; grouped here into **skin / eyes / lips\n  / hair** — the regions the Colors Matching app extracts colors from.\n- **Inputs:** a face image (RGB). **Outputs:** a `SegMask` (grid of class ids) + `part_summary`\n  (present / coverage / bbox per part).\n- **Status:** `raw` — self-contained block (`deps: []`). Real `.pt`/`.onnx` weights run in the\n  iOS Ready (`ios-ready/raw/face-parsing`); CI uses a deterministic synthetic mask.\n- **Apple-native:** *partial* — Apple has on-device **skin & hair** pixel mattes\n  (`AVSemanticSegmentationMatte`, iOS 13+) and eye/lip **landmarks** (Vision). See below.\n\n## Use\n```python\nfrom blocks.face_parsing.src import build\nfrom blocks.face_parsing.src.metrics import part_summary\n\nmodel = build()                         # real BiSeNet on the farm; synthetic mask elsewhere\nmask  = model.predict(\"selfie.png\")\npart_summary(mask)                      # {\"skin\": {...}, \"eyes\": {...}, \"lips\": {...}, \"hair\": {...}}\nmask.bbox([4, 5])                       # where the eyes are (normalized box)\n```\n\n## Apple-native alternatives (researched)\n\nChecked per the task requirement — Apple *partially* covers this on-device:\n\n| Apple API | Covers | Since | Gap vs face-parsing |\n|---|---|---|---|\n| AVFoundation `AVSemanticSegmentationMatte` (`.skin`, `.hair`, `.teeth`, `.glasses`) | per-pixel **skin & hair** mattes | iOS 13 | no eyes/lips class; produced at photo **capture** (`enabledSemanticSegmentationMatteTypes`), not on an arbitrary image |\n| Vision `VNDetectFaceLandmarksRequest` | eyes, lips, brows, nose, contour, pupils — as **points** | iOS 11 | geometric landmarks, not pixel masks |\n| Vision `VNGeneratePersonSegmentationRequest` / `…PersonInstanceMaskRequest` | whole **person** foreground | iOS 15 / 17 | not face parts |\n| ARKit `ARFaceAnchor` | 3D face mesh + blendshapes | iOS 11 | needs TrueDepth; no semantic part masks |\n\n**Verdict — partial.** For a captured selfie, Apple's native **skin + hair** mattes are a strong\non-device option and worth preferring for those parts. face-parsing is still needed for **eyes +\nlips** as pixel regions, a unified parse, and running on non-capture images. Recommendation for\nColors Matching: use Apple's native skin/hair mattes where available, face-parsing for eyes/lips\n(and as the cross-part fallback).\n\n## Running the real model (iOS Ready)\nFetch the repo + a weight (`resnet18.pt`) into `ios-ready/raw/face-parsing/`, install `torch` +\n`opencv`, then `build()` returns the real `FaceParsingModel` (`is_available()` gates the fallback).\n"
     }
   ],

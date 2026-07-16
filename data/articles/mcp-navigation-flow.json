@@ -15,6 +15,7 @@
       "name": "README.md",
       "type": "file",
       "path": "README.md",
+      "previewable": true,
       "content": "# Navigation / Flow Analysis MCP\n\nAn MCP server that analyzes a screen flow: builds the navigation graph and computes\nclicks-to-action, navigation depth, orphan pages / dead ends, and features-per-page.\n\nThe wireframing agent calls it to grade a flow (the \"A score\" loop). The deterministic\nlogic mirrors `agents/wireframing/scripts/flow_audit.py`; exposing it as an MCP lets any\nagent (Codex / Claude) call it directly.\n\n_Server implementation: TODO._\n"
     }
   ],

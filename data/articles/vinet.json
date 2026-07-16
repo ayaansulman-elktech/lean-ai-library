@@ -22,22 +22,26 @@
         {
           "name": "__init__.py",
           "type": "file",
-          "path": "src/__init__.py"
+          "path": "src/__init__.py",
+          "previewable": false
         },
         {
           "name": "metrics.py",
           "type": "file",
-          "path": "src/metrics.py"
+          "path": "src/metrics.py",
+          "previewable": false
         },
         {
           "name": "mock.py",
           "type": "file",
-          "path": "src/mock.py"
+          "path": "src/mock.py",
+          "previewable": false
         },
         {
           "name": "model.py",
           "type": "file",
-          "path": "src/model.py"
+          "path": "src/model.py",
+          "previewable": false
         }
       ]
     },
@@ -49,30 +53,34 @@
         {
           "name": "test_model.py",
           "type": "file",
-          "path": "tests/test_model.py"
+          "path": "tests/test_model.py",
+          "previewable": false
         }
       ]
     },
     {
       "name": "__init__.py",
       "type": "file",
-      "path": "__init__.py"
+      "path": "__init__.py",
+      "previewable": false
     },
     {
       "name": "block.json",
       "type": "file",
       "path": "block.json",
-      "content": "{\n  \"name\": \"vinet\",\n  \"version\": \"0.1.0\",\n  \"task\": \"video saliency (per-frame attention for a clip)\",\n  \"summary\": \"Predicts where viewers look across the frames of a video clip.\",\n  \"description\": \"ViNet-S (ViNet++, U-Net decoder over an S3D backbone) predicts a per-frame human-attention heatmap for a video. Targets the maintained successor because the original ViNet's weights are no longer published; ViNet-S is the same task, ~36MB, and CPU-runnable. Used to check that an onboarding clip leads the eye toward the primary action over time. Real weights run in iOS Ready (or any torch box); a deterministic mock stands in for CI.\",\n  \"keywords\": [\"saliency\", \"video\", \"attention\", \"onboarding\", \"vinet-s\"],\n  \"inputs\": \"video clip — a folder of frames, or a list of frame paths (>= 1; 32-frame window)\",\n  \"outputs\": \"per-frame saliency maps (list of vis_models SaliencyMap)\",\n  \"license\": \"MIT\",\n  \"source\": \"https://github.com/ViNet-Saliency/vinet_v2\",\n  \"status\": \"raw\",\n  \"apple_native\": {\n    \"framework\": \"Vision / ARKit\",\n    \"verdict\": \"no\",\n    \"note\": \"Apple exposes no video attention/saliency-prediction API (Vision does stills detection, ARKit does live gaze) — the model is needed.\"\n  },\n  \"adapter\": \"blocks.vinet.src.model:ViNetModel\",\n  \"mock\": \"blocks.vinet.src.mock:MockViNet\",\n  \"deps\": [\"vis_models.saliency\"],\n  \"weights\": \"ios-ready/raw/ViNet\",\n  \"ready_build\": null,\n  \"mcp\": null\n}\n"
+      "previewable": false
     },
     {
       "name": "cover.svg",
       "type": "file",
-      "path": "cover.svg"
+      "path": "cover.svg",
+      "previewable": false
     },
     {
       "name": "README.md",
       "type": "file",
       "path": "README.md",
+      "previewable": true,
       "content": "# vinet (model card)\n\nVideo saliency — per-frame human-attention heatmaps for a clip. Targets **ViNet-S**\n([ViNet++ / vinet_v2](https://github.com/ViNet-Saliency/vinet_v2), U-Net decoder over an S3D\nbackbone).\n\n> **Why ViNet-S, not the original ViNet:** the original ViNet's pretrained weights are no longer\n> published (dead link). ViNet-S is its maintained successor — same task, ~36MB, CPU-runnable.\n\n- **Task:** predict where viewers look across the frames of a video (e.g. an onboarding clip).\n- **Inputs:** a clip — a folder of frames, or a list of frame paths. ViNet-S uses a 32-frame\n  window per forward; the adapter slides it to yield one map per frame.\n- **Outputs:** one `vis_models` `SaliencyMap` per frame; `metrics.analyze_clip` reduces the\n  sequence to \"does attention settle on the primary action by the end?\".\n- **Status:** `raw` — Python adapter + offline mock. Real `.pt` weights run in iOS Ready\n  (`ios-ready/raw/ViNet`); CI uses the deterministic mock.\n- **Apple-native:** none — Apple exposes no video attention/saliency-prediction API.\n\n## Use\n```python\nfrom blocks.vinet.src import build\nfrom blocks.vinet.src.metrics import analyze_clip\nfrom vis_models.saliency import Region\n\nmodel = build()                              # real ViNet-S when torch + weights are on the box\nmaps  = model.predict(\"clip/frames\")         # list[SaliencyMap], one per frame\nanalyze_clip(maps, Region(0.30, 0.72, 0.40, 0.16))   # -> settles_on_cta, mean/final attention, …\n```\n\n## Running the real model (iOS Ready / any torch box)\nFetch the `vinet_v2` repo and a ViNet-S checkpoint (`vinet_s_dhf1k.pt`, from the repo's Google\nDrive bundle) under `ios-ready/raw/` — the adapter auto-discovers `ViNet_S_model.py` and a\n`vinet_s*.pt` weight. Then `build()` returns the real `ViNetModel` (`is_available()` gates the\nfallback). Preprocessing (224×384 + ImageNet norm, 32-frame clip) matches the repo; verified\nrunning on CPU.\n"
     }
   ],
