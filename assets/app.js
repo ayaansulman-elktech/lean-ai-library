@@ -382,7 +382,7 @@
           <section class="updates-group" id="${escapeAttribute(group.id)}" data-history-date="${escapeAttribute(group.date)}">
             <header class="updates-group-header">
               <h2>${escapeHtml(group.title)}</h2>
-              <p>${escapeHtml(group.date)} Â· ${group.articles.length} new blocks</p>
+              <p>${escapeHtml(group.date)} &middot; ${group.articles.length} new blocks</p>
             </header>
             <div class="updates-grid">${cards}</div>
           </section>
@@ -647,8 +647,8 @@
       <div class="file-tree-viewer">
         <div class="file-tree-content">
           <div>${escapeHtml(article.slug)}/</div>
-          <div class="file-tree-row"><span>â”œâ”€â”€ </span><button>block.json</button></div>
-          <div class="file-tree-row"><span>â””â”€â”€ </span><button>README.md</button></div>
+          <div class="file-tree-row"><span>&#9500;&#9472;&#9472; </span><button>block.json</button></div>
+          <div class="file-tree-row"><span>&#9492;&#9472;&#9472; </span><button>README.md</button></div>
         </div>
       </div>
     `;
@@ -661,7 +661,7 @@
           <div>${escapeHtml(article.slug)}/</div>
           ${files.map((file, index) => `
             <div class="file-tree-row">
-              <span>${index === files.length - 1 ? "â””â”€â”€" : "â”œâ”€â”€"} </span>
+              <span>${index === files.length - 1 ? "&#9492;&#9472;&#9472;" : "&#9500;&#9472;&#9472;"} </span>
               <button type="button" data-file-index="${index}" ${file.kind !== "md" ? 'disabled title="Only Markdown files can be previewed"' : ""}>${escapeHtml(file.name)}</button>
             </div>
           `).join("")}
