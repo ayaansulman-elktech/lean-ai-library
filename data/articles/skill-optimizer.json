@@ -3,7 +3,7 @@
   "type": "agent",
   "category": "agent-library",
   "name": "skill-optimizer",
-  "shortDescription": "Build-time MLOps platform that optimizes SKILL.md files as ML artifacts.",
+  "shortDescription": "Optimizes skills as measurable artifacts",
   "description": "Build-time MLOps platform that optimizes SKILL.md files as ML artifacts.",
   "keywords": [
     "skill",

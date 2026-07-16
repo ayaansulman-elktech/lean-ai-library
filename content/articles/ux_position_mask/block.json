@@ -24,7 +24,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Flags unsafe interface element positions"
+  },
   "attachments": {
     "thumbnail": "content/articles/ux_position_mask/thumbnail.png",
     "pdf": null

@@ -106,7 +106,9 @@
       "sha256": "48cf9843cf1dff1086fc4b17957472d53bde3d007579fb8806e7e0b93e0acdee"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Edits faces through segmentation masks"
+  },
   "attachments": {
     "thumbnail": null,
     "pdf": null

@@ -3,7 +3,7 @@
   "type": "model",
   "category": "model-library",
   "name": "face-editor",
-  "shortDescription": "Edit a face by editing its segmentation mask.",
+  "shortDescription": "Edits faces through segmentation masks",
   "description": "MaskGAN (CelebAMask-HQ, CVPR 2020). Reassign regions of the 19-class face parse - remove glasses, add a hat, reshape hair - and the generator regenerates the image to agree with the edited mask. Composes with blocks/face_parsing, which produces the mask. RESTRICTED LICENSE: non-commercial research and education only; must not reach apps/. Enforced in code - the real adapter is unavailable unless FACTORY_ALLOW_NONCOMMERCIAL=1, and build() returns the deterministic mock instead.",
   "keywords": [
     "face",

@@ -70,8 +70,8 @@ html.dark-theme {
 }
 
 .theme-toggle {
-  position: absolute;
-  top: 24px;
+  position: fixed;
+  top: 20px;
   right: 24px;
   background: var(--color-soft);
   border: 0;
@@ -83,7 +83,7 @@ html.dark-theme {
   align-items: center;
   justify-content: space-between;
   padding: 4px;
-  z-index: 100;
+  z-index: 220;
   transition: background 0.2s ease;
 }
 
@@ -131,6 +131,7 @@ html {
   font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -412,6 +413,18 @@ input {
   z-index: 2;
 }
 
+html.dark-theme .category-section--featured {
+  background: #2c2c2e !important;
+}
+
+html.dark-theme .category-section--featured h2,
+html.dark-theme .category-section--featured p,
+html.dark-theme .category-section--featured .article-short,
+html.dark-theme .category-section--featured .design-card-label strong,
+html.dark-theme .category-section--featured .design-card-label span {
+  color: #ffffff !important;
+}
+
 .category-section--featured .category-inner {
   max-width: var(--page-max);
   padding: 0;
@@ -483,6 +496,7 @@ input {
 
 .article-card {
   color: var(--color-text);
+  cursor: pointer;
   display: block;
   min-width: 0;
   position: relative;

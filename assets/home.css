@@ -8,12 +8,12 @@ body[data-page="home"] {
   --home-surface: #f2f2f4;
 }
 
-html.dark-theme {
-  --home-ink: #f0f0f0;
-  --home-muted: #a0a0a0;
+html.dark-theme body[data-page="home"] {
+  --home-ink: #f5f5f7;
+  --home-muted: #b0b0b5;
   --home-line: #3a3a3c;
   --home-search-surface: #2c2c2e;
-  --home-surface: #1e1e1e;
+  --home-surface: #1c1c1e;
 }
 
 html.dark-theme body[data-page="home"] .library-toolbar {
@@ -79,10 +79,12 @@ body[data-page="home"] .library-toolbar {
 }
 
 body[data-page="home"] .library-toolbar.is-stuck {
-  left: 0;
+  left: 50%;
   margin: 0;
+  margin-left: -50vw;
   position: fixed;
   top: 0;
+  width: 100vw;
 }
 
 body[data-page="home"] .library-toolbar-inner {

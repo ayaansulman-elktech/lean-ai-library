@@ -3,7 +3,7 @@
   "type": "agent",
   "category": "agent-library",
   "name": "security-review",
-  "shortDescription": "Security-review gate: static scan + LLM review of generated app code.",
+  "shortDescription": "Finds security risks in generated code",
   "description": "Security-review gate: static scan + LLM review of generated app code.",
   "keywords": [
     "security",

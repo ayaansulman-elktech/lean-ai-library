@@ -90,7 +90,9 @@
       "sha256": "94797cf45649a9d4cdcfa5b869d00efb363ef9dc356f75a920d7fc65bc1c116e"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Scores visual coherence through MCP"
+  },
   "attachments": {
     "thumbnail": "content/articles/mcp-purity/thumbnail.png",
     "pdf": null

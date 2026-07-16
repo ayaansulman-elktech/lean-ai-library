@@ -93,7 +93,9 @@
       "sha256": "0112bad7d08570cf94875e2ca7636889fd022f5ad1557c5f4fba7b68bf60b9de"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Tracks viewer attention across video"
+  },
   "attachments": {
     "thumbnail": "content/articles/vinet/thumbnail.png",
     "pdf": null

@@ -98,7 +98,9 @@
       "sha256": "d5da63d375a653c805f649c4852477252bfd5ff6bc4535e8784b80619cd16402"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Finds security risks in generated code"
+  },
   "attachments": {
     "thumbnail": "content/articles/security-review/thumbnail.png",
     "pdf": null

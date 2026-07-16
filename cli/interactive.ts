@@ -93,6 +93,10 @@ async function editFlow(rl: ReturnType<typeof createInterface>): Promise<void> {
     if (['1', '2', '3', '4', '5', '6'].includes(choice)) {
       const field = editableFields[Number(choice) - 1];
       const value = await rl.question(`Enter ${field}: `);
+      if (field === 'shortDescription' && value.trim().length > 42) {
+        console.log(chalk.yellow('Short description must be 42 characters or fewer.'));
+        continue;
+      }
       (record.localOverrides as any)[field] = field === 'keywords' ? value.split(',').map((item) => item.trim()).filter(Boolean) : value.trim();
     } else if (choice === '7') {
       pendingThumbnail = validateAttachment(stripQuotes(await rl.question('Enter thumbnail path: ')), ['.png', '.jpg', '.jpeg', '.webp', '.gif']);

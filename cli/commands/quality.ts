@@ -44,6 +44,7 @@ export function validateCatalog(root: string): number {
     for (const field of ['id', 'type', 'category', 'name', 'shortDescription', 'description']) {
       if (typeof merged[field] !== 'string' || !(merged[field] as string).trim()) errors.push(`${id}: missing ${field}`);
     }
+    if (typeof merged.shortDescription === 'string' && merged.shortDescription.length > 42) errors.push(`${id}: shortDescription exceeds 42 characters`);
     if (!Array.isArray(merged.keywords)) errors.push(`${id}: keywords must be an array`);
     for (const [kind, relative] of Object.entries(record.attachments)) {
       if (relative && !fs.existsSync(path.resolve(root, relative))) errors.push(`${id}: missing ${kind} attachment ${relative}`);

@@ -112,7 +112,9 @@
       "sha256": "3e511a098d18b855ad5a36e48b1e4af610776c7ff95a5f935acc33ec9f8fef86"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Checks apps against App Store rules"
+  },
   "attachments": {
     "thumbnail": "content/articles/apple-compliance/thumbnail.png",
     "pdf": null

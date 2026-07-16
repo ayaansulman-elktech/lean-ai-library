@@ -3,7 +3,7 @@
   "type": "model",
   "category": "ios-ready",
   "name": "SUM",
-  "shortDescription": "Image saliency (where humans look) — UI/marketing",
+  "shortDescription": "Predicts attention on static images",
   "description": "Image saliency (where humans look) — UI/marketing",
   "keywords": [
     "ios",

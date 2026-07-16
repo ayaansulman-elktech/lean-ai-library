@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "folder-test",
+  "factoryData": {
+    "id": "folder-test",
+    "type": "folder",
+    "category": "skills-library",
+    "name": "Folder test",
+    "shortDescription": "Folder content preview",
+    "description": "Test article using a content folder instead of a single PDF or Markdown file.",
+    "keywords": [
+      "folder",
+      "test"
+    ]
+  },
+  "localOverrides": {
+    "shortDescription": "Previews article folders and Markdown"
+  },
+  "attachments": {
+    "thumbnail": null,
+    "pdf": null
+  }
+}

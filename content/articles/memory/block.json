@@ -16,7 +16,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Stores competitor screens and flows"
+  },
   "attachments": {
     "thumbnail": "content/articles/memory/thumbnail.png",
     "pdf": null

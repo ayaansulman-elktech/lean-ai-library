@@ -17,7 +17,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Grounds agent answers in source documents"
+  },
   "attachments": {
     "thumbnail": "content/articles/rag/thumbnail.png",
     "pdf": null

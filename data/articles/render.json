@@ -4,7 +4,7 @@
   "type": "library",
   "category": "code-library",
   "description": "Turns a screen into an **image + the primary-action region**, so the UX-audit's SUM saliency check can run on a *real* screen instead of a screenshot you supply by hand. Mirrors the `vis_models` saliency seam: **protocol + real backend + offline mock + factory**. Wireframes from the wireframing agent use a known structure (`button.action` / `a.nav`), so the CTA box is reliable offline. **Real PNGs** need `pip install \"rendering[browser]\"` + `playwright install chromium` (dev/farm); CI stays on the dependency-free mock.",
-  "shortDescription": "rendering",
+  "shortDescription": "Renders screens for attention analysis",
   "keywords": [],
   "version": "0.1.0",
   "githubPath": "libraries/render",

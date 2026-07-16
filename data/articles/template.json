@@ -4,7 +4,7 @@
   "type": "model",
   "category": "models",
   "description": "Longer description: what it does, how, and any caveats.",
-  "shortDescription": "one-line description shown in the gallery",
+  "shortDescription": "Scaffolds a documented factory block",
   "keywords": [
     "one line: what this model predicts / produces"
   ],

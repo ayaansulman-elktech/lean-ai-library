@@ -4,7 +4,7 @@
   "type": "library",
   "category": "code-library",
   "description": "The factory's **shared LLM layer** — one tested, provider-agnostic gateway + cost meter + tracking that every agent and tool depends on. Extracted from the skill-optimizer so there's a single, hardened seam for all LLM calls (no per-tool reinvention).",
-  "shortDescription": "ml-core",
+  "shortDescription": "Unifies model providers and cost tracking",
   "keywords": [],
   "version": "0.1.0",
   "githubPath": "libraries/ml-core",

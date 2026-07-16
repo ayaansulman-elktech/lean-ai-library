@@ -16,7 +16,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Extracts tones for seasonal palettes"
+  },
   "attachments": {
     "thumbnail": "content/articles/skin-tone-cv/thumbnail.png",
     "pdf": null

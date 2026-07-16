@@ -96,7 +96,9 @@
       "sha256": "47dfe61af58f2e5c5bde67a687a5c86834eeb63f7a9034062b44d4dc93a4e841"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Creates and audits editable flows"
+  },
   "attachments": {
     "thumbnail": "content/articles/mcp-wireframing/thumbnail.png",
     "pdf": null

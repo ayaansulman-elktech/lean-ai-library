@@ -19,7 +19,9 @@
     ],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Orchestrates agents into one app sprint"
+  },
   "attachments": {
     "thumbnail": "content/articles/sprint/thumbnail.png",
     "pdf": null

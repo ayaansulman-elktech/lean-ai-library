@@ -16,7 +16,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Defines a reusable triggered workflow"
+  },
   "attachments": {
     "thumbnail": "content/articles/skill/thumbnail.png",
     "pdf": null

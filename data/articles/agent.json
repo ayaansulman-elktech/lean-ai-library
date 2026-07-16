@@ -4,7 +4,7 @@
   "type": "agent",
   "category": "agents",
   "description": "What the agent achieves AND when to use it.",
-  "shortDescription": "agent-name-here",
+  "shortDescription": "Defines when and how an agent should act",
   "keywords": [],
   "githubPath": "_templates/agent",
   "skill": "# <Agent Name>\r\n\r\nAn agent is a skill **plus** a loop, memory, tools, and planning.\r\n\r\n## Loop\r\n- Goal: ...\r\n- Terminates on: success | failure | budget | human interrupt.\r\n\r\n## Memory\r\n- Short-term: within-run scratch.\r\n- Long-term: what persists across runs, and where.\r\n\r\n## Tools\r\n- the tools / `scripts/` this agent may call.\r\n\r\n## Planning / reflection\r\n- how it decomposes the task and self-checks before finishing.\r\n",

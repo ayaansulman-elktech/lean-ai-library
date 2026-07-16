@@ -19,7 +19,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Measures paths through app screens"
+  },
   "attachments": {
     "thumbnail": "content/articles/navigation-flow/thumbnail.png",
     "pdf": null

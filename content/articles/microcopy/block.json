@@ -111,7 +111,9 @@
       "sha256": "f1555d1b200d7dbd54bb468b723c4d70487212822ead33976b1da3fd3c2f9561"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Writes concise Apple-style interface copy"
+  },
   "attachments": {
     "thumbnail": "content/articles/microcopy/thumbnail.png",
     "pdf": null

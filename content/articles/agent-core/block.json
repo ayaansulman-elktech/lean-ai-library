@@ -19,7 +19,9 @@
     ],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Shared framework for production agents"
+  },
   "attachments": {
     "thumbnail": "content/articles/agent-core/thumbnail.png",
     "pdf": null

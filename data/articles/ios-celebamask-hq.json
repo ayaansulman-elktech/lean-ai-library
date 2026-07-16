@@ -3,7 +3,7 @@
   "type": "model",
   "category": "ios-ready",
   "name": "celebamask-hq",
-  "shortDescription": "Mask-guided face editing (MaskGAN): edit the 19-class face mask -> regenerate the face",
+  "shortDescription": "Regenerates faces from edited masks",
   "description": "RESTRICTED. Must not reach apps/ or any shipped artifact. Enforced in code: blocks/face_editor is unavailable unless FACTORY_ALLOW_NONCOMMERCIAL=1, and build() returns the mock instead. Repo ships code only; the generator (latest_net_G.pth) is distributed separately. Cite Lee et al., CVPR 2020.",
   "keywords": [
     "ios",

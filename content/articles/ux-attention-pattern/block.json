@@ -97,7 +97,9 @@
       "sha256": "d46fca24b150ea0d83504740df4efbe2392e4c4ce259439b1e407eb10c47e491"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Evaluates visual reading patterns"
+  },
   "attachments": {
     "thumbnail": "content/articles/ux-attention-pattern/thumbnail.png",
     "pdf": null

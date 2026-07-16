@@ -34,7 +34,9 @@
       "sha256": "d14fe377cdec8de6dbcd4b6641d36550284bf96738ff10a440ee712f367d5b93"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Explains effective layout composition"
+  },
   "attachments": {
     "thumbnail": "content/articles/knowledge-composition/thumbnail.png",
     "pdf": null

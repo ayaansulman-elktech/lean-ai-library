@@ -19,7 +19,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Scaffolds a documented factory block"
+  },
   "attachments": {
     "thumbnail": "content/articles/template/thumbnail.png",
     "pdf": null

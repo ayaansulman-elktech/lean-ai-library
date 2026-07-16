@@ -16,7 +16,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Curates proven competitor design flows"
+  },
   "attachments": {
     "thumbnail": "content/articles/references/thumbnail.png",
     "pdf": null

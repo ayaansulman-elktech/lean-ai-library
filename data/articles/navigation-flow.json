@@ -4,7 +4,7 @@
   "type": "library",
   "category": "mcp",
   "description": "See README.md for details.",
-  "shortDescription": "Block for navigation-flow",
+  "shortDescription": "Measures paths through app screens",
   "keywords": [
     "navigation flow"
   ],

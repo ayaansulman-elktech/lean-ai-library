@@ -3,7 +3,7 @@
   "type": "model",
   "category": "ios-ready",
   "name": "iris",
-  "shortDescription": "Iris/eye-landmark detection -> eye colour for color extraction",
+  "shortDescription": "Detects iris landmarks and eye color",
   "description": "Weights = one-time TFLite->PyTorch conversion (iris_landmark.pth); torch-only at runtime.",
   "keywords": [
     "ios",

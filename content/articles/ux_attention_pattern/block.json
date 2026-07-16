@@ -24,7 +24,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Classifies attention and reading flow"
+  },
   "attachments": {
     "thumbnail": "content/articles/ux_attention_pattern/thumbnail.png",
     "pdf": null

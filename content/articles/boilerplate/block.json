@@ -16,7 +16,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Starts lean Apple design projects"
+  },
   "attachments": {
     "thumbnail": "content/articles/boilerplate/thumbnail.png",
     "pdf": null
