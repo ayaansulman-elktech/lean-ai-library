@@ -1,0 +1,24 @@
+{
+  "id": "skill-1",
+  "type": "md",
+  "category": "skills-library",
+  "name": "Make it scroll",
+  "shortDescription": "Scroll driven website",
+  "description": "Cognitive Shift transforms cutting-edge AI research from MIT and the best practices developed by leading Silicon Valley companies into directly applicable frameworks.",
+  "keywords": [
+    "skill",
+    "website"
+  ],
+  "slug": "skill-1",
+  "contentPath": "content/articles/skill-1/content.md",
+  "coverPath": "assets/default_thumbnail.png",
+  "coverPreviewPath": "",
+  "fileTree": [
+    {
+      "name": "block.json",
+      "type": "file",
+      "path": "block.json",
+      "content": "{\n  \"id\": \"skill-1\",\n  \"type\": \"md\",\n  \"category\": \"skills-library\",\n  \"name\": \"Make it scroll\",\n  \"shortDescription\": \"Scroll driven website\",\n  \"description\": \"Cognitive Shift transforms cutting-edge AI research from MIT and the best practices developed by leading Silicon Valley companies into directly applicable frameworks.\",\n  \"keywords\": [\n    \"skill\",\n    \"website\"\n  ],\n  \"slug\": \"skill-1\",\n  \"contentPath\": \"content/articles/skill-1/content.md\",\n  \"coverPath\": \"assets/default_thumbnail.png\",\n  \"coverPreviewPath\": \"\"\n}"
+    }
+  ]
+}

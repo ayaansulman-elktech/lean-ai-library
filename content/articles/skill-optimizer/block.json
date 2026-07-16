@@ -1,0 +1,566 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "skill-optimizer",
+  "factoryData": {
+    "id": "skill-optimizer",
+    "type": "agent",
+    "category": "agent-library",
+    "name": "skill-optimizer",
+    "shortDescription": "Build-time MLOps platform that optimizes SKILL.md files as ML artifacts.",
+    "description": "Build-time MLOps platform that optimizes SKILL.md files as ML artifacts.",
+    "keywords": [
+      "skill",
+      "optimizer"
+    ],
+    "sourcePath": "agents/skill-optimizer",
+    "fileTree": [
+      {
+        "name": "agents",
+        "type": "directory",
+        "path": "agents",
+        "children": [
+          {
+            "name": "openai.yaml",
+            "type": "file",
+            "path": "agents/openai.yaml",
+            "previewable": false
+          }
+        ]
+      },
+      {
+        "name": "configs",
+        "type": "directory",
+        "path": "configs",
+        "children": [
+          {
+            "name": "objective-skill-metrics.yaml",
+            "type": "file",
+            "path": "configs/objective-skill-metrics.yaml",
+            "previewable": false
+          },
+          {
+            "name": "output-metrics.yaml",
+            "type": "file",
+            "path": "configs/output-metrics.yaml",
+            "previewable": false
+          },
+          {
+            "name": "providers.yaml",
+            "type": "file",
+            "path": "configs/providers.yaml",
+            "previewable": false
+          },
+          {
+            "name": "skill-genomes.yaml",
+            "type": "file",
+            "path": "configs/skill-genomes.yaml",
+            "previewable": false
+          },
+          {
+            "name": "skill-metrics.yaml",
+            "type": "file",
+            "path": "configs/skill-metrics.yaml",
+            "previewable": false
+          }
+        ]
+      },
+      {
+        "name": "mlruns",
+        "type": "directory",
+        "path": "mlruns",
+        "children": [
+          {
+            "name": "skill-opt",
+            "type": "directory",
+            "path": "mlruns/skill-opt",
+            "children": [
+              {
+                "name": "run_1783890098.json",
+                "type": "file",
+                "path": "mlruns/skill-opt/run_1783890098.json",
+                "previewable": false
+              },
+              {
+                "name": "run_1783896352.json",
+                "type": "file",
+                "path": "mlruns/skill-opt/run_1783896352.json",
+                "previewable": false
+              },
+              {
+                "name": "run_1783928220.json",
+                "type": "file",
+                "path": "mlruns/skill-opt/run_1783928220.json",
+                "previewable": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "src",
+        "type": "directory",
+        "path": "src",
+        "children": [
+          {
+            "name": "skill_optimizer",
+            "type": "directory",
+            "path": "src/skill_optimizer",
+            "children": [
+              {
+                "name": "config",
+                "type": "directory",
+                "path": "src/skill_optimizer/config",
+                "children": [
+                  {
+                    "name": "__init__.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/config/__init__.py",
+                    "previewable": false
+                  },
+                  {
+                    "name": "models.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/config/models.py",
+                    "previewable": false
+                  }
+                ]
+              },
+              {
+                "name": "datasets",
+                "type": "directory",
+                "path": "src/skill_optimizer/datasets",
+                "children": [
+                  {
+                    "name": "__init__.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/datasets/__init__.py",
+                    "previewable": false
+                  },
+                  {
+                    "name": "loader.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/datasets/loader.py",
+                    "previewable": false
+                  }
+                ]
+              },
+              {
+                "name": "evaluation",
+                "type": "directory",
+                "path": "src/skill_optimizer/evaluation",
+                "children": [
+                  {
+                    "name": "__init__.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/evaluation/__init__.py",
+                    "previewable": false
+                  },
+                  {
+                    "name": "evaluator.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/evaluation/evaluator.py",
+                    "previewable": false
+                  },
+                  {
+                    "name": "judge.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/evaluation/judge.py",
+                    "previewable": false
+                  },
+                  {
+                    "name": "score.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/evaluation/score.py",
+                    "previewable": false
+                  },
+                  {
+                    "name": "structural.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/evaluation/structural.py",
+                    "previewable": false
+                  }
+                ]
+              },
+              {
+                "name": "generator",
+                "type": "directory",
+                "path": "src/skill_optimizer/generator",
+                "children": [
+                  {
+                    "name": "__init__.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/generator/__init__.py",
+                    "previewable": false
+                  },
+                  {
+                    "name": "generator.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/generator/generator.py",
+                    "previewable": false
+                  }
+                ]
+              },
+              {
+                "name": "genome",
+                "type": "directory",
+                "path": "src/skill_optimizer/genome",
+                "children": [
+                  {
+                    "name": "__init__.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/genome/__init__.py",
+                    "previewable": false
+                  },
+                  {
+                    "name": "builder.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/genome/builder.py",
+                    "previewable": false
+                  },
+                  {
+                    "name": "sections.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/genome/sections.py",
+                    "previewable": false
+                  }
+                ]
+              },
+              {
+                "name": "optimization",
+                "type": "directory",
+                "path": "src/skill_optimizer/optimization",
+                "children": [
+                  {
+                    "name": "__init__.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/optimization/__init__.py",
+                    "previewable": false
+                  },
+                  {
+                    "name": "agent.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/optimization/agent.py",
+                    "previewable": false
+                  },
+                  {
+                    "name": "dspy_gepa.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/optimization/dspy_gepa.py",
+                    "previewable": false
+                  },
+                  {
+                    "name": "optimizer.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/optimization/optimizer.py",
+                    "previewable": false
+                  },
+                  {
+                    "name": "reflective.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/optimization/reflective.py",
+                    "previewable": false
+                  },
+                  {
+                    "name": "sampler.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/optimization/sampler.py",
+                    "previewable": false
+                  }
+                ]
+              },
+              {
+                "name": "providers",
+                "type": "directory",
+                "path": "src/skill_optimizer/providers",
+                "children": [
+                  {
+                    "name": "__init__.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/providers/__init__.py",
+                    "previewable": false
+                  },
+                  {
+                    "name": "gateway.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/providers/gateway.py",
+                    "previewable": false
+                  },
+                  {
+                    "name": "meter.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/providers/meter.py",
+                    "previewable": false
+                  }
+                ]
+              },
+              {
+                "name": "runner",
+                "type": "directory",
+                "path": "src/skill_optimizer/runner",
+                "children": [
+                  {
+                    "name": "__init__.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/runner/__init__.py",
+                    "previewable": false
+                  },
+                  {
+                    "name": "multifile_runner.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/runner/multifile_runner.py",
+                    "previewable": false
+                  },
+                  {
+                    "name": "runner.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/runner/runner.py",
+                    "previewable": false
+                  }
+                ]
+              },
+              {
+                "name": "tracking",
+                "type": "directory",
+                "path": "src/skill_optimizer/tracking",
+                "children": [
+                  {
+                    "name": "__init__.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/tracking/__init__.py",
+                    "previewable": false
+                  },
+                  {
+                    "name": "mlflow_tracker.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/tracking/mlflow_tracker.py",
+                    "previewable": false
+                  }
+                ]
+              },
+              {
+                "name": "validation",
+                "type": "directory",
+                "path": "src/skill_optimizer/validation",
+                "children": [
+                  {
+                    "name": "__init__.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/validation/__init__.py",
+                    "previewable": false
+                  },
+                  {
+                    "name": "compression.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/validation/compression.py",
+                    "previewable": false
+                  },
+                  {
+                    "name": "portability.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/validation/portability.py",
+                    "previewable": false
+                  },
+                  {
+                    "name": "validator.py",
+                    "type": "file",
+                    "path": "src/skill_optimizer/validation/validator.py",
+                    "previewable": false
+                  }
+                ]
+              },
+              {
+                "name": "__init__.py",
+                "type": "file",
+                "path": "src/skill_optimizer/__init__.py",
+                "previewable": false
+              },
+              {
+                "name": "cli.py",
+                "type": "file",
+                "path": "src/skill_optimizer/cli.py",
+                "previewable": false
+              },
+              {
+                "name": "env.py",
+                "type": "file",
+                "path": "src/skill_optimizer/env.py",
+                "previewable": false
+              },
+              {
+                "name": "pipeline.py",
+                "type": "file",
+                "path": "src/skill_optimizer/pipeline.py",
+                "previewable": false
+              },
+              {
+                "name": "py.typed",
+                "type": "file",
+                "path": "src/skill_optimizer/py.typed",
+                "previewable": false
+              },
+              {
+                "name": "types.py",
+                "type": "file",
+                "path": "src/skill_optimizer/types.py",
+                "previewable": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "tests",
+        "type": "directory",
+        "path": "tests",
+        "children": [
+          {
+            "name": "integration",
+            "type": "directory",
+            "path": "tests/integration",
+            "children": [
+              {
+                "name": "test_dspy_gepa_offline.py",
+                "type": "file",
+                "path": "tests/integration/test_dspy_gepa_offline.py",
+                "previewable": false
+              },
+              {
+                "name": "test_evolve_offline.py",
+                "type": "file",
+                "path": "tests/integration/test_evolve_offline.py",
+                "previewable": false
+              },
+              {
+                "name": "test_optimize_offline.py",
+                "type": "file",
+                "path": "tests/integration/test_optimize_offline.py",
+                "previewable": false
+              },
+              {
+                "name": "test_pipeline_offline.py",
+                "type": "file",
+                "path": "tests/integration/test_pipeline_offline.py",
+                "previewable": false
+              },
+              {
+                "name": "test_validation_offline.py",
+                "type": "file",
+                "path": "tests/integration/test_validation_offline.py",
+                "previewable": false
+              }
+            ]
+          },
+          {
+            "name": "unit",
+            "type": "directory",
+            "path": "tests/unit",
+            "children": [
+              {
+                "name": "test_clean_skill.py",
+                "type": "file",
+                "path": "tests/unit/test_clean_skill.py",
+                "previewable": false
+              },
+              {
+                "name": "test_config.py",
+                "type": "file",
+                "path": "tests/unit/test_config.py",
+                "previewable": false
+              },
+              {
+                "name": "test_datasets.py",
+                "type": "file",
+                "path": "tests/unit/test_datasets.py",
+                "previewable": false
+              },
+              {
+                "name": "test_evaluation.py",
+                "type": "file",
+                "path": "tests/unit/test_evaluation.py",
+                "previewable": false
+              },
+              {
+                "name": "test_genome.py",
+                "type": "file",
+                "path": "tests/unit/test_genome.py",
+                "previewable": false
+              },
+              {
+                "name": "test_runner.py",
+                "type": "file",
+                "path": "tests/unit/test_runner.py",
+                "previewable": false
+              }
+            ]
+          },
+          {
+            "name": "__init__.py",
+            "type": "file",
+            "path": "tests/__init__.py",
+            "previewable": false
+          },
+          {
+            "name": "conftest.py",
+            "type": "file",
+            "path": "tests/conftest.py",
+            "previewable": false
+          }
+        ]
+      },
+      {
+        "name": ".env.example",
+        "type": "file",
+        "path": ".env.example",
+        "previewable": false
+      },
+      {
+        "name": ".gitignore",
+        "type": "file",
+        "path": ".gitignore",
+        "previewable": false
+      },
+      {
+        "name": "LICENSE",
+        "type": "file",
+        "path": "LICENSE",
+        "previewable": false
+      },
+      {
+        "name": "optimize.py",
+        "type": "file",
+        "path": "optimize.py",
+        "previewable": false
+      },
+      {
+        "name": "pyproject.toml",
+        "type": "file",
+        "path": "pyproject.toml",
+        "previewable": false
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "path": "README.md",
+        "previewable": true,
+        "content": "# Skill Optimizer\n\nBuild-time MLOps platform that optimizes `SKILL.md` files as ML artifacts. Optuna proposes a\nSkill configuration → an Agent LLM proposes a variation → a Generator LLM writes the candidate\nSkill → the Skill is run to produce an output → a Judge panel scores it → MLflow logs\neverything → repeat while `score < goal` → validate on held-out then frozen datasets.\n\n## Quickstart (offline, no API keys)\n\n```bash\npip install -e \".[dev]\"\n\n# All commands run with the mock provider — no keys needed.\nskill-opt validate-config                       # load + check the 5 YAMLs\nskill-opt calibrate-judge --offline             # judge ranks good > bad\nskill-opt run --offline --no-track              # one candidate end-to-end\nskill-opt optimize-skill --offline --trials 10  # search -> artifacts/best_SKILL.md\nskill-opt validate --offline                    # generalization on D_test\nskill-opt validate --offline --final            # frozen D_guard final validation\nskill-opt portability --offline                 # score preservation across models\nskill-opt compress --offline                    # shrink tokens, keep the score\n```\n\nTo go live: put API keys in `.env` (see `.env.example`) and drop `--offline`. The configs\nship with real model IDs already.\n\n**Render-based scoring** (default) judges the *rendered* page, not raw HTML. It needs the\nbrowser engine — install once:\n\n```bash\npip install -e \".[render]\"\npython -m playwright install chromium\n```\n\nWithout it the runner falls back to judging HTML text (set `execution.mode: static_only` in\n`configs/output-metrics.yaml` to force that).\n\n**Watch a run live:** start the dashboard, then run optimize *with* tracking (no `--no-track`):\n\n```bash\nmlflow ui --backend-store-uri sqlite:///mlflow.db   # open http://127.0.0.1:5000\nskill-opt optimize-skill --trials 30                 # watch trials appear\n```\n\n## Layout\n\n```\nconfigs/      the 4 core YAMLs (+ providers.yaml) — the control surface\nsrc/skill_optimizer/\n  config/     pydantic models that load + validate the YAMLs\n  providers/  LiteLLM gateway, generator/judge pools, cost meter, mock provider\n  datasets/   D_wm / D_test / D_guard loaders\n  genome/     genome <-> SKILL.md assembly\n  generator/  Generator LLM -> candidate SKILL.md\n  runner/     execute a Skill -> output\n  evaluation/ metrics, judge panel, Skill Score\n  tracking/   MLflow wrapper + lineage\n  cli.py\ntests/        unit + integration (mock providers; no real spend in CI)\n```\n\n## Design principles\n\n- **Evaluation-first.** The judge is the only real risk — build and *calibrate* it before the optimizer exists.\n- **Vertical slices, not horizontal layers.** Every slice runs end-to-end.\n- **Config is the control surface.** Behaviour changes live in the YAMLs, not in code.\n- **Reproducibility by construction.** Every candidate links genome + Optuna trial ID + MLflow run ID + outputs + scores.\n- **Cost visible from line one.** Tokens/$ are metered per call and aggregated per trial, under a hard budget cap.\n\n## Key seams\n\nEverything depends on three interfaces, so providers, judges, and runners are swappable\nand mockable in tests without touching the optimization loop:\n\n- `providers.LLMGateway.complete(pool, messages) -> Response{text, tokens, cost}`\n- `runner.Runner.run(skill) -> Output{artifacts, render?}`\n- `evaluation.Judge.score(skill, output) -> Scores`\n"
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "path": "SKILL.md",
+        "previewable": true,
+        "content": "---\nname: skill-optimizer\ndescription: Optimize a SKILL.md as an ML artifact (Optuna/GEPA search -> generate -> run -> judge-panel score -> MLflow -> validate on held-out then frozen sets). Use to harden a skill's quality or make it hold quality on a cheaper model. AI-Engineer / meta tool.\nallowed-tools: Bash, Read, Write\n---\n# Skill Optimizer\n\nA full build-time MLOps platform (not a thin script) that optimizes the factory's own\nskills. See **`README.md`** for the architecture, design principles, and key seams.\n\n## Run it (offline, no keys)\n```bash\npip install -e \".[dev]\"\nskill-opt validate-config\nskill-opt calibrate-judge --offline          # judge must rank good > bad, reproducibly\nskill-opt optimize-skill --offline --trials 10\nskill-opt validate --offline                 # generalization on the held-out set\n```\nDrop `--offline` and set keys in `.env` (see `.env.example`) to run live.\nAn eval dataset root must be supplied — the standalone pilot data is not bundled.\n\n## Where it fits\n- **Meta layer / AI Engineers own it** — it improves skills the Sprint Engineers consume.\n- The control surface is the YAMLs in `configs/`; behavior changes live there, not in code.\n- Generated output (`mlruns/`, `artifacts/`, `mlflow.db`) is gitignored; only\n  source / config / docs / tests are committed.\n\n## To make it useful for THIS factory\nRe-point its eval datasets + objective from the generic pilot task to the factory's real\nskills (wireframing prompts, the ux-audit rubric, app-generation skills) on larger, real briefs.\n"
+      }
+    ],
+    "package": {
+      "format": "zip",
+      "path": "packages/skill-optimizer.zip",
+      "sha256": "bcea102ba51a1562712358f780a830deda84d9c78ea57fbe3939dc76939cf507"
+    }
+  },
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/skill-optimizer/thumbnail.png",
+    "pdf": null
+  }
+}

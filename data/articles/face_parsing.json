@@ -1,0 +1,35 @@
+{
+  "id": "face_parsing",
+  "name": "face-parsing",
+  "type": "model",
+  "category": "models",
+  "description": "BiSeNet (ResNet18/34) 19-class CelebAMask-HQ face parsing. Segments a face into parts (skin, eyes, lips, hair, ...) so the Colors Matching app can extract colors from each region. Real weights run in the AI-farm; a deterministic synthetic mask stands in for CI.",
+  "shortDescription": "Per-pixel face-part masks from a selfie.",
+  "keywords": [
+    "facial segmentation (skin/eyes/lips/hair)"
+  ],
+  "version": "0.1.0",
+  "githubPath": "libraries/models/blocks/face_parsing",
+  "readme": "# face-parsing (model card)\r\n\r\nFacial segmentation — per-pixel face-part masks\r\n([yakhyo/face-parsing](https://github.com/yakhyo/face-parsing), BiSeNet / ResNet18–34).\r\n\r\n- **Task:** segment a selfie into 19 CelebAMask-HQ classes; grouped here into **skin / eyes / lips\r\n  / hair** — the regions the Colors Matching app extracts colors from.\r\n- **Inputs:** a face image (RGB). **Outputs:** a `SegMask` (grid of class ids) + `part_summary`\r\n  (present / coverage / bbox per part).\r\n- **Status:** `raw` — self-contained block (`deps: []`). Real `.pt`/`.onnx` weights run in the\r\n  AI-farm (`ai-farm/raw/face-parsing`); CI uses a deterministic synthetic mask.\r\n- **Apple-native:** *partial* — Apple has on-device **skin & hair** pixel mattes\r\n  (`AVSemanticSegmentationMatte`, iOS 13+) and eye/lip **landmarks** (Vision). See below.\r\n\r\n## Use\r\n```python\r\nfrom blocks.face_parsing.src import build\r\nfrom blocks.face_parsing.src.metrics import part_summary\r\n\r\nmodel = build()                         # real BiSeNet on the farm; synthetic mask elsewhere\r\nmask  = model.predict(\"selfie.png\")\r\npart_summary(mask)                      # {\"skin\": {...}, \"eyes\": {...}, \"lips\": {...}, \"hair\": {...}}\r\nmask.bbox([4, 5])                       # where the eyes are (normalized box)\r\n```\r\n\r\n## Apple-native alternatives (researched)\r\n\r\nChecked per the task requirement — Apple *partially* covers this on-device:\r\n\r\n| Apple API | Covers | Since | Gap vs face-parsing |\r\n|---|---|---|---|\r\n| AVFoundation `AVSemanticSegmentationMatte` (`.skin`, `.hair`, `.teeth`, `.glasses`) | per-pixel **skin & hair** mattes | iOS 13 | no eyes/lips class; produced at photo **capture** (`enabledSemanticSegmentationMatteTypes`), not on an arbitrary image |\r\n| Vision `VNDetectFaceLandmarksRequest` | eyes, lips, brows, nose, contour, pupils — as **points** | iOS 11 | geometric landmarks, not pixel masks |\r\n| Vision `VNGeneratePersonSegmentationRequest` / `…PersonInstanceMaskRequest` | whole **person** foreground | iOS 15 / 17 | not face parts |\r\n| ARKit `ARFaceAnchor` | 3D face mesh + blendshapes | iOS 11 | needs TrueDepth; no semantic part masks |\r\n\r\n**Verdict — partial.** For a captured selfie, Apple's native **skin + hair** mattes are a strong\r\non-device option and worth preferring for those parts. face-parsing is still needed for **eyes +\r\nlips** as pixel regions, a unified parse, and running on non-capture images. Recommendation for\r\nColors Matching: use Apple's native skin/hair mattes where available, face-parsing for eyes/lips\r\n(and as the cross-part fallback).\r\n\r\n## Running the real model (AI-farm)\r\nFetch the repo + a weight (`resnet18.pt`) into `ai-farm/raw/face-parsing/`, install `torch` +\r\n`opencv`, then `build()` returns the real `FaceParsingModel` (`is_available()` gates the fallback).\r\n",
+  "assets": [
+    {
+      "src": "cover.svg",
+      "alt": "cover"
+    }
+  ],
+  "examples": [],
+  "dependencies": [],
+  "related": [],
+  "slug": "face_parsing",
+  "contentPath": "",
+  "coverPath": "content/articles/face_parsing/thumbnail.png",
+  "coverPreviewPath": "content/articles/face_parsing/thumbnail.png",
+  "fileTree": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "content": "# face-parsing (model card)\r\n\r\nFacial segmentation — per-pixel face-part masks\r\n([yakhyo/face-parsing](https://github.com/yakhyo/face-parsing), BiSeNet / ResNet18–34).\r\n\r\n- **Task:** segment a selfie into 19 CelebAMask-HQ classes; grouped here into **skin / eyes / lips\r\n  / hair** — the regions the Colors Matching app extracts colors from.\r\n- **Inputs:** a face image (RGB). **Outputs:** a `SegMask` (grid of class ids) + `part_summary`\r\n  (present / coverage / bbox per part).\r\n- **Status:** `raw` — self-contained block (`deps: []`). Real `.pt`/`.onnx` weights run in the\r\n  AI-farm (`ai-farm/raw/face-parsing`); CI uses a deterministic synthetic mask.\r\n- **Apple-native:** *partial* — Apple has on-device **skin & hair** pixel mattes\r\n  (`AVSemanticSegmentationMatte`, iOS 13+) and eye/lip **landmarks** (Vision). See below.\r\n\r\n## Use\r\n```python\r\nfrom blocks.face_parsing.src import build\r\nfrom blocks.face_parsing.src.metrics import part_summary\r\n\r\nmodel = build()                         # real BiSeNet on the farm; synthetic mask elsewhere\r\nmask  = model.predict(\"selfie.png\")\r\npart_summary(mask)                      # {\"skin\": {...}, \"eyes\": {...}, \"lips\": {...}, \"hair\": {...}}\r\nmask.bbox([4, 5])                       # where the eyes are (normalized box)\r\n```\r\n\r\n## Apple-native alternatives (researched)\r\n\r\nChecked per the task requirement — Apple *partially* covers this on-device:\r\n\r\n| Apple API | Covers | Since | Gap vs face-parsing |\r\n|---|---|---|---|\r\n| AVFoundation `AVSemanticSegmentationMatte` (`.skin`, `.hair`, `.teeth`, `.glasses`) | per-pixel **skin & hair** mattes | iOS 13 | no eyes/lips class; produced at photo **capture** (`enabledSemanticSegmentationMatteTypes`), not on an arbitrary image |\r\n| Vision `VNDetectFaceLandmarksRequest` | eyes, lips, brows, nose, contour, pupils — as **points** | iOS 11 | geometric landmarks, not pixel masks |\r\n| Vision `VNGeneratePersonSegmentationRequest` / `…PersonInstanceMaskRequest` | whole **person** foreground | iOS 15 / 17 | not face parts |\r\n| ARKit `ARFaceAnchor` | 3D face mesh + blendshapes | iOS 11 | needs TrueDepth; no semantic part masks |\r\n\r\n**Verdict — partial.** For a captured selfie, Apple's native **skin + hair** mattes are a strong\r\non-device option and worth preferring for those parts. face-parsing is still needed for **eyes +\r\nlips** as pixel regions, a unified parse, and running on non-capture images. Recommendation for\r\nColors Matching: use Apple's native skin/hair mattes where available, face-parsing for eyes/lips\r\n(and as the cross-part fallback).\r\n\r\n## Running the real model (AI-farm)\r\nFetch the repo + a weight (`resnet18.pt`) into `ai-farm/raw/face-parsing/`, install `torch` +\r\n`opencv`, then `build()` returns the real `FaceParsingModel` (`is_available()` gates the fallback).\r\n"
+    }
+  ]
+}

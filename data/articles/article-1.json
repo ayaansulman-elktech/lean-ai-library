@@ -1,0 +1,26 @@
+{
+  "id": "article-1",
+  "type": "pdf",
+  "category": "agentic",
+  "name": "Language Model",
+  "shortDescription": "Skill optimization process",
+  "description": "Cognitive Shift transforms cutting-edge AI research from MIT and the best practices developed by leading Silicon Valley companies into directly applicable frameworks.",
+  "keywords": [
+    "agentic",
+    "llm",
+    "security",
+    "skill"
+  ],
+  "slug": "article-1",
+  "contentPath": "content/articles/article-1/content.pdf",
+  "coverPath": "content/articles/article-1/cover-preview.png",
+  "coverPreviewPath": "content/articles/article-1/cover-preview.png",
+  "fileTree": [
+    {
+      "name": "block.json",
+      "type": "file",
+      "path": "block.json",
+      "content": "{\n  \"id\": \"article-1\",\n  \"type\": \"pdf\",\n  \"category\": \"agentic\",\n  \"name\": \"Language Model\",\n  \"shortDescription\": \"Skill optimization process\",\n  \"description\": \"Cognitive Shift transforms cutting-edge AI research from MIT and the best practices developed by leading Silicon Valley companies into directly applicable frameworks.\",\n  \"keywords\": [\n    \"agentic\",\n    \"llm\",\n    \"security\",\n    \"skill\"\n  ],\n  \"slug\": \"article-1\",\n  \"contentPath\": \"content/articles/article-1/content.pdf\",\n  \"coverPath\": \"content/articles/article-1/cover-preview.png\",\n  \"coverPreviewPath\": \"content/articles/article-1/cover-preview.png\"\n}"
+    }
+  ]
+}

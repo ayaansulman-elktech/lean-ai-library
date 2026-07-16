@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "color_matching",
+  "factoryData": {
+    "id": "color_matching",
+    "name": "color-matching",
+    "type": "library",
+    "category": "code",
+    "description": "Two independent approaches. SEASONAL (primary): from a base color's undertone + value, classify the season and return the season's recommended palette and colors to avoid — the Color-Matching app's core (skin tone -> 'your colors'). HARMONIES (secondary): complementary, analogous, triadic, split-complementary, tetradic, and monochromatic schemes off a base color. Pure Python (stdlib colorsys), no dependencies.",
+    "shortDescription": "Classify a color into a season (Spring/Summer/Autumn/Winter) with its palette and colors to avoid, plus classic harmonies.",
+    "keywords": [
+      "seasonal color analysis + color-wheel harmonies"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/code/blocks/color_matching",
+    "readme": "# Color matching\r\n\r\nTwo independent approaches, **seasonal first**.\r\n\r\n**1. Seasonal (primary)** — classify a color's undertone + value into a **season**, then **compute**\r\na recommended palette + colors to avoid. This is the Color-Matching app's core (skin tone → \"your\r\ncolors\"). See `libraries/knowledge/color-theory/` (`color-theory.md`, `seasons.md`).\r\n\r\n```python\r\nfrom color_matching import seasonal_match, seasonal_match_from_colors\r\n\r\nseasonal_match(\"#FF6600\")          # {season:\"Spring\", undertone, value, chroma, feel, palette[], avoid[]}\r\nseasonal_match_from_colors(extracted)   # pass color_extraction output; uses the dominant/skin tone\r\n```\r\n- **Classify** by undertone × value (from `seasons.md`): warm+light → **Spring**, warm+deep →\r\n  **Autumn**, cool+light → **Summer**, cool+deep → **Winter**.\r\n- **Compute the palette by rule** (per `color-rules.md` \"computed, not hand-picked\"): take harmonic\r\n  hues off the person's own color (base + analogous + complementary + triadic) and render each into\r\n  the **season's saturation/lightness band** (Spring = bright+light, Autumn = deep+muted, …), add a\r\n  rule-based neutral (+ black/white contrast for Winter). `avoid` = the same hues in the **opposite**\r\n  season's band. So the palette **varies per person** — it's not a static table.\r\n\r\n**2. Harmonies (secondary)** — classic color-wheel schemes off a base color.\r\n\r\n```python\r\nfrom color_matching import harmonies, complementary, triadic\r\nharmonies(\"#0E1B2A\")               # complementary / analogous / triadic / split / tetradic / mono\r\ncomplementary(\"#FF0000\")           # -> [\"#FF0000\", \"#00FFFF\"]\r\n```\r\n\r\n`match(hex)` returns **both**, seasonal on top. Pure Python (stdlib `colorsys`), no dependencies.\r\nCLI: `python color_matching.py \"#FF6600\"`. Visual test: `../color-test-ui/index.html`.\r\n",
+    "assets": [
+      {
+        "src": "cover.svg",
+        "alt": "cover"
+      }
+    ],
+    "examples": [],
+    "dependencies": [],
+    "related": []
+  },
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/color_matching/thumbnail.png",
+    "pdf": null
+  }
+}

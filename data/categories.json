@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "agent-library",
+    "name": "Agent Librairy",
+    "description": "Agent Library brings together specialized Python agents that execute each stage of application generation, verify the resulting work, and keep production workflow focused, reliable and useful."
+  },
+  {
+    "slug": "agentic",
+    "name": "Agentic",
+    "description": ""
+  },
+  {
+    "slug": "code-library",
+    "name": "Code Library",
+    "description": "Code Library gathers reusable Python and Swift blocks, plus local UIs for testing them, so teams can assemble apps faster, validate each component, and avoid rebuilding all common foundations."
+  },
+  {
+    "slug": "ios-ready",
+    "name": "iOS Ready",
+    "description": "iOS Ready organizes production-ready models and their registry files, giving teams a clear foundation for integrating tested AI capabilities directly into all apps across the Apple ecosystems."
+  },
+  {
+    "slug": "knowledge-library",
+    "name": "Knowledge Librairy",
+    "description": "Knowledge Library centralizes references that ground agents and models in trusted theories, guidelines and rules, helping the app make informed decisions instead of relying on hardcoded logic."
+  },
+  {
+    "slug": "mcp-library",
+    "name": "MCP Library",
+    "description": "MCP Library groups shared servers and tools that autonomous agents can call safely, with each service clearly defining its limits, setup instructions and internal state for reliable execution."
+  },
+  {
+    "slug": "model-library",
+    "name": "Model Library",
+    "description": "Model Library organizes portable, self-contained vision models that can be tested independently, validated in continuous integration, and exposed as MCP tools for reuse across AI applications."
+  },
+  {
+    "slug": "skills",
+    "name": "Skills",
+    "description": "Skills Library gathers focused, reusable capabilities that agents can apply across all apps, helping teams complete concrete tasks consistently without rebuilding the same workflows each time."
+  },
+  {
+    "slug": "skills-library",
+    "name": "Skills library",
+    "description": ""
+  }
+]

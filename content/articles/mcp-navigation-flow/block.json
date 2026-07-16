@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "mcp-navigation-flow",
+  "factoryData": {
+    "id": "mcp-navigation-flow",
+    "type": "library",
+    "category": "mcp-library",
+    "name": "navigation-flow",
+    "shortDescription": "An MCP server that analyzes a screen flow: builds the navigation graph and computes clicks-to-action, navigation depth, orphan pages / dead ends, and features-per-page.",
+    "description": "An MCP server that analyzes a screen flow: builds the navigation graph and computes clicks-to-action, navigation depth, orphan pages / dead ends, and features-per-page.",
+    "keywords": [
+      "navigation",
+      "flow"
+    ],
+    "sourcePath": "libraries/mcp/navigation-flow",
+    "fileTree": [
+      {
+        "name": "README.md",
+        "type": "file",
+        "path": "README.md",
+        "previewable": true,
+        "content": "# Navigation / Flow Analysis MCP\n\nAn MCP server that analyzes a screen flow: builds the navigation graph and computes\nclicks-to-action, navigation depth, orphan pages / dead ends, and features-per-page.\n\nThe wireframing agent calls it to grade a flow (the \"A score\" loop). The deterministic\nlogic mirrors `agents/wireframing/scripts/flow_audit.py`; exposing it as an MCP lets any\nagent (Codex / Claude) call it directly.\n\n_Server implementation: TODO._\n"
+      }
+    ],
+    "package": {
+      "format": "zip",
+      "path": "packages/mcp-navigation-flow.zip",
+      "sha256": "a5dd4c9e80f32456a0eae2d7daf9b434751d221723954435efdd758adafe7968"
+    }
+  },
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/mcp-navigation-flow/thumbnail.png",
+    "pdf": null
+  }
+}

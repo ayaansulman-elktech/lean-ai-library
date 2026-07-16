@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "legal",
+  "factoryData": {
+    "id": "legal",
+    "name": "legal",
+    "type": "library",
+    "category": "code-library",
+    "description": "Generates a **Privacy Policy** + **Terms & Conditions** for an app from its data-use profile. Deterministic template filling — **not legal advice**. Every document is stamped *\"requires human/legal review before publishing\"* and `generate()` returns `review_required=True`. Why it exists: the App Store **requires a privacy policy** (Guideline 5.1). The compliance agent only *checks* for one; this produces a truthful first draft grounded in what the app actually does — especially **on-device** processing (no server → strong, honest privacy stance). Placeholders left as `[COMPANY]`, `[JURISDICTION]`, etc. are surfaced in `warnings` so nothing ships half-filled. **A lawyer must review the output before it goes live.**",
+    "shortDescription": "legal",
+    "keywords": [],
+    "version": "0.1.0",
+    "githubPath": "libraries/legal",
+    "readme": "# legal\r\n\r\nGenerates a **Privacy Policy** + **Terms & Conditions** for an app from its data-use profile.\r\nDeterministic template filling — **not legal advice**. Every document is stamped *\"requires\r\nhuman/legal review before publishing\"* and `generate()` returns `review_required=True`.\r\n\r\nWhy it exists: the App Store **requires a privacy policy** (Guideline 5.1). The compliance agent\r\nonly *checks* for one; this produces a truthful first draft grounded in what the app actually does\r\n— especially **on-device** processing (no server → strong, honest privacy stance).\r\n\r\n```python\r\nfrom legal import AppLegalProfile, write_legal_docs\r\n\r\nprofile = AppLegalProfile(\r\n    app_name=\"Color Matching\", company=\"EIK Tech\", contact_email=\"privacy@eiktech.co\",\r\n    collects_data=[\"a selfie you take (processed on-device)\"], on_device=True,\r\n    uses_iap=True, region=\"France\", effective_date=\"2026-07-02\",\r\n)\r\nres = write_legal_docs(profile, \"apps/color-matching/legal\")\r\nres[\"review_required\"]   # True — always\r\nres[\"warnings\"]          # e.g. unfilled placeholders + the mandatory lawyer-review note\r\n```\r\n\r\nPlaceholders left as `[COMPANY]`, `[JURISDICTION]`, etc. are surfaced in `warnings` so nothing\r\nships half-filled. **A lawyer must review the output before it goes live.**\r\n",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": []
+  },
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/legal/thumbnail.png",
+    "pdf": null
+  }
+}

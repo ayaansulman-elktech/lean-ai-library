@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "render",
+  "factoryData": {
+    "id": "render",
+    "name": "rendering",
+    "type": "library",
+    "category": "code-library",
+    "description": "Turns a screen into an **image + the primary-action region**, so the UX-audit's SUM saliency check can run on a *real* screen instead of a screenshot you supply by hand. Mirrors the `vis_models` saliency seam: **protocol + real backend + offline mock + factory**. Wireframes from the wireframing agent use a known structure (`button.action` / `a.nav`), so the CTA box is reliable offline. **Real PNGs** need `pip install \"rendering[browser]\"` + `playwright install chromium` (dev/farm); CI stays on the dependency-free mock.",
+    "shortDescription": "rendering",
+    "keywords": [],
+    "version": "0.1.0",
+    "githubPath": "libraries/render",
+    "readme": "# rendering\r\n\r\nTurns a screen into an **image + the primary-action region**, so the UX-audit's SUM saliency\r\ncheck can run on a *real* screen instead of a screenshot you supply by hand.\r\n\r\nMirrors the `vis_models` saliency seam: **protocol + real backend + offline mock + factory**.\r\n\r\n| Piece | Role |\r\n|---|---|\r\n| `derive_cta_region(html)` | deterministic CTA box from the wireframe markup — **no browser** |\r\n| `MockRenderer` | offline: writes an SVG sketch + the derived region (CI path, dependency-free) |\r\n| `PlaywrightRenderer` | real: headless Chromium → PNG + the actual button bounding box (dev/farm) |\r\n| `build_renderer(backend, offline=…)` | Playwright when available, else the mock |\r\n\r\n```python\r\nfrom rendering import build_renderer\r\nr = build_renderer(\"playwright\")                 # mock fallback if Playwright is absent\r\nres = r.render(wireframe_html, \"out/screen.png\")\r\nres.image_path, res.cta_region                   # feed straight into ux-audit's saliency check\r\n```\r\n\r\nWireframes from the wireframing agent use a known structure (`button.action` / `a.nav`), so the\r\nCTA box is reliable offline. **Real PNGs** need `pip install \"rendering[browser]\"` +\r\n`playwright install chromium` (dev/farm); CI stays on the dependency-free mock.\r\n",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": []
+  },
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/render/thumbnail.png",
+    "pdf": null
+  }
+}

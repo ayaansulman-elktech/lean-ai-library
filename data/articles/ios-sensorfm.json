@@ -1,0 +1,24 @@
+{
+  "id": "ios-sensorfm",
+  "type": "model",
+  "category": "ios-ready",
+  "name": "SensorFM",
+  "shortDescription": "General intelligence and interface for wearable health data",
+  "description": "General intelligence and interface for wearable health data",
+  "keywords": [
+    "ios",
+    "model",
+    "raw"
+  ],
+  "sourcePath": "",
+  "fileTree": [],
+  "package": {
+    "format": "zip",
+    "path": "packages/ios-sensorfm.zip",
+    "sha256": "1a16a2e200509b89db118d5f08bbc86583c599ff9025750d86789997e89efcd5"
+  },
+  "slug": "ios-sensorfm",
+  "contentPath": "",
+  "coverPath": "assets/default_thumbnail.png",
+  "coverPreviewPath": ""
+}

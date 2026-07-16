@@ -1,0 +1,31 @@
+{
+  "id": "ios-sum",
+  "type": "model",
+  "category": "ios-ready",
+  "name": "SUM",
+  "shortDescription": "Image saliency (where humans look) — UI/marketing",
+  "description": "Image saliency (where humans look) — UI/marketing",
+  "keywords": [
+    "ios",
+    "model",
+    "raw"
+  ],
+  "sourcePath": "libraries/ios-ready/raw/SUM",
+  "fileTree": [
+    {
+      "name": ".gitkeep",
+      "type": "file",
+      "path": ".gitkeep",
+      "previewable": false
+    }
+  ],
+  "package": {
+    "format": "zip",
+    "path": "packages/ios-sum.zip",
+    "sha256": "7e79ebe619e3546e178b9d85ff6bec09d7b024c287e48a53ea7d269088fe9b1d"
+  },
+  "slug": "ios-sum",
+  "contentPath": "",
+  "coverPath": "content/articles/ios-sum/thumbnail.png",
+  "coverPreviewPath": "content/articles/ios-sum/thumbnail.png"
+}

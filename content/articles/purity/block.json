@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "purity",
+  "factoryData": {
+    "id": "purity",
+    "name": "purity",
+    "type": "library",
+    "category": "mcp",
+    "description": "See README.md for details.",
+    "shortDescription": "Block for purity",
+    "keywords": [
+      "purity"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/mcp/blocks/purity",
+    "readme": "# Purity MCP\r\n\r\nWraps the moodboard **purity** tool (`cog-ai-intheshell/moodboard-purity-1`): given a\r\nbundle of persona images, it extracts the aesthetic — palette, tags, emotions — and\r\nscores moodboard coherence (\"purity\").\r\n\r\nOutput feeds the per-app **universe** (`apps/<app>/universe/tokens.override.json`) and the\r\nillustration style. This is the engine behind the \"Lean Creative Universe.\"\r\n\r\n_Server wraps the existing tool; implementation: TODO._\r\n",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": []
+  },
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/purity/thumbnail.png",
+    "pdf": null
+  }
+}

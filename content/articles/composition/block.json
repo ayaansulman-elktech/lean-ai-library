@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "composition",
+  "factoryData": {
+    "id": "composition",
+    "name": "composition",
+    "type": "library",
+    "category": "knowledge",
+    "description": "A lean-ai-factory block.",
+    "shortDescription": "Block for composition",
+    "keywords": [
+      "composition"
+    ],
+    "version": "0.1.0",
+    "githubPath": "libraries/knowledge/blocks/composition",
+    "assets": [],
+    "examples": [],
+    "dependencies": [],
+    "related": []
+  },
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/composition/thumbnail.png",
+    "pdf": null
+  }
+}

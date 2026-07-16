@@ -1,0 +1,163 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "wireframing",
+  "factoryData": {
+    "id": "wireframing",
+    "type": "agent",
+    "category": "agent-library",
+    "name": "wireframing",
+    "shortDescription": "Wireframing agent: charter -> A-grade flow wireframe.",
+    "description": "Wireframing agent: charter -> A-grade flow wireframe.",
+    "keywords": [
+      "wireframing"
+    ],
+    "sourcePath": "agents/wireframing",
+    "fileTree": [
+      {
+        "name": "agents",
+        "type": "directory",
+        "path": "agents",
+        "children": [
+          {
+            "name": "openai.yaml",
+            "type": "file",
+            "path": "agents/openai.yaml",
+            "previewable": false
+          }
+        ]
+      },
+      {
+        "name": "assets",
+        "type": "directory",
+        "path": "assets",
+        "children": [
+          {
+            "name": "wireframe-template",
+            "type": "directory",
+            "path": "assets/wireframe-template",
+            "children": [
+              {
+                "name": "base.html",
+                "type": "file",
+                "path": "assets/wireframe-template/base.html",
+                "previewable": false
+              },
+              {
+                "name": "styles.css",
+                "type": "file",
+                "path": "assets/wireframe-template/styles.css",
+                "previewable": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "references",
+        "type": "directory",
+        "path": "references",
+        "children": [
+          {
+            "name": "flow-rules.md",
+            "type": "file",
+            "path": "references/flow-rules.md",
+            "previewable": true,
+            "content": "# Flow-audit rules\n\nThe wireframe must score \"A\" before hand-off. Thresholds (tune per niche):\n\n- Clicks to a key action (login / checkout / cancel): ≤ N\n- Features per page: ≤ N\n- Max navigation depth: ≤ N\n- Orphan pages / dead buttons: 0\n\nScoring lives in `scripts/flow_audit.py`. Best-practice reference flows come from\n`libraries/memory` (App-Benchmark).\n"
+          }
+        ]
+      },
+      {
+        "name": "src",
+        "type": "directory",
+        "path": "src",
+        "children": [
+          {
+            "name": "wireframing",
+            "type": "directory",
+            "path": "src/wireframing",
+            "children": [
+              {
+                "name": "__init__.py",
+                "type": "file",
+                "path": "src/wireframing/__init__.py",
+                "previewable": false
+              },
+              {
+                "name": "agent.py",
+                "type": "file",
+                "path": "src/wireframing/agent.py",
+                "previewable": false
+              },
+              {
+                "name": "audit.py",
+                "type": "file",
+                "path": "src/wireframing/audit.py",
+                "previewable": false
+              },
+              {
+                "name": "charter.py",
+                "type": "file",
+                "path": "src/wireframing/charter.py",
+                "previewable": false
+              },
+              {
+                "name": "generate.py",
+                "type": "file",
+                "path": "src/wireframing/generate.py",
+                "previewable": false
+              },
+              {
+                "name": "spec.py",
+                "type": "file",
+                "path": "src/wireframing/spec.py",
+                "previewable": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "tests",
+        "type": "directory",
+        "path": "tests",
+        "children": [
+          {
+            "name": "test_charter.py",
+            "type": "file",
+            "path": "tests/test_charter.py",
+            "previewable": false
+          },
+          {
+            "name": "test_wireframing.py",
+            "type": "file",
+            "path": "tests/test_wireframing.py",
+            "previewable": false
+          }
+        ]
+      },
+      {
+        "name": "pyproject.toml",
+        "type": "file",
+        "path": "pyproject.toml",
+        "previewable": false
+      },
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "path": "SKILL.md",
+        "previewable": true,
+        "content": "---\nname: wireframing\ndescription: Generate a link-complete HTML/CSS wireframe from a project charter and loop until the user flow scores \"A\". Use when starting any new app's design phase.\nallowed-tools: Read, Write, Bash\n---\n# Wireframing agent\n\nA real agent (`src/wireframing/`, built on `agent-core`): charter → LLM screen-spec →\ngenerate HTML → flow-audit → revise loop until the flow grades **\"A\"**.\n\n1. The LLM turns the charter into a validated screen spec (`WireframeSpec`).\n2. `generate` writes one link-complete HTML page per screen (real links, no orphans).\n3. `audit` grades the flow A–F against the thresholds below; if not A, the audit issues are\n   fed back to the LLM and the spec is revised (bounded by `max_iterations`).\n4. Stop at A; hand to human check; then to the prototype/design step.\n\n## Run\n```python\nfrom wireframing import WireframingAgent          # see README of libraries/agent-core for the AgentContext\nres = WireframingAgent(ctx, out_dir=\"...\").run(charter_text)   # res.output[\"grade\"] == \"A\"\n```\nDeterministic pieces are also CLI-runnable: `python -m wireframing.generate` / `python -m wireframing.audit`.\n\n## Flow-audit thresholds (see `references/flow-rules.md`)\n- clicks-to-key-action ≤ 3 · features per page ≤ 7 · max navigation depth ≤ 4 · zero orphan pages / dead links\n\n> This loop is the fix for hallucinated flows (buttons to nowhere, unlinked pages).\n"
+      }
+    ],
+    "package": {
+      "format": "zip",
+      "path": "packages/wireframing.zip",
+      "sha256": "8c52ef27518166e8e20644bae8b1012c4a34708df8d329aec59c47aca86aeb61"
+    }
+  },
+  "localOverrides": {},
+  "attachments": {
+    "thumbnail": "content/articles/wireframing/thumbnail.png",
+    "pdf": null
+  }
+}
