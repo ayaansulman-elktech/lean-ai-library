@@ -29,7 +29,9 @@
       "sha256": "0e5d78e48c1de72fe466f5f2b10c340bb5347d6477efe6f34823357cf3563fb5"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Extracts skin, hair, and eye tones"
+  },
   "attachments": {
     "thumbnail": "content/articles/ios-skin-tone-cv/thumbnail.png",
     "pdf": null

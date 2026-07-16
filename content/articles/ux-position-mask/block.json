@@ -97,7 +97,9 @@
       "sha256": "c07169f13e39dccbdf2b07d11a44913f55b8731106c4b5d90d5b21c1903baa95"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Audits reachability and safe areas"
+  },
   "attachments": {
     "thumbnail": "content/articles/ux-position-mask/thumbnail.png",
     "pdf": null

@@ -4,7 +4,7 @@
   "type": "library",
   "category": "code-library",
   "description": "The factory's **vision-model layer**. Two parts: - **`catalog.json`** — a human-readable discovery view over the AI-farm registry: model name, task, status, license, and the niche(s) it serves. It stores **no weights** (those live in `../ai-farm`). - **`src/vis_models/`** — the importable adapters Sprint Engineers and agents call. Today this is `saliency`.",
-  "shortDescription": "Models library (`vis_models`)",
+  "shortDescription": "Catalogs reusable computer-vision models",
   "keywords": [],
   "version": "0.1.0",
   "githubPath": "libraries/models",

@@ -136,7 +136,9 @@
       "sha256": "2d8041589578513ed8238ced45873b26982bcd03e82a6aa1526816f436ef9c22"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Builds and validates apps in Simulator"
+  },
   "attachments": {
     "thumbnail": "content/articles/tester/thumbnail.png",
     "pdf": null

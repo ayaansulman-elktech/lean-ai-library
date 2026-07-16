@@ -16,7 +16,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Tests extraction and matching visually"
+  },
   "attachments": {
     "thumbnail": "content/articles/color-test-ui/thumbnail.png",
     "pdf": null

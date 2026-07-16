@@ -18,7 +18,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Explains Apple interface guidelines"
+  },
   "attachments": {
     "thumbnail": "content/articles/apple-guidelines/thumbnail.png",
     "pdf": null

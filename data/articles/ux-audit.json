@@ -3,7 +3,7 @@
   "type": "agent",
   "category": "agent-library",
   "name": "ux-audit",
-  "shortDescription": "UX audit agent: HIG checklist scoring + SUM saliency attention check for a screen.",
+  "shortDescription": "Scores screens against HIG and attention",
   "description": "UX audit agent: HIG checklist scoring + SUM saliency attention check for a screen.",
   "keywords": [
     "ux",

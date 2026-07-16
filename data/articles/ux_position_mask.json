@@ -4,7 +4,7 @@
   "type": "library",
   "category": "code",
   "description": "Audits which elements of a screen are in good vs dangerous positions. Core rules (`audit`, pure stdlib): given elements with a role (primary/secondary/content) and a normalized box, return a per-element verdict (good/ok/dangerous) with reasons plus a score/grade — thumb-reach ergonomics (primary actions belong lower-center), rule-of-thirds active zones (key content where the eye lands first), and safe areas (status bar/notch, home indicator, edges). For an arbitrary screen *design*, `audit_image(path)` first runs a classical, offline detector (background subtraction + connected components + role heuristics; Pillow/numpy/scipy) to find the elements, then scores them. Migration path: when auditing *generated* screens, replace detection by reading element boxes from the known layout — the rules stay the same.",
-  "shortDescription": "Audit a screen design: detect its elements and flag which sit in good/dangerous positions (thumb reach, active zones, safe areas).",
+  "shortDescription": "Flags unsafe interface element positions",
   "keywords": [
     "audit which screen elements sit in good vs dangerous positions"
   ],

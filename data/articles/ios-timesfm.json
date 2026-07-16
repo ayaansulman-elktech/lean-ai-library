@@ -3,7 +3,7 @@
   "type": "model",
   "category": "ios-ready",
   "name": "TimesFM",
-  "shortDescription": "Time-series forecasting",
+  "shortDescription": "Forecasts future time-series values",
   "description": "Time-series forecasting",
   "keywords": [
     "ios",

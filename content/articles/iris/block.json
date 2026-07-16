@@ -99,7 +99,9 @@
       "sha256": "c373dd7e5403218edfa5411774f9748601416d289bd6812845cc7b348e7a78ff"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Locates irises for accurate color sampling"
+  },
   "attachments": {
     "thumbnail": "content/articles/iris/thumbnail.png",
     "pdf": null

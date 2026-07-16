@@ -28,7 +28,9 @@
       "sha256": "5a7a8ebc699db082b0481f6c26d8bb2b3a65ce055511d51bbd45854f8d6cc8d1"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Documents Apple interface standards"
+  },
   "attachments": {
     "thumbnail": "content/articles/knowledge-apple-guidelines/thumbnail.png",
     "pdf": null

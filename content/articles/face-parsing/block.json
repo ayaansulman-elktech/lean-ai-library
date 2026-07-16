@@ -106,7 +106,9 @@
       "sha256": "efffc286153648e8de874fc0cc2e81e8f534e716d5e0bfe4bf2bc6190e479f1b"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Creates masks for facial features"
+  },
   "attachments": {
     "thumbnail": "content/articles/face-parsing/thumbnail.png",
     "pdf": null

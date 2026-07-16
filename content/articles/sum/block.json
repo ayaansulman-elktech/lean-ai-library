@@ -93,7 +93,9 @@
       "sha256": "5ecd0f4998e8255ad913b65e7a84223df4c2a380a91177422214ecae8f382d3a"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Predicts where viewers look on images"
+  },
   "attachments": {
     "thumbnail": "content/articles/sum/thumbnail.png",
     "pdf": null

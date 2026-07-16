@@ -16,7 +16,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Packages production models as MCP tools"
+  },
   "attachments": {
     "thumbnail": "content/articles/ai-farm/thumbnail.png",
     "pdf": null

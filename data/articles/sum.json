@@ -3,7 +3,7 @@
   "type": "model",
   "category": "model-library",
   "name": "sum",
-  "shortDescription": "Predicts where viewers look on a still screen or image.",
+  "shortDescription": "Predicts where viewers look on images",
   "description": "SUM (Saliency Unification through Mamba) predicts a human-attention heatmap for a still image, with a UI/web-page condition tuned for interface screens. Used by ux-audit to check the primary action is the visual hot-spot. Real weights run in iOS Ready; offline, a real pixel-based classical model or a deterministic mock stands in. The adapter is the shared vis_models.saliency core, re-exported here.",
   "keywords": [
     "saliency",

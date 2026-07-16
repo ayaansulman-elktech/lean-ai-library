@@ -16,7 +16,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Defines core visual design tokens"
+  },
   "attachments": {
     "thumbnail": "content/articles/foundations/thumbnail.png",
     "pdf": null

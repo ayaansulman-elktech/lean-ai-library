@@ -18,7 +18,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Guides balanced visual composition"
+  },
   "attachments": {
     "thumbnail": "content/articles/composition/thumbnail.png",
     "pdf": null

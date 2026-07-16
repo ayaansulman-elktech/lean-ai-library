@@ -558,7 +558,9 @@
       "sha256": "bcea102ba51a1562712358f780a830deda84d9c78ea57fbe3939dc76939cf507"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Optimizes skills as measurable artifacts"
+  },
   "attachments": {
     "thumbnail": "content/articles/skill-optimizer/thumbnail.png",
     "pdf": null

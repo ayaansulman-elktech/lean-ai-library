@@ -18,7 +18,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Explains practical color decisions"
+  },
   "attachments": {
     "thumbnail": "content/articles/color-theory/thumbnail.png",
     "pdf": null

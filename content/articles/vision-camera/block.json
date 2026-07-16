@@ -63,7 +63,9 @@
       "sha256": "74f483b3bd3cc683c5ee7330ba830108c62661fb7c2cd1cde69f52dac4ccab75"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Provides secure SwiftUI image capture"
+  },
   "attachments": {
     "thumbnail": "content/articles/vision-camera/thumbnail.png",
     "pdf": null

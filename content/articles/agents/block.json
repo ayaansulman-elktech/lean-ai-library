@@ -16,7 +16,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Runs specialist subagents in parallel"
+  },
   "attachments": {
     "thumbnail": "content/articles/agents/thumbnail.png",
     "pdf": null

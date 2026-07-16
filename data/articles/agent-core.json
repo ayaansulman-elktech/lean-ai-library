@@ -4,7 +4,7 @@
   "type": "agent",
   "category": "agents",
   "description": "The factory's **shared agent framework**, built on `ml-core`. A thin, production-minded base so every agent (wireframing, compliance, security, ux-audit) is consistent: budget-checked, cost-metered, observable, with structured output and memory.",
-  "shortDescription": "agent-core",
+  "shortDescription": "Shared framework for production agents",
   "keywords": [],
   "version": "0.1.0",
   "githubPath": "libraries/agent-core",

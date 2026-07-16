@@ -3,7 +3,7 @@
   "type": "agent",
   "category": "agent-library",
   "name": "wireframing",
-  "shortDescription": "Wireframing agent: charter -> A-grade flow wireframe.",
+  "shortDescription": "Turns product charters into app flows",
   "description": "Wireframing agent: charter -> A-grade flow wireframe.",
   "keywords": [
     "wireframing"

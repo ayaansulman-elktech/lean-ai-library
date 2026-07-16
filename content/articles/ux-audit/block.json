@@ -145,7 +145,9 @@
       "sha256": "43c2c8d563aaa87db1472d7cd624dde3119bccf9b03f1dacdc713b88563fa127"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Scores screens against HIG and attention"
+  },
   "attachments": {
     "thumbnail": "content/articles/ux-audit/thumbnail.png",
     "pdf": null

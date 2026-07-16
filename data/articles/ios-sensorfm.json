@@ -3,7 +3,7 @@
   "type": "model",
   "category": "ios-ready",
   "name": "SensorFM",
-  "shortDescription": "General intelligence and interface for wearable health data",
+  "shortDescription": "Interprets wearable health signals",
   "description": "General intelligence and interface for wearable health data",
   "keywords": [
     "ios",

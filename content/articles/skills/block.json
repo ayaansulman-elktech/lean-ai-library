@@ -16,7 +16,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Provides reusable factory workflows"
+  },
   "attachments": {
     "thumbnail": "content/articles/skills/thumbnail.png",
     "pdf": null

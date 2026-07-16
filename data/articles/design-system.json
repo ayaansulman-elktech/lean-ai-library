@@ -4,7 +4,7 @@
   "type": "library",
   "category": "code-library",
   "description": "Apple-native component shell. **Built once, shared by every app.**",
-  "shortDescription": "Lean Design System",
+  "shortDescription": "Provides shared Apple-native components",
   "keywords": [],
   "version": "0.1.0",
   "githubPath": "design-system",

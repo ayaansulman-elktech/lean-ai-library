@@ -3,7 +3,7 @@
   "type": "model",
   "category": "ios-ready",
   "name": "moodboard-purity",
-  "shortDescription": "Moodboard aesthetic extraction (palette, tags) + coherence/purity score -> per-app universe",
+  "shortDescription": "Scores moodboard style consistency",
   "description": "Runs in-process from raw/moodboard-purity via vis_models.moodboard. Real scoring needs SigLIP2 (google/siglip2-base-patch16-224) in data/huggingface; without it the adapter reports unavailable and build_moodboard falls back to the mock.",
   "keywords": [
     "ios",

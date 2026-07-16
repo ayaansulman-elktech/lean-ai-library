@@ -3,7 +3,7 @@
   "type": "model",
   "category": "ios-ready",
   "name": "face-parsing",
-  "shortDescription": "Facial segmentation (skin/eyes/lips/hair) for color extraction",
+  "shortDescription": "Segments skin, eyes, lips, and hair",
   "description": "Code is MIT. The pretrained BiSeNet weights are trained on CelebAMask-HQ, whose agreement forbids commercial exploitation of derived data. Confirm licensing before shipping in a paid app, or retrain on a permissive dataset.",
   "keywords": [
     "ios",

@@ -81,7 +81,9 @@
       "sha256": "cb827f8baa90536d7536c35114ef65dc26f61d9cfcee6cca3056a617e856c9e3"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Builds seasonal color harmonies"
+  },
   "attachments": {
     "thumbnail": "content/articles/color-matching/thumbnail.png",
     "pdf": null

@@ -4,7 +4,7 @@
   "type": "model",
   "category": "models",
   "description": "BiSeNet (ResNet18/34) 19-class CelebAMask-HQ face parsing. Segments a face into parts (skin, eyes, lips, hair, ...) so the Colors Matching app can extract colors from each region. Real weights run in the AI-farm; a deterministic synthetic mask stands in for CI.",
-  "shortDescription": "Per-pixel face-part masks from a selfie.",
+  "shortDescription": "Segments facial features pixel by pixel",
   "keywords": [
     "facial segmentation (skin/eyes/lips/hair)"
   ],

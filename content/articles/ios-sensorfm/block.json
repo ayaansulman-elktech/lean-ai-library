@@ -21,7 +21,9 @@
       "sha256": "1a16a2e200509b89db118d5f08bbc86583c599ff9025750d86789997e89efcd5"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Interprets wearable health signals"
+  },
   "attachments": {
     "thumbnail": null,
     "pdf": null

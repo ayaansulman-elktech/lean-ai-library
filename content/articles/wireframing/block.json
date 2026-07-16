@@ -155,7 +155,9 @@
       "sha256": "8c52ef27518166e8e20644bae8b1012c4a34708df8d329aec59c47aca86aeb61"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Turns product charters into app flows"
+  },
   "attachments": {
     "thumbnail": "content/articles/wireframing/thumbnail.png",
     "pdf": null

@@ -19,7 +19,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Measures visual style consistency"
+  },
   "attachments": {
     "thumbnail": "content/articles/purity/thumbnail.png",
     "pdf": null

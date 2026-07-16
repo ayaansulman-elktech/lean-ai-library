@@ -17,7 +17,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Provides reusable Swift and Python blocks"
+  },
   "attachments": {
     "thumbnail": "content/articles/code/thumbnail.png",
     "pdf": null

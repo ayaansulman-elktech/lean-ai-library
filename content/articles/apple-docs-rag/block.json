@@ -115,7 +115,9 @@
       "sha256": "d7acae69b1b862b236fc8e39dd9e432f1ee761aaa3b389485fe6a08ca937726d"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Answers Apple questions with citations"
+  },
   "attachments": {
     "thumbnail": "content/articles/apple-docs-rag/thumbnail.png",
     "pdf": null

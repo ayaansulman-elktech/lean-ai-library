@@ -28,7 +28,9 @@
       "sha256": "a5dd4c9e80f32456a0eae2d7daf9b434751d221723954435efdd758adafe7968"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Audits navigation graphs and dead ends"
+  },
   "attachments": {
     "thumbnail": "content/articles/mcp-navigation-flow/thumbnail.png",
     "pdf": null

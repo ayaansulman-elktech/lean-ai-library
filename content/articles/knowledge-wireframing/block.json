@@ -34,7 +34,9 @@
       "sha256": "f95e5e7a99509011efb069aa33e1ea0b87512d0fc3f3f08e3e8f8cd3ba4c1fba"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Documents reliable wireframing methods"
+  },
   "attachments": {
     "thumbnail": "content/articles/knowledge-wireframing/thumbnail.png",
     "pdf": null

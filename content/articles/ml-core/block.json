@@ -21,7 +21,9 @@
     ],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Unifies model providers and cost tracking"
+  },
   "attachments": {
     "thumbnail": "content/articles/ml-core/thumbnail.png",
     "pdf": null

@@ -16,7 +16,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Organizes models as portable blocks"
+  },
   "attachments": {
     "thumbnail": "content/articles/blocks/thumbnail.png",
     "pdf": null

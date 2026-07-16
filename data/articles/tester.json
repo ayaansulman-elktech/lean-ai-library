@@ -3,7 +3,7 @@
   "type": "agent",
   "category": "agent-library",
   "name": "tester",
-  "shortDescription": "iOS build tester: compile + launch in the simulator, assert the core screen renders, diagnose crashes.",
+  "shortDescription": "Builds and validates apps in Simulator",
   "description": "iOS build tester: compile + launch in the simulator, assert the core screen renders, diagnose crashes.",
   "keywords": [
     "tester"

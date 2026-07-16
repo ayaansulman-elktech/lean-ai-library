@@ -16,7 +16,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Maps actions to suitable SF Symbols"
+  },
   "attachments": {
     "thumbnail": "content/articles/sfsymbols/thumbnail.png",
     "pdf": null

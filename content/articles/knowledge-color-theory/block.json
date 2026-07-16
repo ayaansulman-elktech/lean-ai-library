@@ -35,7 +35,9 @@
       "sha256": "3c6b393bf54a8e4fee5f01a2e066291e16aa1675a9c8a44177e7f828d3081b60"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Applies color theory to product design"
+  },
   "attachments": {
     "thumbnail": "content/articles/knowledge-color-theory/thumbnail.png",
     "pdf": null

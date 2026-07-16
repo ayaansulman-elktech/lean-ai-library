@@ -16,7 +16,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Provides reusable Apple UX patterns"
+  },
   "attachments": {
     "thumbnail": "content/articles/patterns/thumbnail.png",
     "pdf": null

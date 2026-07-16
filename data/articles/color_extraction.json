@@ -4,7 +4,7 @@
   "type": "library",
   "category": "code",
   "description": "Upload an image and get its dominant colors as [{hex, percentage}] sorted by coverage. Near-identical colors are grouped by snapping each channel to a small grid, so the result is a handful of meaningful swatches rather than thousands of near-duplicates. The pure-Python core (extract_from_pixels) is dependency-free and tested; extract_colors() reads a file via Pillow (optional [image] extra). Feeds color-matching (the dominant/skin tone becomes the seasonal input).",
-  "shortDescription": "Extract an image's dominant colors with their coverage percentages.",
+  "shortDescription": "Finds dominant colors and coverage",
   "keywords": [
     "dominant color extraction from an image"
   ],

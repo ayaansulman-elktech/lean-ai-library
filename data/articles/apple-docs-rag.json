@@ -3,7 +3,7 @@
   "type": "agent",
   "category": "agent-library",
   "name": "apple-docs-rag",
-  "shortDescription": "RAG agent: grounded answers about Apple development, with citations.",
+  "shortDescription": "Answers Apple questions with citations",
   "description": "RAG agent: grounded answers about Apple development, with citations.",
   "keywords": [
     "apple",

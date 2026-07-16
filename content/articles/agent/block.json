@@ -16,7 +16,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Defines when and how an agent should act"
+  },
   "attachments": {
     "thumbnail": "content/articles/agent/thumbnail.png",
     "pdf": null

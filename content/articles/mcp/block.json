@@ -16,7 +16,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Provides shared tools for factory agents"
+  },
   "attachments": {
     "thumbnail": "content/articles/mcp/thumbnail.png",
     "pdf": null

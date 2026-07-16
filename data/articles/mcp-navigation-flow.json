@@ -3,7 +3,7 @@
   "type": "library",
   "category": "mcp-library",
   "name": "navigation-flow",
-  "shortDescription": "An MCP server that analyzes a screen flow: builds the navigation graph and computes clicks-to-action, navigation depth, orphan pages / dead ends, and features-per-page.",
+  "shortDescription": "Audits navigation graphs and dead ends",
   "description": "An MCP server that analyzes a screen flow: builds the navigation graph and computes clicks-to-action, navigation depth, orphan pages / dead ends, and features-per-page.",
   "keywords": [
     "navigation",

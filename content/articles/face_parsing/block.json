@@ -24,7 +24,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Segments facial features pixel by pixel"
+  },
   "attachments": {
     "thumbnail": "content/articles/face_parsing/thumbnail.png",
     "pdf": null

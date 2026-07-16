@@ -484,7 +484,7 @@
           </div>` : ""}
         </a>
         <div class="article-meta-row">
-          <p class="article-short">${escapeHtml(article.shortDescription || article.name)}</p>
+          <p class="article-short" title="${escapeAttribute(article.shortDescription || article.name)}">${escapeHtml(article.shortDescription || article.name)}</p>
           <a class="download-dot" href="${escapeAttribute(article.contentPath)}" download aria-label="Download ${escapeHtml(article.name)}">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M12 6.5v11m0 0 5-5m-5 5-5-5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path>

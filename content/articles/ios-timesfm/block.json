@@ -21,7 +21,9 @@
       "sha256": "7770d88b2400c3b3cf068326bc985884a7149a8a59c2565b1c094faaa5f98a92"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Forecasts future time-series values"
+  },
   "attachments": {
     "thumbnail": null,
     "pdf": null

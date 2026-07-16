@@ -112,7 +112,9 @@
       "sha256": "9bb96c458a9c24a3d27e1d71ab6e9be1d10eff83fcdd4a2ae744cc2b74de9ec5"
     }
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Generates checked SwiftUI from wireframes"
+  },
   "attachments": {
     "thumbnail": "content/articles/swiftui-gen/thumbnail.png",
     "pdf": null

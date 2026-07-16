@@ -24,7 +24,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Matches colors to seasonal palettes"
+  },
   "attachments": {
     "thumbnail": "content/articles/color_matching/thumbnail.png",
     "pdf": null

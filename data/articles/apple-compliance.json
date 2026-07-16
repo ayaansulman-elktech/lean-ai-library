@@ -3,7 +3,7 @@
   "type": "agent",
   "category": "agent-library",
   "name": "apple-compliance",
-  "shortDescription": "Apple App Store compliance gate (Guideline 4.3-weighted).",
+  "shortDescription": "Checks apps against App Store rules",
   "description": "Apple App Store compliance gate (Guideline 4.3-weighted).",
   "keywords": [
     "apple",

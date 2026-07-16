@@ -3,7 +3,7 @@
   "type": "model",
   "category": "ios-ready",
   "name": "skin-tone-cv",
-  "shortDescription": "Extract skin/hair/eye tones from a selfie -> features for seasonal palette",
+  "shortDescription": "Extracts skin, hair, and eye tones",
   "description": "Extract skin/hair/eye tones from a selfie -> features for seasonal palette",
   "keywords": [
     "ios",

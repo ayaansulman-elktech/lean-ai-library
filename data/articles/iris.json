@@ -3,7 +3,7 @@
   "type": "model",
   "category": "model-library",
   "name": "iris",
-  "shortDescription": "Locates the iris in an eye, so the eye colour can be sampled.",
+  "shortDescription": "Locates irises for accurate color sampling",
   "description": "MediaPipe Iris (PyTorch port) locates the pupil center + iris boundary and eye contour from a 64x64 eye crop. Used by Colors Matching to pull the person's eye colour from the precise iris disc (face-parsing gives the rough eye region; this pinpoints the iris). Weights are a one-time TFLite->PyTorch conversion (torch-only at runtime, CPU-fast); the upstream MediaPipe face-mesh crop stage is skipped in favour of a supplied eye box.",
   "keywords": [
     "iris",

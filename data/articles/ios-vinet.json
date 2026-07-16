@@ -3,7 +3,7 @@
   "type": "model",
   "category": "ios-ready",
   "name": "ViNet",
-  "shortDescription": "Video saliency — onboarding clips (ViNet-S / ViNet++)",
+  "shortDescription": "Predicts attention across video frames",
   "description": "Original ViNet weights unpublished; targets the maintained ViNet-S. Checkpoint vinet_s_dhf1k.pt.",
   "keywords": [
     "ios",

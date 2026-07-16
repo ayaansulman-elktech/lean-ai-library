@@ -3,7 +3,7 @@
   "type": "library",
   "category": "mcp-library",
   "name": "wireframing",
-  "shortDescription": "Wireframing MCP: editable-flow tools (place/link/audit/export) any agent or the studio can call.",
+  "shortDescription": "Creates and audits editable flows",
   "description": "Wireframing MCP: editable-flow tools (place/link/audit/export) any agent or the studio can call.",
   "keywords": [
     "wireframing"

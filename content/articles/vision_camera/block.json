@@ -24,7 +24,9 @@
     "dependencies": [],
     "related": []
   },
-  "localOverrides": {},
+  "localOverrides": {
+    "shortDescription": "Captures and encrypts images on device"
+  },
   "attachments": {
     "thumbnail": "content/articles/vision_camera/thumbnail.png",
     "pdf": null
