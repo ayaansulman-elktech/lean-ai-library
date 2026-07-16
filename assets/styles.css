@@ -496,6 +496,7 @@ html.dark-theme .category-section--featured .design-card-label span {
 
 .article-card {
   color: var(--color-text);
+  cursor: pointer;
   display: block;
   min-width: 0;
   position: relative;
