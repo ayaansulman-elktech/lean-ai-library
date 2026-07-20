@@ -493,3 +493,41 @@ body[data-page="updates"] :focus-visible {
     transform: none !important;
   }
 }
+
+html.dark-theme body[data-page="updates"] .updates-toolbar {
+  background: rgba(18, 18, 18, 0.9);
+}
+
+html.dark-theme body[data-page="updates"] .updates-filters button {
+  color: #a0a0a0;
+}
+
+html.dark-theme body[data-page="updates"] .updates-filters button:hover,
+html.dark-theme body[data-page="updates"] .updates-filters button:focus-visible,
+html.dark-theme body[data-page="updates"] .updates-filters button[aria-pressed="true"] {
+  background: #f0f0f0;
+  color: #121212;
+}
+
+html.dark-theme body[data-page="updates"] .updates-search:focus-within {
+  background: #1e1e1e;
+  border-color: #555559;
+}
+
+html.dark-theme body[data-page="updates"] .updates-history {
+  background: rgba(18, 18, 18, 0.9);
+  border-color: #2c2c2e;
+}
+
+html.dark-theme body[data-page="updates"] .updates-history nav::before {
+  background: #2c2c2e;
+}
+
+html.dark-theme body[data-page="updates"] .updates-history a {
+  color: #a0a0a0;
+}
+
+html.dark-theme body[data-page="updates"] .updates-history a::before {
+  background: #121212;
+  border-color: #555559;
+}
