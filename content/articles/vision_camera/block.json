@@ -29,7 +29,7 @@
     "description": "Provides reusable SwiftUI camera capture and CryptoKit image encryption for applications that process sensitive images on device."
   },
   "attachments": {
-    "thumbnail": "content/articles/vision_camera/thumbnail.png",
+    "thumbnail": "content/articles/vision_camera/thumbnail.webp",
     "pdf": null
   }
 }

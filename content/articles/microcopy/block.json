@@ -116,7 +116,7 @@
     "description": "Generates concise interface copy for wireframe screens, checks it against Apple conventions and length limits, and prepares it for SwiftUI generation."
   },
   "attachments": {
-    "thumbnail": "content/articles/microcopy/thumbnail.png",
+    "thumbnail": "content/articles/microcopy/thumbnail.webp",
     "pdf": null
   }
 }

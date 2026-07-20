@@ -95,7 +95,7 @@
     "description": "Exposes moodboard analysis and visual-coherence scoring through MCP, including generated design-token overrides for an application universe."
   },
   "attachments": {
-    "thumbnail": "content/articles/mcp-purity/thumbnail.png",
+    "thumbnail": "content/articles/mcp-purity/thumbnail.webp",
     "pdf": null
   }
 }

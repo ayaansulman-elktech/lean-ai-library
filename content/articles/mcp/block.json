@@ -21,7 +21,7 @@
     "description": "A collection of shared MCP servers that expose factory capabilities such as flow analysis, wireframing, and visual-coherence scoring to agents."
   },
   "attachments": {
-    "thumbnail": "content/articles/mcp/thumbnail.png",
+    "thumbnail": "content/articles/mcp/thumbnail.webp",
     "pdf": null
   }
 }

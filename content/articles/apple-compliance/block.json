@@ -117,7 +117,7 @@
     "description": "Reviews an application against Apple App Store requirements, with added attention to Guideline 4.3 and common causes of review rejection."
   },
   "attachments": {
-    "thumbnail": "content/articles/apple-compliance/thumbnail.png",
+    "thumbnail": "content/articles/apple-compliance/thumbnail.webp",
     "pdf": null
   }
 }

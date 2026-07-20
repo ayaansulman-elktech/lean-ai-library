@@ -29,7 +29,7 @@
     "description": "Uses attention signals and established iOS reading behavior to classify a screen's visual flow and identify unhealthy presentation patterns."
   },
   "attachments": {
-    "thumbnail": "content/articles/ux_attention_pattern/thumbnail.png",
+    "thumbnail": "content/articles/ux_attention_pattern/thumbnail.webp",
     "pdf": null
   }
 }

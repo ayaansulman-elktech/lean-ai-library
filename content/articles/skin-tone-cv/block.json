@@ -21,7 +21,7 @@
     "description": "A model card for extracting skin, hair, and eye tones from selfies and converting them into features for seasonal color analysis."
   },
   "attachments": {
-    "thumbnail": "content/articles/skin-tone-cv/thumbnail.png",
+    "thumbnail": "content/articles/skin-tone-cv/thumbnail.webp",
     "pdf": null
   }
 }

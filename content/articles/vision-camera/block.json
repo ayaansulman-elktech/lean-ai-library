@@ -68,7 +68,7 @@
     "description": "A reusable secure-capture block for SwiftUI that encrypts captured images at rest before they are persisted or processed."
   },
   "attachments": {
-    "thumbnail": "content/articles/vision-camera/thumbnail.png",
+    "thumbnail": "content/articles/vision-camera/thumbnail.webp",
     "pdf": null
   }
 }

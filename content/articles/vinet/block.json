@@ -98,7 +98,7 @@
     "description": "Produces per-frame attention heatmaps for video, helping teams assess where viewers look throughout motion and onboarding content."
   },
   "attachments": {
-    "thumbnail": "content/articles/vinet/thumbnail.png",
+    "thumbnail": "content/articles/vinet/thumbnail.webp",
     "pdf": null
   }
 }

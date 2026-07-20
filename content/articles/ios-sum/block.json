@@ -33,7 +33,7 @@
     "description": "Predicts where people are likely to look in a static image or interface and produces a saliency map for design evaluation."
   },
   "attachments": {
-    "thumbnail": "content/articles/ios-sum/thumbnail.png",
+    "thumbnail": "content/articles/ios-sum/thumbnail.webp",
     "pdf": null
   }
 }

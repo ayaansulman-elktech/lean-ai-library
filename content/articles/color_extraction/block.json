@@ -29,7 +29,7 @@
     "description": "Analyzes an image, groups visually similar colors, and returns its dominant colors with estimated coverage percentages."
   },
   "attachments": {
-    "thumbnail": "content/articles/color_extraction/thumbnail.png",
+    "thumbnail": "content/articles/color_extraction/thumbnail.webp",
     "pdf": null
   }
 }

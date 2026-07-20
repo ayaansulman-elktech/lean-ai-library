@@ -21,7 +21,7 @@
     "description": "A reusable illustration system containing art-direction rules, generation prompts, model settings, and the resulting visual assets."
   },
   "attachments": {
-    "thumbnail": "content/articles/illustrations/thumbnail.png",
+    "thumbnail": "content/articles/illustrations/thumbnail.webp",
     "pdf": null
   }
 }

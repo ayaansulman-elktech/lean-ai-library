@@ -21,7 +21,7 @@
     "description": "A subagent architecture for dividing development work among focused specialists, running tasks in parallel, and combining their findings into one result."
   },
   "attachments": {
-    "thumbnail": "content/articles/agents/thumbnail.png",
+    "thumbnail": "content/articles/agents/thumbnail.webp",
     "pdf": null
   }
 }

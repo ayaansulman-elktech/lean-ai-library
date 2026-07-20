@@ -33,7 +33,7 @@
     "description": "Detects pupil, iris, and eye-contour landmarks so applications can reliably sample a person's eye color from an image."
   },
   "attachments": {
-    "thumbnail": "content/articles/ios-iris/thumbnail.png",
+    "thumbnail": "content/articles/ios-iris/thumbnail.webp",
     "pdf": null
   }
 }

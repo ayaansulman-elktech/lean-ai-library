@@ -33,7 +33,7 @@
     "description": "Builds a graph from application screens and reports clicks to key actions, navigation depth, dead ends, orphan screens, and feature density."
   },
   "attachments": {
-    "thumbnail": "content/articles/mcp-navigation-flow/thumbnail.png",
+    "thumbnail": "content/articles/mcp-navigation-flow/thumbnail.webp",
     "pdf": null
   }
 }

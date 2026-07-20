@@ -111,7 +111,7 @@
     "description": "Creates detailed masks for individual facial features so downstream tools can analyze colors, edit regions, or isolate components."
   },
   "attachments": {
-    "thumbnail": "content/articles/face-parsing/thumbnail.png",
+    "thumbnail": "content/articles/face-parsing/thumbnail.webp",
     "pdf": null
   }
 }
