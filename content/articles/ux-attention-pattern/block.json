@@ -102,7 +102,7 @@
     "description": "Analyzes an iOS screen's attention pattern and reading order to determine whether important content follows a healthy visual flow."
   },
   "attachments": {
-    "thumbnail": "content/articles/ux-attention-pattern/thumbnail.png",
+    "thumbnail": "content/articles/ux-attention-pattern/thumbnail.webp",
     "pdf": null
   }
 }

@@ -98,7 +98,7 @@
     "description": "Generates human-attention heatmaps for static images and interfaces, including a condition tuned for evaluating web and application screens."
   },
   "attachments": {
-    "thumbnail": "content/articles/sum/thumbnail.png",
+    "thumbnail": "content/articles/sum/thumbnail.webp",
     "pdf": null
   }
 }

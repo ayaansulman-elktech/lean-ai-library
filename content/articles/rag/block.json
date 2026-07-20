@@ -22,7 +22,7 @@
     "description": "A lightweight retrieval library that chunks source documents, ranks relevant passages, and grounds agent answers in traceable evidence."
   },
   "attachments": {
-    "thumbnail": "content/articles/rag/thumbnail.png",
+    "thumbnail": "content/articles/rag/thumbnail.webp",
     "pdf": null
   }
 }

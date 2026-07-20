@@ -141,7 +141,7 @@
     "description": "Builds an iOS application, launches it in Simulator, verifies that the core screen renders, and reports useful diagnostics when execution fails."
   },
   "attachments": {
-    "thumbnail": "content/articles/tester/thumbnail.png",
+    "thumbnail": "content/articles/tester/thumbnail.webp",
     "pdf": null
   }
 }

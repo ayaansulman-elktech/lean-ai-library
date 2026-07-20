@@ -34,7 +34,7 @@
     "description": "Extracts representative skin, hair, and eye tones from a selfie as structured features for seasonal palette recommendations."
   },
   "attachments": {
-    "thumbnail": "content/articles/ios-skin-tone-cv/thumbnail.png",
+    "thumbnail": "content/articles/ios-skin-tone-cv/thumbnail.webp",
     "pdf": null
   }
 }

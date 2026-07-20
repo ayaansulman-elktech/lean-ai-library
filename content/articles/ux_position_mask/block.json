@@ -29,7 +29,7 @@
     "description": "Evaluates interface elements against thumb reach, active zones, safe areas, and role-specific positioning to flag risky placements."
   },
   "attachments": {
-    "thumbnail": "content/articles/ux_position_mask/thumbnail.png",
+    "thumbnail": "content/articles/ux_position_mask/thumbnail.webp",
     "pdf": null
   }
 }

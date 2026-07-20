@@ -13,14 +13,14 @@
   ],
   "slug": "article-1",
   "contentPath": "content/articles/article-1/content.pdf",
-  "coverPath": "content/articles/article-1/cover-preview.png",
-  "coverPreviewPath": "content/articles/article-1/cover-preview.png",
+  "coverPath": "content/articles/article-1/thumbnail.webp",
+  "coverPreviewPath": "content/articles/article-1/thumbnail.webp",
   "fileTree": [
     {
       "name": "block.json",
       "type": "file",
       "path": "block.json",
-      "content": "{\n  \"id\": \"article-1\",\n  \"type\": \"pdf\",\n  \"category\": \"agentic\",\n  \"name\": \"Language Model\",\n  \"shortDescription\": \"Optimizes reusable AI skills\",\n  \"description\": \"Explains how reusable AI skills can be measured, refined, and optimized into dependable workflows for real production tasks.\",\n  \"keywords\": [\n    \"agentic\",\n    \"llm\",\n    \"security\",\n    \"skill\"\n  ],\n  \"slug\": \"article-1\",\n  \"contentPath\": \"content/articles/article-1/content.pdf\",\n  \"coverPath\": \"content/articles/article-1/cover-preview.png\",\n  \"coverPreviewPath\": \"content/articles/article-1/cover-preview.png\"\n}"
+      "content": "{\n  \"id\": \"article-1\",\n  \"type\": \"pdf\",\n  \"category\": \"agentic\",\n  \"name\": \"Language Model\",\n  \"shortDescription\": \"Optimizes reusable AI skills\",\n  \"description\": \"Explains how reusable AI skills can be measured, refined, and optimized into dependable workflows for real production tasks.\",\n  \"keywords\": [\n    \"agentic\",\n    \"llm\",\n    \"security\",\n    \"skill\"\n  ],\n  \"slug\": \"article-1\",\n  \"contentPath\": \"content/articles/article-1/content.pdf\",\n  \"coverPath\": \"content/articles/article-1/thumbnail.webp\",\n  \"coverPreviewPath\": \"content/articles/article-1/thumbnail.webp\"\n}"
     }
   ]
 }

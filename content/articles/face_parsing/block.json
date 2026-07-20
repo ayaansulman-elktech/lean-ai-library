@@ -29,7 +29,7 @@
     "description": "Uses semantic segmentation to create pixel-level masks for facial regions such as skin, eyes, lips, hair, and accessories."
   },
   "attachments": {
-    "thumbnail": "content/articles/face_parsing/thumbnail.png",
+    "thumbnail": "content/articles/face_parsing/thumbnail.webp",
     "pdf": null
   }
 }

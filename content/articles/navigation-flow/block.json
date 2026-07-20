@@ -24,7 +24,7 @@
     "description": "Analyzes how users move between application screens and measures navigation depth, action distance, dead ends, and structural complexity."
   },
   "attachments": {
-    "thumbnail": "content/articles/navigation-flow/thumbnail.png",
+    "thumbnail": "content/articles/navigation-flow/thumbnail.webp",
     "pdf": null
   }
 }

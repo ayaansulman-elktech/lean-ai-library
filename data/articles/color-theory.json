@@ -16,14 +16,14 @@
   "related": [],
   "slug": "color-theory",
   "contentPath": "",
-  "coverPath": "content/articles/color-theory/thumbnail.png",
-  "coverPreviewPath": "content/articles/color-theory/thumbnail.png",
+  "coverPath": "content/articles/color-theory/thumbnail.webp",
+  "coverPreviewPath": "content/articles/color-theory/thumbnail.webp",
   "fileTree": [
     {
       "name": "block.json",
       "type": "file",
       "path": "block.json",
-      "content": "{\n  \"id\": \"color-theory\",\n  \"name\": \"color-theory\",\n  \"type\": \"library\",\n  \"category\": \"knowledge\",\n  \"description\": \"A practical color reference covering palette construction, contrast, emotional associations, branding, accessibility, and interface decisions.\",\n  \"shortDescription\": \"Explains practical color decisions\",\n  \"keywords\": [\n    \"color theory\"\n  ],\n  \"version\": \"0.1.0\",\n  \"githubPath\": \"libraries/knowledge/blocks/color-theory\",\n  \"assets\": [],\n  \"examples\": [],\n  \"dependencies\": [],\n  \"related\": [],\n  \"slug\": \"color-theory\",\n  \"contentPath\": \"\",\n  \"coverPath\": \"content/articles/color-theory/thumbnail.png\",\n  \"coverPreviewPath\": \"content/articles/color-theory/thumbnail.png\"\n}"
+      "content": "{\n  \"id\": \"color-theory\",\n  \"name\": \"color-theory\",\n  \"type\": \"library\",\n  \"category\": \"knowledge\",\n  \"description\": \"A practical color reference covering palette construction, contrast, emotional associations, branding, accessibility, and interface decisions.\",\n  \"shortDescription\": \"Explains practical color decisions\",\n  \"keywords\": [\n    \"color theory\"\n  ],\n  \"version\": \"0.1.0\",\n  \"githubPath\": \"libraries/knowledge/blocks/color-theory\",\n  \"assets\": [],\n  \"examples\": [],\n  \"dependencies\": [],\n  \"related\": [],\n  \"slug\": \"color-theory\",\n  \"contentPath\": \"\",\n  \"coverPath\": \"content/articles/color-theory/thumbnail.webp\",\n  \"coverPreviewPath\": \"content/articles/color-theory/thumbnail.webp\"\n}"
     }
   ]
 }

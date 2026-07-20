@@ -150,7 +150,7 @@
     "description": "Scores a screen against Apple interface guidance and combines the result with saliency analysis to identify usability and attention problems."
   },
   "attachments": {
-    "thumbnail": "content/articles/ux-audit/thumbnail.png",
+    "thumbnail": "content/articles/ux-audit/thumbnail.webp",
     "pdf": null
   }
 }

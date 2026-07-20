@@ -22,7 +22,7 @@
     "description": "Catalogs the factory's computer-vision models, their tasks, readiness, licensing, dependencies, and the interfaces used to run them."
   },
   "attachments": {
-    "thumbnail": "content/articles/models/thumbnail.png",
+    "thumbnail": "content/articles/models/thumbnail.webp",
     "pdf": null
   }
 }

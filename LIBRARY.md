@@ -338,6 +338,17 @@ explicit mappings in the CLI.
 Matched files are copied locally. Unmatched articles retain their existing thumbnail or
 `assets/default_thumbnail.png`.
 
+### Optimize thumbnails for the web
+
+Preview the conversion, then resize recognized thumbnails to a maximum width of 1200 pixels and encode them as WebP at quality 82:
+
+```powershell
+npm run cli -- thumbnails optimize --dry-run
+npm run cli -- thumbnails optimize
+```
+
+The optimizer updates every article attachment to `thumbnail.webp` and removes the superseded PNG/JPEG/GIF after a successful conversion. Use `--keep-originals` to retain source files, or tune output with `--width <320-4000>` and `--quality <1-100>`. Card images load lazily and decode asynchronously; the article-detail cover loads eagerly because it is immediately visible.
+
 Card behavior:
 
 - Custom thumbnail: show the image without title/type overlay text
@@ -438,6 +449,7 @@ npm run cli -- article detach <id> [--thumbnail] [--pdf]
 npm run cli -- article remove <id> --yes
 
 npm run cli -- thumbnails import <directory> [--dry-run]
+npm run cli -- thumbnails optimize [--width <pixels>] [--quality <number>] [--keep-originals] [--dry-run]
 ```
 
 Show live help at any level:

@@ -22,7 +22,7 @@
     "description": "Turns an implemented screen into an image and identifies its primary-action region so attention and UX audits can evaluate the real interface."
   },
   "attachments": {
-    "thumbnail": "content/articles/render/thumbnail.png",
+    "thumbnail": "content/articles/render/thumbnail.webp",
     "pdf": null
   }
 }

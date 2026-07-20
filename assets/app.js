@@ -486,7 +486,7 @@
     return `
       <article class="article-card design-card" data-category="${escapeAttribute(normalizedCat)}" data-search="${escapeAttribute(searchText)}" aria-label="${escapeAttribute(article.name)}">
         <a class="article-cover-link design-card-cover" href="article.html?id=${encodeURIComponent(article.slug)}">
-          <img src="${escapeAttribute(coverPath)}" alt="">
+          <img src="${escapeAttribute(coverPath)}" alt="" width="1200" height="675" loading="lazy" decoding="async">
           ${usesDefaultThumbnail ? `<div class="design-card-label" aria-hidden="true">
             <span class="design-card-mark"></span>
             <strong>${escapeHtml(article.name)}</strong>
@@ -603,7 +603,7 @@
           ${renderViewer(article, contentKind, files)}
         </div>
         <aside class="article-sidebar">
-          <img class="article-sidebar-cover" src="${escapeAttribute(coverPath)}" alt="">
+          <img class="article-sidebar-cover" src="${escapeAttribute(coverPath)}" alt="" width="1200" height="675" loading="eager" decoding="async" fetchpriority="high">
           <h1>${escapeHtml(article.name)}</h1>
           <p class="article-subtitle">${escapeHtml(article.description || article.shortDescription || "")}</p>
           ${article.contentPath ? `<a class="download-button" href="${escapeAttribute(article.contentPath)}" download>download</a>` : ""}

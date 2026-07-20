@@ -103,7 +103,7 @@
     "description": "Combines deterministic static checks with model-assisted review to identify security risks in generated application code before release."
   },
   "attachments": {
-    "thumbnail": "content/articles/security-review/thumbnail.png",
+    "thumbnail": "content/articles/security-review/thumbnail.webp",
     "pdf": null
   }
 }

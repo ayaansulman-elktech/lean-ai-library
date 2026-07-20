@@ -26,7 +26,7 @@
     "description": "A provider-independent model gateway that centralizes LLM access, cost tracking, execution metadata, and shared behavior for factory agents."
   },
   "attachments": {
-    "thumbnail": "content/articles/ml-core/thumbnail.png",
+    "thumbnail": "content/articles/ml-core/thumbnail.webp",
     "pdf": null
   }
 }

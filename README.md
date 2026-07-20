@@ -29,6 +29,7 @@ npm run cli -- feed import path/to/library-feeds --dry-run
 npm run cli -- feed import path/to/library-feeds
 npm run cli -- article edit iris --short-description "Custom text"
 npm run cli -- article attach iris --thumbnail cover.png
+npm run cli -- thumbnails optimize
 npm run cli -- article attach iris --pdf research.pdf
 ```
 

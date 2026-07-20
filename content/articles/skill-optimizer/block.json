@@ -563,7 +563,7 @@
     "description": "Treats SKILL.md instructions as measurable artifacts, evaluating and refining them at build time to improve reliability and task performance."
   },
   "attachments": {
-    "thumbnail": "content/articles/skill-optimizer/thumbnail.png",
+    "thumbnail": "content/articles/skill-optimizer/thumbnail.webp",
     "pdf": null
   }
 }

@@ -117,7 +117,7 @@
     "description": "Converts one token-driven wireframe screen at a time into SwiftUI and applies static checks before the generated code moves downstream."
   },
   "attachments": {
-    "thumbnail": "content/articles/swiftui-gen/thumbnail.png",
+    "thumbnail": "content/articles/swiftui-gen/thumbnail.webp",
     "pdf": null
   }
 }

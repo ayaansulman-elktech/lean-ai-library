@@ -21,7 +21,7 @@
     "description": "Defines the portable block structure used to package models with their metadata, files, documentation, dependencies, and usage information."
   },
   "attachments": {
-    "thumbnail": "content/articles/blocks/thumbnail.png",
+    "thumbnail": "content/articles/blocks/thumbnail.webp",
     "pdf": null
   }
 }

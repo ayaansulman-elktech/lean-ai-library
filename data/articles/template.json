@@ -17,8 +17,8 @@
   "related": [],
   "slug": "template",
   "contentPath": "",
-  "coverPath": "content/articles/template/thumbnail.png",
-  "coverPreviewPath": "content/articles/template/thumbnail.png",
+  "coverPath": "content/articles/template/thumbnail.webp",
+  "coverPreviewPath": "content/articles/template/thumbnail.webp",
   "fileTree": [
     {
       "name": "README.md",

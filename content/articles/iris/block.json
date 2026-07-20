@@ -104,7 +104,7 @@
     "description": "Locates the pupil center, iris boundary, and eye contour from an eye crop so downstream tools can sample eye color accurately."
   },
   "attachments": {
-    "thumbnail": "content/articles/iris/thumbnail.png",
+    "thumbnail": "content/articles/iris/thumbnail.webp",
     "pdf": null
   }
 }
