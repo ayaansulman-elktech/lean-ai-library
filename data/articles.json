@@ -14,8 +14,8 @@
     "related": [],
     "slug": "agent",
     "contentPath": "",
-    "coverPath": "content/articles/agent/thumbnail.png",
-    "coverPreviewPath": "content/articles/agent/thumbnail.png"
+    "coverPath": "content/articles/agent/thumbnail.webp",
+    "coverPreviewPath": "content/articles/agent/thumbnail.webp"
   },
   {
     "id": "agent-core",
@@ -35,8 +35,8 @@
     "related": [],
     "slug": "agent-core",
     "contentPath": "",
-    "coverPath": "content/articles/agent-core/thumbnail.png",
-    "coverPreviewPath": "content/articles/agent-core/thumbnail.png"
+    "coverPath": "content/articles/agent-core/thumbnail.webp",
+    "coverPreviewPath": "content/articles/agent-core/thumbnail.webp"
   },
   {
     "id": "agents",
@@ -53,8 +53,8 @@
     "related": [],
     "slug": "agents",
     "contentPath": "",
-    "coverPath": "content/articles/agents/thumbnail.png",
-    "coverPreviewPath": "content/articles/agents/thumbnail.png"
+    "coverPath": "content/articles/agents/thumbnail.webp",
+    "coverPreviewPath": "content/articles/agents/thumbnail.webp"
   },
   {
     "id": "ai-farm",
@@ -71,8 +71,8 @@
     "related": [],
     "slug": "ai-farm",
     "contentPath": "",
-    "coverPath": "content/articles/ai-farm/thumbnail.png",
-    "coverPreviewPath": "content/articles/ai-farm/thumbnail.png"
+    "coverPath": "content/articles/ai-farm/thumbnail.webp",
+    "coverPreviewPath": "content/articles/ai-farm/thumbnail.webp"
   },
   {
     "id": "apple-compliance",
@@ -93,8 +93,8 @@
     },
     "slug": "apple-compliance",
     "contentPath": "",
-    "coverPath": "content/articles/apple-compliance/thumbnail.png",
-    "coverPreviewPath": "content/articles/apple-compliance/thumbnail.png"
+    "coverPath": "content/articles/apple-compliance/thumbnail.webp",
+    "coverPreviewPath": "content/articles/apple-compliance/thumbnail.webp"
   },
   {
     "id": "apple-docs-rag",
@@ -116,8 +116,8 @@
     },
     "slug": "apple-docs-rag",
     "contentPath": "",
-    "coverPath": "content/articles/apple-docs-rag/thumbnail.png",
-    "coverPreviewPath": "content/articles/apple-docs-rag/thumbnail.png"
+    "coverPath": "content/articles/apple-docs-rag/thumbnail.webp",
+    "coverPreviewPath": "content/articles/apple-docs-rag/thumbnail.webp"
   },
   {
     "id": "apple-guidelines",
@@ -137,8 +137,8 @@
     "related": [],
     "slug": "apple-guidelines",
     "contentPath": "",
-    "coverPath": "content/articles/apple-guidelines/thumbnail.png",
-    "coverPreviewPath": "content/articles/apple-guidelines/thumbnail.png"
+    "coverPath": "content/articles/apple-guidelines/thumbnail.webp",
+    "coverPreviewPath": "content/articles/apple-guidelines/thumbnail.webp"
   },
   {
     "id": "article-1",
@@ -155,8 +155,8 @@
     ],
     "slug": "article-1",
     "contentPath": "content/articles/article-1/content.pdf",
-    "coverPath": "content/articles/article-1/cover-preview.png",
-    "coverPreviewPath": "content/articles/article-1/cover-preview.png"
+    "coverPath": "content/articles/article-1/thumbnail.webp",
+    "coverPreviewPath": "content/articles/article-1/thumbnail.webp"
   },
   {
     "id": "article-2",
@@ -173,8 +173,8 @@
     ],
     "slug": "article-2",
     "contentPath": "content/articles/article-2/content.pdf",
-    "coverPath": "assets/default_thumbnail.png",
-    "coverPreviewPath": ""
+    "coverPath": "content/articles/article-2/thumbnail.webp",
+    "coverPreviewPath": "content/articles/article-2/thumbnail.webp"
   },
   {
     "id": "article-3",
@@ -191,8 +191,8 @@
     ],
     "slug": "article-3",
     "contentPath": "content/articles/article-3/content.pdf",
-    "coverPath": "content/articles/article-3/cover-preview.png",
-    "coverPreviewPath": "content/articles/article-3/cover-preview.png"
+    "coverPath": "content/articles/article-3/thumbnail.webp",
+    "coverPreviewPath": "content/articles/article-3/thumbnail.webp"
   },
   {
     "id": "blocks",
@@ -209,8 +209,8 @@
     "related": [],
     "slug": "blocks",
     "contentPath": "",
-    "coverPath": "content/articles/blocks/thumbnail.png",
-    "coverPreviewPath": "content/articles/blocks/thumbnail.png"
+    "coverPath": "content/articles/blocks/thumbnail.webp",
+    "coverPreviewPath": "content/articles/blocks/thumbnail.webp"
   },
   {
     "id": "boilerplate",
@@ -227,8 +227,8 @@
     "related": [],
     "slug": "boilerplate",
     "contentPath": "",
-    "coverPath": "content/articles/boilerplate/thumbnail.png",
-    "coverPreviewPath": "content/articles/boilerplate/thumbnail.png"
+    "coverPath": "content/articles/boilerplate/thumbnail.webp",
+    "coverPreviewPath": "content/articles/boilerplate/thumbnail.webp"
   },
   {
     "id": "code",
@@ -246,8 +246,8 @@
     "related": [],
     "slug": "code",
     "contentPath": "",
-    "coverPath": "content/articles/code/thumbnail.png",
-    "coverPreviewPath": "content/articles/code/thumbnail.png"
+    "coverPath": "content/articles/code/thumbnail.webp",
+    "coverPreviewPath": "content/articles/code/thumbnail.webp"
   },
   {
     "id": "color_extraction",
@@ -272,8 +272,8 @@
     "related": [],
     "slug": "color_extraction",
     "contentPath": "",
-    "coverPath": "content/articles/color_extraction/thumbnail.png",
-    "coverPreviewPath": "content/articles/color_extraction/thumbnail.png"
+    "coverPath": "content/articles/color_extraction/thumbnail.webp",
+    "coverPreviewPath": "content/articles/color_extraction/thumbnail.webp"
   },
   {
     "id": "color_matching",
@@ -298,8 +298,8 @@
     "related": [],
     "slug": "color_matching",
     "contentPath": "",
-    "coverPath": "content/articles/color_matching/thumbnail.png",
-    "coverPreviewPath": "content/articles/color_matching/thumbnail.png"
+    "coverPath": "content/articles/color_matching/thumbnail.webp",
+    "coverPreviewPath": "content/articles/color_matching/thumbnail.webp"
   },
   {
     "id": "color-extraction",
@@ -323,8 +323,8 @@
     },
     "slug": "color-extraction",
     "contentPath": "",
-    "coverPath": "content/articles/color-extraction/thumbnail.png",
-    "coverPreviewPath": "content/articles/color-extraction/thumbnail.png"
+    "coverPath": "content/articles/color-extraction/thumbnail.webp",
+    "coverPreviewPath": "content/articles/color-extraction/thumbnail.webp"
   },
   {
     "id": "color-matching",
@@ -348,8 +348,8 @@
     },
     "slug": "color-matching",
     "contentPath": "",
-    "coverPath": "content/articles/color-matching/thumbnail.png",
-    "coverPreviewPath": "content/articles/color-matching/thumbnail.png"
+    "coverPath": "content/articles/color-matching/thumbnail.webp",
+    "coverPreviewPath": "content/articles/color-matching/thumbnail.webp"
   },
   {
     "id": "color-test-ui",
@@ -366,8 +366,8 @@
     "related": [],
     "slug": "color-test-ui",
     "contentPath": "",
-    "coverPath": "content/articles/color-test-ui/thumbnail.png",
-    "coverPreviewPath": "content/articles/color-test-ui/thumbnail.png"
+    "coverPath": "content/articles/color-test-ui/thumbnail.webp",
+    "coverPreviewPath": "content/articles/color-test-ui/thumbnail.webp"
   },
   {
     "id": "color-theory",
@@ -387,8 +387,8 @@
     "related": [],
     "slug": "color-theory",
     "contentPath": "",
-    "coverPath": "content/articles/color-theory/thumbnail.png",
-    "coverPreviewPath": "content/articles/color-theory/thumbnail.png"
+    "coverPath": "content/articles/color-theory/thumbnail.webp",
+    "coverPreviewPath": "content/articles/color-theory/thumbnail.webp"
   },
   {
     "id": "composition",
@@ -408,8 +408,8 @@
     "related": [],
     "slug": "composition",
     "contentPath": "",
-    "coverPath": "content/articles/composition/thumbnail.png",
-    "coverPreviewPath": "content/articles/composition/thumbnail.png"
+    "coverPath": "content/articles/composition/thumbnail.webp",
+    "coverPreviewPath": "content/articles/composition/thumbnail.webp"
   },
   {
     "id": "design-system",
@@ -427,8 +427,8 @@
     "related": [],
     "slug": "design-system",
     "contentPath": "",
-    "coverPath": "content/articles/design-system/thumbnail.png",
-    "coverPreviewPath": "content/articles/design-system/thumbnail.png"
+    "coverPath": "content/articles/design-system/thumbnail.webp",
+    "coverPreviewPath": "content/articles/design-system/thumbnail.webp"
   },
   {
     "id": "face_parsing",
@@ -453,8 +453,8 @@
     "related": [],
     "slug": "face_parsing",
     "contentPath": "",
-    "coverPath": "content/articles/face_parsing/thumbnail.png",
-    "coverPreviewPath": "content/articles/face_parsing/thumbnail.png"
+    "coverPath": "content/articles/face_parsing/thumbnail.webp",
+    "coverPreviewPath": "content/articles/face_parsing/thumbnail.webp"
   },
   {
     "id": "face-editor",
@@ -505,8 +505,8 @@
     },
     "slug": "face-parsing",
     "contentPath": "",
-    "coverPath": "content/articles/face-parsing/thumbnail.png",
-    "coverPreviewPath": "content/articles/face-parsing/thumbnail.png"
+    "coverPath": "content/articles/face-parsing/thumbnail.webp",
+    "coverPreviewPath": "content/articles/face-parsing/thumbnail.webp"
   },
   {
     "id": "folder-test",
@@ -521,8 +521,8 @@
     ],
     "slug": "folder-test",
     "contentPath": "",
-    "coverPath": "assets/default_thumbnail.png",
-    "coverPreviewPath": ""
+    "coverPath": "content/articles/folder-test/thumbnail.webp",
+    "coverPreviewPath": "content/articles/folder-test/thumbnail.webp"
   },
   {
     "id": "foundations",
@@ -539,8 +539,8 @@
     "related": [],
     "slug": "foundations",
     "contentPath": "",
-    "coverPath": "content/articles/foundations/thumbnail.png",
-    "coverPreviewPath": "content/articles/foundations/thumbnail.png"
+    "coverPath": "content/articles/foundations/thumbnail.webp",
+    "coverPreviewPath": "content/articles/foundations/thumbnail.webp"
   },
   {
     "id": "illustrations",
@@ -557,8 +557,8 @@
     "related": [],
     "slug": "illustrations",
     "contentPath": "",
-    "coverPath": "content/articles/illustrations/thumbnail.png",
-    "coverPreviewPath": "content/articles/illustrations/thumbnail.png"
+    "coverPath": "content/articles/illustrations/thumbnail.webp",
+    "coverPreviewPath": "content/articles/illustrations/thumbnail.webp"
   },
   {
     "id": "ios-celebamask-hq",
@@ -603,8 +603,8 @@
     },
     "slug": "ios-face-parsing",
     "contentPath": "",
-    "coverPath": "content/articles/ios-face-parsing/thumbnail.png",
-    "coverPreviewPath": "content/articles/ios-face-parsing/thumbnail.png"
+    "coverPath": "content/articles/ios-face-parsing/thumbnail.webp",
+    "coverPreviewPath": "content/articles/ios-face-parsing/thumbnail.webp"
   },
   {
     "id": "ios-iris",
@@ -626,8 +626,8 @@
     },
     "slug": "ios-iris",
     "contentPath": "",
-    "coverPath": "content/articles/ios-iris/thumbnail.png",
-    "coverPreviewPath": "content/articles/ios-iris/thumbnail.png"
+    "coverPath": "content/articles/ios-iris/thumbnail.webp",
+    "coverPreviewPath": "content/articles/ios-iris/thumbnail.webp"
   },
   {
     "id": "ios-moodboard-purity",
@@ -695,8 +695,8 @@
     },
     "slug": "ios-skin-tone-cv",
     "contentPath": "",
-    "coverPath": "content/articles/ios-skin-tone-cv/thumbnail.png",
-    "coverPreviewPath": "content/articles/ios-skin-tone-cv/thumbnail.png"
+    "coverPath": "content/articles/ios-skin-tone-cv/thumbnail.webp",
+    "coverPreviewPath": "content/articles/ios-skin-tone-cv/thumbnail.webp"
   },
   {
     "id": "ios-sum",
@@ -718,8 +718,8 @@
     },
     "slug": "ios-sum",
     "contentPath": "",
-    "coverPath": "content/articles/ios-sum/thumbnail.png",
-    "coverPreviewPath": "content/articles/ios-sum/thumbnail.png"
+    "coverPath": "content/articles/ios-sum/thumbnail.webp",
+    "coverPreviewPath": "content/articles/ios-sum/thumbnail.webp"
   },
   {
     "id": "ios-timesfm",
@@ -764,8 +764,8 @@
     },
     "slug": "ios-vinet",
     "contentPath": "",
-    "coverPath": "content/articles/ios-vinet/thumbnail.png",
-    "coverPreviewPath": "content/articles/ios-vinet/thumbnail.png"
+    "coverPath": "content/articles/ios-vinet/thumbnail.webp",
+    "coverPreviewPath": "content/articles/ios-vinet/thumbnail.webp"
   },
   {
     "id": "iris",
@@ -789,8 +789,8 @@
     },
     "slug": "iris",
     "contentPath": "",
-    "coverPath": "content/articles/iris/thumbnail.png",
-    "coverPreviewPath": "content/articles/iris/thumbnail.png"
+    "coverPath": "content/articles/iris/thumbnail.webp",
+    "coverPreviewPath": "content/articles/iris/thumbnail.webp"
   },
   {
     "id": "knowledge",
@@ -807,8 +807,8 @@
     "related": [],
     "slug": "knowledge",
     "contentPath": "",
-    "coverPath": "content/articles/knowledge/thumbnail.png",
-    "coverPreviewPath": "content/articles/knowledge/thumbnail.png"
+    "coverPath": "content/articles/knowledge/thumbnail.webp",
+    "coverPreviewPath": "content/articles/knowledge/thumbnail.webp"
   },
   {
     "id": "knowledge-apple-guidelines",
@@ -829,8 +829,8 @@
     },
     "slug": "knowledge-apple-guidelines",
     "contentPath": "",
-    "coverPath": "content/articles/knowledge-apple-guidelines/thumbnail.png",
-    "coverPreviewPath": "content/articles/knowledge-apple-guidelines/thumbnail.png"
+    "coverPath": "content/articles/knowledge-apple-guidelines/thumbnail.webp",
+    "coverPreviewPath": "content/articles/knowledge-apple-guidelines/thumbnail.webp"
   },
   {
     "id": "knowledge-color-theory",
@@ -851,8 +851,8 @@
     },
     "slug": "knowledge-color-theory",
     "contentPath": "",
-    "coverPath": "content/articles/knowledge-color-theory/thumbnail.png",
-    "coverPreviewPath": "content/articles/knowledge-color-theory/thumbnail.png"
+    "coverPath": "content/articles/knowledge-color-theory/thumbnail.webp",
+    "coverPreviewPath": "content/articles/knowledge-color-theory/thumbnail.webp"
   },
   {
     "id": "knowledge-composition",
@@ -872,8 +872,8 @@
     },
     "slug": "knowledge-composition",
     "contentPath": "",
-    "coverPath": "content/articles/knowledge-composition/thumbnail.png",
-    "coverPreviewPath": "content/articles/knowledge-composition/thumbnail.png"
+    "coverPath": "content/articles/knowledge-composition/thumbnail.webp",
+    "coverPreviewPath": "content/articles/knowledge-composition/thumbnail.webp"
   },
   {
     "id": "knowledge-wireframing",
@@ -893,8 +893,8 @@
     },
     "slug": "knowledge-wireframing",
     "contentPath": "",
-    "coverPath": "content/articles/knowledge-wireframing/thumbnail.png",
-    "coverPreviewPath": "content/articles/knowledge-wireframing/thumbnail.png"
+    "coverPath": "content/articles/knowledge-wireframing/thumbnail.webp",
+    "coverPreviewPath": "content/articles/knowledge-wireframing/thumbnail.webp"
   },
   {
     "id": "legal",
@@ -912,8 +912,8 @@
     "related": [],
     "slug": "legal",
     "contentPath": "",
-    "coverPath": "content/articles/legal/thumbnail.png",
-    "coverPreviewPath": "content/articles/legal/thumbnail.png"
+    "coverPath": "content/articles/legal/thumbnail.webp",
+    "coverPreviewPath": "content/articles/legal/thumbnail.webp"
   },
   {
     "id": "mcp",
@@ -930,8 +930,8 @@
     "related": [],
     "slug": "mcp",
     "contentPath": "",
-    "coverPath": "content/articles/mcp/thumbnail.png",
-    "coverPreviewPath": "content/articles/mcp/thumbnail.png"
+    "coverPath": "content/articles/mcp/thumbnail.webp",
+    "coverPreviewPath": "content/articles/mcp/thumbnail.webp"
   },
   {
     "id": "mcp-navigation-flow",
@@ -952,8 +952,8 @@
     },
     "slug": "mcp-navigation-flow",
     "contentPath": "",
-    "coverPath": "content/articles/mcp-navigation-flow/thumbnail.png",
-    "coverPreviewPath": "content/articles/mcp-navigation-flow/thumbnail.png"
+    "coverPath": "content/articles/mcp-navigation-flow/thumbnail.webp",
+    "coverPreviewPath": "content/articles/mcp-navigation-flow/thumbnail.webp"
   },
   {
     "id": "mcp-purity",
@@ -973,8 +973,8 @@
     },
     "slug": "mcp-purity",
     "contentPath": "",
-    "coverPath": "content/articles/mcp-purity/thumbnail.png",
-    "coverPreviewPath": "content/articles/mcp-purity/thumbnail.png"
+    "coverPath": "content/articles/mcp-purity/thumbnail.webp",
+    "coverPreviewPath": "content/articles/mcp-purity/thumbnail.webp"
   },
   {
     "id": "mcp-wireframing",
@@ -994,8 +994,8 @@
     },
     "slug": "mcp-wireframing",
     "contentPath": "",
-    "coverPath": "content/articles/mcp-wireframing/thumbnail.png",
-    "coverPreviewPath": "content/articles/mcp-wireframing/thumbnail.png"
+    "coverPath": "content/articles/mcp-wireframing/thumbnail.webp",
+    "coverPreviewPath": "content/articles/mcp-wireframing/thumbnail.webp"
   },
   {
     "id": "memory",
@@ -1012,8 +1012,8 @@
     "related": [],
     "slug": "memory",
     "contentPath": "",
-    "coverPath": "content/articles/memory/thumbnail.png",
-    "coverPreviewPath": "content/articles/memory/thumbnail.png"
+    "coverPath": "content/articles/memory/thumbnail.webp",
+    "coverPreviewPath": "content/articles/memory/thumbnail.webp"
   },
   {
     "id": "microcopy",
@@ -1033,8 +1033,8 @@
     },
     "slug": "microcopy",
     "contentPath": "",
-    "coverPath": "content/articles/microcopy/thumbnail.png",
-    "coverPreviewPath": "content/articles/microcopy/thumbnail.png"
+    "coverPath": "content/articles/microcopy/thumbnail.webp",
+    "coverPreviewPath": "content/articles/microcopy/thumbnail.webp"
   },
   {
     "id": "ml-core",
@@ -1056,8 +1056,8 @@
     "related": [],
     "slug": "ml-core",
     "contentPath": "",
-    "coverPath": "content/articles/ml-core/thumbnail.png",
-    "coverPreviewPath": "content/articles/ml-core/thumbnail.png"
+    "coverPath": "content/articles/ml-core/thumbnail.webp",
+    "coverPreviewPath": "content/articles/ml-core/thumbnail.webp"
   },
   {
     "id": "models",
@@ -1075,8 +1075,8 @@
     "related": [],
     "slug": "models",
     "contentPath": "",
-    "coverPath": "content/articles/models/thumbnail.png",
-    "coverPreviewPath": "content/articles/models/thumbnail.png"
+    "coverPath": "content/articles/models/thumbnail.webp",
+    "coverPreviewPath": "content/articles/models/thumbnail.webp"
   },
   {
     "id": "navigation-flow",
@@ -1096,8 +1096,8 @@
     "related": [],
     "slug": "navigation-flow",
     "contentPath": "",
-    "coverPath": "content/articles/navigation-flow/thumbnail.png",
-    "coverPreviewPath": "content/articles/navigation-flow/thumbnail.png"
+    "coverPath": "content/articles/navigation-flow/thumbnail.webp",
+    "coverPreviewPath": "content/articles/navigation-flow/thumbnail.webp"
   },
   {
     "id": "patterns",
@@ -1114,8 +1114,8 @@
     "related": [],
     "slug": "patterns",
     "contentPath": "",
-    "coverPath": "content/articles/patterns/thumbnail.png",
-    "coverPreviewPath": "content/articles/patterns/thumbnail.png"
+    "coverPath": "content/articles/patterns/thumbnail.webp",
+    "coverPreviewPath": "content/articles/patterns/thumbnail.webp"
   },
   {
     "id": "platforms",
@@ -1132,8 +1132,8 @@
     "related": [],
     "slug": "platforms",
     "contentPath": "",
-    "coverPath": "content/articles/platforms/thumbnail.png",
-    "coverPreviewPath": "content/articles/platforms/thumbnail.png"
+    "coverPath": "content/articles/platforms/thumbnail.webp",
+    "coverPreviewPath": "content/articles/platforms/thumbnail.webp"
   },
   {
     "id": "purity",
@@ -1153,8 +1153,8 @@
     "related": [],
     "slug": "purity",
     "contentPath": "",
-    "coverPath": "content/articles/purity/thumbnail.png",
-    "coverPreviewPath": "content/articles/purity/thumbnail.png"
+    "coverPath": "content/articles/purity/thumbnail.webp",
+    "coverPreviewPath": "content/articles/purity/thumbnail.webp"
   },
   {
     "id": "rag",
@@ -1172,8 +1172,8 @@
     "related": [],
     "slug": "rag",
     "contentPath": "",
-    "coverPath": "content/articles/rag/thumbnail.png",
-    "coverPreviewPath": "content/articles/rag/thumbnail.png"
+    "coverPath": "content/articles/rag/thumbnail.webp",
+    "coverPreviewPath": "content/articles/rag/thumbnail.webp"
   },
   {
     "id": "references",
@@ -1190,8 +1190,8 @@
     "related": [],
     "slug": "references",
     "contentPath": "",
-    "coverPath": "content/articles/references/thumbnail.png",
-    "coverPreviewPath": "content/articles/references/thumbnail.png"
+    "coverPath": "content/articles/references/thumbnail.webp",
+    "coverPreviewPath": "content/articles/references/thumbnail.webp"
   },
   {
     "id": "render",
@@ -1209,8 +1209,8 @@
     "related": [],
     "slug": "render",
     "contentPath": "",
-    "coverPath": "content/articles/render/thumbnail.png",
-    "coverPreviewPath": "content/articles/render/thumbnail.png"
+    "coverPath": "content/articles/render/thumbnail.webp",
+    "coverPreviewPath": "content/articles/render/thumbnail.webp"
   },
   {
     "id": "security-review",
@@ -1231,8 +1231,8 @@
     },
     "slug": "security-review",
     "contentPath": "",
-    "coverPath": "content/articles/security-review/thumbnail.png",
-    "coverPreviewPath": "content/articles/security-review/thumbnail.png"
+    "coverPath": "content/articles/security-review/thumbnail.webp",
+    "coverPreviewPath": "content/articles/security-review/thumbnail.webp"
   },
   {
     "id": "sfsymbols",
@@ -1249,8 +1249,8 @@
     "related": [],
     "slug": "sfsymbols",
     "contentPath": "",
-    "coverPath": "content/articles/sfsymbols/thumbnail.png",
-    "coverPreviewPath": "content/articles/sfsymbols/thumbnail.png"
+    "coverPath": "content/articles/sfsymbols/thumbnail.webp",
+    "coverPreviewPath": "content/articles/sfsymbols/thumbnail.webp"
   },
   {
     "id": "skill",
@@ -1267,8 +1267,8 @@
     "related": [],
     "slug": "skill",
     "contentPath": "",
-    "coverPath": "content/articles/skill/thumbnail.png",
-    "coverPreviewPath": "content/articles/skill/thumbnail.png"
+    "coverPath": "content/articles/skill/thumbnail.webp",
+    "coverPreviewPath": "content/articles/skill/thumbnail.webp"
   },
   {
     "id": "skill-1",
@@ -1283,8 +1283,8 @@
     ],
     "slug": "skill-1",
     "contentPath": "content/articles/skill-1/content.md",
-    "coverPath": "assets/default_thumbnail.png",
-    "coverPreviewPath": ""
+    "coverPath": "content/articles/skill-1/thumbnail.webp",
+    "coverPreviewPath": "content/articles/skill-1/thumbnail.webp"
   },
   {
     "id": "skill-optimizer",
@@ -1305,8 +1305,8 @@
     },
     "slug": "skill-optimizer",
     "contentPath": "",
-    "coverPath": "content/articles/skill-optimizer/thumbnail.png",
-    "coverPreviewPath": "content/articles/skill-optimizer/thumbnail.png"
+    "coverPath": "content/articles/skill-optimizer/thumbnail.webp",
+    "coverPreviewPath": "content/articles/skill-optimizer/thumbnail.webp"
   },
   {
     "id": "skills",
@@ -1323,8 +1323,8 @@
     "related": [],
     "slug": "skills",
     "contentPath": "",
-    "coverPath": "content/articles/skills/thumbnail.png",
-    "coverPreviewPath": "content/articles/skills/thumbnail.png"
+    "coverPath": "content/articles/skills/thumbnail.webp",
+    "coverPreviewPath": "content/articles/skills/thumbnail.webp"
   },
   {
     "id": "skin-tone-cv",
@@ -1341,8 +1341,8 @@
     "related": [],
     "slug": "skin-tone-cv",
     "contentPath": "",
-    "coverPath": "content/articles/skin-tone-cv/thumbnail.png",
-    "coverPreviewPath": "content/articles/skin-tone-cv/thumbnail.png"
+    "coverPath": "content/articles/skin-tone-cv/thumbnail.webp",
+    "coverPreviewPath": "content/articles/skin-tone-cv/thumbnail.webp"
   },
   {
     "id": "sprint",
@@ -1362,8 +1362,8 @@
     "related": [],
     "slug": "sprint",
     "contentPath": "",
-    "coverPath": "content/articles/sprint/thumbnail.png",
-    "coverPreviewPath": "content/articles/sprint/thumbnail.png"
+    "coverPath": "content/articles/sprint/thumbnail.webp",
+    "coverPreviewPath": "content/articles/sprint/thumbnail.webp"
   },
   {
     "id": "sum",
@@ -1387,8 +1387,8 @@
     },
     "slug": "sum",
     "contentPath": "",
-    "coverPath": "content/articles/sum/thumbnail.png",
-    "coverPreviewPath": "content/articles/sum/thumbnail.png"
+    "coverPath": "content/articles/sum/thumbnail.webp",
+    "coverPreviewPath": "content/articles/sum/thumbnail.webp"
   },
   {
     "id": "swiftui-gen",
@@ -1409,8 +1409,8 @@
     },
     "slug": "swiftui-gen",
     "contentPath": "",
-    "coverPath": "content/articles/swiftui-gen/thumbnail.png",
-    "coverPreviewPath": "content/articles/swiftui-gen/thumbnail.png"
+    "coverPath": "content/articles/swiftui-gen/thumbnail.webp",
+    "coverPreviewPath": "content/articles/swiftui-gen/thumbnail.webp"
   },
   {
     "id": "template",
@@ -1430,8 +1430,8 @@
     "related": [],
     "slug": "template",
     "contentPath": "",
-    "coverPath": "content/articles/template/thumbnail.png",
-    "coverPreviewPath": "content/articles/template/thumbnail.png"
+    "coverPath": "content/articles/template/thumbnail.webp",
+    "coverPreviewPath": "content/articles/template/thumbnail.webp"
   },
   {
     "id": "tester",
@@ -1451,8 +1451,8 @@
     },
     "slug": "tester",
     "contentPath": "",
-    "coverPath": "content/articles/tester/thumbnail.png",
-    "coverPreviewPath": "content/articles/tester/thumbnail.png"
+    "coverPath": "content/articles/tester/thumbnail.webp",
+    "coverPreviewPath": "content/articles/tester/thumbnail.webp"
   },
   {
     "id": "ux_attention_pattern",
@@ -1477,8 +1477,8 @@
     "related": [],
     "slug": "ux_attention_pattern",
     "contentPath": "",
-    "coverPath": "content/articles/ux_attention_pattern/thumbnail.png",
-    "coverPreviewPath": "content/articles/ux_attention_pattern/thumbnail.png"
+    "coverPath": "content/articles/ux_attention_pattern/thumbnail.webp",
+    "coverPreviewPath": "content/articles/ux_attention_pattern/thumbnail.webp"
   },
   {
     "id": "ux_position_mask",
@@ -1503,8 +1503,8 @@
     "related": [],
     "slug": "ux_position_mask",
     "contentPath": "",
-    "coverPath": "content/articles/ux_position_mask/thumbnail.png",
-    "coverPreviewPath": "content/articles/ux_position_mask/thumbnail.png"
+    "coverPath": "content/articles/ux_position_mask/thumbnail.webp",
+    "coverPreviewPath": "content/articles/ux_position_mask/thumbnail.webp"
   },
   {
     "id": "ux-attention-pattern",
@@ -1532,8 +1532,8 @@
     },
     "slug": "ux-attention-pattern",
     "contentPath": "",
-    "coverPath": "content/articles/ux-attention-pattern/thumbnail.png",
-    "coverPreviewPath": "content/articles/ux-attention-pattern/thumbnail.png"
+    "coverPath": "content/articles/ux-attention-pattern/thumbnail.webp",
+    "coverPreviewPath": "content/articles/ux-attention-pattern/thumbnail.webp"
   },
   {
     "id": "ux-audit",
@@ -1554,8 +1554,8 @@
     },
     "slug": "ux-audit",
     "contentPath": "",
-    "coverPath": "content/articles/ux-audit/thumbnail.png",
-    "coverPreviewPath": "content/articles/ux-audit/thumbnail.png"
+    "coverPath": "content/articles/ux-audit/thumbnail.webp",
+    "coverPreviewPath": "content/articles/ux-audit/thumbnail.webp"
   },
   {
     "id": "ux-position-mask",
@@ -1583,8 +1583,8 @@
     },
     "slug": "ux-position-mask",
     "contentPath": "",
-    "coverPath": "content/articles/ux-position-mask/thumbnail.png",
-    "coverPreviewPath": "content/articles/ux-position-mask/thumbnail.png"
+    "coverPath": "content/articles/ux-position-mask/thumbnail.webp",
+    "coverPreviewPath": "content/articles/ux-position-mask/thumbnail.webp"
   },
   {
     "id": "vinet",
@@ -1608,8 +1608,8 @@
     },
     "slug": "vinet",
     "contentPath": "",
-    "coverPath": "content/articles/vinet/thumbnail.png",
-    "coverPreviewPath": "content/articles/vinet/thumbnail.png"
+    "coverPath": "content/articles/vinet/thumbnail.webp",
+    "coverPreviewPath": "content/articles/vinet/thumbnail.webp"
   },
   {
     "id": "vision_camera",
@@ -1634,8 +1634,8 @@
     "related": [],
     "slug": "vision_camera",
     "contentPath": "",
-    "coverPath": "content/articles/vision_camera/thumbnail.png",
-    "coverPreviewPath": "content/articles/vision_camera/thumbnail.png"
+    "coverPath": "content/articles/vision_camera/thumbnail.webp",
+    "coverPreviewPath": "content/articles/vision_camera/thumbnail.webp"
   },
   {
     "id": "vision-camera",
@@ -1660,8 +1660,8 @@
     },
     "slug": "vision-camera",
     "contentPath": "",
-    "coverPath": "content/articles/vision-camera/thumbnail.png",
-    "coverPreviewPath": "content/articles/vision-camera/thumbnail.png"
+    "coverPath": "content/articles/vision-camera/thumbnail.webp",
+    "coverPreviewPath": "content/articles/vision-camera/thumbnail.webp"
   },
   {
     "id": "wireframe-studio",
@@ -1678,8 +1678,8 @@
     "related": [],
     "slug": "wireframe-studio",
     "contentPath": "",
-    "coverPath": "content/articles/wireframe-studio/thumbnail.png",
-    "coverPreviewPath": "content/articles/wireframe-studio/thumbnail.png"
+    "coverPath": "content/articles/wireframe-studio/thumbnail.webp",
+    "coverPreviewPath": "content/articles/wireframe-studio/thumbnail.webp"
   },
   {
     "id": "wireframing",
@@ -1699,7 +1699,7 @@
     },
     "slug": "wireframing",
     "contentPath": "",
-    "coverPath": "content/articles/wireframing/thumbnail.png",
-    "coverPreviewPath": "content/articles/wireframing/thumbnail.png"
+    "coverPath": "content/articles/wireframing/thumbnail.webp",
+    "coverPreviewPath": "content/articles/wireframing/thumbnail.webp"
   }
 ]

@@ -13,14 +13,14 @@
   ],
   "slug": "article-3",
   "contentPath": "content/articles/article-3/content.pdf",
-  "coverPath": "content/articles/article-3/cover-preview.png",
-  "coverPreviewPath": "content/articles/article-3/cover-preview.png",
+  "coverPath": "content/articles/article-3/thumbnail.webp",
+  "coverPreviewPath": "content/articles/article-3/thumbnail.webp",
   "fileTree": [
     {
       "name": "block.json",
       "type": "file",
       "path": "block.json",
-      "content": "{\n  \"id\": \"article-3\",\n  \"type\": \"pdf\",\n  \"category\": \"agentic\",\n  \"name\": \"Language Model\",\n  \"shortDescription\": \"Turns research into applied AI guidance\",\n  \"description\": \"Turns current AI research and proven industry practices into concise implementation guidance for teams building applied AI systems.\",\n  \"keywords\": [\n    \"agentic\",\n    \"llm\",\n    \"security\",\n    \"skill\"\n  ],\n  \"slug\": \"article-3\",\n  \"contentPath\": \"content/articles/article-3/content.pdf\",\n  \"coverPath\": \"content/articles/article-3/cover-preview.png\",\n  \"coverPreviewPath\": \"content/articles/article-3/cover-preview.png\"\n}"
+      "content": "{\n  \"id\": \"article-3\",\n  \"type\": \"pdf\",\n  \"category\": \"agentic\",\n  \"name\": \"Language Model\",\n  \"shortDescription\": \"Turns research into applied AI guidance\",\n  \"description\": \"Turns current AI research and proven industry practices into concise implementation guidance for teams building applied AI systems.\",\n  \"keywords\": [\n    \"agentic\",\n    \"llm\",\n    \"security\",\n    \"skill\"\n  ],\n  \"slug\": \"article-3\",\n  \"contentPath\": \"content/articles/article-3/content.pdf\",\n  \"coverPath\": \"content/articles/article-3/thumbnail.webp\",\n  \"coverPreviewPath\": \"content/articles/article-3/thumbnail.webp\"\n}"
     }
   ]
 }

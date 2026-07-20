@@ -11,14 +11,14 @@
   ],
   "slug": "folder-test",
   "contentPath": "",
-  "coverPath": "assets/default_thumbnail.png",
-  "coverPreviewPath": "",
+  "coverPath": "content/articles/folder-test/thumbnail.webp",
+  "coverPreviewPath": "content/articles/folder-test/thumbnail.webp",
   "fileTree": [
     {
       "name": "block.json",
       "type": "file",
       "path": "block.json",
-      "content": "{\n  \"id\": \"folder-test\",\n  \"type\": \"folder\",\n  \"category\": \"skills-library\",\n  \"name\": \"Folder test\",\n  \"shortDescription\": \"Previews article folders and Markdown\",\n  \"description\": \"Demonstrates how an article can expose a folder tree and open included Markdown documents directly in the Library interface.\",\n  \"keywords\": [\n    \"folder\",\n    \"test\"\n  ],\n  \"slug\": \"folder-test\",\n  \"contentPath\": \"\",\n  \"coverPath\": \"assets/default_thumbnail.png\",\n  \"coverPreviewPath\": \"\"\n}"
+      "content": "{\n  \"id\": \"folder-test\",\n  \"type\": \"folder\",\n  \"category\": \"skills-library\",\n  \"name\": \"Folder test\",\n  \"shortDescription\": \"Previews article folders and Markdown\",\n  \"description\": \"Demonstrates how an article can expose a folder tree and open included Markdown documents directly in the Library interface.\",\n  \"keywords\": [\n    \"folder\",\n    \"test\"\n  ],\n  \"slug\": \"folder-test\",\n  \"contentPath\": \"\",\n  \"coverPath\": \"content/articles/folder-test/thumbnail.webp\",\n  \"coverPreviewPath\": \"content/articles/folder-test/thumbnail.webp\"\n}"
     }
   ]
 }

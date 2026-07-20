@@ -22,8 +22,8 @@
   "related": [],
   "slug": "face_parsing",
   "contentPath": "",
-  "coverPath": "content/articles/face_parsing/thumbnail.png",
-  "coverPreviewPath": "content/articles/face_parsing/thumbnail.png",
+  "coverPath": "content/articles/face_parsing/thumbnail.webp",
+  "coverPreviewPath": "content/articles/face_parsing/thumbnail.webp",
   "fileTree": [
     {
       "name": "README.md",

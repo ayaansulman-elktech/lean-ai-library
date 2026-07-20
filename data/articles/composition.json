@@ -16,14 +16,14 @@
   "related": [],
   "slug": "composition",
   "contentPath": "",
-  "coverPath": "content/articles/composition/thumbnail.png",
-  "coverPreviewPath": "content/articles/composition/thumbnail.png",
+  "coverPath": "content/articles/composition/thumbnail.webp",
+  "coverPreviewPath": "content/articles/composition/thumbnail.webp",
   "fileTree": [
     {
       "name": "block.json",
       "type": "file",
       "path": "block.json",
-      "content": "{\n  \"id\": \"composition\",\n  \"name\": \"composition\",\n  \"type\": \"library\",\n  \"category\": \"knowledge\",\n  \"description\": \"Explains how alignment, hierarchy, spacing, balance, rhythm, and visual weight create clear and effective interface compositions.\",\n  \"shortDescription\": \"Guides balanced visual composition\",\n  \"keywords\": [\n    \"composition\"\n  ],\n  \"version\": \"0.1.0\",\n  \"githubPath\": \"libraries/knowledge/blocks/composition\",\n  \"assets\": [],\n  \"examples\": [],\n  \"dependencies\": [],\n  \"related\": [],\n  \"slug\": \"composition\",\n  \"contentPath\": \"\",\n  \"coverPath\": \"content/articles/composition/thumbnail.png\",\n  \"coverPreviewPath\": \"content/articles/composition/thumbnail.png\"\n}"
+      "content": "{\n  \"id\": \"composition\",\n  \"name\": \"composition\",\n  \"type\": \"library\",\n  \"category\": \"knowledge\",\n  \"description\": \"Explains how alignment, hierarchy, spacing, balance, rhythm, and visual weight create clear and effective interface compositions.\",\n  \"shortDescription\": \"Guides balanced visual composition\",\n  \"keywords\": [\n    \"composition\"\n  ],\n  \"version\": \"0.1.0\",\n  \"githubPath\": \"libraries/knowledge/blocks/composition\",\n  \"assets\": [],\n  \"examples\": [],\n  \"dependencies\": [],\n  \"related\": [],\n  \"slug\": \"composition\",\n  \"contentPath\": \"\",\n  \"coverPath\": \"content/articles/composition/thumbnail.webp\",\n  \"coverPreviewPath\": \"content/articles/composition/thumbnail.webp\"\n}"
     }
   ]
 }

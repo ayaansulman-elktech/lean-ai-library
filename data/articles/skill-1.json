@@ -11,14 +11,14 @@
   ],
   "slug": "skill-1",
   "contentPath": "content/articles/skill-1/content.md",
-  "coverPath": "assets/default_thumbnail.png",
-  "coverPreviewPath": "",
+  "coverPath": "content/articles/skill-1/thumbnail.webp",
+  "coverPreviewPath": "content/articles/skill-1/thumbnail.webp",
   "fileTree": [
     {
       "name": "block.json",
       "type": "file",
       "path": "block.json",
-      "content": "{\n  \"id\": \"skill-1\",\n  \"type\": \"md\",\n  \"category\": \"skills-library\",\n  \"name\": \"Make it scroll\",\n  \"shortDescription\": \"Builds scroll-driven web experiences\",\n  \"description\": \"Demonstrates how to build a polished scroll-driven web experience with coordinated content, motion, and interaction behavior.\",\n  \"keywords\": [\n    \"skill\",\n    \"website\"\n  ],\n  \"slug\": \"skill-1\",\n  \"contentPath\": \"content/articles/skill-1/content.md\",\n  \"coverPath\": \"assets/default_thumbnail.png\",\n  \"coverPreviewPath\": \"\"\n}"
+      "content": "{\n  \"id\": \"skill-1\",\n  \"type\": \"md\",\n  \"category\": \"skills-library\",\n  \"name\": \"Make it scroll\",\n  \"shortDescription\": \"Builds scroll-driven web experiences\",\n  \"description\": \"Demonstrates how to build a polished scroll-driven web experience with coordinated content, motion, and interaction behavior.\",\n  \"keywords\": [\n    \"skill\",\n    \"website\"\n  ],\n  \"slug\": \"skill-1\",\n  \"contentPath\": \"content/articles/skill-1/content.md\",\n  \"coverPath\": \"content/articles/skill-1/thumbnail.webp\",\n  \"coverPreviewPath\": \"content/articles/skill-1/thumbnail.webp\"\n}"
     }
   ]
 }

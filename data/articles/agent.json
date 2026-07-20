@@ -14,8 +14,8 @@
   "related": [],
   "slug": "agent",
   "contentPath": "",
-  "coverPath": "content/articles/agent/thumbnail.png",
-  "coverPreviewPath": "content/articles/agent/thumbnail.png",
+  "coverPath": "content/articles/agent/thumbnail.webp",
+  "coverPreviewPath": "content/articles/agent/thumbnail.webp",
   "fileTree": [
     {
       "name": "SKILL.md",
